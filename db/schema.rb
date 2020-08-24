@@ -10,10 +10,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_194716) do
+ActiveRecord::Schema.define(version: 2020_08_24_204752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cuisines", force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "dishes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_favorites_on_restaurant_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.bigint "follower_id", null: false
+    t.bigint "followed_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_follows_on_followed_id"
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "phone"
+    t.boolean "vegetarian"
+    t.float "longitude"
+    t.float "latitude"
+    t.bigint "cuisine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cuisine_id"], name: "index_restaurants_on_cuisine_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.bigint "dish_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dish_id"], name: "index_tags_on_dish_id"
+    t.index ["restaurant_id"], name: "index_tags_on_restaurant_id"
+    t.index ["user_id"], name: "index_tags_on_user_id"
+  end
+
+  create_table "upvotes", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_upvotes_on_restaurant_id"
+    t.index ["user_id"], name: "index_upvotes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +100,16 @@ ActiveRecord::Schema.define(version: 2020_08_24_194716) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "restaurants"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "follows", "users", column: "followed_id"
+  add_foreign_key "follows", "users", column: "follower_id"
+  add_foreign_key "restaurants", "cuisines"
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "tags", "dishes"
+  add_foreign_key "tags", "restaurants"
+  add_foreign_key "tags", "users"
+  add_foreign_key "upvotes", "restaurants"
+  add_foreign_key "upvotes", "users"
 end
