@@ -1,2 +1,6 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% @cuisines.each do |cuisine| %>
+    <p><%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %></p>
+<% end  %>
