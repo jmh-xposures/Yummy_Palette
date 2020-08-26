@@ -9,6 +9,5 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true
   validates :phone, presence: true
   validate :vegetarian
-  validates :latitude, presence: true
-  validates :longitude, presence: true
+  
 end
