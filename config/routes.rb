@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :cuisines, only: [:show] do
+  resources :cuisines, only: [:index, :show] do
     resources :restaurants, only: [:create]
   end
-  resources :restaurants, only: [:show, :index] do
-    resources :upvotes, only: [:create]
-    resources :tags, only: [:create]
-    resources :reviews, only: [:create]
+
+  resources :restaurants, only: [:show] do
+    resources :upvotes, only: [:create, :destroy]
+    resources :tags, only: [:create, :destroy]
+    resources :reviews, only: [:create, :destroy]
   end
+
   resources :users, only: [:show] do 
     resources :follows, only: [:create]
   end
