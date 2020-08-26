@@ -1,8 +1,13 @@
 class CuisinesController < ApplicationController
-  def show
-    # all the cuisine / portuguese restaurants after research
+  def index
+    @cuisines = Cuisine.all
   end
-  def create
-    # Add a new restaurant
+
+  def show
+    @cuisine = Cuisine.find(params[:id])
+    @restaurant = Restaurant.new
+    @review = Review.new
+    @upvote = Upvote.new
+    @tag = Tag.new
   end
 end
