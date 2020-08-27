@@ -8,6 +8,7 @@
 
 .info-icons {
   position: relative;
+  text-align: center;
 
   img {
     height: 50px;
@@ -15,7 +16,13 @@
 
   span {
     position: absolute;
-    left: 26px;
+    left: 50px;
     top: 18px;
   }
+}
+
+.intro-info {
+  width: 90px;
+  text-align: center;
+  margin-top: 10px;
 }

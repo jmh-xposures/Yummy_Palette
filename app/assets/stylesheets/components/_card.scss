@@ -10,11 +10,12 @@
 
 .restaurant-index-cards {
   overflow: hidden;
+  position: relative;
   background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 0 24px 3px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   width: 340px;
-  height: 238px;
+  height: 260px;
 
   img.card-image {
     width: 100%;
@@ -25,15 +26,26 @@
   }
 }
 
+
+#cuisine_tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(235, 220, 135, 0.8);
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+}
+
 .index-title {
   position: relative;
-  padding: 3px;
+  padding-left: 10px;
+  padding-top: 10px;
   justify-content: space-between;
   align-items: flex-end;
 
   h2 {
     font-size: 18px;
-    margin: none !important;
+    margin: 0;
   }
 
   p {
@@ -48,7 +60,13 @@
   p {
     font-size: 13px;
     font-weight: bold;
+    padding-top: 30px;
   }
+  
+}
+
+#address-container {
+  width: 240px;
 }
 
 #location {

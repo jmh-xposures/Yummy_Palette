@@ -7,46 +7,39 @@
 <div class="icons_aligned">   
   <div class="info-icons">
     <%= image_tag 'small_orange_palette.svg' %>
-    <span class="info-nums">12</span>
+    <span class="info-nums"><%= @cuisine_count %></span>
+    <div class="intro-info">
+      <p>Cuisines to explore</p>
+    </div>
   </div>
   <div class="info-icons">
      <%= image_tag 'small_yellow_palette.svg' %>
-     <span class="info-nums">73</span>
+     <span class="info-nums"><%= @restaurant_count %></span>
+     <div class="intro-info">
+      <p>Restaurants to discover</p>
+    </div>
   </div>
   <div class="info-icons">
      <%= image_tag 'small_green_palette.svg' %>
-     <span class="info-nums">241</span>
-  </div>
-</div>
-
-<!-- cuisine index -->
-
-<% @cuisines.each do  |cuisine| %>
-  <p><%= cuisine.name %></p>
-<% end %>
-
-<!-- Recently upvoted restaurants -->
-
-<div class="container mt-5">
-  <div class="restaurant-index-cards mx-auto">
-    <%= image_tag 'ma_poule.jpg', class: "card-image" %>
-    <div class="restaurant-index-footer">
-      <div class="index-title">
-        <h2>Ma Poule Mouillée</h2>
-         <%= image_tag 'location_icon.svg', size: "17" %>
-        <p id="location">Location</p>
-      </div>
-        <div id="card-extra-info">
-          <p><%= image_tag 'black_star.svg', size: "18" %> 20 <%= image_tag 'black_upvote.svg', size: "18" %> 23</p>
-        </div>
+     <span class="info-nums"><%= @user_count %></span>
+     <div class="intro-info">
+      <p>Cuisine Experts</p>
     </div>
   </div>
 </div>
 
+<!-- cuisine index -->
+<div class="container">
+  <p style="font-weight: bold">Cuisines</p>
+  <div>
+    <% @cuisines.each do  |cuisine| %>
+      <p><%= cuisine.name %></p>
+    <% end %>
+</div>
+</div>
+<!-- Recently upvoted restaurant cards -->
 
-
-
-
+<%= render 'shared/index_card.html.erb' %>
 
 
 
