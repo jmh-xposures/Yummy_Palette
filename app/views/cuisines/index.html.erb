@@ -1,8 +1,12 @@
 <h1>Welcome to all the cuisines page</h1>
-<% @cuisines.each do |cuisine| %>
- <%= cuisine.name %>
- <%  if cuisine.photo.attached? %>
- 	<%= cl_image_tag cuisine.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-	<% end %>
+
+<%# render the list of cuisines seeded in the database using partials %>
+<div class="cuisine-card-wrapper">
+	<div class="cuisine_card_container">
+		<% @cuisines.each do |cuisine| %>
+			<%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %>
+		<% end  %>
+	</div> 
+</div>
+
 
