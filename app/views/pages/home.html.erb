@@ -1,3 +1,4 @@
+
 <!-- Background image -->
 <div class="cover-banner">
  
@@ -53,4 +54,14 @@
 
 
 
+
+
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="cuisine_card_container">
+    <% @cuisines.each do |cuisine| %>
+        <p><%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %></p>
+    <% end  %>
+</div> 
 

@@ -10,10 +10,11 @@ class Restaurant < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
   validates :phone, presence: true
-  validate :vegetarian
-  validates :latitude, presence: true
-  validates :longitude, presence: true
-
+  # validate :vegetarian
+  # validates :latitude, presence: true
+  # validates :longitude, presence: true
+  has_one_attached :photo
+  
   def self.latest_upvoted
     global = self.all.select do |restaurant|
       cuisine_experts = restaurant.cuisine.users.count
@@ -31,7 +32,6 @@ class Restaurant < ApplicationRecord
   def neat_address 
     self.address.split(',')[0..1].join(',')
   end
-
 end
 
 
