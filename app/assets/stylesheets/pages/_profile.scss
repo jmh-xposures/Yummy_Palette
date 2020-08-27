@@ -1,0 +1,48 @@
+ .background_profile {
+background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/0a/e0/d7/2c/balcony.jpg");
+width: 375px;
+height: 300;
+background-image: cover;
+background-position: top;
+ }
+ .profile-avatar {
+ 
+  left: 0;
+  top: 50%;
+  height: 50%;
+  right: 0;
+
+ 	width: 200;
+ 	height: 200;
+ 	border-radius: 50%;
+    margin: 0 auto;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+ }
+ .user_name{
+ 	color: #342E37;
+ 	font-size: 20px;
+    font-style: bold;
+    font-family: dosis;
+    text-align: center;
+    margin-top: 10px
+ }
+ .user_cuisine{
+ 	text-align: center;
+ 	font-family: dosis;
+ 	font-size: 20px
+ }
+ .user_bio {
+ 	font-size: 20px;
+ 	font-family: dosis;
+ }
+  .p{
+   text-align: center;
+  }
+ .favorite_rest {
+ 	font-family: dosis;
+ 	font-size: 20px;
+ }
