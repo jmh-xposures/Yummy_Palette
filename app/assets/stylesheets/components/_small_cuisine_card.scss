@@ -1,0 +1,29 @@
+.small-cuisine-card {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 110px;
+    height: 110px;
+    border-radius: 22px;
+    margin: 10px;
+}
+
+.small-cuisine-card > img {
+    height: 75%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.small-cuisine-card-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+        p {
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 7px;
+        }
+}
+
+
