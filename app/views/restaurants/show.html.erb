@@ -1,1 +1,15 @@
 <h1>Welcome to the specific restaurant page</h1>
+
+
+  <div class='restaurant-card'>    
+    <h3 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h3>
+    <div class="card-text">
+      <p><%= @restaurant.address %></p><br>
+      <p><%= @restaurant.phone %></p><br>
+      <p><%= @restaurant.website %></p>
+    </div>
+  
+    <hr>
+  </div>
+
+  
