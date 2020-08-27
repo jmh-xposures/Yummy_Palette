@@ -8,4 +8,8 @@ class Restaurant < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
   validates :phone, presence: true
+  # validate :vegetarian
+  # validates :latitude, presence: true
+  # validates :longitude, presence: true
+  has_one_attached :photo
 end
