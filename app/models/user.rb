@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   # belongs_to :cuisine
   
  
@@ -16,4 +17,5 @@ class User < ApplicationRecord
   has_many :follower_follows, foreign_key: :followed_id, class_name: "Follow"
   has_many :followers, through: :follower_follows, source: "follower"
   has_many :followings, through: :following_follows, source: "followed"
+  has_one_attached :photo
 end

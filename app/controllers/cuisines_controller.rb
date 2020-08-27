@@ -11,3 +11,4 @@ class CuisinesController < ApplicationController
     @tag = Tag.new
   end
 end
+# ne pas oublié de mettre :photo dans cuisine_params
