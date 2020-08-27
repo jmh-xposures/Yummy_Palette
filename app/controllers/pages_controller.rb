@@ -4,3 +4,4 @@ class PagesController < ApplicationController
   def home
   end
 end
+# ne pas oublié de mettre :photo dans page_params
