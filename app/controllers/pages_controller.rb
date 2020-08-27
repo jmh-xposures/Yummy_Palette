@@ -5,3 +5,4 @@ class PagesController < ApplicationController
     @cuisines = Cuisine.all
   end
 end
+# ne pas oublié de mettre :photo dans page_params
