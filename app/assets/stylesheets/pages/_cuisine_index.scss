@@ -1,10 +1,20 @@
-.cuisine_card_container{
-display: flex;
-// width: 100%;
-overflow-x: scroll;
-justify-content: space-evenly;
+.cuisine-cards-wrapper {
+    width: 100vw;
+    margin: 10px;
 }
 
-.cuisine-card-wrapper {
+.cuisine_cards_container{
+display: flex;
+overflow-x: scroll;
+}
+
+
+.restaurant-cards-wrapper {
     width: 100vw;
+    margin: 10px;
+}
+
+.restaurant_card_container {
+    display: flex;
+    overflow-x: scroll;
 }

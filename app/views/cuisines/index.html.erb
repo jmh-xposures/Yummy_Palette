@@ -1,12 +1,25 @@
 <h1>Welcome to all the cuisines page</h1>
 
 <%# render the list of cuisines seeded in the database using partials %>
-<div class="cuisine-card-wrapper">
-	<div class="cuisine_card_container">
+<div class="cuisine-cards-wrapper">
+	<h3>Cuisine</h3>
+	<div class="cuisine_cards_container">
 		<% @cuisines.each do |cuisine| %>
 			<%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %>
 		<% end  %>
 	</div> 
 </div>
+
+<% @cuisines.each do |cuisine| %>
+	<div class="restaurant-cards-wrapper">
+		<h3><%= cuisine.name %></h3>
+		<div class="restaurant_card_container">
+			<% @cuisine_restaurants[cuisine.name].each do |restaurant| %>
+			<p><%= restaurant.name %></p>
+				<%# <%= render "restaurants/medium_restaurant_card", {restaurant: restaurant} %>
+			<% end  %>
+		</div> 
+	</div>
+<% end %>
 
 
