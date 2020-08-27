@@ -1,15 +1,11 @@
 <h1>Welcome to the specific restaurant page</h1>
 
-
-  <div class='restaurant-card'>    
-    <h3 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h3>
-    <div class="card-text">
-      <p><%= @restaurant.address %></p><br>
-      <p><%= @restaurant.phone %></p><br>
-      <p><%= @restaurant.website %></p>
+ <div class="container restaurant-card">    
+    <h4 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h4>
+     <a href=""><%#= @cuisine.name%></a> 
+    <div class="card-restaurant-infos">
+      <p><i class='fas fa-map-marker-alt' style='font-size:15px;color:blue'></i> <%= @restaurant.address %></p>
+      <p><i class='fas fa-phone' style='font-size:15px;color:blue'></i> <%= @restaurant.phone %></p>
     </div>
-  
     <hr>
   </div>
-
-  
