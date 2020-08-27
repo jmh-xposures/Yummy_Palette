@@ -1,1 +1,22 @@
-<h1>Welcome to your profile page :D</h1>
+
+<div class= "background_profile">
+  <div>
+  	<% if current_user.photo.attached? %>
+  	  <%= cl_image_tag current_user.photo.key, class: "profile-avatar" %>
+  	<% else %>
+  	  <%= image_tag "https://kitt.lewagon.com/placeholder/users/Papillard", class: "profile-avatar" %>
+  	<% end %>
+  </div>
+</div>
+
+<h3 class= "user_name"> <strong><%= current_user.first_name %><strong></h3>
+<h4 class= "user_cuisine"> <%= Cuisine.where(id: current_user.cuisine_id).first.name %> Cuisine Expert</h4>
+
+<div class= "user_bio">
+  <h2>Bio</h2>
+  <p>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+</div>
+
+<div>
+  <h2 class= "Favorite_rest"> <strong>Favorite Restaurants</strong></h2>
+</div> 
