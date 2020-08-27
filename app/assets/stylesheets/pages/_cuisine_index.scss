@@ -1,0 +1,10 @@
+.cuisine_card_container{
+display: flex;
+// width: 100%;
+overflow-x: scroll;
+justify-content: space-evenly;
+}
+
+.cuisine-card-wrapper {
+    width: 100vw;
+}

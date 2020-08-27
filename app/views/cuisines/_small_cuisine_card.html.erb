@@ -1,6 +1,12 @@
-<div class="small-cuisine-card">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="small-cuisine-card-name">
-        <p><%= cuisine.name %></p>
+<%= link_to cuisine_path(cuisine) do %>
+    <div class="small-cuisine-card">
+        <% if cuisine.photo.attached? %>
+            <%= cl_image_tag cuisine.photo.key, crop: :fill %>
+        <% else %>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <% end %>
+        <div class="small-cuisine-card-name">
+            <%= cuisine.name %>
+        </div>
     </div>
-</div>
+<% end %>
