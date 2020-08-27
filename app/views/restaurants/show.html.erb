@@ -1,11 +1,64 @@
-<h1>Welcome to the specific restaurant page</h1>
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div> %>
 
- <div class="container restaurant-card">    
-    <h4 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h4>
-     <a href=""><%#= @cuisine.name%></a> 
-    <div class="card-restaurant-infos">
-      <p><i class='fas fa-map-marker-alt' style='font-size:15px;color:blue'></i> <%= @restaurant.address %></p>
-      <p><i class='fas fa-phone' style='font-size:15px;color:blue'></i> <%= @restaurant.phone %></p>
+<div class="restaurant-show-container">
+  <div class="restaurant_card">
+
+      <h1 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h1>
+      <%= link_to @cuisine.name, cuisine_path(@cuisine), class: "btn btn-ghost cuisine" %>
+
+      <div class="card-restaurant-infos">
+        <p><i class='fas fa-map-marker-alt' style='font-size:15px;color:blue'></i> <%= @restaurant.address %></p>
+        <p><i class='fas fa-phone' style='font-size:15px;color:blue'></i> <%= @restaurant.phone %></p>
+        <i class="far fa-triangle"></i>
+      </div>
+      <br>
+      <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+      <span class="fa fa-star checked"> 20<%#= @favorite.%></span>
+      <p><i class="far fa-triangle">20</i></p>
     </div>
-    <hr>
+
+
+
+    <%# if current_user.signed_in do %>
+      <div class="upvote-button">
+        <%# TODO%>
+      </div>
+    <%# else %>
+      <div>
+        <%# TODO%>
+      </div>
+    <%# end %>
+
+
+    <h1>Best dishes</h1>
+    <div class="best-dishes">
+      <div class="flex-card">
+        <div><%= @cuisine.name%></div>
+        <div><%= @cuisine.name%></div>
+        <div><%= @cuisine.name%></div>
+      </div>
+    </div>
+
+    <h1>Why we recommend this Restaurant</h1>
+
+    <div class="recommentation_card">
+      <div class="avatar">    
+        <%# if @user.photo.attached? %>
+          <%#= cl_image_tag @user.photo.key, height: 10, width: 10, crop: :fill %>
+        <%# end %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
+
+      </div>
+      <div class="comment_card">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Dignissimos impedit maxime ad ex ut praesentium facere velit 
+        fugit atque quis!
+      </div>
+    </div>
   </div>

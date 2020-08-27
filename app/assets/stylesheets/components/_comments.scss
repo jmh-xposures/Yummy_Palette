@@ -1,0 +1,19 @@
+.recommentation_card {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.comment_card {
+  overflow: hidden;
+  background: rgb(250, 247, 247);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px auto;
+  width: 100%;
+}
+
+.avatar {
+  width: 56px;
+  border-radius: 50%;
+}

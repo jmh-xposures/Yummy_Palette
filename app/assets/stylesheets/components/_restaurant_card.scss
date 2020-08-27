@@ -2,15 +2,38 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: lightblue;
-  border: 5px solid red;
-  margin: 0 auto;
+  margin: 10px auto;
+  width: 100%;
+  border-radius: 25px;
+  position: relative;
+}
+.cuisine {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.btn-ghost {
+  color: #4A4A4A;
+  background-color: rgba(252, 142, 17, 0.8);;
+  padding: 2px;
+  border-radius: 5px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  color: black;
 }
 
-.restaurant_card h4 {
-  font-size: 16px;
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 20px;
   font-weight: bold;
-  margin: 0;
+  padding: 20px;
+}
+.card-title a:hover {
+  text-decoration: none;
 }
 
 .restaurant_card p {
@@ -25,11 +48,25 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  padding-bottom: 10px;
 }
 
-.restaurant_card-infos .restaurant_card-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+.fas {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.checked {
+  color: orange;
+}
+.fa {
+  margin: 20px;
+}
+
+.restaurant-show-container {
+  width: 500px;
+  margin: 0 auto;
+}
+.far {
+  color: red;
 }
