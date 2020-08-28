@@ -1,4 +1,12 @@
-<h1>Welcome to all the cuisines page</h1>
+<div class="cuisines-banner">
+ 
+</div>
+
+<%# Map %>
+<div id="map"
+     style="width: 100%; height: 300px; margin-top:25px; margin-bottom: 40px; box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.3);"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 <%# render the list of cuisines seeded in the database using partials %>
 <div class="cuisine-cards-wrapper">
