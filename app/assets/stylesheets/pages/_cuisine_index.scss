@@ -1,11 +1,15 @@
+.restaurant-container-wrapper {
+    width: 100vw;
+}
+
 .cuisine-cards-wrapper {
     width: 100vw;
     margin: 10px;
 }
 
 .cuisine_cards_container{
-display: flex;
-overflow-x: scroll;
+    display: flex;
+    overflow-x: scroll;
 }
 
 
@@ -17,4 +21,5 @@ overflow-x: scroll;
 .restaurant_card_container {
     display: flex;
     overflow-x: scroll;
+    padding: 10px;
 }

@@ -34,7 +34,7 @@
   <h2 style="font-weight: bold; font-size: 23px">Cuisines</h2>
   <div class="cuisine_cards_container">
     <% @cuisines.each do |cuisine| %>
-      <%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %>
+      <%= render "shared/small_cuisine_card", {cuisine: cuisine} %>
     <% end  %>
   </div> 
 </div>
@@ -43,4 +43,9 @@
   <%= image_tag 'Line.svg' %>
 </div>
 <h2 style="margin-bottom: 0; margin-top: 20px; font-weight: bold; font-size: 23px; padding-left: 12px;">Latest Upvoted Restaurants</h2>
-<%= render 'shared/index_card.html.erb' %>
+
+  <div class="restaurant_card_container_home">
+    <% @restaurants.each do |restaurant| %>
+          <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+    <% end %>
+  </div>

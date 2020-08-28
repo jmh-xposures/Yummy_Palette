@@ -64,6 +64,9 @@ japan_rest9 = Restaurant.create!(cuisine: japanese, name: "Kinka Izakaya Montral
 japan_rest10 = Restaurant.create!(cuisine: japanese, name: "Jun L", address: "156 Laurier Ave W, Montreal, Quebec H2T 2N7 Canada", phone: "1-514-276-5864")
 
 indian_rest1 = Restaurant.create!(cuisine: indian, name: "Le 409", address: "409 Rue McGill, Montréal, Québec H2Y 0B5 Canada", phone: "1-514-750-0409", vegetarian: false)
+img_indian_rest1 = URI.open('https://www.jeffontheroad.com/wp-content/uploads/2019/01/le-409-restaurant-montreal-menu-jeffontheroad-6.jpg')
+indian_rest1.photo.attach(io: img_indian_rest1, filename: 'Le 409', content_type: 'image/jpg')
+
 indian_rest2 = Restaurant.create!(cuisine: indian, name: "Atma", address: "3962 Boul. St-Laurent Corner Duluth Street, Montréal, Québec H2W 1Y3 Canada", phone: "1-514-798-8484", vegetarian: false)
 indian_rest3 = Restaurant.create!(cuisine: indian, name: "Resto Darbar", address: "2027 St-Laurent, Montreal, Quebec H2X 2T3 Canada", phone: "1-514-982-3724", vegetarian: true)
 indian_rest4 = Restaurant.create!(cuisine: indian, name: "Le Taj", address: "2077 Stanley Street, Montreal, Quebec H3A 1R7 Canada", phone: "1-514-845-9015", vegetarian: true)

@@ -1,0 +1,24 @@
+<div class="container mt-5" style="position: relative; width: 350px; display: flex; justify-content: center">
+    <div class="restaurant-index-cards">
+        <%= link_to restaurant_path(restaurant) do %>
+            <% if restaurant.photo.attached? %>
+                <%= cl_image_tag restaurant.photo.key, crop: :fill, class: "card-image" %>
+            <% else %>
+                <img class="card-image" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+            <% end %>
+        <% end %>
+    </div>
+    <div id="cuisine_tag"><%= restaurant.cuisine.name %></div>
+    <div class="restaurant-index-footer">
+        <div class="index-title">
+            <h2><%= restaurant.name %></h2>
+            <div id="address-container">
+                <%= image_tag 'location_icon.svg', size: "17" %>
+                <p id="location"><%= restaurant.neat_address %></p>
+            </div>
+        </div>
+        <div id="card-extra-info">
+            <p><%= image_tag 'black_star.svg', size: "18" %> <%= restaurant.favorites.count %> <%= image_tag 'black_upvote.svg', size: "18" %> <%= restaurant.upvotes.count %></p>
+        </div>
+    </div>
+</div>
