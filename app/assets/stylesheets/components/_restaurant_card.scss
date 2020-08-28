@@ -1,5 +1,4 @@
-.restaurant_card {
-  overflow: hidden;
+.restaurant-show-card {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px auto;
@@ -36,13 +35,13 @@
   text-decoration: none;
 }
 
-.restaurant_card p {
+.restaurant-show-card p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
-.restaurant_card .restaurant_card-infos {
+.restaurant-show-card .restaurant-show-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;

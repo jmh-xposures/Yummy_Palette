@@ -1,6 +1,5 @@
 <div class="restaurant-show-container">
-  <div class="restaurant_card">
-
+  <div class="restaurant-show-card">
       <h1 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h1>
       <%= link_to @cuisine.name, cuisine_path(@cuisine), class: "btn btn-ghost cuisine" %>
 
@@ -13,7 +12,7 @@
       <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
       <span class="fa fa-star checked"> 20<%#= @favorite.%></span>
       <p><i class="far fa-triangle">20</i></p>
-    </div>
+  </div>
 
 
 
