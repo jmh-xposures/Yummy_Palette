@@ -9,6 +9,7 @@
     width: 100%;
     transition: all 0.4s ease;
     display: block;
+    z-index: 100;
   }
   .navbar-collapse.collapsing {
     height: auto !important;
@@ -34,5 +35,6 @@
     background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=
       ');
   }
+
 
 }
