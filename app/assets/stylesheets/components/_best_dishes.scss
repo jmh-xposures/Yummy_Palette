@@ -1,0 +1,27 @@
+.best-dishes {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: lightblue;
+    margin: 10px auto;
+    border-radius: 25px;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg);
+  }
+  
+  .flex-card {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+  }
+  
+  .tag {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 12px;
+    border-radius: 50px;
+  }

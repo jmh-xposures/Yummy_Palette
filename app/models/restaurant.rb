@@ -7,6 +7,7 @@ class Restaurant < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :upvotes, dependent: :destroy
+  has_many :tags, dependent: :destroy
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
   validates :phone, presence: true
