@@ -1,8 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<div class="cuisine_card_container">
+<!-- Background image -->
+<div class="cover-banner">
+ 
+</div>
+
+<!-- Palette info icons -->
+<div class="icons_aligned">   
+  <div class="info-icons">
+    <%= image_tag 'small_orange_palette.svg' %>
+    <span class="info-nums"><%= @cuisine_count %></span>
+    <div class="intro-info">
+      <p>Cuisines to explore</p>
+    </div>
+  </div>
+  <div class="info-icons">
+     <%= image_tag 'small_yellow_palette.svg' %>
+     <span class="info-nums"><%= @restaurant_count %></span>
+     <div class="intro-info">
+      <p>Restaurants to discover</p>
+    </div>
+  </div>
+  <div class="info-icons">
+     <%= image_tag 'small_green_palette.svg' %>
+     <span class="info-nums"><%= @user_count %></span>
+     <div class="intro-info">
+      <p>Cuisine Experts</p>
+    </div>
+  </div>
+</div>
+
+<!-- cuisine index -->
+<div class="cuisine-cards-wrapper">
+  <h2 style="font-weight: bold; font-size: 23px">Cuisines</h2>
+  <div class="cuisine_cards_container">
     <% @cuisines.each do |cuisine| %>
-        <p><%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %></p>
+      <%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %>
     <% end  %>
-</div> 
+  </div> 
+</div>
+<!-- Recently upvoted restaurant cards -->
+<div class="container" style="text-align: center">
+  <%= image_tag 'Line.svg' %>
+</div>
+<h2 style="margin-bottom: 0; margin-top: 20px; font-weight: bold; font-size: 23px; padding-left: 12px;">Latest Upvoted Restaurants</h2>
+<%= render 'shared/index_card.html.erb' %>

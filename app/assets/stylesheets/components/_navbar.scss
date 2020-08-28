@@ -1,12 +1,40 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 106px;
+    left: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    transition: all 0.4s ease;
+    display: block;
+    z-index: 100;
+  }
+  .navbar-collapse.collapsing {
+    height: auto !important;
+    margin-left: 50%;
+    left: 50%;
+    transition: all 0.2s ease;
+  }
+  .navbar-collapse.show {
+    left: 0;
+    background: white;
+  }
+  .navbar-light .navbar-toggler {
+    color: rgba(0, 0, 0, 0.5);
+    border: 0;
+  }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .nav-blur {
+     background: white;
+     transition: all 1s;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .navbar .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=
+      ');
+  }
+
+
 }

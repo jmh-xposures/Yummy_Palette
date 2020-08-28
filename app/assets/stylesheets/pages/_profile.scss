@@ -6,22 +6,19 @@ background-image: cover;
 background-position: top;
  }
  .profile-avatar {
- 
-  left: 0;
-  top: 50%;
-  height: 50%;
-  right: 0;
-
- 	width: 200;
- 	height: 200;
+ position: relative;
+ 	width: 200px;
+ 	height: 200px;
  	border-radius: 50%;
     margin: 0 auto;
     text-align:center;
     display: flex;
     align-items: center;
     justify-content: center;
-    
- }
+    margin-bottom: 100px;  
+    top: 100px;
+}
+
  .user_name{
  	color: #342E37;
  	font-size: 20px;
@@ -38,9 +35,12 @@ background-position: top;
  .user_bio {
  	font-size: 20px;
  	font-family: dosis;
+  width: 352px;
+  margin: 0 auto;
  }
-  .p{
-   text-align: center;
+  p{
+   color: #8a8a8a;
+   font-weight: normal;
   }
  .favorite_rest {
  	font-family: dosis;

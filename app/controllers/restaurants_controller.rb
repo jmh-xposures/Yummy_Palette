@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
       @restaurant = Restaurant.find(params[:id])
       @tag = Tag.new
       @review = Review.new
+      @cuisine = @restaurant.cuisine
   end
 
   def create
