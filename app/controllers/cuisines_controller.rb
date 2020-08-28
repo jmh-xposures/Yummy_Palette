@@ -2,7 +2,14 @@ class CuisinesController < ApplicationController
   def index
     @cuisines = Cuisine.all
     @restaurants = Restaurant.all
-
+    @restaurants_coordinates = Restaurant.where.not(latitude: nil, longitude: nil)
+    @markers = @restaurants_coordinates.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+      }
+    end
+    print @markers
     @cuisine_restaurants = {}
     @cuisines.each do |cuisine|
       @cuisine_restaurants[cuisine.name] = Restaurant.where("restaurants.cuisine_id = #{cuisine.id}")
@@ -17,4 +24,5 @@ class CuisinesController < ApplicationController
     @tag = Tag.new
   end
 end
+
 # ne pas oublié de mettre :photo dans cuisine_params
