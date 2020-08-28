@@ -30,38 +30,17 @@
 </div>
 
 <!-- cuisine index -->
-<div class="container">
-  <p style="font-weight: bold">Cuisines</p>
-  <div>
-    <% @cuisines.each do  |cuisine| %>
-      <p><%= cuisine.name %></p>
-    <% end %>
-</div>
+<div class="cuisine-cards-wrapper">
+  <h2 style="font-weight: bold; font-size: 23px">Cuisines</h2>
+  <div class="cuisine_cards_container">
+    <% @cuisines.each do |cuisine| %>
+      <%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %>
+    <% end  %>
+  </div> 
 </div>
 <!-- Recently upvoted restaurant cards -->
-
+<div class="container" style="text-align: center">
+  <%= image_tag 'Line.svg' %>
+</div>
+<h2 style="margin-bottom: 0; margin-top: 20px; font-weight: bold; font-size: 23px; padding-left: 12px;">Latest Upvoted Restaurants</h2>
 <%= render 'shared/index_card.html.erb' %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<div class="cuisine_card_container">
-    <% @cuisines.each do |cuisine| %>
-        <p><%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %></p>
-    <% end  %>
-</div> 
-
