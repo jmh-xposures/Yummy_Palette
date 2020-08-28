@@ -22,6 +22,7 @@ class CuisinesController < ApplicationController
     @review = Review.new
     @upvote = Upvote.new
     @tag = Tag.new
+    @cuisine_restaurants = Restaurant.where(cuisine_id: params[:id].to_i)
   end
 end
 
