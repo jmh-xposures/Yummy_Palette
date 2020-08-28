@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+.icons_aligned {
+  display: flex;
+  margin: 30px 20px 10px 20px;
+  padding: 0 10px 0 10px;
+  justify-content: space-around;
+}
+
+.info-icons {
+  position: relative;
+  text-align: center;
+
+  img {
+    height: 50px;
+  }
+
+  span {
+    position: absolute;
+    left: 50px;
+    top: 18px;
+  }
+}
+
+.intro-info {
+  width: 90px;
+  text-align: center;
+  margin-top: 10px;
+}
