@@ -1,8 +1,7 @@
  .background_profile {
-background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/0a/e0/d7/2c/balcony.jpg");
-width: 375px;
+background-image: url(https://media.restomontreal.ca/blog/Square/809_2018-09-25-1460_news.jpg);
 height: 300;
-background-image: cover;
+background-size: cover;
 background-position: top;
  }
  .profile-avatar {
@@ -58,14 +57,13 @@ white-space: nowrap;
   
   .cuisine_card {
    display: inline-block;
-   padding: 10px;
+   padding: 100px;
     width:  352px;
      box-shadow: 0 0 15px rgba(0,0,0,0.2);
      margin: 10px;
       border-radius: 25px;
-      background-image: url(https://www.restomania.ca/wp-content/uploads/2018/11/409_montage.jpg);
-      background-image: cover;
-
+      background-image: url(https://pbs.twimg.com/profile_images/600006367815049218/GPTFe5f2_400x400.jpg);
+      background-size: cover;
   }
 }
 
