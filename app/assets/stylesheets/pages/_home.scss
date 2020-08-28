@@ -26,3 +26,10 @@
   text-align: center;
   margin-top: 10px;
 }
+
+.restaurant_card_container_home {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 50vw;
+}

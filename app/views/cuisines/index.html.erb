@@ -13,21 +13,19 @@
 	<h3>Cuisine</h3>
 	<div class="cuisine_cards_container">
 		<% @cuisines.each do |cuisine| %>
-			<%= render "cuisines/small_cuisine_card", {cuisine: cuisine} %>
+			<%= render "shared/small_cuisine_card", {cuisine: cuisine} %>
 		<% end  %>
 	</div> 
 </div>
-
-<% @cuisines.each do |cuisine| %>
-	<div class="restaurant-cards-wrapper">
-		<h3><%= cuisine.name %></h3>
-		<div class="restaurant_card_container">
-			<% @cuisine_restaurants[cuisine.name].each do |restaurant| %>
-			<p><%= restaurant.name %></p>
-				<%# <%= render "restaurants/medium_restaurant_card", {restaurant: restaurant} %>
-			<% end  %>
-		</div> 
-	</div>
-<% end %>
-
-
+<div class="restaurant-container-wrapper">
+	<% @cuisines.each do |cuisine| %>
+		<div class="restaurant-cards-wrapper">
+			<h3><%= cuisine.name %></h3>
+			<div class="restaurant_card_container">
+				<% @cuisine_restaurants[cuisine.name].each do |restaurant| %>
+					<%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+				<% end  %>
+			</div> 
+		</div>
+	<% end %>
+</div>
