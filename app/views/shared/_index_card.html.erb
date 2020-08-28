@@ -1,20 +1,23 @@
 <% @restaurants.each do |restaurant| %>
-  <div class="container mt-5">
-    <div class="restaurant-index-cards mx-auto">
-      <%= image_tag 'ma_poule.jpg', class: "card-image" %>
-      <div id="cuisine_tag"> <%= restaurant.cuisine.name %></div>
-      <div class="restaurant-index-footer">
-        <div class="index-title">
-          <h2><%= restaurant.name %></h2>
-          <div id="address-container">
-            <%= image_tag 'location_icon.svg', size: "17" %>
-            <p id="location"><%= restaurant.neat_address %></p>
+  
+    <div class="container mt-5">
+      <div class="restaurant-index-cards mx-auto">
+        <%= link_to restaurant_path(restaurant) do %>
+        <%= image_tag 'ma_poule.jpg', class: "card-image" %>
+          <% end %>
+        <div id="cuisine_tag"> <%= restaurant.cuisine.name %></div>
+        <div class="restaurant-index-footer">
+          <div class="index-title">
+            <h2><%= restaurant.name %></h2>
+            <div id="address-container">
+              <%= image_tag 'location_icon.svg', size: "17" %>
+              <p id="location"><%= restaurant.neat_address %></p>
+            </div>
           </div>
+            <div id="card-extra-info">
+              <p><%= image_tag 'black_star.svg', size: "18" %> <%= restaurant.favorites.count %> <%= image_tag 'black_upvote.svg', size: "18" %> <%= restaurant.upvotes.count %></p>
+            </div>
         </div>
-          <div id="card-extra-info">
-            <p><%= image_tag 'black_star.svg', size: "18" %> <%= restaurant.favorites.count %> <%= image_tag 'black_upvote.svg', size: "18" %> <%= restaurant.upvotes.count %></p>
-          </div>
       </div>
     </div>
-  </div>
 <% end %>
