@@ -17,6 +17,8 @@ background-position: top;
     justify-content: center;
     margin-bottom: 100px;  
     top: 100px;
+    background-image: cover;
+    
 }
 
  .user_name{
@@ -46,3 +48,33 @@ background-position: top;
  	font-family: dosis;
  	font-size: 20px;
  }
+.cuisine_cards_container {
+  // overflow: hidden;
+
+  background: white;
+ overflow-x: scroll;
+overflow-y: hidden;
+white-space: nowrap;
+  
+  .cuisine_card {
+   display: inline-block;
+   padding: 10px;
+    width:  352px;
+     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+     margin: 10px;
+      border-radius: 25px;
+      background-image: url(https://www.restomania.ca/wp-content/uploads/2018/11/409_montage.jpg);
+      background-image: cover;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+

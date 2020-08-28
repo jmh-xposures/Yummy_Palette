@@ -4,7 +4,7 @@
   	<% if current_user.photo.attached? %>
   	  <%= cl_image_tag current_user.photo.key, class: "profile-avatar" %>
   	<% else %>
-  	  <%= image_tag "https://kitt.lewagon.com/placeholder/users/Papillard", class: "profile-avatar" %>
+  	  <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
   	<% end %>
   </div>
 </div>
@@ -17,3 +17,17 @@
   <p>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 </div>
 
+
+<div class="cuisine-cards-wrapper">
+  <h2 style="font-weight: bold; font-size: 23px">Favorites Restaurant</h2>
+  <div class="cuisine_cards_container">
+    <% @favorites.each do |favorite| %>
+    <div class="cuisine_card">
+    	<h4> <%= favorite.restaurant.name %> </h4>
+    	<p><%=favorite.restaurant.neat_address %></p>
+    </div>
+    <% end %>
+  </div> 
+</div>
+
+	<!-- Recently upvoted restaurant cards -->
