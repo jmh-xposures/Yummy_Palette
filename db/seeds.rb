@@ -19,9 +19,6 @@ Cuisine.destroy_all
 
 puts "creating cuisine"
 indian = Cuisine.create!(name:'Indian')
-img_indian_cuisine = URI.open('https://c4.wallpaperflare.com/wallpaper/869/719/717/cuisine-food-india-indian-wallpaper-preview.jpg')
-indian.photo.attach(io: img_indian_cuisine, filename: 'idian_cuisine', content_type: 'image/jpg')
-
 japanese = Cuisine.create!(name:'Japanese')
 portuguese = Cuisine.create!(name:'Portuguese')
 italian = Cuisine.create!(name:'Italian')
