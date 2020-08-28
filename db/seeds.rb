@@ -162,6 +162,9 @@ Upvote.create!(restaurant: port_rest1, user: thom)
 
 Favorite.create!(restaurant:port_rest2, user:thom)
 Favorite.create!(restaurant:japan_rest1, user: ka)
+Favorite.create!(restaurant:indian_rest1, user: junior)
+Favorite.create!(restaurant:indian_rest10, user: junior)
+Favorite.create!(restaurant:indian_rest4, user: junior)
 
 
 
