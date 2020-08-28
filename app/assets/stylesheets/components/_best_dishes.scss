@@ -1,5 +1,5 @@
 .best-dishes {
-    height: 200px;
+    height: 300px;
     width: 100%;
     overflow: hidden;
     background: white;
@@ -7,13 +7,9 @@
     background-color: lightblue;
     margin: 10px auto;
     border-radius: 25px;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg);
-    background-size: cover;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg);
   }
-  img {
-    width: 100%;
-    height: auto;
-  }
+  
   .flex-card {
     display: flex;
     flex-wrap: nowrap;
@@ -24,27 +20,8 @@
     background-color: #f1f1f1;
     width: 100px;
     margin: 10px;
-    padding: 2px;
     text-align: center;
-    line-height: 25px;
+    line-height: 75px;
     font-size: 12px;
     border-radius: 50px;
-  }
-
-  .restaurant_name {
-    text-align: center;
-    font-size: 30px;
-  }
-  .restaurant_name a:hover {
-    text-decoration: none;
-  }
-  
-  .btn-review {
-    background-color: #f1f1f1;
-    font-weight: bold;
-    margin: 10px auto;
-    text-align: center;
-    font-size: 16px;
-    display: block;
-    border: none;
   }

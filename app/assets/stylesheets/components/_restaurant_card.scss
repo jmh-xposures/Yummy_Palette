@@ -1,7 +1,9 @@
 .restaurant_card {
+  overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 150px;
+  margin: 10px auto;
+  width: 100%;
   border-radius: 25px;
   position: relative;
 }
@@ -62,16 +64,9 @@
 }
 
 .restaurant-show-container {
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
 }
 .far {
   color: red;
-}
-
-@media (max-width: 600px) {
-  .restaurant-show-container {
-    width: 390px;
-
-  }
 }
