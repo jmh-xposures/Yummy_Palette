@@ -1,25 +1,20 @@
 .best-dishes {
-    height: 200px;
+    height: 150px;
     width: 100%;
-    overflow: hidden;
-    background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    background-color: lightblue;
     margin: 10px auto;
-    border-radius: 25px;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg);
+    background-image: linear-gradient(rgba(240,240,240,0.3), rgba(240,240,240,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg);
     background-size: cover;
   }
-  // img {
-  //   width: 100%;
-  //   height: auto;
-  // }
+
   .flex-card {
     display: flex;
     flex-wrap: nowrap;
     margin-top: 20px;
   }
+
   
+
   .tag {
     background-color: #f1f1f1;
     width: 100px;

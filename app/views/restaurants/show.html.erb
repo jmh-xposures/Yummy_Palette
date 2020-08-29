@@ -1,5 +1,11 @@
-<!-- <div class="cuisines-banner"></div> -->
-<div class="restaurant-show-container">
+<% if @restaurant.photo.attached? %>
+    <%= cl_image_tag @restaurant.photo.key, crop: :fill, class: "card-image" %>
+  <% else %>
+   <img class="show-page-cover" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+<% end %>
+
+
+<div class="restaurant-show-container container">
   <div class="restaurant-show-card">
 
       <h1 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h1>
@@ -13,7 +19,7 @@
       <br>
       <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
       <span class="fa fa-star checked"> 20<%#= @favorite.%></span>
-      
+
       <p><i class="far fa-triangle">20</i></p>
   </div>
 
