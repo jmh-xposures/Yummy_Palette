@@ -1,20 +1,21 @@
+<!-- <div class="cuisines-banner"></div> -->
 <div class="restaurant-show-container">
   <div class="restaurant-show-card">
+
       <h1 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h1>
       <%= link_to @cuisine.name, cuisine_path(@cuisine), class: "btn btn-ghost cuisine" %>
 
       <div class="card-restaurant-infos">
-        <p><i class='fas fa-map-marker-alt' style='font-size:15px;color:blue'></i> <%= @restaurant.address %></p>
-        <p><i class='fas fa-phone' style='font-size:15px;color:blue'></i> <%= @restaurant.phone %></p>
-        <p><i class="fas fa-spider-web" style='font-size:15px;color:blue'></i>www.restaurant.com</p>
+        <p><i class='fas fa-map-marker-alt' style='font-size:15px; color:blue'></i> <%= @restaurant.address %></p>
+        <p><i class='fas fa-phone' style='font-size:15px; color:blue'></i> <%= @restaurant.phone %></p>
+        <p><i class="fas fa-spider-web" style='font-size:15px; color:blue'></i>www.restaurant.com</p>
       </div>
       <br>
       <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
       <span class="fa fa-star checked"> 20<%#= @favorite.%></span>
+      
       <p><i class="far fa-triangle">20</i></p>
   </div>
-
-
 
     <%# if current_user.signed_in do %>
       <div class="upvote-button">
@@ -26,61 +27,86 @@
       </div>
     <%# end %>
 
-
-    <h1>Best dishes</h1>
+    <!-- Best dishes card -->
+    <h1 style="font-size: 23px; font-weight: bold;">Best dishes</h1>
     <div class="best-dishes">
       <div class="flex-card">
         <% @restaurant.tags.each do |tag| %>
-          <div class="tag"><%= tag.dish.name%></div>
+          <div class="tag">
+            <%= tag.dish.name%>
+          </div>
         <% end %>
 
-        <!-- Button trigger modal -->
+        <!-- Add Dish trigger modal -->
         <button type="button" class="tag" data-toggle="modal" data-target="#tagModal">
           +
         </button>
-
         <!-- Modal -->
         <div class="modal fade" id="tagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+              <h5 class="restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
               <div class="modal-body">
+                <p>Add your favorite dish</p>
                 <%= simple_form_for(@dish) do |f| %>
                   <%= f.input :name %>
                   <%= f.input :restaurant_id, :as => :hidden, :input_html => { :value => @restaurant.id } %>
                   <%= f.submit %>
                 <% end %>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+              <%# <div>
+                <button type="button" class="btn btn-primary">Submit</button>
+              </div> %>
+            </div>
+          </div>
+        </div>
+        <!-- end of add Dish -->
+      </div>
+    </div>
+    <!-- end of Best Dish -->
+   
+
+    <h1 style="font-size: 23px; font-weight: bold;">Why we recommend this Restaurant</h1>
+    <div class="recommentation_card">
+      <div class="avatar">    
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+        <% end %>
+        <h3><%= current_user.first_name %></h3>
+      </div>
+      <div>
+        <div class="flex-info">
+          <span><%= current_user.first_name %></span>
+          <span><%= @cuisine.name %> Expert</span>
+        </div>
+        <div class="comment_card">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Dignissimos impedit maxime ad ex ut praesentium facere velit 
+          fugit atque quis!
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Review trigger modal -->
+        <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Review</button>
+        <!-- Modal -->
+        <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <h5 class="restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
+              <div class="modal-body">
+                <p>Leave a review</p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+              </div>
+              <div>
+                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
               </div>
             </div>
           </div>
         </div>
+        <!-- end of add Review -->
 
-      </div>
-    </div>
 
-    <h1>Why we recommend this Restaurant</h1>
 
-    <div class="recommentation_card">
-      <div class="avatar">    
-        <%# if @user.photo.attached? %>
-          <%#= cl_image_tag @user.photo.key, height: 10, width: 10, crop: :fill %>
-        <%# end %>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
-
-      </div>
-      <div class="comment_card">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-        Dignissimos impedit maxime ad ex ut praesentium facere velit 
-        fugit atque quis!
-      </div>
-    </div>
-  </div>
+</div>

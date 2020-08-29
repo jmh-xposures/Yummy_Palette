@@ -1,8 +1,8 @@
 .restaurant-show-card {
+
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 10px auto;
-  width: 100%;
+  margin-top: 150px;
   border-radius: 25px;
   position: relative;
 }
@@ -63,9 +63,16 @@
 }
 
 .restaurant-show-container {
-  width: 900px;
+  width: 800px;
   margin: 0 auto;
 }
 .far {
   color: red;
+}
+
+@media (max-width: 600px) {
+  .restaurant-show-container {
+    width: 390px;
+
+  }
 }
