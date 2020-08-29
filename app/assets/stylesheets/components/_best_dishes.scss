@@ -1,27 +1,45 @@
 .best-dishes {
-    height: 300px;
+    height: 150px;
     width: 100%;
-    overflow: hidden;
-    background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    background-color: lightblue;
     margin: 10px auto;
-    border-radius: 25px;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg);
+    background-image: linear-gradient(rgba(240,240,240,0.3), rgba(240,240,240,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg);
+    background-size: cover;
   }
-  
+
   .flex-card {
     display: flex;
     flex-wrap: nowrap;
     margin-top: 20px;
   }
+
   
+
   .tag {
     background-color: #f1f1f1;
     width: 100px;
     margin: 10px;
+    padding: 2px;
     text-align: center;
-    line-height: 75px;
+    line-height: 25px;
     font-size: 12px;
     border-radius: 50px;
+  }
+
+  .restaurant_name {
+    text-align: center;
+    font-size: 30px;
+  }
+  .restaurant_name a:hover {
+    text-decoration: none;
+  }
+  
+  .btn-review {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 16px;
+    display: block;
+    border: none;
   }

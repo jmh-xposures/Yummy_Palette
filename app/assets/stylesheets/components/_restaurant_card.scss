@@ -1,25 +1,33 @@
 .restaurant-show-card {
+
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 10px auto;
-  width: 100%;
   border-radius: 25px;
   position: relative;
+  bottom: 70px;
+  height: 200px;
+
 }
-.cuisine {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
+
+.show-page-cover {
+    width: 100vw;
+    height: 175px;
+    object-fit: cover;
+    box-shadow: 2px 1px 9px 2px rgba(0, 0, 0, 0.25);
+  }
+
 .btn-ghost {
   color: #4A4A4A;
-  background-color: rgba(252, 142, 17, 0.8);;
-  padding: 2px;
+  background-color: rgba(235, 220, 135, 0.8);
+  padding: 2px 5px 2px 5px;
   border-radius: 5px;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   color: black;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .btn-ghost:hover {
@@ -29,7 +37,9 @@
 .card-title {
   font-size: 20px;
   font-weight: bold;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
 }
 .card-title a:hover {
   text-decoration: none;
@@ -59,13 +69,21 @@
   color: orange;
 }
 .fa {
-  margin: 20px;
+  // margin: 20px;
 }
 
 .restaurant-show-container {
-  width: 900px;
+  width: 800px;
   margin: 0 auto;
 }
+
 .far {
   color: red;
+}
+
+@media (max-width: 600px) {
+  .restaurant-show-container {
+    width: 390px;
+
+  }
 }
