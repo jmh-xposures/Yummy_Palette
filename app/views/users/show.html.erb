@@ -21,17 +21,15 @@
 <div class="cuisine-cards-wrapper">
   <h2 style="font-weight: bold; font-size: 23px">Favorites Restaurant</h2>
   <div class="cuisine_cards_container">
-    <% @favorites.each_with_index do |favorite, i| %>
+    <% @favorites.each do |favorite| %>
     <div class="cuisine_card">
-    	<% if i == 1 %>
-    		<img src="https://lh3.googleusercontent.com/proxy/Z4xFXvd4bz_6FKcu1VwSDWwAFr-lt4DugoIH94cM4LCyC06Lar3GuzxDoHadaBfPbcKG1RMsS2SMMt6TLceyoA8eoRL0O-oMM48u7f5IIqjy50fxKIF_">
-        <% elsif i == 0  %>
-            <img src="https://pbs.twimg.com/profile_images/600006367815049218/GPTFe5f2_400x400.jpg">
-        <% else %>
-            <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/b1/82/04/restaurante-porto-mar.jpg">
-        <% end %>
+    	<%= cl_image_tag favorite.restaurant.photo.key  %>
     	<h4> <%= favorite.restaurant.name %> </h4>
     	<p><%=favorite.restaurant.neat_address %></p>
+
+
+
+
     </div>
     <% end %>
   </div> 
