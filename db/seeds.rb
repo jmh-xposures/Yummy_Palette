@@ -19,92 +19,81 @@ Cuisine.destroy_all
 
 
 
-puts "creating cuisine"
+
+# Indian Cuisine 
+puts "Creating Indian cuisine"
 indian = Cuisine.create!(name:'Indian')
 img_indian_cuisine = URI.open('https://c4.wallpaperflare.com/wallpaper/869/719/717/cuisine-food-india-indian-wallpaper-preview.jpg')
 indian.photo.attach(io: img_indian_cuisine, filename: 'indian_cuisine', content_type: 'image/jpg')
 
+
+puts "Creating Indian restaurants"
+indian_rest1 = Restaurant.create!(cuisine: indian, name: "Le 409", address: "409 Rue McGill, Montréal, Québec H2Y 0B5 Canada", phone: "1-514-750-0409")
+img_indian_rest1 = URI.open('https://www.jeffontheroad.com/wp-content/uploads/2019/01/le-409-restaurant-montreal-menu-jeffontheroad-6.jpg')
+indian_rest1.photo.attach(io: img_indian_rest1, filename: 'Le 409', content_type: 'image/jpg')
+
+indian_rest2 = Restaurant.create!(cuisine: indian, name: "Atma", address: "3962 Boul. St-Laurent Corner Duluth Street, Montréal, Québec H2W 1Y3 Canada", phone: "1-514-798-8484")
+img_indian_rest2 = URI.open('https://ssmscdn.yp.ca/image/resize/25b5a82e-9b7e-4dee-8059-a1a7fd3b21a1/ypui-d-mp-pic-gal-lg/restaurant-atma-11.jpg')
+indian_rest2.photo.attach(io: img_indian_rest2, filename: 'Atma', content_type: 'image/jpg')
+
+indian_rest3 = Restaurant.create!(cuisine: indian, name: "Resto Darbar", address: "2027 St-Laurent, Montreal, Quebec H2X 2T3 Canada", phone: "1-514-982-3724")
+img_indian_rest3 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0a/e2/09/dd/resto-darbar.jpg')
+indian_rest3.photo.attach(io: img_indian_rest3, filename: 'Resto Darbar', content_type: 'image/jpg')
+
+indian_rest4 = Restaurant.create!(cuisine: indian, name: "Le Taj", address: "2077 Stanley Street, Montreal, Quebec H3A 1R7 Canada", phone: "1-514-845-9015")
+img_indian_rest4 = URI.open('https://images.squarespace-cdn.com/content/v1/5c6f00f5c46f6d367d3a67c5/1556721782452-8PAU5PHI8LZUXK7OV6XX/ke17ZwdGBToddI8pDm48kPg3kkMSlDqGprD-21e6kCJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIpppx-FWaxK7i6rVdWZNGy6SGN0ZVlswpj22aI6j1zesKMshLAGzx4R3EDFOm1kBS/3.jpg')
+indian_rest4.photo.attach(io: img_indian_rest4, filename: 'Le Taj', content_type: 'image/jpg')
+
+indian_rest5 = Restaurant.create!(cuisine: indian, name: "Chez Devi", address: "1450 Crescent St. Above St. Catherine, Qc, Montreal, Quebec H3G 2B6 Canada", phone: "1-514-286-0303")
+img_indian_rest5 = URI.open('https://ssmscdn.yp.ca/image/resize/16d4d9af-2414-45cc-a9b4-5465ec292695/ypui-d-mp-pic-gal-lg/devi-restaurant-16.jpg')
+indian_rest5.photo.attach(io: img_indian_rest5, filename: 'Chez Devi', content_type: 'image/jpg')
+
+indian_rest6 = Restaurant.create!(cuisine: indian, name: "Gandhi", address: "230 rue Saint-Paul Ouest Vieux Montreal, Montreal, Quebec H2Y 1Z9 Canada", phone: "1-514-845-5866")
+img_indian_rest6 = URI.open('https://portal.restomontreal.ca/gandhi/gallery/images/a-restomtl-photo.jpg')
+indian_rest6.photo.attach(io: img_indian_rest6, filename: 'Gandhi', content_type: 'image/jpg')
+
+indian_rest7 = Restaurant.create!(cuisine: indian, name: "Thanjai Restaurant", address: "4759 Van Horne, Montreal, Quebec H3W 1H8 Canada", phone: "1-514-419-9696")
+img_indian_rest7 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/06/8b/45/98/thanjai-restaurant.jpg')
+indian_rest7.photo.attach(io: img_indian_rest7, filename: 'Thanjai Restaurant', content_type: 'image/jpg')
+
+indian_rest8 = Restaurant.create!(cuisine: indian, name: "Restaurant Bombay Choupati", address: "5011 Boulevard Des Sources Pierrefonds, Montreal, Quebec H8Y 3E3 Canada", phone: "1-514-421-3130")
+img_indian_rest8 = URI.open('https://img2.10bestmedia.com/Images/Photos/222978/p-4567ky_59_330x220_201407171049.jpg')
+indian_rest8.photo.attach(io: img_indian_rest8, filename: 'Restaurant Bombay Choupati', content_type: 'image/jpg')
+
+indian_rest9 = Restaurant.create!(cuisine: indian, name: "Pushap Sweets", address: "5195 Rue Pare, Montreal, Quebec H4P 1P4 Canada", phone: "1-514-737-4527")
+img_indian_rest9 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/PZVDdBFH7OucjtjivzLhqA/l.jpg')
+indian_rest9.photo.attach(io: img_indian_rest9, filename: 'Pushap Sweets', content_type: 'image/jpg')
+
+indian_rest10 = Restaurant.create!(cuisine: indian, name: "Kuljit India", address: "1904 Boulevard Thimens, Montreal, Quebec H4R 1J9 Canada", phone: "1-514-745-6975")
+img_indian_rest10 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/tWCjJkr8hDCRVNGPlGCLWw/l.jpg')
+indian_rest10.photo.attach(io: img_indian_rest10, filename: 'Kuljit India', content_type: 'image/jpg')
+
+
+puts "Creating Indian cuisine experts"
+debora = User.create!(cuisine_id: indian.id, first_name: "Debora", last_name: "Anjos", email:"debora@wagon.com" , bio:"I am from Brazil, moved to Montreal 7 years ago and love the food scene in this wonderful city! I am particularly fond of Indian food and have tried at least half of all indian restaurants in town. I am excited to share my favorite ones on Yummy Palette!  ", password:"123456")
+debora_img = URI.open('https://avatars1.githubusercontent.com/u/67605273?v=4')
+debora.photo.attach(io: debora_img, filename: 'debora profile', content_type: 'image/jpg')
+
+nachiket = User.create!(cuisine_id: indian.id, first_name: "Nachiket", last_name: "Pusalkar", email:"nachiket@wagon.com" , bio: "I'm really excited to be a part of Yummy Palette to share my favortie Indian restaurants with you as well as discover all  of your recommendations. I love this app!!!!!", password:"123456")
+nachiket_img = URI.open('https://avatars3.githubusercontent.com/u/33430835?v=4')
+nachiket.photo.attach(io: nachiket_img, filename: 'nachiket profile', content_type: 'image/jpg')
+
+lea = User. create!(cuisine_id: indian.id, first_name: "Lea", last_name: "Jasmine", email:"lea@wagon.com" , bio:"I am an artist, nature lover, food lover, animal lover... I love life and I love being part of Yummy Palette! Follow me on this app and stay up to date with my favorite restaurants and recommendations.", password:"123456")
+lea_img = URI.open('https://avatars3.githubusercontent.com/u/67395105?v=4')
+lea.photo.attach(io: lea_img, filename: 'lea profile', content_type: 'image/jpg')
+
+
+
+
+
+#Japanese Cuisine
+puts "Creating Japanese cuisine"
 japanese = Cuisine.create!(name:'Japanese')
 img_japanese_cuisine = URI.open('https://www.otodoke.fr/wp-content/uploads/2018/05/japan-feat.jpg')
 japanese.photo.attach(io: img_japanese_cuisine, filename: 'japanese_cuisine', content_type: 'image/jpg')
 
-portuguese = Cuisine.create!(name:'Portuguese')
-img_portuguese_cuisine = URI.open('https://media.restomontreal.ca/blog/5_2020-01-31-1344_blog.jpg')
-portuguese.photo.attach(io: img_portuguese_cuisine, filename: 'portuguese_cuisine', content_type: 'image/jpg')
 
-italian = Cuisine.create!(name:'Italian')
-img_italian_cuisine = URI.open('https://fondue.bg/wp-content/uploads/2019/09/italiancuisine.jpg')
-italian.photo.attach(io: img_italian_cuisine, filename: 'italian_cuisine', content_type: 'image/jpg')
-
-chinese = Cuisine.create!(name:'Chinese')
-img_chinese_cuisine = URI.open('https://as1.ftcdn.net/jpg/01/15/26/28/500_F_115262838_Qdfwviyw9ATjw0TNnky95RjvKoQXprj5.jpg')
-chinese.photo.attach(io: img_chinese_cuisine, filename: 'chinese_cuisine', content_type: 'image/jpg')
-
-greek = Cuisine.create!(name:'Greek')
-img_greek_cuisine = URI.open('https://previews.123rf.com/images/anaumenko/anaumenko1905/anaumenko190500085/123097263-selection-of-traditional-greek-food.jpg')
-greek.photo.attach(io: img_greek_cuisine, filename: 'greek_cuisine', content_type: 'image/jpg')
-
-mexican = Cuisine.create!(name:'Mexican')
-img_mexican_cuisine = URI.open('https://www.adv-bio.com/wp-content/uploads/shutterstock_395007781__1__gbzwut-e1519314492769.jpg')
-mexican.photo.attach(io: img_mexican_cuisine, filename: 'mexican_cuisine', content_type: 'image/jpg')
-
-
-
-puts "creating users"
-miguel = User.create!(cuisine_id: japanese.id, first_name: "Juan-Miguel", last_name: "Hernandez", email:"miguel@wagon.com" , bio:"I am a specialist on food japanese food ", password:"123456")
-juan = User.create!(first_name: "Juan", last_name: "Hernandez", email:"jm@wagon.com" , bio:"I am a user of Yummy Pallet belongs to portuguese cuisine ", password:"123456")
-thomas = User.create!(cuisine_id: portuguese.id, first_name: "Thomas", last_name: "Viaules", email:"thomas@wagon.com" , bio:"I am a specialist on food japanese food ", password:"123456")
-thom = User.create!(first_name: "Thom", last_name: "Viau", email:"tv@wagon.com" , bio:"I am a user of Yummy Pallet belongs to portuguese cuisine ", password:"123456")
-kahina = User.create!(cuisine_id: japanese.id, first_name: "kahina", last_name: "Chelli", email:"kahina@wagon.com" , bio:"I am a specialist on food japanese food ", password:"123456")
-ka = User.create!(first_name: "Ka", last_name: " Hina", email:"kc@wagon.com" , bio:"I am a user of Yummy Pallet belongs to portuguese cuisine ", password:"123456")
-junior = User.create!(cuisine_id: portuguese.id, first_name: "Junior", last_name: "Rivas", email:"junior@wagon.com" , bio:"I am a specialist on  japanese food ", password:"123456")
-jun = User.create!(first_name: "Jun", last_name: "Riv", email:"jr@wagon.com" , bio:"I am a user of Yummy Pallet belongs to portuguese cuisine ", password:"123456")
-
-
-
-puts "creating restaurants"
-port_rest1 = Restaurant.create!(cuisine: portuguese, name: "Helena", address: "438 McGill, Montréal, Québec H2Y 2G1", phone: "1-514-677-6338" , vegetarian: true)
-img_port_rest1 = URI.open('https://images.lpcdn.ca/924x615/201210/19/601068-vue-interieure-restaurant-helena-situe.jpg')
-port_rest1.photo.attach(io: img_port_rest1, filename: 'Helena', content_type: 'image/jpg')
-
-port_rest2 = Restaurant.create!(cuisine: portuguese, name: "Ma Poule Mouillé", address: "969 Rachel Street East, Montréal, Québec H2J 2J4 Canada", phone: "1-514-522-5175", vegetarian: true)
-img_port_rest2 = URI.open('https://media.cntraveler.com/photos/5b6dab0d9dc0d5057c463e92/master/pass/Ma-Poule-Mouille%CC%81e_Alison-Slattery__2018_Ma-Poule-Mouillee-0004.jpg')
-port_rest2.photo.attach(io: img_port_rest2, filename: 'Ma Poule Mouillé', content_type: 'image/jpg')
-
-port_rest3 = Restaurant.create!(cuisine: portuguese, name: "Porto Mar", address: "201 Place d'Youville, Montreal, Quebec H2Y 2B3 Canada", phone: "1-514-286-5223", vegetarian: false )
-img_port_rest3 = URI.open('https://www.bonjourquebec.com/fiche/images/800x600/2df2c04e-a787-4906-b339-912b51572415/restaurant-porto-mar-salle-a-manger.jpg')
-port_rest3.photo.attach(io: img_port_rest3, filename: 'Porto Mar', content_type: 'image/jpg')
-
-port_rest4 = Restaurant.create!(cuisine: portuguese, name: "Romados", address: "115 Rachel E, Montreal, Quebec H2W 1C8 Canada", phone: "1-514-859-1803", vegetarian: false )
-img_port_rest4 = URI.open('https://foodology.ca/wp-content/uploads/2012/05/rom0inner.jpg')
-port_rest4.photo.attach(io: img_port_rest4, filename: 'Romados', content_type: 'image/jpg')
-
-port_rest5 = Restaurant.create!(cuisine: portuguese, name: "Portus 360", address: "777, Boulevard Robert Bourassa, Montreal, Quebec H3C 3Z7 Canada", phone: "1-514-849-2070", vegetarian: false )
-img_port_rest5 = URI.open('https://www.debeur.com/site/uploads/news/id1273/Debeur_Portus360-625.jpg')
-port_rest5.photo.attach(io: img_port_rest5, filename: 'Portus 360', content_type: 'image/jpg')
-
-port_rest6 = Restaurant.create!(cuisine: portuguese, name: "coco rico", address: "3907 St Laurent, Montreal, Quebec H2W 1X9 Canada", phone: "1-514-849-5554", vegetarian: false)
-img_port_rest6 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Coco_Rico_Restaurant_Montr%C3%A9al.jpg/1280px-Coco_Rico_Restaurant_Montr%C3%A9al.jpg')
-port_rest6.photo.attach(io: img_port_rest6, filename: 'coco rico', content_type: 'image/jpg')
-
-port_rest7 = Restaurant.create!(cuisine: portuguese, name: "Chez Jose", address: "173 Avenue Duluth E, Montréal, Quebec H2W 1H4 Canada", phone: "1-514-663-2381", vegetarian: false)
-img_port_rest7 = URI.open('https://i.pinimg.com/564x/9c/d0/87/9cd087017b69af74766b7c42a626e4fb.jpg')
-port_rest7.photo.attach(io: img_port_rest7, filename: 'Chez Jose', content_type: 'image/jpg')
-
-port_rest8 = Restaurant.create!(cuisine: portuguese, name: "Boca Iberica", address: "12 rue Rachel O, Montréal, Quebec H2W 1G1 Canada", phone: "1-514-507-9996", vegetarian: false)
-img_port_rest8 = URI.open('https://www.restomontreal.ca/media/blog/boca_iberica-18.jpg')
-port_rest8.photo.attach(io: img_port_rest8, filename: 'Boca Iberica', content_type: 'image/jpg')
-
-port_rest9 = Restaurant.create!(cuisine: portuguese, name: "Ferreira Cafe", address: "1485, Jeanne Mance Quartier des spectacles, Montreal, Quebec H2X 2J4 Canada", phone: "1-514-848-0988", vegetarian: true)
-img_port_rest9 = URI.open('https://ferreiracafe.com/wp-content/uploads/2015/08/ferreira-1585-1024x683.jpg')
-port_rest9.photo.attach(io: img_port_rest9, filename: 'Ferreira Cafe', content_type: 'image/jpg')
-
-port_rest10 = Restaurant.create!(cuisine: portuguese, name: "Taverne F", address: "1108 Boulevard de Maisonneuve O, Montréal, Quebec H3A 1M7 Canada", phone: "1-514-289-4558", vegetarian: false)
-img_port_rest10 = URI.open('https://ferreiracafe.com/wp-content/uploads/2015/08/ferreira-1585-1024x683.jpg')
-port_rest10.photo.attach(io: img_port_rest10, filename: 'Taverne F', content_type: 'image/jpg')
-
-
-
+puts "Creating Japanese restaurants"
 japan_rest1 = Restaurant.create!(cuisine: japanese, name: "Saint Sushi Plateau", address: "424 Duluth Ave E, Montréal, Québec H2L 1A3 Canada", phone: "1-514-507-7537", vegetarian: true)
 img_japan_rest1 = URI.open('https://www.montrealfooddivas.com/wp-content/uploads/2015/11/Saint-Sushi-Bar-Montreal-Restaurant-Sushi-Bar-2.jpg')
 japan_rest1.photo.attach(io: img_japan_rest1, filename: 'Saint Sushi Plateau', content_type: 'image/jpg')
@@ -146,49 +135,95 @@ img_japan_rest10 = URI.open('https://images.lpcdn.ca/435x290/201804/26/1530973-j
 japan_rest10.photo.attach(io: img_japan_rest10, filename: 'Jun L', content_type: 'image/jpg')
 
 
+puts "Creating Japanese cuisine experts"
+wince = User.create!(cuisine_id: japanese.id, first_name: "Wince", last_name: "Shum", email:"wince@wagon.com" , bio:"I eat to live and I live to eat!!! Yummy Palette is my kind of app! Can't wait to discover all the amazing restaurants on this app. And since I have a weak spot for sushi, I'll make ure you know where the best spots in town are! Cheers", password:"123456")
+wince_img = URI.open('https://avatars1.githubusercontent.com/u/61887264?v=4')
+wince.photo.attach(io: wince_img, filename: 'wince profile', content_type: 'image/jpg')
 
-indian_rest1 = Restaurant.create!(cuisine: indian, name: "Le 409", address: "409 Rue McGill, Montréal, Québec H2Y 0B5 Canada", phone: "1-514-750-0409", vegetarian: false)
-img_indian_rest1 = URI.open('https://www.jeffontheroad.com/wp-content/uploads/2019/01/le-409-restaurant-montreal-menu-jeffontheroad-6.jpg')
-indian_rest1.photo.attach(io: img_indian_rest1, filename: 'Le 409', content_type: 'image/jpg')
+timothy = User.create!(cuisine_id: japanese.id, first_name: "Timothy", last_name: "Vieira", email:"timothy@wagon.com" , bio:"I'm a web developer from Montreal. My girlfriedn is Japanese and we eat out and try all japanese restaurants in town. Looking forwards to sharing my favorites on Yummy pLaette! ", password:"123456")
+timothy_img = URI.open('https://avatars0.githubusercontent.com/u/47645893?v=4')
+timothy.photo.attach(io: timothy_img, filename: 'timothy profile', content_type: 'image/jpg')
 
-indian_rest2 = Restaurant.create!(cuisine: indian, name: "Atma", address: "3962 Boul. St-Laurent Corner Duluth Street, Montréal, Québec H2W 1Y3 Canada", phone: "1-514-798-8484", vegetarian: false)
-img_indian_rest2 = URI.open('https://ssmscdn.yp.ca/image/resize/25b5a82e-9b7e-4dee-8059-a1a7fd3b21a1/ypui-d-mp-pic-gal-lg/restaurant-atma-11.jpg')
-indian_rest2.photo.attach(io: img_indian_rest2, filename: 'Atma', content_type: 'image/jpg')
-
-indian_rest3 = Restaurant.create!(cuisine: indian, name: "Resto Darbar", address: "2027 St-Laurent, Montreal, Quebec H2X 2T3 Canada", phone: "1-514-982-3724", vegetarian: true)
-img_indian_rest3 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0a/e2/09/dd/resto-darbar.jpg')
-indian_rest3.photo.attach(io: img_indian_rest3, filename: 'Resto Darbar', content_type: 'image/jpg')
-
-indian_rest4 = Restaurant.create!(cuisine: indian, name: "Le Taj", address: "2077 Stanley Street, Montreal, Quebec H3A 1R7 Canada", phone: "1-514-845-9015", vegetarian: true)
-img_indian_rest4 = URI.open('https://images.squarespace-cdn.com/content/v1/5c6f00f5c46f6d367d3a67c5/1556721782452-8PAU5PHI8LZUXK7OV6XX/ke17ZwdGBToddI8pDm48kPg3kkMSlDqGprD-21e6kCJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIpppx-FWaxK7i6rVdWZNGy6SGN0ZVlswpj22aI6j1zesKMshLAGzx4R3EDFOm1kBS/3.jpg')
-indian_rest4.photo.attach(io: img_indian_rest4, filename: 'Le Taj', content_type: 'image/jpg')
-
-indian_rest5 = Restaurant.create!(cuisine: indian, name: "Chez Devi", address: "1450 Crescent St. Above St. Catherine, Qc, Montreal, Quebec H3G 2B6 Canada", phone: "1-514-286-0303")
-img_indian_rest5 = URI.open('https://ssmscdn.yp.ca/image/resize/16d4d9af-2414-45cc-a9b4-5465ec292695/ypui-d-mp-pic-gal-lg/devi-restaurant-16.jpg')
-indian_rest5.photo.attach(io: img_indian_rest5, filename: 'Chez Devi', content_type: 'image/jpg')
-
-indian_rest6 = Restaurant.create!(cuisine: indian, name: "Gandhi", address: "230 rue Saint-Paul Ouest Vieux Montreal, Montreal, Quebec H2Y 1Z9 Canada", phone: "1-514-845-5866")
-img_indian_rest6 = URI.open('https://portal.restomontreal.ca/gandhi/gallery/images/a-restomtl-photo.jpg')
-indian_rest6.photo.attach(io: img_indian_rest6, filename: 'Gandhi', content_type: 'image/jpg')
-
-indian_rest7 = Restaurant.create!(cuisine: indian, name: "Thanjai Restaurant", address: "4759 Van Horne, Montreal, Quebec H3W 1H8 Canada", phone: "1-514-419-9696")
-img_indian_rest7 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/06/8b/45/98/thanjai-restaurant.jpg')
-indian_rest7.photo.attach(io: img_indian_rest7, filename: 'Thanjai Restaurant', content_type: 'image/jpg')
-
-indian_rest8 = Restaurant.create!(cuisine: indian, name: "Restaurant Bombay Choupati", address: "5011 Boulevard Des Sources Pierrefonds, Montreal, Quebec H8Y 3E3 Canada", phone: "1-514-421-3130")
-img_indian_rest8 = URI.open('https://img2.10bestmedia.com/Images/Photos/222978/p-4567ky_59_330x220_201407171049.jpg')
-indian_rest8.photo.attach(io: img_indian_rest8, filename: 'Restaurant Bombay Choupati', content_type: 'image/jpg')
-
-indian_rest9 = Restaurant.create!(cuisine: indian, name: "Pushap Sweets", address: "5195 Rue Pare, Montreal, Quebec H4P 1P4 Canada", phone: "1-514-737-4527")
-img_indian_rest9 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/PZVDdBFH7OucjtjivzLhqA/l.jpg')
-indian_rest9.photo.attach(io: img_indian_rest9, filename: 'Pushap Sweets', content_type: 'image/jpg')
-
-indian_rest10 = Restaurant.create!(cuisine: indian, name: "Kuljit India", address: "1904 Boulevard Thimens, Montreal, Quebec H4R 1J9 Canada", phone: "1-514-745-6975")
-img_indian_rest10 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/tWCjJkr8hDCRVNGPlGCLWw/l.jpg')
-indian_rest10.photo.attach(io: img_indian_rest10, filename: 'Kuljit India', content_type: 'image/jpg')
+kyle = User.create!(cuisine_id: japanese.id, first_name: "Kyle", last_name: "Materson", email:"Kyle@wagon.com" , bio:"I worked for 6 years as a carpenter. After a few attempts at teaching myself to code I decided jump in feet first and enroll in Le Wagon. Coding allows me to build things in a very similar way to carpentry but with so many more possibilities. Oh and I love discovering authentic cuisine in town and sharing my love of Japanese cuisine on Yummy Palette.", password:"123456")
+kyle_img = URI.open('https://avatars3.githubusercontent.com/u/61397690?v=4')
+kyle.photo.attach(io: kyle_img, filename: 'kyle profile', content_type: 'image/jpg')
 
 
 
+
+#Portuguese Cuisine
+puts "Creating Portuguese cuisine"
+portuguese = Cuisine.create!(name:'Portuguese')
+img_portuguese_cuisine = URI.open('https://media.restomontreal.ca/blog/5_2020-01-31-1344_blog.jpg')
+portuguese.photo.attach(io: img_portuguese_cuisine, filename: 'portuguese_cuisine', content_type: 'image/jpg')
+
+
+puts "Creating Portuguese restaurants"
+port_rest1 = Restaurant.create!(cuisine: portuguese, name: "Helena", address: "438 McGill, Montréal, Québec H2Y 2G1", phone: "1-514-677-6338" , vegetarian: true)
+img_port_rest1 = URI.open('https://images.lpcdn.ca/924x615/201210/19/601068-vue-interieure-restaurant-helena-situe.jpg')
+port_rest1.photo.attach(io: img_port_rest1, filename: 'Helena', content_type: 'image/jpg')
+
+port_rest2 = Restaurant.create!(cuisine: portuguese, name: "Ma Poule Mouillée", address: "969 Rachel Street East, Montréal, Québec H2J 2J4 Canada", phone: "1-514-522-5175", vegetarian: true)
+img_port_rest2 = URI.open('https://media.cntraveler.com/photos/5b6dab0d9dc0d5057c463e92/master/pass/Ma-Poule-Mouille%CC%81e_Alison-Slattery__2018_Ma-Poule-Mouillee-0004.jpg')
+port_rest2.photo.attach(io: img_port_rest2, filename: 'Ma Poule Mouillé', content_type: 'image/jpg')
+
+port_rest3 = Restaurant.create!(cuisine: portuguese, name: "Porto Mar", address: "201 Place d'Youville, Montreal, Quebec H2Y 2B3 Canada", phone: "1-514-286-5223", vegetarian: false )
+img_port_rest3 = URI.open('https://www.bonjourquebec.com/fiche/images/800x600/2df2c04e-a787-4906-b339-912b51572415/restaurant-porto-mar-salle-a-manger.jpg')
+port_rest3.photo.attach(io: img_port_rest3, filename: 'Porto Mar', content_type: 'image/jpg')
+
+port_rest4 = Restaurant.create!(cuisine: portuguese, name: "Romados", address: "115 Rachel E, Montreal, Quebec H2W 1C8 Canada", phone: "1-514-859-1803", vegetarian: false )
+img_port_rest4 = URI.open('https://foodology.ca/wp-content/uploads/2012/05/rom0inner.jpg')
+port_rest4.photo.attach(io: img_port_rest4, filename: 'Romados', content_type: 'image/jpg')
+
+port_rest5 = Restaurant.create!(cuisine: portuguese, name: "Portus 360", address: "777, Boulevard Robert Bourassa, Montreal, Quebec H3C 3Z7 Canada", phone: "1-514-849-2070", vegetarian: false )
+img_port_rest5 = URI.open('https://www.debeur.com/site/uploads/news/id1273/Debeur_Portus360-625.jpg')
+port_rest5.photo.attach(io: img_port_rest5, filename: 'Portus 360', content_type: 'image/jpg')
+
+port_rest6 = Restaurant.create!(cuisine: portuguese, name: "coco rico", address: "3907 St Laurent, Montreal, Quebec H2W 1X9 Canada", phone: "1-514-849-5554", vegetarian: false)
+img_port_rest6 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Coco_Rico_Restaurant_Montr%C3%A9al.jpg/1280px-Coco_Rico_Restaurant_Montr%C3%A9al.jpg')
+port_rest6.photo.attach(io: img_port_rest6, filename: 'coco rico', content_type: 'image/jpg')
+
+port_rest7 = Restaurant.create!(cuisine: portuguese, name: "Chez Jose", address: "173 Avenue Duluth E, Montréal, Quebec H2W 1H4 Canada", phone: "1-514-663-2381", vegetarian: false)
+img_port_rest7 = URI.open('https://i.pinimg.com/564x/9c/d0/87/9cd087017b69af74766b7c42a626e4fb.jpg')
+port_rest7.photo.attach(io: img_port_rest7, filename: 'Chez Jose', content_type: 'image/jpg')
+
+port_rest8 = Restaurant.create!(cuisine: portuguese, name: "Boca Iberica", address: "12 rue Rachel O, Montréal, Quebec H2W 1G1 Canada", phone: "1-514-507-9996", vegetarian: false)
+img_port_rest8 = URI.open('https://www.restomontreal.ca/media/blog/boca_iberica-18.jpg')
+port_rest8.photo.attach(io: img_port_rest8, filename: 'Boca Iberica', content_type: 'image/jpg')
+
+port_rest9 = Restaurant.create!(cuisine: portuguese, name: "Ferreira Cafe", address: "1485, Jeanne Mance Quartier des spectacles, Montreal, Quebec H2X 2J4 Canada", phone: "1-514-848-0988", vegetarian: true)
+img_port_rest9 = URI.open('https://ferreiracafe.com/wp-content/uploads/2015/08/ferreira-1585-1024x683.jpg')
+port_rest9.photo.attach(io: img_port_rest9, filename: 'Ferreira Cafe', content_type: 'image/jpg')
+
+port_rest10 = Restaurant.create!(cuisine: portuguese, name: "Taverne F", address: "1108 Boulevard de Maisonneuve O, Montréal, Quebec H3A 1M7 Canada", phone: "1-514-289-4558", vegetarian: false)
+img_port_rest10 = URI.open('https://ferreiracafe.com/wp-content/uploads/2015/08/ferreira-1585-1024x683.jpg')
+port_rest10.photo.attach(io: img_port_rest10, filename: 'Taverne F', content_type: 'image/jpg')
+
+
+puts "Creating Portuguese cuisine experts"
+aline = User.create!(cuisine_id: portuguese.id, first_name: "Aline", last_name: "Gasparindo", email:"aline@wagon.com" , bio:"I am Brazilian and moved to Canada in 2015 and, here, and I felt in love with the startup world. So I am in the Tech industry loving every moment of it. On my spare time I love to learn about new cuisines and try all the wonderful tastes Montreal has to offer. Thanks to Yummy Palette community I amable to discover the very best restaurantsa from so many cuisines and help the portuguese cuisine community showcase the best restaurants in town.  ", password:"123456")
+aline_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1543883446/yafaowizaho0lqfdnjlg.jpg')
+aline.photo.attach(io: aline_img, filename: 'aline profile', content_type: 'image/jpg')
+
+junior = User.create!(cuisine_id: portuguese.id, first_name: "Junior", last_name: "Rivas", email:"junior@wagon.com" , bio:"I am a real estate broker by day and a foodie by night! I am es[pecially fond of Portuguese cuisine which is why I love being part of the Yummy Palette community to share my favorite  restaurants and learn from other passionate food lovers.", password:"123456")
+junior_img = URI.open('https://avatars2.githubusercontent.com/u/67280424?v=4')
+junior.photo.attach(io: junior_img, filename: 'junior profile', content_type: 'image/jpg')
+
+thomas = User.create!(cuisine_id: portuguese.id, first_name: "Thomas", last_name: "Viaules", email:"thomas@wagon.com" , bio:"I'm a fullstack developer living in Momntreal. I love to hang with friends and eat at the most delicious restaurtants in town which is why I joined Yummy Palette. ", password:"123456")
+thomas_img = URI.open('https://avatars0.githubusercontent.com/u/66626082?v=4')
+thomas.photo.attach(io: thomas_img, filename: 'thomas profile', content_type: 'image/jpg')
+
+
+
+
+#Italian Cuisine
+puts "Creating Italian cuisine"
+italian = Cuisine.create!(name:'Italian')
+img_italian_cuisine = URI.open('https://fondue.bg/wp-content/uploads/2019/09/italiancuisine.jpg')
+italian.photo.attach(io: img_italian_cuisine, filename: 'italian_cuisine', content_type: 'image/jpg')
+
+
+puts "Creating Italian restaurants"
 italian_rest1 = Restaurant.create!(cuisine: italian, name: "La Campagnola steakhouse italien", address: "Av. Dollard 1708, Montréal, Québec H8N 1T8 Canada", phone: "1-514-363-4066", vegetarian: false)
 img_italian_rest1 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/00/5d/99/photo4jpg.jpg')
 italian_rest1.photo.attach(io: img_italian_rest1, filename: 'La Campagnola steakhouse italien', content_type: 'image/jpg')
@@ -230,7 +265,31 @@ img_italian_rest10 = URI.open('https://portal.restomontreal.ca/st-jacques/galler
 italian_rest10.photo.attach(io: img_italian_rest10, filename: 'Le Saint-Jacques', content_type: 'image/jpg')
 
 
+puts "Creating Italian cuisine experts"
+ekaterina = User.create!(cuisine_id: italian.id, first_name: "Ekaterina", last_name: "Andruishova", email:"ekaterina@wagon.com" , bio:"I'm a photographer and front-end developer living in the beautiful city of Montreal. I've always had a weakness for Italian food so I traveled many times to Italy and am now always searching for the most authentic Italian food in town. Yummy Palette is the best place to meet other Italian food lovers and I discovered the best restaurants in town thanks to them. ", password:"123456")
+ekaterina_img = URI.open('https://avatars2.githubusercontent.com/u/67912394?v=4')
+ekaterina.photo.attach(io: ekaterina_img, filename: 'ekaterina profile', content_type: 'image/jpg')
 
+emily = User.create!(cuisine_id: italian.id, first_name: "Emily", last_name: "Rockarts", email:"emily@wagon.com" , bio:"I'm a musician and singer-songwriter based in Montreal. My grandma is Italian so I grew up with the best italian home meals. Now I am always in search of the best, most authentic Italian foods in town which remind me of my nonna's cuisine. I found a handful of amazing restaurants that I am excited to share with the Yummy Palette community!", password:"123456")
+emily_img = URI.open('https://avatars1.githubusercontent.com/u/66974595?v=4')
+emily.photo.attach(io: emily_img, filename: 'emily profile', content_type: 'image/jpg')
+
+nirali = User.create!(cuisine_id: italian.id, first_name: "Nirali", last_name: "Patel", email:"nirali@wagon.com" , bio:"MyNameIsNirali and I am from southern USA. But after completing an amazing bootcamp at Le Wagon Montreal, I got an amazing position working as a fullstack developer in a great company in Montreal. I've absolutely loved discovering the Canadian hospitality, comparable to southern hospitaly :). Yummy Palette has been great in helping me find the most amazing, authentic restaurants in town. I am really glad to be part of this beautiful foody community!!", password:"123456")
+nirali_img = URI.open('https://avatars0.githubusercontent.com/u/66753224?v=4')
+nirali.photo.attach(io: nirali_img, filename: 'nirali profile', content_type: 'image/jpg')
+
+
+
+
+
+#Chinese Cuisine
+puts "Creating Chinese cuisine"
+chinese = Cuisine.create!(name:'Chinese')
+img_chinese_cuisine = URI.open('https://as1.ftcdn.net/jpg/01/15/26/28/500_F_115262838_Qdfwviyw9ATjw0TNnky95RjvKoQXprj5.jpg')
+chinese.photo.attach(io: img_chinese_cuisine, filename: 'chinese_cuisine', content_type: 'image/jpg')
+
+
+puts "Creating Chinese restaurants"
 chinese_rest1 = Restaurant.create!(cuisine: chinese, name: "Nouille de Lan Zhou", address: "1006 Boulevard Saint-Laurent, Montreal, Quebec H2Z 1J3 Canada", phone: "1-514-800-2959")
 img_chinese_rest1 = URI.open('https://tastet.ca/wp-content/uploads/2019/09/lan-zhou-8-1024x684.jpg')
 chinese_rest1.photo.attach(io: img_chinese_rest1, filename: 'Nouille de Lan Zhou', content_type: 'image/jpg')
@@ -272,82 +331,2214 @@ img_chinese_rest10 = URI.open('https://tastet.ca/wp-content/uploads/2019/01/mai-
 chinese_rest10.photo.attach(io: img_chinese_rest10, filename: 'Mai Xiang Yuan', content_type: 'image/jpg')
 
 
+puts "Creating Chinese cuisine experts"
+poyan = User.create!(cuisine_id: chinese.id, first_name: "Poyan", last_name: "Ng", email:"poyan@wagon.com" , bio:"With 9 years of violin teaching experience from Hong Kong, here I am in Montreal pursuing my passion as a web developer. I share the passion and love of food with my boyfriend so we spend lots of time trying restaurants in town and we love that we can share our discoveries on Yummy Palette as well as make amazing new discoveries no matter what cuisine we are in the mood for.  ", password:"123456")
+poyan_img = URI.open('https://avatars1.githubusercontent.com/u/58827819?v=4')
+poyan.photo.attach(io: poyan_img, filename: 'poyan profile', content_type: 'image/jpg')
 
-greek_rest1 = Restaurant.create!(cuisine: greek, name: "Philinos", address: "4806, Parc Avenue, Montreal, Quebec H2V 4E6 Canada", phone: "1-514-271-9099")
+meagan = User.create!(cuisine_id: chinese.id, first_name: "Meagan", last_name: "Butters", email:"meagan@wagon.com" , bio:"I have a BFA in Computation Arts and worked in digital marketing for about a year before COVID-19 hit. Besides my digital background, I am also a synchronized swimming coach. I love to hang out with friends, so every week we go out and discover different restaurants. Yummy Palette has been amazing at recommending the most incredible restaurants, week after week!!! I'm so glad I found this app where I get to contribute to the chinese cuisine community, my favorite!!!", password:"123456")
+meagan_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1596770628/yralq9jbswprabehlhv5.jpg')
+meagan.photo.attach(io: meagan_img, filename: 'meagan profile', content_type: 'image/jpg')
+
+rebecca = User.create!(cuisine_id: chinese.id, first_name: "Rebecca", last_name: "Morel", email:"rebecca@wagon.com" , bio:"Hi! I am currently a student at McGill University, doing a Software Engineering bachelor. I've always loved chinese cuisine and have traveled to China twice to discover the authentic of this incredibly varied cuisine. Until I go next, I am happily discovering amazing chinese retaurants in Montreal as well as contributing to the communbity on Yummy Palette as I discover the best!", password:"123456")
+rebecca_img = URI.open('https://avatars3.githubusercontent.com/u/67113677?v=4')
+rebecca.photo.attach(io: rebecca_img, filename: 'rebecca profile', content_type: 'image/jpg')
+
+
+
+
+
+#Greek Cuisine
+puts "Creating Greek cuisine"
+greek = Cuisine.create!(name:'Greek')
+img_greek_cuisine = URI.open('https://previews.123rf.com/images/anaumenko/anaumenko1905/anaumenko190500085/123097263-selection-of-traditional-greek-food.jpg')
+greek.photo.attach(io: img_greek_cuisine, filename: 'greek_cuisine', content_type: 'image/jpg')
+
+
+puts "Creating Greek restaurants"
+greek_rest1 = Restaurant.create!(cuisine: greek, name: "Zante", address: "3449, Rue St-Laurent, Montreal, Quebec H2X 2T6 Canada", phone: "1-514-271-9099")
+img_greek_rest1 = URI.open('https://portal.restomontreal.ca/zante-downtown/gallery/images/02_zante_132-2017-10-31.jpg')
+greek_rest1.photo.attach(io: img_greek_rest1, filename: 'zante', content_type: 'image/jpg')
+
 greek_rest2 = Restaurant.create!(cuisine: greek, name: "Milos", address: "5357 av. du Parc Between rue St-Viateur and av. Fairmont, Montreal, Quebec H2V 4G9 Canada", phone: "1-514-272-3522")
+img_greek_rest2 = URI.open('https://media-exp1.licdn.com/dms/image/C561BAQEEjeMqxhOSGw/company-background_10000/0?e=2159024400&v=beta&t=BrdJOxSwvmwgjpePXCjMeCyDn6HCRwrLp4Pe2wIAER8')
+greek_rest2.photo.attach(io: img_greek_rest2, filename: 'milos', content_type: 'image/jpg')
+
 greek_rest3 = Restaurant.create!(cuisine: greek, name: "Yia Sou Greek Grill", address: "5375 Queen Mary Road, Montreal, Quebec H3X 1V1 Canada", phone: "1-514-488-4222")
+img_greek_rest3 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0e/34/eb/0e/view-of-the-exterior.jpg')
+greek_rest3.photo.attach(io: img_greek_rest3, filename: 'yia_sou', content_type: 'image/jpg')
+
 greek_rest4 = Restaurant.create!(cuisine: greek, name: "Le Jardin De Panos", address: "521 Av Duluth E, Montreal, Quebec H2L 1A8 Canada", phone: "1-514-521-4206")
+img_greek_rest4 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0e/34/eb/0e/view-of-the-exterior.jpg')
+greek_rest4.photo.attach(io: img_greek_rest4, filename: 'jardin_panos', content_type: 'image/jpg')
+
 greek_rest5 = Restaurant.create!(cuisine: greek, name: "Elounda", address: "1818 Boulevard de la Cote-Vertu, Montreal, Quebec H4L 2A6 Canada", phone: "1-514-331-4040")
+img_greek_rest5 = URI.open('https://assets.restomontreal.ca/sites/_webfiles/r694/bg_image2.jpg?v=2c')
+greek_rest5.photo.attach(io: img_greek_rest5, filename: 'elounda', content_type: 'image/jpg')
+
 greek_rest6 = Restaurant.create!(cuisine: greek, name: "Ouzeri", address: "4690 St-Denis, Montreal, Quebec H2J 2L3 Canada", phone: "1-514-845-1336")
+img_greek_rest6 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/06/b0/82/89/ouzeri.jpg')
+greek_rest6.photo.attach(io: img_greek_rest6, filename: 'ouzeri', content_type: 'image/jpg')
+
 greek_rest7 = Restaurant.create!(cuisine: greek, name: "Mythos", address: "5318 Ave Du Parc, Montreal, Quebec H2V 4G7 Canada", phone: "1-514-270-0235")
+img_greek_rest7 = URI.open('https://ssmscdn.yp.ca/image/resize/e38593cd-acdd-47ee-9f82-380f3a60b426/ypui-d-mp-pic-gal-lg/mythos-ouzeri-estiatorio-11.jpg')
+greek_rest7.photo.attach(io: img_greek_rest7, filename: 'mythos', content_type: 'image/jpg')
+
 greek_rest8 = Restaurant.create!(cuisine: greek, name: "Marven's Restaurant", address: "880 Av Ball, Montreal, Quebec H3N 1J7 Canada", phone: "1-514-277-3625")
-greek_rest9 = Restaurant.create!(cuisine: greek, name: "La maison Greque", address: "450 Avenue Duluth Est, Montreal, Quebec H2L 1A5 Canada", phone: "1-514-842-0969")
+img_greek_rest8 = URI.open('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/marvens-greek-restaurant-park-ex-paintings-montreal-winterscenes-hockey-art-c-spandau-streetscenes-carole-spandau.jpg')
+greek_rest8.photo.attach(io: img_greek_rest8, filename: 'marven', content_type: 'image/jpg')
+
+greek_rest9 = Restaurant.create!(cuisine: greek, name: "La Maison Grecque", address: "450 Avenue Duluth Est, Montreal, Quebec H2L 1A5 Canada", phone: "1-514-842-0969")
+img_greek_rest9 = URI.open('http://lamaisongrecque.com/wp-content/uploads/photo-gallery/imported_from_media_libray/Meilleur-Nourriture-Grec.jpg?bwg=1570335574')
+greek_rest9.photo.attach(io: img_greek_rest9, filename: 'maison_grecque', content_type: 'image/jpg')
+
 greek_rest10 = Restaurant.create!(cuisine: greek, name: "Marathon Souvlaki", address: "5365 des Jockeys, Montreal, Quebec H4P 2T8 Canada", phone: "1-514-731-6455")
+img_greek_rest10 = URI.open('https://marathonsouvlaki.ca/wp-content/uploads/2019/12/marathon-souvlaki.jpg')
+greek_rest10.photo.attach(io: img_greek_rest10, filename: 'marathon', content_type: 'image/jpg')
+
+
+puts "Creating Greek cuisine experts"
+kahina = User.create!(cuisine_id: greek.id, first_name: "kahina", last_name: "Chelli", email:"kahina@wagon.com" , bio:"I am a web developer based in monmtreal. Outside professional life, I like hiking with family and friends, and to discover the authentic tastes of all cuisines. I have a weak spot for Greek cuisine so it is amazing to be part of a community on Yummy Pslette which brings only the best Greek restaurants in town together into one great app!", password:"123456")
+kahina_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1594662893/wxc2ykklbz0letyf2vji.jpg')
+kahina.photo.attach(io: kahina_img, filename: 'kahina profile', content_type: 'image/jpg')
+
+francesca = User.create!(cuisine_id: greek.id, first_name: "Francesca", last_name: "Hall", email:"francesca@wagon.com" , bio:"I'm Francesca, a web developer, deep water diver, foody, dog lover and Montrealer. I love to be on HYummy Palette as I get to share my recommendations for greek restaurants in town, a cuisine I am very familiar with, with a community of passionate food lovers! I also get to discovcer other cuisines whici is great!", password:"123456")
+francesca_img = URI.open('https://avatars1.githubusercontent.com/u/62946944?v=4')
+francesca.photo.attach(io: francesca_img, filename: 'francesca profile', content_type: 'image/jpg')
+
+erika = User.create!(cuisine_id: greek.id, first_name: "Erika", last_name: "Sinkovics", email:"erika@wagon.com" , bio:"I worked as an accountant for 8 years. I wanted to do something more creative, so I am now a front-end developer working in montreal for a fantastic company. I love to discover new cuisines on the weekends and share my discoveries of delcious greek cuisine in town!!!", password:"123456")
+erika_img = URI.open('https://avatars1.githubusercontent.com/u/62946944?v=4')
+erika.photo.attach(io: erika_img, filename: 'francesca profile', content_type: 'image/jpg')
 
 
 
+
+#Mexican Cuisine
+puts "Creating Mexican cuisine"
+mexican = Cuisine.create!(name:'Mexican')
+img_mexican_cuisine = URI.open('https://www.adv-bio.com/wp-content/uploads/shutterstock_395007781__1__gbzwut-e1519314492769.jpg')
+mexican.photo.attach(io: img_mexican_cuisine, filename: 'mexican_cuisine', content_type: 'image/jpg')
+
+
+puts "Creating Mexican restaurants"
 mexican_rest1 = Restaurant.create!(cuisine: mexican, name: "Escondite", address: "1206, Union, Montreal, Quebec H3B 3C4 Canada", phone: "1-514-419-9755")
+img_mexican_rest1 = URI.open('https://www.bonjourquebec.com/en/listing/images/800x600/91729664-69fc-41d3-9d5d-3e7c25e068ce/escondite-montreal-rue-st-paul-o-bar.jpg')
+mexican_rest1.photo.attach(io: img_mexican_rest1, filename: 'escondite', content_type: 'image/jpg')
+
 mexican_rest2 = Restaurant.create!(cuisine: mexican, name: "Cafe Lola Rosa", address: "545 Milton, Montreal, Quebec H2X 1W5 Canada", phone: "1-514-287-9337")
+img_mexican_rest2 = URI.open('https://laurenjane.files.wordpress.com/2010/11/lolarosa.jpg')
+mexican_rest2.photo.attach(io: img_mexican_rest2, filename: 'cafe_lola', content_type: 'image/jpg')
+
 mexican_rest3 = Restaurant.create!(cuisine: mexican, name: "La Capital Tacos", address: "232, Jean Talon, East, Montreal, Quebec H2R 1S7 Canada", phone: "1-514-873-5255")
+img_mexican_rest3 = URI.open('https://i.ytimg.com/vi/zvrSdWP3fr0/maxresdefault.jpg')
+mexican_rest3.photo.attach(io: img_mexican_rest3, filename: 'capital_tacos', content_type: 'image/jpg')
+
 mexican_rest4 = Restaurant.create!(cuisine: mexican, name: "El Rey del Taco", address: "232, Jean Talon, East, Montreal, Quebec H2R 1S7 Canada", phone: "1-514-274-3336")
+img_mexican_rest4 = URI.open('https://montrealbestfoodever.files.wordpress.com/2012/06/p10401281.jpg')
+mexican_rest4.photo.attach(io: img_mexican_rest4, filename: 'rey_del_taco', content_type: 'image/jpg')
+
 mexican_rest5 = Restaurant.create!(cuisine: mexican, name: "Restaurant El Sabor de Mexico", address: "5013 Rue Wellinton Verdun, Montreal, Quebec H4G 1Y1 Canada", phone: "1-514-362-8888")
+img_mexican_rest5 = URI.open('https://portal.restomontreal.ca/el-sabor-de-mexico/gallery/images/40_el-sabor_409-2018-07-17.jpg')
+mexican_rest5.photo.attach(io: img_mexican_rest5, filename: 'el_sabor', content_type: 'image/jpg')
+
 mexican_rest6 = Restaurant.create!(cuisine: mexican, name: "Grumman 78 ", address: "Around Montreal 630 de Courcelle, Montreal, Quebec, Montreal, Quebec H4C 3C5 Canada", phone: "1-514-290-5125")
+img_mexican_rest6 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/18/ef/6e/8f/outside-of-restaurant.jpg')
+mexican_rest6.photo.attach(io: img_mexican_rest6, filename: 'grumman', content_type: 'image/jpg')
+
 mexican_rest7 = Restaurant.create!(cuisine: mexican, name: "Escondite Drummond", address: "1224, Rue Drummond, Montreal, Quebec H3G 1V7 Canada", phone: "1-514-375-5945")
-mexican_rest8 = Restaurant.create!(cuisine: mexican, name: "Le Roi du Taco", address: "234 Rue Jean Talon East, Montreal, Quebec H2R 1S7 Canada", phone: "1-514-274-3336")
-mexican_rest9 = Restaurant.create!(cuisine: mexican, name: "La tamalera Haute Cuisine de Rue Mexicaine", address: "226 Av. Fairmount o, Montreal, Quebec H2T 2M7 Canada", phone: "1-438-381-5034")
-mexican_rest10 = Restaurant.create!(cuisine: mexican, name: "3 amigos", address: "1621 Saint-Denis Rue, Montreal, Quebec H2X 3K3 Canada", phone: "1-514-987-6868")
-  
-    
+img_mexican_rest7 = URI.open('https://www.bonjourquebec.com/en/listing/images/800x600/e891c961-218e-4b15-aea4-c169eb711346/escondite-montreal-rue-drummond-exterieur.jpg')
+mexican_rest7.photo.attach(io: img_mexican_rest7, filename: 'esoncdite_drummond', content_type: 'image/jpg')
 
-puts "creating reviews"
-expertreviewone  = Review.create!(restaurant: port_rest1, user: thomas, content:"i reccomended this portuguese restaurant")
-expertreviewtwo  = Review.create!(restaurant: port_rest2, user: junior, content:"i recomended this restauran cause Carms love it")
+mexican_rest8 = Restaurant.create!(cuisine: mexican, name: "La Tamalera", address: "226 Av. Fairmount o, Montreal, Quebec H2T 2M7 Canada", phone: "1-438-381-5034")
+img_mexican_rest8 = URI.open('https://www.mtlblog.com/uploads/0019e72edcd96857761da9abd33b166ad8574c0f.jpg_facebook.jpg')
+mexican_rest8.photo.attach(io: img_mexican_rest8, filename: 'tamalera', content_type: 'image/jpg')
 
-# port_helenaone = Dish.create!(name:"")
-# port_helenatwo = Dish.create!(name:"")
-# port_helenatree = Dish.create!(name:"")
-# port_helenafour = Dish.create!(name:"")
+mexican_rest9 = Restaurant.create!(cuisine: mexican, name: "3 amigos", address: "1621 Saint-Denis Rue, Montreal, Quebec H2X 3K3 Canada", phone: "1-514-987-6868")
+img_mexican_rest9 = URI.open('https://media.musely.com/u/549bc0a7-3e80-4140-82f2-fcbacbe15cc4.jpg')
+mexican_rest9.photo.attach(io: img_mexican_rest9, filename: 'amigos', content_type: 'image/jpg')
 
 
+puts "Creating Mexican cuisine experts"
+alexander = User.create!(cuisine_id: mexican.id, first_name: "Alexander", last_name: "Encinas", email:"alexander@wagon.com" , bio:"I'm Alex. I love my job as a fullstack developer, I love my wife and daughter, adn I love mexicn food!!! It is really great to be part of this amazing foody community on Yummy Palette!", password:"123456")
+alexander_img = URI.open('https://avatars2.githubusercontent.com/u/48971294?v=4')
+alexander.photo.attach(io: alexander_img, filename: 'alexander profile', content_type: 'image/jpg')
 
-puts "creating dishes"
-dish_port_mapoule1 = Dish.create!(name:"Le Tony Alves")
-dish_port_mapoule2 = Dish.create!(name:"Le Louis Cyr")
+millie = User.create!(cuisine_id: mexican.id, first_name: "Millie", last_name: "Senecal", email:"millie@wagon.com" , bio:"As a creative person, I love solving problems. I started my career doing web marketing and project management, and now I work as a fullstack developer in the heart of Montreal. You can find me on evenings and weekends at restaurants, discovering the many authentic flavours this city has to offer, but more often then not I am discovering the best mexican restaurants in town... my weak spot.", password:"123456")
+millie_img = URI.open('https://avatars3.githubusercontent.com/u/25030345?v=4')
+millie.photo.attach(io: millie_img, filename: 'millie profile', content_type: 'image/jpg')
 
-# Dish.create!(name:"")
-# Dish.create!(name:" ")
-# Dish.create!(name:" ")
-# Dish.create!(name:" ")
-# Dish.create!(name:" ")
-# Dish.create!(name:" ")
-# Dish.create!(name:" ")
-# Dish.create!(name:" ")
-# Dish.create!(name:" ")
+arthur = User.create!(cuisine_id: mexican.id, first_name: "Arthur", last_name: "Prats", email:"arthur@wagon.com" , bio:"I believe that every problem has a solution. It just requires humility, resilience, and a good team to build it. I joined le Wagon in Montreal so that I can acquire the necessary skill to further my knowledge of building compelling products. I give my brain a break by enjoying amazing mexican food most of the time. I can't get enough of it! Thanks to yummy Palette I have an amazing community to discover and share our best places in town!!", password:"123456")
+arthur_img = URI.open('https://avatars0.githubusercontent.com/u/35572239?v=4')
+arthur.photo.attach(io: arthur_img, filename: 'arthur profile', content_type: 'image/jpg')
 
 
 
-puts "creating tags"
-Tag.create!(dish: dish_port_mapoule1, restaurant: port_rest2, user: thomas)
-Tag.create!(dish: dish_port_mapoule2, restaurant: port_rest2, user: junior)
 
-Upvote.create!(restaurant: port_rest2, user: thom)
-Upvote.create!(restaurant: port_rest1, user: thom)
 
-Favorite.create!(restaurant:port_rest2, user:thom)
-Favorite.create!(restaurant:japan_rest1, user: ka)
-Favorite.create!(restaurant:port_rest2, user: junior)
-Favorite.create!(restaurant:port_rest1, user: junior)
-Favorite.create!(restaurant:port_rest3, user: junior)
+#Korean Cuisine
+puts "Creating Korean cuisine"
+korean = Cuisine.create!(name: "Korean")
+img_korean_cuisine = URI.open('https://asiasociety.org/sites/default/files/styles/1200w/public/2019-02/%EB%B0%98%EC%B0%AC.jpg')
+korean.photo.attach(io: img_korean_cuisine, filename: 'korean_cuisine', content_type: 'image/jpg')
 
-#Servi avec frites et salade / Served with fries & salad13.00$
-#Le Mike AlvesPoulet, chouriço et Bifana / Chicken, Chouriço & Bifana
-#Servi avec frites et salade / Served with fries & salad15.00$
-#Le Victor MedinaCuisse de poulet / Chicken Leg
-#Servi avec frites et salade / Served with fries & salad11.00$
-#Salade FloreaSalade repas / Meal salad
-#Servi avec poulet et chouriço / Served with Chicken & Chouriço14.00$
-#Salade MatildeSalade avec poulet grillé / Salad with Grilled Chicken
-#Regular / Regular12.00$
-#Petite salade végé / Small veggie salad3.00$
-#CalamarsCalamars grillés / Grilled Calamari
-#Servi avec frites et salade / Serv
+
+puts "Creating Korean restaurants"
+korean_rest1 = Restaurant.create!(cuisine: korean, name: "Omma", address: "51 Rue Ontario O, Montréal, QC H2X 1Y8 Canada", phone: "(514) 379-1183")
+img_korean_rest1 = URI.open('https://media1.ledevoir.com/images_galerie/nwd_344350_229850/image.jpg')
+korean_rest1.photo.attach(io: img_korean_rest1, filename: 'omma', content_type: 'image/jpg')
+
+korean_rest2 = Restaurant.create!(cuisine: korean, name: "Sam Cha", address: "2176 A Saint-Catherine St, Montreal, Quebec H3H 1M6 Canada", phone: "(514) 932-7565")
+img_korean_rest2 = URI.open('https://images.squarespace-cdn.com/content/v1/5cbe77f87fdcb8a33b617351/1560572848903-G1Z1L765M6F5JNZM5HIQ/ke17ZwdGBToddI8pDm48kK3wSlZs07heI9EV0CdBBQx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJXCyjgVWUnrptCwacG-841H9fbR-hyucpqzvrb-KBUQqg/sam%2Bcha%2Batmosphere')
+korean_rest2.photo.attach(io: img_korean_rest2, filename: 'sam_cha', content_type: 'image/jpg')
+
+korean_rest3 = Restaurant.create!(cuisine: korean, name: "Daldongnae", address: "1216 Bishop St, Montreal, Quebec H3G 2E3 Canada", phone: "(514) 878-1111")
+img_korean_rest3 = URI.open('https://images.squarespace-cdn.com/content/v1/5c7dd5c0af4683dd84e8f918/1551750963647-RIOXMWUER7WKK9TMCZIH/ke17ZwdGBToddI8pDm48kFyD7pzB8zoMIVY5aiUuFlp7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jG2lbcDYBOeMi4OFSYem8DMb5PTLoEDdB05UqhYu-xbnSznFxIRsaAU-3g5IaylIg/_DSC0927.jpg?format=2500w')
+korean_rest3.photo.attach(io: img_korean_rest3, filename: 'daldongnae', content_type: 'image/jpg')
+
+korean_rest4 = Restaurant.create!(cuisine: korean, name: "Chez Bong", address: "1021 St-Laurent, Montreal H2Z 1J4 Canada", phone: "(514) 396-7779")
+img_korean_rest4 = URI.open('https://media-cdn.tripadvisor.com/media/photo-p/15/36/c0/a3/photo0jpg.jpg')
+korean_rest4.photo.attach(io: img_korean_rest4, filename: 'chez_bong', content_type: 'image/jpg')
+
+korean_rest5 = Restaurant.create!(cuisine: korean, name: "Mon ami Korean BBQ", address: "1488 Saint-Catherine St W, Montreal, Quebec H3G 1S8 Canada", phone: "(514) 931-1119")
+img_korean_rest5 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/12/79/9f/d9/ready-for-korean-bbq.jpg')
+korean_rest5.photo.attach(io: img_korean_rest5, filename: 'mon_ami', content_type: 'image/jpg')
+
+korean_rest6 = Restaurant.create!(cuisine: korean, name: "Ganadara", address: "1862 Maisonneuve Blvd W, Montreal, Quebec H3H 1J9 Canada", phone: "(514) 933-2288")
+img_korean_rest6 = URI.open('https://www.mcgilldaily.com/wp-content/uploads/2014/01/CULTURE_Ganadara-Cafe_Tamim-Sujat_WEB.jpg')
+korean_rest6.photo.attach(io: img_korean_rest6, filename: 'ganadara', content_type: 'image/jpg')
+
+puts "Creating Korean cuisine experts"
+miguel = User.create!(cuisine_id: korean.id, first_name: "Juan-Miguel", last_name: "Hernandez", email:"miguel@wagon.com" , bio:"I am a violist, photographer and have a passion for food and am particularly knowledgeable about Korean cuisine. Really loving being a part of Yummy Palette to share with the community and discover through them the best food in town!!!  ", password:"123456")
+miguel_img = URI.open('https://avatars3.githubusercontent.com/u/64239865?v=4')
+miguel.photo.attach(io: miguel_img, filename: 'miguel profile', content_type: 'image/jpg')
+
+choong = User.create!(cuisine_id: korean.id, first_name: "Choong Hun", last_name: "Lee", email:"choong@wagon.com" , bio:"I am originally from New York but I moved to Montreal to work as a software developer. I noticed that the korean food industry in Montreal wasen't as vibrant as in New York so it was quite difficult for me to find really good korean cuisine in town. Thanks to Yummy Palette I know not just where to find the best korean food in town, but the best of any cuisine I might be in the mood for. This app is fantastic!!!", password:"123456")
+choong_img = URI.open('https://avatars3.githubusercontent.com/u/64239865?v=4')
+choong.photo.attach(io: choong_img, filename: 'choong profile', content_type: 'image/jpg')
+
+ryan = User.create!(cuisine_id: korean.id, first_name: "Ryan", last_name: "Buckley", email:"ryan@wagon.com" , bio:"Originally from Toronto, I spent the last seven years working freelance in NYC as a consultant in the arts, helping museums and artists organize their digital and physical assets. I am now in Montreal working as a fullstack developer. Having traveled around the world and spent lots of time in Asia, I am particuarly fond of Korean cuisine. I love that I can share my discoveried on Yummy Palette and discover other people's discoveries. The quality of the restaurants on this app is stunning!", password:"123456")
+ryan_img = URI.open('https://avatars1.githubusercontent.com/u/48371025?v=4')
+ryan.photo.attach(io: ryan_img, filename: 'ryan profile', content_type: 'image/jpg')
+
+
+
+
+
+#Middle-Eastern Cuisine
+puts "Creating Middle-Eastern cuisine"
+middle_eastern = Cuisine.create!(name: "Middle Eastern")
+img_middle_eastern_cuisine = URI.open('https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1200&h=628&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F35%2F2019%2F04%2F03222703%2Ffb-middle-eastern-food.jpg')
+middle_eastern.photo.attach(io: img_middle_eastern_cuisine, filename: 'middle_eastern_cuisine', content_type: 'image/jpg')
+
+
+puts "Creating Middle-Eastern restaurants"
+middle_eastern_rest1 = Restaurant.create!(cuisine: middle_eastern, name: "Trip de Bouffe", address: "277 Mont-Royal Ave E, Montreal, Quebec H2T 1P6 Canada", phone: "(438) 381-4388")
+img_middle_eastern_rest1 = URI.open('https://www.mont-royal.net/image/1/987/0/uploads/site/sdamr_277_2-fr-1550502464.jpg')
+middle_eastern_rest1.photo.attach(io: img_middle_eastern_rest1, filename: 'trip_de_bouffe', content_type: 'image/jpg')
+
+middle_eastern_rest2 = Restaurant.create!(cuisine: middle_eastern, name: "Shawarmaz", address: "1206 Peel St, Montreal, Quebec H3B 2T6 Canada", phone: "(514) 431-9345")
+img_middle_eastern_rest2 = URI.open('https://d1ralsognjng37.cloudfront.net/589936c7-639c-4ee9-bf5c-f4b5e298f248.jpeg')
+middle_eastern_rest2.photo.attach(io: img_middle_eastern_rest2, filename: 'shawarmaz', content_type: 'image/jpg')
+
+middle_eastern_rest3 = Restaurant.create!(cuisine: middle_eastern, name: "La Khaima", address: "142 Avenue Fairmount O, Montréal, QC H2T 2M5 Canada", phone: "(514) 948-9993")
+img_middle_eastern_rest3 = URI.open('https://s3.amazonaws.com/tuango2/nimblebuy/19-pour-40-de-fine-cuisine-lafrique-louest-au-restaurant-la-598011-regular.jpg')
+middle_eastern_rest3.photo.attach(io: img_middle_eastern_rest3, filename: 'khaima', content_type: 'image/jpg')
+
+middle_eastern_rest4 = Restaurant.create!(cuisine: middle_eastern, name: "Daou", address: "519 Rue Faillon E, Montréal, QC H2R 1L6 Canada", phone: "(514) 276-8310")
+img_middle_eastern_rest4 = URI.open('https://montreall.com/wp-content/uploads/2014/01/restaurant-daou-montreal3.jpg')
+middle_eastern_rest4.photo.attach(io: img_middle_eastern_rest4, filename: 'daou', content_type: 'image/jpg')
+
+middle_eastern_rest5 = Restaurant.create!(cuisine: middle_eastern, name: "Damas", address: "1201 Ave Van Horne, Outremont, Quebec H2V 1K4 Canada", phone: "(514) 439-5435")
+img_middle_eastern_rest5 = URI.open('https://cdn.vox-cdn.com/thumbor/d8LS33YK3h5dlU9tdC_KHIgtx9c=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19604541/64211094_2511375208909067_95785879599054848_o.jpg')
+middle_eastern_rest5.photo.attach(io: img_middle_eastern_rest5, filename: 'damas', content_type: 'image/jpg')
+
+middle_eastern_rest6 = Restaurant.create!(cuisine: middle_eastern, name: "Kaza Maza", address: "4629 Park Ave, Montreal, Quebec H2V 4E4 Canada", phone: "(514) 844-6292")
+img_middle_eastern_rest6 = URI.open('https://www.accesresto.com/r_photos/res_107_2.jpg')
+middle_eastern_rest6.photo.attach(io: img_middle_eastern_rest6, filename: 'kaza_maza', content_type: 'image/jpg')
+
+middle_eastern_rest7 = Restaurant.create!(cuisine: middle_eastern, name: "Omnivore", address: "4306 St Laurent Blvd, Montreal, Quebec H2W 1Z3 Canada", phone: "(514) 303-5757")
+img_middle_eastern_rest7 = URI.open('https://ssmscdn.yp.ca/image/resize/ccbccf47-c4f2-4b8b-86d3-66e83cb11e72/ypui-d-mp-pic-gal-lg/omnivore-4.jpg')
+middle_eastern_rest7.photo.attach(io: img_middle_eastern_rest7, filename: 'omnivore', content_type: 'image/jpg')
+
+puts "Creating Middle-Eastern cuisine experts"
+michel = User.create!(cuisine_id: middle_eastern.id, first_name: "Michel-Alexandre", last_name: "Broekaert", email:"michel-alexandre@wagon.com" , bio:"I'm a professional pianist, turned coder after an amazing bootcamp at Le Wagon Montreal following the Covid pandemic of 2020. I love all foods but I am most at home with middle eastern cuisine. I love being part of Yummy Palette to share my favorite restaurants and discover new ones. ", password:"123456")
+michel_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1595389025/fcroj9cvxh3f3ishc0z5.jpg')
+michel.photo.attach(io: michel_img, filename: 'michel profile', content_type: 'image/jpg')
+
+boran = User.create!(cuisine_id: middle_eastern.id, first_name: "Boran", last_name: "Zaza", email:"boran@wagon.com" , bio:"I am a pianist, marketing manager and fullstack developer. I am originally from Seria so I am very glad to be able to share my opinion on Yummy Palette and discover so many other amazing restaurants!", password:"123456")
+boran_img = URI.open('https://avatars3.githubusercontent.com/u/66437669?v=4')
+boran.photo.attach(io: boran_img, filename: 'boran profile', content_type: 'image/jpg')
+
+stephane = User.create!(cuisine_id: middle_eastern.id, first_name: "Stephane", last_name: "Lafontaine", email:"stephane@wagon.com" , bio:"I am a Qigong disciple, a sound engineer, a fullstack developer, a teacher, a rock climber, a healer...... name it, I dot it ;). I have a huge weak spot for middle eastern food but I also love food in general. Yummy Palette is an amazing community I am glad to be part of!", password:"123456")
+stephane_img = URI.open('https://avatars0.githubusercontent.com/u/37821714?v=4')
+stephane.photo.attach(io: stephane_img, filename: 'stephane profile', content_type: 'image/jpg')
+
+
+
+
+
+#French Cuisine
+puts "Creating French cuisine"
+french = Cuisine.create!(name: "French")
+img_french_cuisine = URI.open('https://www.expatica.com/app/uploads/sites/5/2014/05/French-food2400x1600px-1200x675.jpg')
+french.photo.attach(io: img_french_cuisine, filename: 'french_cuisine', content_type: 'image/jpg')
+
+
+puts "Creating French restaurants"
+french_rest1 = Restaurant.create!(cuisine: french, name: "L'express", address: "3927 St Denis St, Montreal, Quebec H2W 2M4 Canada", phone: "(514) 845-5333")
+img_french_rest1 = URI.open('https://tastet.ca/wp-content/uploads/2018/10/restaurant-lexpress-montreal-1-1024x684.jpg')
+french_rest1.photo.attach(io: img_french_rest1, filename: 'express', content_type: 'image/jpg')
+
+french_rest2 = Restaurant.create!(cuisine: french, name: "Le Quartier Général", address: "1251 Rue Gilford, Montréal, QC H2J 1R3 Canada", phone: "(514) 658-1839")
+img_french_rest2 = URI.open('https://cdn.vox-cdn.com/thumbor/ToZ4OHxYbTNleaQyagp8SnfYQtc=/122x0:596x356/1400x788/filters:focal(122x0:596x356):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/46814314/quartiergeneralchef.0.0.jpg')
+french_rest2.photo.attach(io: img_french_rest2, filename: 'quartier_general', content_type: 'image/jpg')
+
+french_rest3 = Restaurant.create!(cuisine: french, name: "Le Pégase", address: "1831 Rue Gilford, Montréal, QC H2H 1G7 Canada", phone: "(514) 522-0487")
+img_french_rest3 = URI.open('https://lepegase.ca/rlp-content/uploads/2014/08/pegase-bouchees.jpg')
+french_rest3.photo.attach(io: img_french_rest3, filename: 'pegase', content_type: 'image/jpg')
+
+french_rest4 = Restaurant.create!(cuisine: french, name: "P'tit Plateau", address: "330 Marie-Anne St E, Montreal, Quebec H2W 1B1 Canada", phone: "(514) 282-6342")
+img_french_rest4 = URI.open('https://portal.restomontreal.ca/le-ptit-plateau/gallery/images/01_le-pti_190-2017-04-18.jpg')
+french_rest4.photo.attach(io: img_french_rest4, filename: 'plateau', content_type: 'image/jpg')
+
+french_rest5 = Restaurant.create!(cuisine: french, name: "Au Petit Extra", address: "1690 Ontario St E, Montreal, Quebec H2L 1S7 Canada", phone: "(514) 527-5552")
+img_french_rest5 = URI.open('https://scontent.bookenda.com/merchants/au-petit-extra/image/65c876b0-92be-4cac-b23e-2b709f6d39c7.png')
+french_rest5.photo.attach(io: img_french_rest5, filename: 'petit_extra', content_type: 'image/jpg')
+
+french_rest6 = Restaurant.create!(cuisine: french, name: "Le Margaux", address: "5058 Park Ave, Montreal, Quebec H2V 4G1", phone: "(514) 448-1598")
+img_french_rest6 = URI.open('https://ssmscdn.yp.ca/image/resize/383fa596-8b8e-41ed-a791-7863567970d4/ypui-d-mp-pic-gal-lg/restaurant-le-margaux-1.jpg')
+french_rest6.photo.attach(io: img_french_rest6, filename: 'margaux', content_type: 'image/jpg')
+
+french_rest7 = Restaurant.create!(cuisine: french, name: "Chez Lévèque", address: "1030 Avenue Laurier O, Outremont, QC H2V 2K8", phone: "(514) 279-7355")
+img_french_rest7 = URI.open('https://s3.amazonaws.com/tuango2/nimblebuy/59pourunmenu5servicesspecial40emeanniversairepour2aucelebreresta-768441-regular.jpg')
+french_rest7.photo.attach(io: img_french_rest7, filename: 'leveque', content_type: 'image/jpg')
+
+puts "Creating French cuisine experts"
+lenoy = User.create!(cuisine_id: french.id, first_name: "Lenoy", last_name: "Christy", email:"lenoy@wagon.com" , bio:"I'm a 2nd Year McGill Software Engineering student. I lived in France for many years porevious to moving to Montreal. It is really nice to be able to fins the most authentic French restaurants on Yummy Palette! Love it!", password:"123456")
+lenoy_img = URI.open('https://avatars1.githubusercontent.com/u/54909689?v=4')
+lenoy.photo.attach(io: lenoy_img, filename: 'lenoy profile', content_type: 'image/jpg')
+
+cloe = User.create!(cuisine_id: french.id, first_name: "Cloé", last_name: "Furlan", email:"cloe@wagon.com" , bio:"Originally from France, I amd now based in Momntreal. I worked for three years in various companies as a recruiter and am now a fullstack developer, happily! I love using the Yummy Palette app to find the most authentic restaurants in town and to share my favorite choices for the best French restaurants!", password:"123456")
+cloe_img = URI.open('https://avatars0.githubusercontent.com/u/59398311?v=4')
+cloe.photo.attach(io: cloe_img, filename: 'cloe profile', content_type: 'image/jpg')
+
+mg = User.create!(cuisine_id: french.id, first_name: "Marie-Gabrielle", last_name: "Ayoub", email:"marie-gabrielle@wagon.com" , bio:"After co-founding Le Wagon in Montréal, running 4 batches and building an amazing team, I have taken the time to learn codding myself. Originally from France, I love french food and thanks to Yummy Palette I have the best french cuisine at my fingertips.", password:"123456")
+mg_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1544640326/siqunmt58cmrxroe3nbc.jpg')
+mg.photo.attach(io: mg_img, filename: 'mg profile', content_type: 'image/jpg')
+
+
+
+
+
+
+
+
+puts "Creating Global Visitors"
+martin = User.create!(cuisine_id: nil, first_name: "Martin", last_name: "Giannakopoulos", email:"martin@wagon.com" , bio:"I am a web develper and teacher for Le Wagon, based in Montreal. I don't eat very much, or particularly well usually. So I made a resolution to discover great food this year. So I was really happy to discover Yummy Palette which has really open up my world to the amazing flavors of so many cuisines all right here in Montreal! ", password:"123456")
+martin_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1533305351/pwlstconwxh7zetwsz1w.jpg')
+martin.photo.attach(io: martin_img, filename: 'martin profile', content_type: 'image/jpg')
+
+nicolas = User.create!(cuisine_id: nil, first_name: "Nicolas", last_name: "Fraisse", email:"Nicolas@wagon.com" , bio:"I am a drummer, fullstack developer anf fulltime food lover! Yummy Palette is helping me discover the most authentic taste of various cuisines available right here in Montreal! I love this app!", password:"123456")
+nicolas_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1570482026/xlayp6fkanfrqzwlg1eu.jpg')
+nicolas.photo.attach(io: nicolas_img, filename: 'nicolas profile', content_type: 'image/jpg')
+
+richard = User.create!(cuisine_id: nil, first_name: "Richard", last_name: "Jarram", email:"richard@wagon.com" , bio:"Fullstack developer and teacher for Le Wagon Montreal, I love spending time out woith friends and discovering restaurants. Yummy Palette is my go-to app to find the bext, most authentic choices in town!!!", password:"123456")
+richard_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1546902451/oyfiqksipakhgmfvbbsd.jpg')
+richard.photo.attach(io: richard_img, filename: 'richard profile', content_type: 'image/jpg')
+
+
+
+
+
+#reviews for restaurants
+puts "creating reviews for Indian Restaurants"
+Review.create!(restaurant: indian_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest9, user: richard, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest9, user: millie, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest9, user: cloe, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest9, user: miguel, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest9, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest9, user: michel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest9, user: choong, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: indian_rest10, user: lenoy, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: indian_rest10, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest10, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: indian_rest10, user: francesca, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: indian_rest10, user: kahina, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: indian_rest10, user: miguel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: indian_rest10, user: meagan, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+puts "creating reviews for Japanese Restaurants"
+Review.create!(restaurant: japan_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest9, user: richard, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest9, user: millie, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest9, user: cloe, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest9, user: miguel, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest9, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest9, user: michel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest9, user: choong, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: japan_rest10, user: lenoy, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: japan_rest10, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest10, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: japan_rest10, user: francesca, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: japan_rest10, user: kahina, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: japan_rest10, user: miguel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: japan_rest10, user: meagan, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+
+puts "Creating reviews for Portuguese Restaurants"
+Review.create!(restaurant: port_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest9, user: richard, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest9, user: millie, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest9, user: cloe, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest9, user: miguel, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest9, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest9, user: michel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest9, user: choong, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: port_rest10, user: lenoy, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: port_rest10, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest10, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: port_rest10, user: francesca, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: port_rest10, user: kahina, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: port_rest10, user: miguel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: port_rest10, user: meagan, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+puts "Creating reviews for Italian restaurants"
+Review.create!(restaurant: italian_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest9, user: richard, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest9, user: millie, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest9, user: cloe, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest9, user: miguel, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest9, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest9, user: michel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest9, user: choong, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: italian_rest10, user: lenoy, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: italian_rest10, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest10, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: italian_rest10, user: francesca, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: italian_rest10, user: kahina, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: italian_rest10, user: miguel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: italian_rest10, user: meagan, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+puts "Creating reviews for Chinese restaurants"
+Review.create!(restaurant: chinese_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest9, user: richard, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest9, user: millie, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest9, user: cloe, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest9, user: miguel, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest9, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest9, user: michel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest9, user: choong, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: chinese_rest10, user: lenoy, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: chinese_rest10, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest10, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: chinese_rest10, user: francesca, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: chinese_rest10, user: kahina, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: chinese_rest10, user: miguel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: chinese_rest10, user: meagan, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+
+puts "Creating reviews for Greek restaurants"
+Review.create!(restaurant: greek_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest9, user: richard, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest9, user: millie, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest9, user: cloe, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest9, user: miguel, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest9, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest9, user: michel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest9, user: choong, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: greek_rest10, user: lenoy, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: greek_rest10, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest10, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: greek_rest10, user: francesca, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: greek_rest10, user: kahina, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: greek_rest10, user: miguel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: greek_rest10, user: meagan, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+puts "Creating reviews for Mexican restaurants"
+Review.create!(restaurant: mexican_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: mexican_rest9, user: richard, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: mexican_rest9, user: millie, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest9, user: cloe, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest9, user: miguel, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest9, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: mexican_rest9, user: michel, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest9, user: choong, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+puts "Creating reviews for Korean restaurants"
+Review.create!(restaurant: korean_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: korean_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: korean_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: korean_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: korean_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: korean_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: korean_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: korean_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: korean_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: korean_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: korean_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: korean_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: korean_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: korean_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: korean_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: korean_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: korean_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: korean_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: korean_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: korean_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: korean_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: korean_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: korean_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: korean_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: korean_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: korean_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: korean_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: korean_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: korean_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: korean_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: korean_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+puts "Creating reviews for Middle-Eastern restaurants"
+Review.create!(restaurant: middle_eastern_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: middle_eastern_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: middle_eastern_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: middle_eastern_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: middle_eastern_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: middle_eastern_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: middle_eastern_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: middle_eastern_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: middle_eastern_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: middle_eastern_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: middle_eastern_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: middle_eastern_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: middle_eastern_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: middle_eastern_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: middle_eastern_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: middle_eastern_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: middle_eastern_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: middle_eastern_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: middle_eastern_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: middle_eastern_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: middle_eastern_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: middle_eastern_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: middle_eastern_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: middle_eastern_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: middle_eastern_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: middle_eastern_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: middle_eastern_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: middle_eastern_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: middle_eastern_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: middle_eastern_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: middle_eastern_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: middle_eastern_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: middle_eastern_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: middle_eastern_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: middle_eastern_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: middle_eastern_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+puts "Creating reviews for French restaurants"
+Review.create!(restaurant: french_rest1, user: thomas, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: french_rest1, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest1, user: ekaterina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest1, user: aline, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: french_rest1, user: wince, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: french_rest1, user: lenoy, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: french_rest1, user: junior, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: french_rest2, user: miguel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: french_rest2, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest2, user: martin, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest2, user: mg, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: french_rest2, user: stephane, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: french_rest2, user: kahina, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: french_rest2, user: cloe, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: french_rest3, user: nachiket, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: french_rest3, user: kyle, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest3, user: junior, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest3, user: boran, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: french_rest3, user: choong, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: french_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: french_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: french_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: french_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: french_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: french_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: french_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: french_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: french_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest5, user: timothy, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest5, user: nirali, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: french_rest5, user: emily, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: french_rest5, user: meagan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: french_rest5, user: rebecca, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: french_rest6, user: erika, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: french_rest6, user: rebecca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest6, user: meagan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest6, user: stephane, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: french_rest6, user: junior, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: french_rest6, user: poyan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: french_rest6, user: wince, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+Review.create!(restaurant: french_rest7, user: michel, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
+Review.create!(restaurant: french_rest7, user: francesca, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest7, user: kahina, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: french_rest7, user: thomas, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: french_rest7, user: nicolas, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
+Review.create!(restaurant: french_rest7, user: boran, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: french_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+
+
+
+
+
+#dishes for restaurants
+puts "creating Indian dishes"
+i1 = Dish.create!(name:"tandoori")
+i2 = Dish.create!(name:"tikka masala")
+i3 = Dish.create!(name:"vindaloo curry")
+i4 = Dish.create!(name:"rogan josh")
+i5 = Dish.create!(name:"malai kofta")
+i6 = Dish.create!(name:"chole")
+i7 = Dish.create!(name:"palak paneer")
+i8 = Dish.create!(name:"kaali daal")
+i9 = Dish.create!(name:"naan")
+
+puts "creating Japanese dishes"
+j1 = Dish.create!(name:"sushi")
+j2 = Dish.create!(name:"sashimi")
+j3 = Dish.create!(name:"tempura")
+j4 = Dish.create!(name:"soba")
+j5 = Dish.create!(name:"udon")
+j6 = Dish.create!(name:"onigiri")
+j7 = Dish.create!(name:"yakitori")
+j8 = Dish.create!(name:"sukiyaki")
+j9 = Dish.create!(name:"oden")
+j10 = Dish.create!(name:"miso")
+
+puts "creating Portuguese dishes"
+p1 = Dish.create!(name:"caldo verde")
+p2 = Dish.create!(name:"bacalhau")
+p3 = Dish.create!(name:"sardines")
+p4 = Dish.create!(name:"bifanas")
+p5 = Dish.create!(name:"francesinha")
+p6 = Dish.create!(name:"chicken piri-piri")
+p7 = Dish.create!(name:"polvo a la Lagareiro")
+p8 = Dish.create!(name:"porco preto")
+p9 = Dish.create!(name:"pastel de nata")
+
+puts "creating Italian dishes"
+it1 = Dish.create!(name:"panzanella")
+it2 = Dish.create!(name:"bruschetta")
+it3 = Dish.create!(name:"focaccia")
+it4 = Dish.create!(name:"Pasta Carbonara")
+it5 = Dish.create!(name:"Pizza Margherita")
+it6 = Dish.create!(name:"risotto")
+it7 = Dish.create!(name:"lasacha")
+it8 = Dish.create!(name:"panna cotta")
+it9 = Dish.create!(name:"panettone")
+
+puts "creating Chinese dishes"
+c1 = Dish.create!(name:"xiaolongbao")
+c2 = Dish.create!(name:"peking duck")
+c3 = Dish.create!(name:"stinky tofu")
+c4 = Dish.create!(name:"chow mein")
+c5 = Dish.create!(name:"congee")
+c6 = Dish.create!(name:"baozi")
+c7 = Dish.create!(name:"char siu")
+c8 = Dish.create!(name:"zhajiangmian")
+c9 = Dish.create!(name:"wonton soup")
+
+puts "creating Greek dishes"
+g1 = Dish.create!(name:"taramasalata")
+g2 = Dish.create!(name:"dolmades")
+g3 = Dish.create!(name:"moussaka")
+g4 = Dish.create!(name:"bougatsa")
+g5 = Dish.create!(name:"courgette balls")
+g6 = Dish.create!(name:"baklava")
+g7 = Dish.create!(name:"amygdalota")
+g8 = Dish.create!(name:"dolmadakia")
+g9 = Dish.create!(name:"tomatokeftedes")
+g10 = Dish.create!(name:"ellinikos")
+
+puts "creating Mexican dishes"
+m1 = Dish.create!(name:"enchiladas")
+m2 = Dish.create!(name:"posole")
+m3 = Dish.create!(name:"tortas")
+m4 = Dish.create!(name:"tacos")
+m5 = Dish.create!(name:"burrito")
+m6 = Dish.create!(name:"sopa de lima")
+m7 = Dish.create!(name:"chilaquiles")
+m8 = Dish.create!(name:"tostadas")
+m9 = Dish.create!(name:"chiles en nogada")
+m10 = Dish.create!(name:"mole")
+
+puts "creating Korean dishes"
+k1 = Dish.create!(name:"hoeddeok")
+k2 = Dish.create!(name:"bulgogi")
+k3 = Dish.create!(name:"galbi")
+k4 = Dish.create!(name:"japchae")
+k5 = Dish.create!(name:"kimchi")
+k6 = Dish.create!(name:"bibimbap")
+k7 = Dish.create!(name:"sundubu")
+k8 = Dish.create!(name:"bossam")
+k9 = Dish.create!(name:"samgyeopsal")
+k10 = Dish.create!(name:"seolleontang")
+
+puts "creating Middle-Eastern dishes"
+me1 = Dish.create!(name:"hummus")
+me2 = Dish.create!(name:"manakeesh")
+me3 = Dish.create!(name:"grilled halloumi")
+me4 = Dish.create!(name:"falafel")
+me5 = Dish.create!(name:"tabouleh balls")
+me6 = Dish.create!(name:"baklava")
+me7 = Dish.create!(name:"moutabal")
+me8 = Dish.create!(name:"fattoush")
+me9 = Dish.create!(name:"shanklish")
+me10 = Dish.create!(name:"shawarma")
+
+puts "creating French dishes"
+f1 = Dish.create!(name:"onion soup")
+f2 = Dish.create!(name:"coq au vin")
+f3 = Dish.create!(name:"cassoulet")
+f4 = Dish.create!(name:"boeuf bourgignon")
+f5 = Dish.create!(name:"chocolat souffle")
+f6 = Dish.create!(name:"flamiche")
+f7 = Dish.create!(name:"duck confit")
+f8 = Dish.create!(name:"nicoise salad")
+f9 = Dish.create!(name:"ratatouille")
+f10 = Dish.create!(name:"tarte tatin")
+
+
+
+
+#Tags for dishes
+puts "creating tags for Indian restaurants"
+Tag.create!(dish: i1, restaurant: indian_rest1, user: debora)
+Tag.create!(dish: i2, restaurant: indian_rest1, user: debora)
+Tag.create!(dish: i3, restaurant: indian_rest1, user: nachiket)
+Tag.create!(dish: i4, restaurant: indian_rest1, user: nachiket)
+Tag.create!(dish: i5, restaurant: indian_rest2, user: debora)
+Tag.create!(dish: i4, restaurant: indian_rest2, user: lea)
+Tag.create!(dish: i6, restaurant: indian_rest2, user: lea)
+Tag.create!(dish: i6, restaurant: indian_rest3, user: nachiket)
+Tag.create!(dish: i7, restaurant: indian_rest3, user: nachiket)
+Tag.create!(dish: i3, restaurant: indian_rest4, user: debora)
+Tag.create!(dish: i2, restaurant: indian_rest4, user: debora)
+Tag.create!(dish: i8, restaurant: indian_rest4, user: nachiket)
+Tag.create!(dish: i9, restaurant: indian_rest4, user: nachiket)
+Tag.create!(dish: i1, restaurant: indian_rest4, user: debora)
+Tag.create!(dish: i9, restaurant: indian_rest5, user: debora)
+Tag.create!(dish: i8, restaurant: indian_rest5, user: debora)
+Tag.create!(dish: i4, restaurant: indian_rest6, user: debora)
+Tag.create!(dish: i1, restaurant: indian_rest7, user: lea)
+Tag.create!(dish: i5, restaurant: indian_rest7, user: lea)
+Tag.create!(dish: i7, restaurant: indian_rest7, user: nachiket)
+Tag.create!(dish: i5, restaurant: indian_rest8, user: nachiket)
+Tag.create!(dish: i8, restaurant: indian_rest8, user: lea)
+Tag.create!(dish: i9, restaurant: indian_rest8, user: debora)
+Tag.create!(dish: i2, restaurant: indian_rest9, user: lea)
+Tag.create!(dish: i3, restaurant: indian_rest9, user: lea)
+Tag.create!(dish: i4, restaurant: indian_rest10, user: nachiket)
+Tag.create!(dish: i6, restaurant: indian_rest10, user: nachiket)
+Tag.create!(dish: i3, restaurant: indian_rest10, user: nachiket)
+
+puts "creating tags for Japanese restaurants"
+Tag.create!(dish: j1, restaurant: japan_rest1, user: wince)
+Tag.create!(dish: j2, restaurant: japan_rest1, user: wince)
+Tag.create!(dish: j3, restaurant: japan_rest1, user: timothy)
+Tag.create!(dish: j4, restaurant: japan_rest1, user: timothy)
+Tag.create!(dish: j5, restaurant: japan_rest2, user: wince)
+Tag.create!(dish: j4, restaurant: japan_rest2, user: kyle)
+Tag.create!(dish: j6, restaurant: japan_rest2, user: kyle)
+Tag.create!(dish: j6, restaurant: japan_rest3, user: timothy)
+Tag.create!(dish: j7, restaurant: japan_rest3, user: timothy)
+Tag.create!(dish: j3, restaurant: japan_rest4, user: wince)
+Tag.create!(dish: j2, restaurant: japan_rest4, user: wince)
+Tag.create!(dish: j8, restaurant: japan_rest4, user: timothy)
+Tag.create!(dish: j9, restaurant: japan_rest4, user: timothy)
+Tag.create!(dish: j1, restaurant: japan_rest4, user: wince)
+Tag.create!(dish: j10, restaurant: japan_rest5, user: wince)
+Tag.create!(dish: j8, restaurant: japan_rest5, user: wince)
+Tag.create!(dish: j10, restaurant: japan_rest6, user: wince)
+Tag.create!(dish: j1, restaurant: japan_rest7, user: kyle)
+Tag.create!(dish: j5, restaurant: japan_rest7, user: kyle)
+Tag.create!(dish: j7, restaurant: japan_rest7, user: timothy)
+Tag.create!(dish: j5, restaurant: japan_rest8, user: timothy)
+Tag.create!(dish: j8, restaurant: japan_rest8, user: kyle)
+Tag.create!(dish: j9, restaurant: japan_rest8, user: wince)
+Tag.create!(dish: j2, restaurant: japan_rest9, user: kyle)
+Tag.create!(dish: j3, restaurant: japan_rest9, user: kyle)
+Tag.create!(dish: j4, restaurant: japan_rest10, user: timothy)
+Tag.create!(dish: j6, restaurant: japan_rest10, user: timothy)
+Tag.create!(dish: j3, restaurant: japan_rest10, user: timothy)
+
+puts "creating tags for Portuguese restaurants"
+Tag.create!(dish: p1, restaurant: port_rest1, user: aline)
+Tag.create!(dish: p2, restaurant: port_rest1, user: aline)
+Tag.create!(dish: p3, restaurant: port_rest1, user: thomas)
+Tag.create!(dish: p4, restaurant: port_rest1, user: thomas)
+Tag.create!(dish: p5, restaurant: port_rest2, user: aline)
+Tag.create!(dish: p4, restaurant: port_rest2, user: junior)
+Tag.create!(dish: p6, restaurant: port_rest2, user: junior)
+Tag.create!(dish: p6, restaurant: port_rest3, user: thomas)
+Tag.create!(dish: p7, restaurant: port_rest3, user: thomas)
+Tag.create!(dish: p3, restaurant: port_rest4, user: aline)
+Tag.create!(dish: p2, restaurant: port_rest4, user: aline)
+Tag.create!(dish: p8, restaurant: port_rest4, user: thomas)
+Tag.create!(dish: p9, restaurant: port_rest4, user: thomas)
+Tag.create!(dish: p1, restaurant: port_rest4, user: aline)
+Tag.create!(dish: p9, restaurant: port_rest5, user: aline)
+Tag.create!(dish: p8, restaurant: port_rest5, user: aline)
+Tag.create!(dish: p4, restaurant: port_rest6, user: aline)
+Tag.create!(dish: p1, restaurant: port_rest7, user: junior)
+Tag.create!(dish: p5, restaurant: port_rest7, user: junior)
+Tag.create!(dish: p7, restaurant: port_rest7, user: thomas)
+Tag.create!(dish: p5, restaurant: port_rest8, user: thomas)
+Tag.create!(dish: p8, restaurant: port_rest8, user: junior)
+Tag.create!(dish: p9, restaurant: port_rest8, user: aline)
+Tag.create!(dish: p2, restaurant: port_rest9, user: junior)
+Tag.create!(dish: p3, restaurant: port_rest9, user: junior)
+Tag.create!(dish: p4, restaurant: port_rest10, user: thomas)
+Tag.create!(dish: p6, restaurant: port_rest10, user: thomas)
+Tag.create!(dish: p3, restaurant: port_rest10, user: thomas)
+
+puts "creating tags for Indian restaurants"
+Tag.create!(dish: it1, restaurant: italian_rest1, user: nirali)
+Tag.create!(dish: it2, restaurant: italian_rest1, user: nirali)
+Tag.create!(dish: it3, restaurant: italian_rest1, user: emily)
+Tag.create!(dish: it4, restaurant: italian_rest1, user: emily)
+Tag.create!(dish: it5, restaurant: italian_rest2, user: nirali)
+Tag.create!(dish: it4, restaurant: italian_rest2, user: ekaterina)
+Tag.create!(dish: it6, restaurant: italian_rest2, user: ekaterina)
+Tag.create!(dish: it6, restaurant: italian_rest3, user: emily)
+Tag.create!(dish: it7, restaurant: italian_rest3, user: emily)
+Tag.create!(dish: it3, restaurant: italian_rest4, user: nirali)
+Tag.create!(dish: it2, restaurant: italian_rest4, user: nirali)
+Tag.create!(dish: it8, restaurant: italian_rest4, user: emily)
+Tag.create!(dish: it9, restaurant: italian_rest4, user: emily)
+Tag.create!(dish: it1, restaurant: italian_rest4, user: nirali)
+Tag.create!(dish: it9, restaurant: italian_rest5, user: nirali)
+Tag.create!(dish: it8, restaurant: italian_rest5, user: nirali)
+Tag.create!(dish: it4, restaurant: italian_rest6, user: nirali)
+Tag.create!(dish: it1, restaurant: italian_rest7, user: ekaterina)
+Tag.create!(dish: it5, restaurant: italian_rest7, user: ekaterina)
+Tag.create!(dish: it7, restaurant: italian_rest7, user: emily)
+Tag.create!(dish: it5, restaurant: italian_rest8, user: emily)
+Tag.create!(dish: it8, restaurant: italian_rest8, user: ekaterina)
+Tag.create!(dish: it9, restaurant: italian_rest8, user: nirali)
+Tag.create!(dish: it2, restaurant: italian_rest9, user: ekaterina)
+Tag.create!(dish: it3, restaurant: italian_rest9, user: ekaterina)
+Tag.create!(dish: it4, restaurant: italian_rest10, user: emily)
+Tag.create!(dish: it6, restaurant: italian_rest10, user: emily)
+Tag.create!(dish: it3, restaurant: italian_rest10, user: emily)
+
+
+puts "creating tags for Chinese restaurants"
+Tag.create!(dish: c1, restaurant: chinese_rest1, user: poyan)
+Tag.create!(dish: c2, restaurant: chinese_rest1, user: poyan)
+Tag.create!(dish: c3, restaurant: chinese_rest1, user: meagan)
+Tag.create!(dish: c4, restaurant: chinese_rest1, user: meagan)
+Tag.create!(dish: c5, restaurant: chinese_rest2, user: poyan)
+Tag.create!(dish: c4, restaurant: chinese_rest2, user: rebecca)
+Tag.create!(dish: c6, restaurant: chinese_rest2, user: rebecca)
+Tag.create!(dish: c6, restaurant: chinese_rest3, user: meagan)
+Tag.create!(dish: c7, restaurant: chinese_rest3, user: meagan)
+Tag.create!(dish: c3, restaurant: chinese_rest4, user: poyan)
+Tag.create!(dish: c2, restaurant: chinese_rest4, user: poyan)
+Tag.create!(dish: c8, restaurant: chinese_rest4, user: meagan)
+Tag.create!(dish: c9, restaurant: chinese_rest4, user: meagan)
+Tag.create!(dish: c1, restaurant: chinese_rest4, user: poyan)
+Tag.create!(dish: c9, restaurant: chinese_rest5, user: poyan)
+Tag.create!(dish: c8, restaurant: chinese_rest5, user: poyan)
+Tag.create!(dish: c4, restaurant: chinese_rest6, user: poyan)
+Tag.create!(dish: c1, restaurant: chinese_rest7, user: rebecca)
+Tag.create!(dish: c5, restaurant: chinese_rest7, user: rebecca)
+Tag.create!(dish: c7, restaurant: chinese_rest7, user: meagan)
+Tag.create!(dish: c5, restaurant: chinese_rest8, user: meagan)
+Tag.create!(dish: c8, restaurant: chinese_rest8, user: rebecca)
+Tag.create!(dish: c9, restaurant: chinese_rest8, user: poyan)
+Tag.create!(dish: c2, restaurant: chinese_rest9, user: rebecca)
+Tag.create!(dish: c3, restaurant: chinese_rest9, user: rebecca)
+Tag.create!(dish: c4, restaurant: chinese_rest10, user: meagan)
+Tag.create!(dish: c6, restaurant: chinese_rest10, user: meagan)
+Tag.create!(dish: c3, restaurant: chinese_rest10, user: meagan)
+
+puts "creating tags for Greek restaurants"
+Tag.create!(dish: g1, restaurant: greek_rest1, user: kahina)
+Tag.create!(dish: g2, restaurant: greek_rest1, user: kahina)
+Tag.create!(dish: g3, restaurant: greek_rest1, user: erika)
+Tag.create!(dish: g4, restaurant: greek_rest1, user: erika)
+Tag.create!(dish: g5, restaurant: greek_rest2, user: kahina)
+Tag.create!(dish: g4, restaurant: greek_rest2, user: francesca)
+Tag.create!(dish: g6, restaurant: greek_rest2, user: francesca)
+Tag.create!(dish: g6, restaurant: greek_rest3, user: erika)
+Tag.create!(dish: g7, restaurant: greek_rest3, user: erika)
+Tag.create!(dish: g3, restaurant: greek_rest4, user: kahina)
+Tag.create!(dish: g2, restaurant: greek_rest4, user: kahina)
+Tag.create!(dish: g8, restaurant: greek_rest4, user: erika)
+Tag.create!(dish: g9, restaurant: greek_rest4, user: erika)
+Tag.create!(dish: g1, restaurant: greek_rest4, user: kahina)
+Tag.create!(dish: g10, restaurant: greek_rest5, user: kahina)
+Tag.create!(dish: g8, restaurant: greek_rest5, user: kahina)
+Tag.create!(dish: g10, restaurant: greek_rest6, user: kahina)
+Tag.create!(dish: g1, restaurant: greek_rest7, user: francesca)
+Tag.create!(dish: g5, restaurant: greek_rest7, user: francesca)
+Tag.create!(dish: g7, restaurant: greek_rest7, user: erika)
+Tag.create!(dish: g5, restaurant: greek_rest8, user: erika)
+Tag.create!(dish: g8, restaurant: greek_rest8, user: francesca)
+Tag.create!(dish: g9, restaurant: greek_rest8, user: kahina)
+Tag.create!(dish: g2, restaurant: greek_rest9, user: francesca)
+Tag.create!(dish: g3, restaurant: greek_rest9, user: francesca)
+Tag.create!(dish: g4, restaurant: greek_rest10, user: erika)
+Tag.create!(dish: g6, restaurant: greek_rest10, user: erika)
+Tag.create!(dish: g3, restaurant: greek_rest10, user: erika)
+
+puts "creating tags for Mexican restaurants"
+Tag.create!(dish: m1, restaurant: mexican_rest1, user: alexander)
+Tag.create!(dish: m2, restaurant: mexican_rest1, user: alexander)
+Tag.create!(dish: m3, restaurant: mexican_rest1, user: millie)
+Tag.create!(dish: m4, restaurant: mexican_rest1, user: millie)
+Tag.create!(dish: m5, restaurant: mexican_rest2, user: alexander)
+Tag.create!(dish: m4, restaurant: mexican_rest2, user: arthur)
+Tag.create!(dish: m6, restaurant: mexican_rest2, user: arthur)
+Tag.create!(dish: m6, restaurant: mexican_rest3, user: millie)
+Tag.create!(dish: m7, restaurant: mexican_rest3, user: millie)
+Tag.create!(dish: m3, restaurant: mexican_rest4, user: alexander)
+Tag.create!(dish: m2, restaurant: mexican_rest4, user: alexander)
+Tag.create!(dish: m8, restaurant: mexican_rest4, user: millie)
+Tag.create!(dish: m9, restaurant: mexican_rest4, user: millie)
+Tag.create!(dish: m1, restaurant: mexican_rest4, user: alexander)
+Tag.create!(dish: m10, restaurant: mexican_rest5, user: alexander)
+Tag.create!(dish: m8, restaurant: mexican_rest5, user: alexander)
+Tag.create!(dish: m10, restaurant: mexican_rest6, user: alexander)
+Tag.create!(dish: m1, restaurant: mexican_rest7, user: arthur)
+Tag.create!(dish: m5, restaurant: mexican_rest7, user: arthur)
+Tag.create!(dish: m7, restaurant: mexican_rest7, user: millie)
+Tag.create!(dish: m5, restaurant: mexican_rest8, user: millie)
+Tag.create!(dish: m8, restaurant: mexican_rest8, user: arthur)
+Tag.create!(dish: m9, restaurant: mexican_rest8, user: alexander)
+Tag.create!(dish: m2, restaurant: mexican_rest9, user: arthur)
+Tag.create!(dish: m3, restaurant: mexican_rest9, user: arthur)
+
+
+puts "creating tags for Korean restaurants"
+Tag.create!(dish: k1, restaurant: korean_rest1, user: choong)
+Tag.create!(dish: k2, restaurant: korean_rest1, user: choong)
+Tag.create!(dish: k3, restaurant: korean_rest1, user: miguel)
+Tag.create!(dish: k4, restaurant: korean_rest1, user: miguel)
+Tag.create!(dish: k5, restaurant: korean_rest2, user: choong)
+Tag.create!(dish: k4, restaurant: korean_rest2, user: ryan)
+Tag.create!(dish: k6, restaurant: korean_rest2, user: ryan)
+Tag.create!(dish: k6, restaurant: korean_rest3, user: miguel)
+Tag.create!(dish: k7, restaurant: korean_rest3, user: miguel)
+Tag.create!(dish: k3, restaurant: korean_rest4, user: choong)
+Tag.create!(dish: k2, restaurant: korean_rest4, user: choong)
+Tag.create!(dish: k8, restaurant: korean_rest4, user: miguel)
+Tag.create!(dish: k9, restaurant: korean_rest4, user: miguel)
+Tag.create!(dish: k1, restaurant: korean_rest4, user: choong)
+Tag.create!(dish: k10, restaurant: korean_rest5, user: choong)
+Tag.create!(dish: k8, restaurant: korean_rest5, user: choong)
+Tag.create!(dish: k10, restaurant: korean_rest6, user: choong)
+
+
+puts "creating tags for Middle-Eastern restaurants"
+Tag.create!(dish: me1, restaurant: middle_eastern_rest1, user: michel)
+Tag.create!(dish: me2, restaurant: middle_eastern_rest1, user: michel)
+Tag.create!(dish: me3, restaurant: middle_eastern_rest1, user: boran)
+Tag.create!(dish: me4, restaurant: middle_eastern_rest1, user: boran)
+Tag.create!(dish: me5, restaurant: middle_eastern_rest2, user: michel)
+Tag.create!(dish: me4, restaurant: middle_eastern_rest2, user: stephane)
+Tag.create!(dish: me6, restaurant: middle_eastern_rest2, user: stephane)
+Tag.create!(dish: me6, restaurant: middle_eastern_rest3, user: boran)
+Tag.create!(dish: me7, restaurant: middle_eastern_rest3, user: boran)
+Tag.create!(dish: me3, restaurant: middle_eastern_rest4, user: michel)
+Tag.create!(dish: me2, restaurant: middle_eastern_rest4, user: michel)
+Tag.create!(dish: me8, restaurant: middle_eastern_rest4, user: boran)
+Tag.create!(dish: me9, restaurant: middle_eastern_rest4, user: boran)
+Tag.create!(dish: me1, restaurant: middle_eastern_rest4, user: michel)
+Tag.create!(dish: me10, restaurant: middle_eastern_rest5, user: michel)
+Tag.create!(dish: me8, restaurant: middle_eastern_rest5, user: michel)
+Tag.create!(dish: me10, restaurant: middle_eastern_rest6, user: michel)
+Tag.create!(dish: me1, restaurant: middle_eastern_rest7, user: stephane)
+Tag.create!(dish: me5, restaurant: middle_eastern_rest7, user: stephane)
+Tag.create!(dish: me7, restaurant: middle_eastern_rest7, user: boran)
+
+
+puts "creating tags for French restaurants"
+Tag.create!(dish: f1, restaurant: french_rest1, user: lenoy)
+Tag.create!(dish: f2, restaurant: french_rest1, user: lenoy)
+Tag.create!(dish: f3, restaurant: french_rest1, user: cloe)
+Tag.create!(dish: f4, restaurant: french_rest1, user: cloe)
+Tag.create!(dish: f5, restaurant: french_rest2, user: lenoy)
+Tag.create!(dish: f4, restaurant: french_rest2, user: mg)
+Tag.create!(dish: f6, restaurant: french_rest2, user: mg)
+Tag.create!(dish: f6, restaurant: french_rest3, user: cloe)
+Tag.create!(dish: f7, restaurant: french_rest3, user: cloe)
+Tag.create!(dish: f3, restaurant: french_rest4, user: lenoy)
+Tag.create!(dish: f2, restaurant: french_rest4, user: lenoy)
+Tag.create!(dish: f8, restaurant: french_rest4, user: cloe)
+Tag.create!(dish: f9, restaurant: french_rest4, user: cloe)
+Tag.create!(dish: f1, restaurant: french_rest4, user: lenoy)
+Tag.create!(dish: f10, restaurant: french_rest5, user: lenoy)
+Tag.create!(dish: f8, restaurant: french_rest5, user: lenoy)
+Tag.create!(dish: f10, restaurant: french_rest6, user: lenoy)
+Tag.create!(dish: f1, restaurant: french_rest7, user: mg)
+Tag.create!(dish: f5, restaurant: french_rest7, user: mg)
+Tag.create!(dish: f7, restaurant: french_rest7, user: cloe)
+
+
+
+
+
+#Upvotes for restaurants
+puts "Creating upvotes for Indian restaurants"
+Upvote.create!(restaurant: indian_rest1, user: debora)
+Upvote.create!(restaurant: indian_rest1, user: nachiket)
+Upvote.create!(restaurant: indian_rest1, user: lea)
+Upvote.create!(restaurant: indian_rest2, user: debora)
+Upvote.create!(restaurant: indian_rest2, user: nachiket)
+Upvote.create!(restaurant: indian_rest2, user: lea)
+Upvote.create!(restaurant: indian_rest3, user: debora)
+Upvote.create!(restaurant: indian_rest3, user: nachiket)
+Upvote.create!(restaurant: indian_rest3, user: lea)
+Upvote.create!(restaurant: indian_rest4, user: nachiket)
+Upvote.create!(restaurant: indian_rest5, user: nachiket)
+Upvote.create!(restaurant: indian_rest5, user: lea)
+Upvote.create!(restaurant: indian_rest6, user: debora)
+Upvote.create!(restaurant: indian_rest7, user: debora)
+Upvote.create!(restaurant: indian_rest7, user: nachiket)
+Upvote.create!(restaurant: indian_rest7, user: lea)
+Upvote.create!(restaurant: indian_rest8, user: lea)
+Upvote.create!(restaurant: indian_rest8, user: debora)
+Upvote.create!(restaurant: indian_rest9, user: nachiket)
+
+
+puts "Creating upvotes for Japanese restaurants"
+Upvote.create!(restaurant: japan_rest1, user: wince)
+Upvote.create!(restaurant: japan_rest1, user: timothy)
+Upvote.create!(restaurant: japan_rest1, user: kyle)
+Upvote.create!(restaurant: japan_rest2, user: wince)
+Upvote.create!(restaurant: japan_rest2, user: timothy)
+Upvote.create!(restaurant: japan_rest2, user: kyle)
+Upvote.create!(restaurant: japan_rest3, user: wince)
+Upvote.create!(restaurant: japan_rest3, user: timothy)
+Upvote.create!(restaurant: japan_rest3, user: kyle)
+Upvote.create!(restaurant: japan_rest4, user: timothy)
+Upvote.create!(restaurant: japan_rest5, user: timothy)
+Upvote.create!(restaurant: japan_rest5, user: kyle)
+Upvote.create!(restaurant: japan_rest6, user: wince)
+Upvote.create!(restaurant: japan_rest7, user: wince)
+Upvote.create!(restaurant: japan_rest7, user: timothy)
+Upvote.create!(restaurant: japan_rest7, user: kyle)
+Upvote.create!(restaurant: japan_rest8, user: kyle)
+Upvote.create!(restaurant: japan_rest8, user: wince)
+Upvote.create!(restaurant: japan_rest9, user: timothy)
+Upvote.create!(restaurant: japan_rest10, user: wince)
+
+puts "Creating upvotes for Portuguese restaurants"
+Upvote.create!(restaurant: port_rest1, user: aline)
+Upvote.create!(restaurant: port_rest1, user: thomas)
+Upvote.create!(restaurant: port_rest1, user: junior)
+Upvote.create!(restaurant: port_rest2, user: aline)
+Upvote.create!(restaurant: port_rest2, user: thomas)
+Upvote.create!(restaurant: port_rest2, user: junior)
+Upvote.create!(restaurant: port_rest3, user: aline)
+Upvote.create!(restaurant: port_rest3, user: thomas)
+Upvote.create!(restaurant: port_rest3, user: junior)
+Upvote.create!(restaurant: port_rest4, user: thomas)
+Upvote.create!(restaurant: port_rest5, user: thomas)
+Upvote.create!(restaurant: port_rest5, user: junior)
+Upvote.create!(restaurant: port_rest6, user: aline)
+Upvote.create!(restaurant: port_rest7, user: aline)
+Upvote.create!(restaurant: port_rest7, user: thomas)
+Upvote.create!(restaurant: port_rest7, user: junior)
+Upvote.create!(restaurant: port_rest8, user: junior)
+Upvote.create!(restaurant: port_rest8, user: aline)
+Upvote.create!(restaurant: port_rest9, user: thomas)
+Upvote.create!(restaurant: port_rest10, user: aline)
+
+
+puts "Creating upvotes for Italian restaurants"
+Upvote.create!(restaurant: italian_rest1, user: emily)
+Upvote.create!(restaurant: italian_rest1, user: nirali)
+Upvote.create!(restaurant: italian_rest1, user: ekaterina)
+Upvote.create!(restaurant: italian_rest2, user: emily)
+Upvote.create!(restaurant: italian_rest2, user: nirali)
+Upvote.create!(restaurant: italian_rest2, user: ekaterina)
+Upvote.create!(restaurant: italian_rest3, user: emily)
+Upvote.create!(restaurant: italian_rest3, user: nirali)
+Upvote.create!(restaurant: italian_rest3, user: ekaterina)
+Upvote.create!(restaurant: italian_rest4, user: nirali)
+Upvote.create!(restaurant: italian_rest5, user: nirali)
+Upvote.create!(restaurant: italian_rest5, user: ekaterina)
+Upvote.create!(restaurant: italian_rest6, user: emily)
+Upvote.create!(restaurant: italian_rest7, user: emily)
+Upvote.create!(restaurant: italian_rest7, user: nirali)
+Upvote.create!(restaurant: italian_rest7, user: ekaterina)
+Upvote.create!(restaurant: italian_rest8, user: ekaterina)
+Upvote.create!(restaurant: italian_rest8, user: emily)
+Upvote.create!(restaurant: italian_rest9, user: nirali)
+Upvote.create!(restaurant: italian_rest10, user: emily)
+
+puts "Creating upvotes for Chinese restaurants"
+Upvote.create!(restaurant: chinese_rest1, user: poyan)
+Upvote.create!(restaurant: chinese_rest1, user: meagan)
+Upvote.create!(restaurant: chinese_rest1, user: rebecca)
+Upvote.create!(restaurant: chinese_rest2, user: poyan)
+Upvote.create!(restaurant: chinese_rest2, user: meagan)
+Upvote.create!(restaurant: chinese_rest2, user: rebecca)
+Upvote.create!(restaurant: chinese_rest3, user: poyan)
+Upvote.create!(restaurant: chinese_rest3, user: meagan)
+Upvote.create!(restaurant: chinese_rest3, user: rebecca)
+Upvote.create!(restaurant: chinese_rest4, user: meagan)
+Upvote.create!(restaurant: chinese_rest5, user: meagan)
+Upvote.create!(restaurant: chinese_rest5, user: rebecca)
+Upvote.create!(restaurant: chinese_rest6, user: poyan)
+Upvote.create!(restaurant: chinese_rest7, user: poyan)
+Upvote.create!(restaurant: chinese_rest7, user: meagan)
+Upvote.create!(restaurant: chinese_rest7, user: rebecca)
+Upvote.create!(restaurant: chinese_rest8, user: rebecca)
+Upvote.create!(restaurant: chinese_rest8, user: poyan)
+Upvote.create!(restaurant: chinese_rest9, user: meagan)
+Upvote.create!(restaurant: chinese_rest10, user: poyan)
+
+puts "Creating upvotes for Greek restaurants"
+Upvote.create!(restaurant: greek_rest1, user: kahina)
+Upvote.create!(restaurant: greek_rest1, user: francesca)
+Upvote.create!(restaurant: greek_rest1, user: erika)
+Upvote.create!(restaurant: greek_rest2, user: kahina)
+Upvote.create!(restaurant: greek_rest2, user: francesca)
+Upvote.create!(restaurant: greek_rest2, user: erika)
+Upvote.create!(restaurant: greek_rest3, user: kahina)
+Upvote.create!(restaurant: greek_rest3, user: francesca)
+Upvote.create!(restaurant: greek_rest3, user: erika)
+Upvote.create!(restaurant: greek_rest4, user: francesca)
+Upvote.create!(restaurant: greek_rest5, user: francesca)
+Upvote.create!(restaurant: greek_rest5, user: erika)
+Upvote.create!(restaurant: greek_rest6, user: kahina)
+Upvote.create!(restaurant: greek_rest7, user: kahina)
+Upvote.create!(restaurant: greek_rest7, user: francesca)
+Upvote.create!(restaurant: greek_rest7, user: erika)
+Upvote.create!(restaurant: greek_rest8, user: erika)
+Upvote.create!(restaurant: greek_rest8, user: kahina)
+Upvote.create!(restaurant: greek_rest9, user: francesca)
+Upvote.create!(restaurant: greek_rest10, user: kahina)
+
+puts "Creating upvotes for Mexican restaurants"
+Upvote.create!(restaurant: mexican_rest1, user: alexander)
+Upvote.create!(restaurant: mexican_rest1, user: millie)
+Upvote.create!(restaurant: mexican_rest1, user: arthur)
+Upvote.create!(restaurant: mexican_rest2, user: alexander)
+Upvote.create!(restaurant: mexican_rest2, user: millie)
+Upvote.create!(restaurant: mexican_rest2, user: arthur)
+Upvote.create!(restaurant: mexican_rest3, user: alexander)
+Upvote.create!(restaurant: mexican_rest3, user: millie)
+Upvote.create!(restaurant: mexican_rest3, user: arthur)
+Upvote.create!(restaurant: mexican_rest4, user: millie)
+Upvote.create!(restaurant: mexican_rest5, user: millie)
+Upvote.create!(restaurant: mexican_rest5, user: arthur)
+Upvote.create!(restaurant: mexican_rest6, user: alexander)
+Upvote.create!(restaurant: mexican_rest7, user: alexander)
+Upvote.create!(restaurant: mexican_rest7, user: millie)
+Upvote.create!(restaurant: mexican_rest7, user: arthur)
+Upvote.create!(restaurant: mexican_rest8, user: arthur)
+Upvote.create!(restaurant: mexican_rest8, user: alexander)
+Upvote.create!(restaurant: mexican_rest9, user: millie)
+
+puts "Creating upvotes for Korean restaurants"
+Upvote.create!(restaurant: korean_rest1, user: miguel)
+Upvote.create!(restaurant: korean_rest1, user: choong)
+Upvote.create!(restaurant: korean_rest2, user: miguel)
+Upvote.create!(restaurant: korean_rest2, user: choong)
+Upvote.create!(restaurant: korean_rest2, user: ryan)
+Upvote.create!(restaurant: korean_rest3, user: miguel)
+Upvote.create!(restaurant: korean_rest3, user: choong)
+Upvote.create!(restaurant: korean_rest3, user: ryan)
+Upvote.create!(restaurant: korean_rest4, user: choong)
+Upvote.create!(restaurant: korean_rest5, user: choong)
+Upvote.create!(restaurant: korean_rest5, user: ryan)
+Upvote.create!(restaurant: korean_rest6, user: miguel)
+
+
+puts "Creating upvotes for Middle-Eastern restaurants"
+Upvote.create!(restaurant: middle_eastern_rest1, user: michel)
+Upvote.create!(restaurant: middle_eastern_rest1, user: boran)
+Upvote.create!(restaurant: middle_eastern_rest1, user: stephane)
+Upvote.create!(restaurant: middle_eastern_rest2, user: michel)
+Upvote.create!(restaurant: middle_eastern_rest2, user: boran)
+Upvote.create!(restaurant: middle_eastern_rest2, user: stephane)
+Upvote.create!(restaurant: middle_eastern_rest3, user: michel)
+Upvote.create!(restaurant: middle_eastern_rest3, user: boran)
+Upvote.create!(restaurant: middle_eastern_rest3, user: stephane)
+Upvote.create!(restaurant: middle_eastern_rest4, user: boran)
+Upvote.create!(restaurant: middle_eastern_rest5, user: boran)
+Upvote.create!(restaurant: middle_eastern_rest5, user: stephane)
+Upvote.create!(restaurant: middle_eastern_rest6, user: michel)
+Upvote.create!(restaurant: middle_eastern_rest7, user: michel)
+Upvote.create!(restaurant: middle_eastern_rest7, user: boran)
+Upvote.create!(restaurant: middle_eastern_rest7, user: stephane)
+
+
+puts "Creating upvotes for French restaurants"
+Upvote.create!(restaurant: french_rest1, user: lenoy)
+Upvote.create!(restaurant: french_rest1, user: cloe)
+Upvote.create!(restaurant: french_rest1, user: mg)
+Upvote.create!(restaurant: french_rest2, user: lenoy)
+Upvote.create!(restaurant: french_rest2, user: cloe)
+Upvote.create!(restaurant: french_rest2, user: mg)
+Upvote.create!(restaurant: french_rest3, user: lenoy)
+Upvote.create!(restaurant: french_rest3, user: cloe)
+Upvote.create!(restaurant: french_rest3, user: mg)
+Upvote.create!(restaurant: french_rest4, user: cloe)
+Upvote.create!(restaurant: french_rest5, user: cloe)
+Upvote.create!(restaurant: french_rest5, user: mg)
+Upvote.create!(restaurant: french_rest6, user: lenoy)
+Upvote.create!(restaurant: french_rest7, user: lenoy)
+Upvote.create!(restaurant: french_rest7, user: cloe)
+Upvote.create!(restaurant: french_rest7, user: mg)
+
+
+
+
+#Favorite restaurants bu user
+puts "Creating favorite restaurants for Debora"
+Favorite.create!(restaurant: indian_rest1, user: debora)
+Favorite.create!(restaurant: indian_rest2, user: debora)
+Favorite.create!(restaurant: indian_rest3, user: debora)
+Favorite.create!(restaurant: korean_rest2, user: debora)
+Favorite.create!(restaurant: port_rest1, user: debora)
+Favorite.create!(restaurant: port_rest3, user: debora)
+Favorite.create!(restaurant: port_rest3, user: debora)
+Favorite.create!(restaurant: french_rest3, user: debora)
+Favorite.create!(restaurant: mexican_rest2, user: debora)
+Favorite.create!(restaurant: greek_rest3, user: debora)
+Favorite.create!(restaurant: middle_eastern_rest1, user: debora)
+Favorite.create!(restaurant: chinese_rest2, user: debora)
+Favorite.create!(restaurant: japan_rest1, user: debora)
+Favorite.create!(restaurant: japan_rest3, user: debora)
+
+
+puts "Creating favorite restaurants for Nachiket"
+Favorite.create!(restaurant: indian_rest1, user: nachiket)
+Favorite.create!(restaurant: indian_rest2, user: nachiket)
+Favorite.create!(restaurant: indian_rest9, user: nachiket)
+Favorite.create!(restaurant: korean_rest2, user: nachiket)
+Favorite.create!(restaurant: port_rest1, user: nachiket)
+Favorite.create!(restaurant: chinese_rest3, user: nachiket)
+Favorite.create!(restaurant: port_rest3, user: nachiket)
+Favorite.create!(restaurant: french_rest3, user: nachiket)
+Favorite.create!(restaurant: mexican_rest2, user: nachiket)
+Favorite.create!(restaurant: greek_rest3, user: nachiket)
+Favorite.create!(restaurant: middle_eastern_rest3, user: nachiket)
+Favorite.create!(restaurant: chinese_rest2, user: nachiket)
+Favorite.create!(restaurant: japan_rest5, user: nachiket)
+Favorite.create!(restaurant: japan_rest2, user: nachiket)
+
+puts "Creating favorite restaurants for Lea"
+Favorite.create!(restaurant: greek_rest1, user: lea)
+Favorite.create!(restaurant: indian_rest2, user: lea)
+Favorite.create!(restaurant: indian_rest5, user: lea)
+Favorite.create!(restaurant: korean_rest2, user: lea)
+Favorite.create!(restaurant: port_rest1, user: lea)
+Favorite.create!(restaurant: port_rest3, user: lea)
+Favorite.create!(restaurant: port_rest3, user: lea)
+Favorite.create!(restaurant: french_rest3, user: lea)
+Favorite.create!(restaurant: mexican_rest2, user: lea)
+Favorite.create!(restaurant: greek_rest5, user: lea)
+Favorite.create!(restaurant: middle_eastern_rest3, user: lea)
+Favorite.create!(restaurant: chinese_rest3, user: lea)
+Favorite.create!(restaurant: japan_rest2, user: lea)
+Favorite.create!(restaurant: japan_rest3, user: lea)
+
+
+puts "Creating favorite restaurants for Wince"
+Favorite.create!(restaurant: french_rest1, user: wince)
+Favorite.create!(restaurant: french_rest2, user: wince)
+Favorite.create!(restaurant: indian_rest5, user: wince)
+Favorite.create!(restaurant: korean_rest2, user: wince)
+Favorite.create!(restaurant: chinese_rest1, user: wince)
+Favorite.create!(restaurant: japan_rest3, user: wince)
+Favorite.create!(restaurant: korean_rest3, user: wince)
+Favorite.create!(restaurant: french_rest3, user: wince)
+Favorite.create!(restaurant: mexican_rest2, user: wince)
+Favorite.create!(restaurant: greek_rest5, user: wince)
+Favorite.create!(restaurant: middle_eastern_rest3, user: wince)
+Favorite.create!(restaurant: chinese_rest3, user: wince)
+Favorite.create!(restaurant: japan_rest5, user: wince)
+Favorite.create!(restaurant: japan_rest7, user: wince)
+
+
+puts "Creating favorite restaurants for Timothy"
+Favorite.create!(restaurant: japan_rest1, user: timothy)
+Favorite.create!(restaurant: middle_eastern_rest2, user: timothy)
+Favorite.create!(restaurant: greek_rest5, user: timothy)
+Favorite.create!(restaurant: korean_rest2, user: timothy)
+Favorite.create!(restaurant: chinese_rest1, user: timothy)
+Favorite.create!(restaurant: japan_rest3, user: timothy)
+Favorite.create!(restaurant: korean_rest5, user: timothy)
+Favorite.create!(restaurant: french_rest7, user: timothy)
+Favorite.create!(restaurant: mexican_rest5, user: timothy)
+Favorite.create!(restaurant: greek_rest8, user: timothy)
+Favorite.create!(restaurant: middle_eastern_rest7, user: timothy)
+Favorite.create!(restaurant: chinese_rest8, user: timothy)
+Favorite.create!(restaurant: japan_rest4, user: timothy)
+Favorite.create!(restaurant: japan_rest8, user: timothy)
+
+puts "Creating favorite restaurants for Kyle"
+Favorite.create!(restaurant: japan_rest1, user: timothy)
+Favorite.create!(restaurant: middle_eastern_rest2, user: timothy)
+Favorite.create!(restaurant: port_rest5, user: timothy)
+Favorite.create!(restaurant: port_rest2, user: timothy)
+Favorite.create!(restaurant: chinese_rest1, user: timothy)
+Favorite.create!(restaurant: japan_rest3, user: timothy)
+Favorite.create!(restaurant: korean_rest5, user: timothy)
+Favorite.create!(restaurant: french_rest7, user: timothy)
+Favorite.create!(restaurant: mexican_rest5, user: timothy)
+Favorite.create!(restaurant: greek_rest8, user: timothy)
+Favorite.create!(restaurant: mexican_rest7, user: timothy)
+Favorite.create!(restaurant: chinese_rest8, user: timothy)
+Favorite.create!(restaurant: japan_rest5, user: timothy)
+Favorite.create!(restaurant: japan_rest8, user: timothy)
+
+puts "Creating favorite restaurants for Aline"
+Favorite.create!(restaurant: port_rest1, user: aline)
+Favorite.create!(restaurant: middle_eastern_rest1, user: aline)
+Favorite.create!(restaurant: greek_rest5, user: aline)
+Favorite.create!(restaurant: french_rest2, user: aline)
+Favorite.create!(restaurant: chinese_rest1, user: aline)
+Favorite.create!(restaurant: japan_rest3, user: aline)
+Favorite.create!(restaurant: korean_rest5, user: aline)
+Favorite.create!(restaurant: french_rest7, user: aline)
+Favorite.create!(restaurant: mexican_rest5, user: aline)
+Favorite.create!(restaurant: mexican_rest8, user: aline)
+Favorite.create!(restaurant: middle_eastern_rest7, user: aline)
+Favorite.create!(restaurant: chinese_rest8, user: aline)
+Favorite.create!(restaurant: port_rest4, user: aline)
+Favorite.create!(restaurant: port_rest8, user: aline)
+
+
+puts "Creating favorite restaurants for thomas"
+Favorite.create!(restaurant: port_rest2, user: thomas)
+Favorite.create!(restaurant: middle_eastern_rest3, user: thomas)
+Favorite.create!(restaurant: greek_rest1, user: thomas)
+Favorite.create!(restaurant: french_rest3, user: thomas)
+Favorite.create!(restaurant: chinese_rest2, user: thomas)
+Favorite.create!(restaurant: greek_rest3, user: thomas)
+Favorite.create!(restaurant: korean_rest1, user: thomas)
+Favorite.create!(restaurant: french_rest5, user: thomas)
+Favorite.create!(restaurant: mexican_rest2, user: thomas)
+Favorite.create!(restaurant: mexican_rest1, user: thomas)
+Favorite.create!(restaurant: middle_eastern_rest1, user: thomas)
+Favorite.create!(restaurant: chinese_rest8, user: thomas)
+Favorite.create!(restaurant: port_rest5, user: thomas)
+Favorite.create!(restaurant: port_rest7, user: thomas)
+
+
+puts "Creating favorite restaurants for Junior"
+Favorite.create!(restaurant: port_rest1, user: junior)
+Favorite.create!(restaurant: middle_eastern_rest2, user: junior)
+Favorite.create!(restaurant: greek_rest7, user: junior)
+Favorite.create!(restaurant: french_rest3, user: junior)
+Favorite.create!(restaurant: chinese_rest8, user: junior)
+Favorite.create!(restaurant: japan_rest2, user: junior)
+Favorite.create!(restaurant: korean_rest2, user: junior)
+Favorite.create!(restaurant: french_rest7, user: junior)
+Favorite.create!(restaurant: mexican_rest5, user: junior)
+Favorite.create!(restaurant: mexican_rest8, user: junior)
+Favorite.create!(restaurant: middle_eastern_rest7, user: junior)
+Favorite.create!(restaurant: chinese_rest8, user: junior)
+Favorite.create!(restaurant: port_rest2, user: junior)
+Favorite.create!(restaurant: port_rest3, user: junior)
+
+
+puts "Creating favorite restaurants for Ekaterina"
+Favorite.create!(restaurant: italian_rest1, user: ekaterina)
+Favorite.create!(restaurant: middle_eastern_rest2, user: ekaterina)
+Favorite.create!(restaurant: greek_rest1, user: ekaterina)
+Favorite.create!(restaurant: french_rest1, user: ekaterina)
+Favorite.create!(restaurant: chinese_rest1, user: ekaterina)
+Favorite.create!(restaurant: chinese_rest3, user: ekaterina)
+Favorite.create!(restaurant: mexican_rest5, user: ekaterina)
+Favorite.create!(restaurant: french_rest7, user: ekaterina)
+Favorite.create!(restaurant: mexican_rest7, user: ekaterina)
+Favorite.create!(restaurant: port_rest8, user: ekaterina)
+Favorite.create!(restaurant: middle_eastern_rest3, user: ekaterina)
+Favorite.create!(restaurant: chinese_rest5, user: ekaterina)
+Favorite.create!(restaurant: italian_rest4, user: ekaterina)
+Favorite.create!(restaurant: italian_rest8, user: ekaterina)
+
+puts "Creating favorite restaurants for Emily"
+Favorite.create!(restaurant: italian_rest1, user: emily)
+Favorite.create!(restaurant: port_rest1, user: emily)
+Favorite.create!(restaurant: greek_rest5, user: emily)
+Favorite.create!(restaurant: french_rest2, user: emily)
+Favorite.create!(restaurant: chinese_rest2, user: emily)
+Favorite.create!(restaurant: japan_rest8, user: emily)
+Favorite.create!(restaurant: korean_rest3, user: emily)
+Favorite.create!(restaurant: french_rest2, user: emily)
+Favorite.create!(restaurant: mexican_rest5, user: emily)
+Favorite.create!(restaurant: indian_rest8, user: emily)
+Favorite.create!(restaurant: middle_eastern_rest7, user: emily)
+Favorite.create!(restaurant: greek_rest3, user: emily)
+Favorite.create!(restaurant: italian_rest2, user: emily)
+Favorite.create!(restaurant: italian_rest5, user: emily)
+
+puts "Creating favorite restaurants for Nirali"
+Favorite.create!(restaurant: italian_rest5, user: nirali)
+Favorite.create!(restaurant: port_rest3, user: nirali)
+Favorite.create!(restaurant: indian_rest5, user: nirali)
+Favorite.create!(restaurant: french_rest2, user: nirali)
+Favorite.create!(restaurant: chinese_rest1, user: nirali)
+Favorite.create!(restaurant: japan_rest8, user: nirali)
+Favorite.create!(restaurant: korean_rest2, user: nirali)
+Favorite.create!(restaurant: french_rest2, user: nirali)
+Favorite.create!(restaurant: indian_rest5, user: nirali)
+Favorite.create!(restaurant: indian_rest8, user: nirali)
+Favorite.create!(restaurant: middle_eastern_rest7, user: nirali)
+Favorite.create!(restaurant: greek_rest2, user: nirali)
+Favorite.create!(restaurant: italian_rest7, user: nirali)
+Favorite.create!(restaurant: italian_rest8, user: nirali)
+
+puts "Creating favorite restaurants for Poyan"
+Favorite.create!(restaurant: chinese_rest5, user: poyan)
+Favorite.create!(restaurant: port_rest3, user: poyan)
+Favorite.create!(restaurant: indian_rest5, user: poyan)
+Favorite.create!(restaurant: middle_eastern_rest2, user: poyan)
+Favorite.create!(restaurant: chinese_rest1, user: poyan)
+Favorite.create!(restaurant: japan_rest8, user: poyan)
+Favorite.create!(restaurant: korean_rest2, user: poyan)
+Favorite.create!(restaurant: french_rest2, user: poyan)
+Favorite.create!(restaurant: japan_rest5, user: poyan)
+Favorite.create!(restaurant: indian_rest8, user: poyan)
+Favorite.create!(restaurant: middle_eastern_rest1, user: poyan)
+Favorite.create!(restaurant: greek_rest5, user: poyan)
+Favorite.create!(restaurant: chinese_rest7, user: poyan)
+Favorite.create!(restaurant: chinese_rest8, user: poyan)
+
+puts "Creating favorite restaurants for Meagan"
+Favorite.create!(restaurant: chinese_rest1, user: meagan)
+Favorite.create!(restaurant: port_rest5, user: meagan)
+Favorite.create!(restaurant: indian_rest5, user: meagan)
+Favorite.create!(restaurant: middle_eastern_rest7, user: meagan)
+Favorite.create!(restaurant: chinese_rest2, user: meagan)
+Favorite.create!(restaurant: japan_rest3, user: meagan)
+Favorite.create!(restaurant: korean_rest2, user: meagan)
+Favorite.create!(restaurant: french_rest2, user: meagan)
+Favorite.create!(restaurant: japan_rest5, user: meagan)
+Favorite.create!(restaurant: indian_rest8, user: meagan)
+Favorite.create!(restaurant: middle_eastern_rest1, user: meagan)
+Favorite.create!(restaurant: greek_rest1, user: meagan)
+Favorite.create!(restaurant: chinese_rest7, user: meagan)
+Favorite.create!(restaurant: chinese_rest3, user: meagan)
+
+puts "Creating favorite restaurants for Rebecca"
+Favorite.create!(restaurant: chinese_rest7, user: rebecca)
+Favorite.create!(restaurant: port_rest2, user: rebecca)
+Favorite.create!(restaurant: indian_rest5, user: rebecca)
+Favorite.create!(restaurant: middle_eastern_rest7, user: rebecca)
+Favorite.create!(restaurant: chinese_rest1, user: rebecca)
+Favorite.create!(restaurant: japan_rest1, user: rebecca)
+Favorite.create!(restaurant: korean_rest1, user: rebecca)
+Favorite.create!(restaurant: french_rest1, user: rebecca)
+Favorite.create!(restaurant: japan_rest5, user: rebecca)
+Favorite.create!(restaurant: indian_rest7, user: rebecca)
+Favorite.create!(restaurant: middle_eastern_rest7, user: rebecca)
+Favorite.create!(restaurant: indian_rest1, user: rebecca)
+Favorite.create!(restaurant: chinese_rest2, user: rebecca)
+Favorite.create!(restaurant: chinese_rest7, user: rebecca)
+
+puts "Creating favorite restaurants for Kahina"
+Favorite.create!(restaurant: greek_rest7, user: kahina)
+Favorite.create!(restaurant: middle_eastern_rest2, user: kahina)
+Favorite.create!(restaurant: indian_rest5, user: kahina)
+Favorite.create!(restaurant: middle_eastern_rest7, user: kahina)
+Favorite.create!(restaurant: greek_rest1, user: kahina)
+Favorite.create!(restaurant: middle_eastern_rest1, user: kahina)
+Favorite.create!(restaurant: korean_rest2, user: kahina)
+Favorite.create!(restaurant: french_rest2, user: kahina)
+Favorite.create!(restaurant: mexican_rest5, user: kahina)
+Favorite.create!(restaurant: indian_rest7, user: kahina)
+Favorite.create!(restaurant: middle_eastern_rest1, user: kahina)
+Favorite.create!(restaurant: indian_rest2, user: kahina)
+Favorite.create!(restaurant: greek_rest2, user: kahina)
+Favorite.create!(restaurant: greek_rest7, user: kahina)
+
+
+puts "Creating favorite restaurants for Francesca"
+Favorite.create!(restaurant: greek_rest1, user: francesca)
+Favorite.create!(restaurant: middle_eastern_rest2, user: francesca)
+Favorite.create!(restaurant: indian_rest5, user: francesca)
+Favorite.create!(restaurant: middle_eastern_rest7, user: francesca)
+Favorite.create!(restaurant: greek_rest5, user: francesca)
+Favorite.create!(restaurant: middle_eastern_rest1, user: francesca)
+Favorite.create!(restaurant: korean_rest2, user: francesca)
+Favorite.create!(restaurant: french_rest2, user: francesca)
+Favorite.create!(restaurant: mexican_rest5, user: francesca)
+Favorite.create!(restaurant: indian_rest7, user: francesca)
+Favorite.create!(restaurant: middle_eastern_rest1, user: francesca)
+Favorite.create!(restaurant: indian_rest2, user: francesca)
+Favorite.create!(restaurant: greek_rest8, user: francesca)
+Favorite.create!(restaurant: greek_rest3, user: francesca)
+
+
+puts "Creating favorite restaurants for Erika"
+Favorite.create!(restaurant: greek_rest1, user: erika)
+Favorite.create!(restaurant: middle_eastern_rest1, user: erika)
+Favorite.create!(restaurant: indian_rest5, user: erika)
+Favorite.create!(restaurant: middle_eastern_rest7, user: erika)
+Favorite.create!(restaurant: greek_rest5, user: erika)
+Favorite.create!(restaurant: middle_eastern_rest1, user: erika)
+Favorite.create!(restaurant: korean_rest5, user: erika)
+Favorite.create!(restaurant: french_rest3, user: erika)
+Favorite.create!(restaurant: mexican_rest5, user: erika)
+Favorite.create!(restaurant: indian_rest2, user: erika)
+Favorite.create!(restaurant: middle_eastern_rest5, user: erika)
+Favorite.create!(restaurant: indian_rest3, user: erika)
+Favorite.create!(restaurant: greek_rest8, user: erika)
+Favorite.create!(restaurant: greek_rest3, user: erika)
+
+puts "Creating favorite restaurants for Alexander"
+Favorite.create!(restaurant: mexican_rest1, user: alexander)
+Favorite.create!(restaurant: middle_eastern_rest2, user: alexander)
+Favorite.create!(restaurant: indian_rest5, user: alexander)
+Favorite.create!(restaurant: greek_rest7, user: alexander)
+Favorite.create!(restaurant: mexican_rest5, user: alexander)
+Favorite.create!(restaurant: korean_rest1, user: alexander)
+Favorite.create!(restaurant: korean_rest5, user: alexander)
+Favorite.create!(restaurant: french_rest1, user: alexander)
+Favorite.create!(restaurant: mexican_rest5, user: alexander)
+Favorite.create!(restaurant: indian_rest1, user: alexander)
+Favorite.create!(restaurant: middle_eastern_rest7, user: alexander)
+Favorite.create!(restaurant: indian_rest1, user: alexander)
+Favorite.create!(restaurant: mexican_rest8, user: alexander)
+Favorite.create!(restaurant: mexican_rest3, user: alexander)
+
+puts "Creating favorite restaurants for Millie"
+Favorite.create!(restaurant: mexican_rest1, user: millie)
+Favorite.create!(restaurant: korean_rest1, user: millie)
+Favorite.create!(restaurant: indian_rest5, user: millie)
+Favorite.create!(restaurant: korean_rest6, user: millie)
+Favorite.create!(restaurant: mexican_rest5, user: millie)
+Favorite.create!(restaurant: middle_eastern_rest1, user: millie)
+Favorite.create!(restaurant: korean_rest5, user: millie)
+Favorite.create!(restaurant: french_rest3, user: millie)
+Favorite.create!(restaurant: mexican_rest2, user: millie)
+Favorite.create!(restaurant: indian_rest2, user: millie)
+Favorite.create!(restaurant: greek_rest5, user: millie)
+Favorite.create!(restaurant: indian_rest3, user: millie)
+Favorite.create!(restaurant: mexican_rest8, user: millie)
+Favorite.create!(restaurant: mexican_rest3, user: millie)
+
+puts "Creating favorite restaurants for Arthur"
+Favorite.create!(restaurant: mexican_rest7, user: arthur)
+Favorite.create!(restaurant: korean_rest1, user: arthur)
+Favorite.create!(restaurant: indian_rest3, user: arthur)
+Favorite.create!(restaurant: korean_rest6, user: arthur)
+Favorite.create!(restaurant: mexican_rest5, user: arthur)
+Favorite.create!(restaurant: middle_eastern_rest1, user: arthur)
+Favorite.create!(restaurant: korean_rest5, user: arthur)
+Favorite.create!(restaurant: french_rest3, user: arthur)
+Favorite.create!(restaurant: mexican_rest2, user: arthur)
+Favorite.create!(restaurant: indian_rest8, user: arthur)
+Favorite.create!(restaurant: greek_rest8, user: arthur)
+Favorite.create!(restaurant: port_rest3, user: arthur)
+Favorite.create!(restaurant: mexican_rest8, user: arthur)
+Favorite.create!(restaurant: mexican_rest3, user: arthur)
+
+
+puts "Creating favorite restaurants for Miguel"
+Favorite.create!(restaurant: korean_rest1, user: miguel)
+Favorite.create!(restaurant: korean_rest2, user: miguel)
+Favorite.create!(restaurant: indian_rest1, user: miguel)
+Favorite.create!(restaurant: korean_rest6, user: miguel)
+Favorite.create!(restaurant: korean_rest5, user: miguel)
+Favorite.create!(restaurant: middle_eastern_rest1, user: miguel)
+Favorite.create!(restaurant: korean_rest5, user: miguel)
+Favorite.create!(restaurant: french_rest3, user: miguel)
+Favorite.create!(restaurant: italian_rest2, user: miguel)
+Favorite.create!(restaurant: indian_rest8, user: miguel)
+Favorite.create!(restaurant: chinese_rest2, user: miguel)
+Favorite.create!(restaurant: port_rest2, user: miguel)
+Favorite.create!(restaurant: chinese_rest8, user: miguel)
+Favorite.create!(restaurant: korean_rest3, user: miguel)
+
+puts "Creating favorite restaurants for Choong"
+Favorite.create!(restaurant: korean_rest1, user: choong)
+Favorite.create!(restaurant: korean_rest2, user: choong)
+Favorite.create!(restaurant: indian_rest8, user: choong)
+Favorite.create!(restaurant: korean_rest6, user: choong)
+Favorite.create!(restaurant: korean_rest5, user: choong)
+Favorite.create!(restaurant: middle_eastern_rest7, user: choong)
+Favorite.create!(restaurant: korean_rest5, user: choong)
+Favorite.create!(restaurant: french_rest2, user: choong)
+Favorite.create!(restaurant: italian_rest1, user: choong)
+Favorite.create!(restaurant: indian_rest7, user: choong)
+Favorite.create!(restaurant: chinese_rest3, user: choong)
+Favorite.create!(restaurant: port_rest1, user: choong)
+Favorite.create!(restaurant: chinese_rest8, user: choong)
+Favorite.create!(restaurant: korean_rest3, user: choong)
+
+puts "Creating favorite restaurants for Ryan"
+Favorite.create!(restaurant: korean_rest1, user: ryan)
+Favorite.create!(restaurant: korean_rest2, user: ryan)
+Favorite.create!(restaurant: indian_rest7, user: ryan)
+Favorite.create!(restaurant: korean_rest6, user: ryan)
+Favorite.create!(restaurant: mexican_rest5, user: ryan)
+Favorite.create!(restaurant: middle_eastern_rest3, user: ryan)
+Favorite.create!(restaurant: korean_rest5, user: ryan)
+Favorite.create!(restaurant: french_rest2, user: ryan)
+Favorite.create!(restaurant: japan_rest2, user: ryan)
+Favorite.create!(restaurant: indian_rest8, user: ryan)
+Favorite.create!(restaurant: chinese_rest2, user: ryan)
+Favorite.create!(restaurant: port_rest2, user: ryan)
+Favorite.create!(restaurant: chinese_rest8, user: ryan)
+Favorite.create!(restaurant: korean_rest3, user: ryan)
+
+puts "Creating favorite restaurants for Michel"
+Favorite.create!(restaurant: middle_eastern_rest1, user: michel)
+Favorite.create!(restaurant: middle_eastern_rest2, user: michel)
+Favorite.create!(restaurant: indian_rest7, user: michel)
+Favorite.create!(restaurant: middle_eastern_rest7, user: michel)
+Favorite.create!(restaurant: mexican_rest5, user: michel)
+Favorite.create!(restaurant: korean_rest3, user: michel)
+Favorite.create!(restaurant: middle_eastern_rest5, user: michel)
+Favorite.create!(restaurant: french_rest2, user: michel)
+Favorite.create!(restaurant: japan_rest2, user: michel)
+Favorite.create!(restaurant: indian_rest8, user: michel)
+Favorite.create!(restaurant: chinese_rest2, user: michel)
+Favorite.create!(restaurant: port_rest2, user: michel)
+Favorite.create!(restaurant: chinese_rest8, user: michel)
+Favorite.create!(restaurant: middle_eastern_rest3, user: michel)
+
+
+puts "Creating favorite restaurants for Boran"
+Favorite.create!(restaurant: middle_eastern_rest1, user: boran)
+Favorite.create!(restaurant: middle_eastern_rest2, user: boran)
+Favorite.create!(restaurant: korean_rest5, user: boran)
+Favorite.create!(restaurant: greek_rest7, user: boran)
+Favorite.create!(restaurant: mexican_rest5, user: boran)
+Favorite.create!(restaurant: korean_rest3, user: boran)
+Favorite.create!(restaurant: middle_eastern_rest5, user: boran)
+Favorite.create!(restaurant: french_rest2, user: boran)
+Favorite.create!(restaurant: japan_rest2, user: boran)
+Favorite.create!(restaurant: indian_rest8, user: boran)
+Favorite.create!(restaurant: chinese_rest2, user: boran)
+Favorite.create!(restaurant: port_rest2, user: boran)
+Favorite.create!(restaurant: chinese_rest2, user: boran)
+Favorite.create!(restaurant: middle_eastern_rest3, user: boran)
+
+puts "Creating favorite restaurants for Stephane"
+Favorite.create!(restaurant: middle_eastern_rest1, user: stephane)
+Favorite.create!(restaurant: french_rest2, user: stephane)
+Favorite.create!(restaurant: korean_rest5, user: stephane)
+Favorite.create!(restaurant: greek_rest7, user: stephane)
+Favorite.create!(restaurant: greek_rest5, user: stephane)
+Favorite.create!(restaurant: korean_rest3, user: stephane)
+Favorite.create!(restaurant: japan_rest5, user: stephane)
+Favorite.create!(restaurant: french_rest2, user: stephane)
+Favorite.create!(restaurant: japan_rest2, user: stephane)
+Favorite.create!(restaurant: french_rest7, user: stephane)
+Favorite.create!(restaurant: chinese_rest2, user: stephane)
+Favorite.create!(restaurant: port_rest7, user: stephane)
+Favorite.create!(restaurant: chinese_rest1, user: stephane)
+Favorite.create!(restaurant: middle_eastern_rest3, user: stephane)
+
+puts "Creating favorite restaurants for Stephane"
+Favorite.create!(restaurant: middle_eastern_rest1, user: stephane)
+Favorite.create!(restaurant: french_rest2, user: stephane)
+Favorite.create!(restaurant: korean_rest5, user: stephane)
+Favorite.create!(restaurant: greek_rest7, user: stephane)
+Favorite.create!(restaurant: greek_rest5, user: stephane)
+Favorite.create!(restaurant: korean_rest3, user: stephane)
+Favorite.create!(restaurant: japan_rest5, user: stephane)
+Favorite.create!(restaurant: french_rest2, user: stephane)
+Favorite.create!(restaurant: japan_rest2, user: stephane)
+Favorite.create!(restaurant: french_rest7, user: stephane)
+Favorite.create!(restaurant: chinese_rest2, user: stephane)
+Favorite.create!(restaurant: port_rest7, user: stephane)
+Favorite.create!(restaurant: chinese_rest1, user: stephane)
+Favorite.create!(restaurant: middle_eastern_rest3, user: stephane)
+
+puts "Creating favorite restaurants for Lenoy"
+Favorite.create!(restaurant: middle_eastern_rest1, user: lenoy)
+Favorite.create!(restaurant: french_rest2, user: lenoy)
+Favorite.create!(restaurant: korean_rest5, user: lenoy)
+Favorite.create!(restaurant: french_rest7, user: lenoy)
+Favorite.create!(restaurant: greek_rest5, user: lenoy)
+Favorite.create!(restaurant: korean_rest3, user: lenoy)
+Favorite.create!(restaurant: japan_rest5, user: lenoy)
+Favorite.create!(restaurant: french_rest2, user: lenoy)
+Favorite.create!(restaurant: japan_rest2, user: lenoy)
+Favorite.create!(restaurant: french_rest5, user: lenoy)
+Favorite.create!(restaurant: chinese_rest2, user: lenoy)
+Favorite.create!(restaurant: port_rest7, user: lenoy)
+Favorite.create!(restaurant: french_rest1, user: lenoy)
+Favorite.create!(restaurant: middle_eastern_rest3, user: lenoy)
+
+puts "Creating favorite restaurants for Cloe"
+Favorite.create!(restaurant: middle_eastern_rest1, user: cloe)
+Favorite.create!(restaurant: french_rest2, user: cloe)
+Favorite.create!(restaurant: korean_rest5, user: cloe)
+Favorite.create!(restaurant: french_rest7, user: cloe)
+Favorite.create!(restaurant: greek_rest5, user: cloe)
+Favorite.create!(restaurant: korean_rest3, user: cloe)
+Favorite.create!(restaurant: japan_rest5, user: cloe)
+Favorite.create!(restaurant: french_rest3, user: cloe)
+Favorite.create!(restaurant: japan_rest2, user: cloe)
+Favorite.create!(restaurant: greek_rest1, user: cloe)
+Favorite.create!(restaurant: chinese_rest2, user: cloe)
+Favorite.create!(restaurant: port_rest7, user: cloe)
+Favorite.create!(restaurant: french_rest1, user: cloe)
+Favorite.create!(restaurant: middle_eastern_rest3, user: cloe)
+
+puts "Creating favorite restaurants for Marie-Gabrielle"
+Favorite.create!(restaurant: middle_eastern_rest2, user: mg)
+Favorite.create!(restaurant: french_rest2, user: mg)
+Favorite.create!(restaurant: korean_rest1, user: mg)
+Favorite.create!(restaurant: french_rest7, user: mg)
+Favorite.create!(restaurant: greek_rest5, user: mg)
+Favorite.create!(restaurant: korean_rest3, user: mg)
+Favorite.create!(restaurant: japan_rest8, user: mg)
+Favorite.create!(restaurant: french_rest2, user: mg)
+Favorite.create!(restaurant: japan_rest1, user: mg)
+Favorite.create!(restaurant: italian_rest8, user: mg)
+Favorite.create!(restaurant: chinese_rest2, user: mg)
+Favorite.create!(restaurant: port_rest7, user: mg)
+Favorite.create!(restaurant: french_rest1, user: mg)
+Favorite.create!(restaurant: middle_eastern_rest3, user: mg)
+
+puts "Creating favorite restaurants for Martin"
+Favorite.create!(restaurant: middle_eastern_rest1, user: martin)
+Favorite.create!(restaurant: french_rest2, user: martin)
+Favorite.create!(restaurant: korean_rest5, user: martin)
+Favorite.create!(restaurant: french_rest7, user: martin)
+Favorite.create!(restaurant: greek_rest5, user: martin)
+Favorite.create!(restaurant: korean_rest3, user: martin)
+Favorite.create!(restaurant: japan_rest5, user: martin)
+Favorite.create!(restaurant: french_rest2, user: martin)
+Favorite.create!(restaurant: japan_rest2, user: martin)
+Favorite.create!(restaurant: italian_rest8, user: martin)
+Favorite.create!(restaurant: chinese_rest2, user: martin)
+Favorite.create!(restaurant: port_rest7, user: martin)
+Favorite.create!(restaurant: french_rest1, user: martin)
+Favorite.create!(restaurant: middle_eastern_rest3, user: martin)
+
+puts "Creating favorite restaurants for Nicolas"
+Favorite.create!(restaurant: middle_eastern_rest2, user: nicolas)
+Favorite.create!(restaurant: greek_rest2, user: nicolas)
+Favorite.create!(restaurant: korean_rest5, user: nicolas)
+Favorite.create!(restaurant: chinese_rest7, user: nicolas)
+Favorite.create!(restaurant: greek_rest5, user: nicolas)
+Favorite.create!(restaurant: korean_rest3, user: nicolas)
+Favorite.create!(restaurant: japan_rest1, user: nicolas)
+Favorite.create!(restaurant: french_rest2, user: nicolas)
+Favorite.create!(restaurant: japan_rest2, user: nicolas)
+Favorite.create!(restaurant: port_rest8, user: nicolas)
+Favorite.create!(restaurant: chinese_rest2, user: nicolas)
+Favorite.create!(restaurant: port_rest7, user: nicolas)
+Favorite.create!(restaurant: french_rest1, user: nicolas)
+Favorite.create!(restaurant: middle_eastern_rest1, user: nicolas)
+
+puts "Creating favorite restaurants for Richard"
+Favorite.create!(restaurant: middle_eastern_rest2, user: richard)
+Favorite.create!(restaurant: greek_rest2, user: richard)
+Favorite.create!(restaurant: korean_rest5, user: richard)
+Favorite.create!(restaurant: chinese_rest7, user: richard)
+Favorite.create!(restaurant: greek_rest5, user: richard)
+Favorite.create!(restaurant: korean_rest3, user: richard)
+Favorite.create!(restaurant: mexican_rest1, user: richard)
+Favorite.create!(restaurant: french_rest2, user: richard)
+Favorite.create!(restaurant: japan_rest2, user: richard)
+Favorite.create!(restaurant: port_rest8, user: richard)
+Favorite.create!(restaurant: greek_rest2, user: richard)
+Favorite.create!(restaurant: port_rest7, user: richard)
+Favorite.create!(restaurant: korean_rest1, user: richard)
+Favorite.create!(restaurant: greek_rest7, user: richard)
