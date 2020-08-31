@@ -1,0 +1,12 @@
+<% if restaurant.photo.attached? %>
+  <%= cl_image_tag restaurant.photo.key, crop: :fill, class: "card-image" %>
+<% else %>
+  <img class="card-image" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+<% end %>
+
+<div class="popup-inline-text">
+  <h3 style="padding-top: 2px;"><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+  <p style="font-weight: bold;"><%= restaurant.cuisine.name %></p>
+</div>
+
+<p><%= restaurant.neat_address %></p>
