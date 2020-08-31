@@ -23,6 +23,11 @@ class CuisinesController < ApplicationController
     @upvote = Upvote.new
     @tag = Tag.new
     @cuisine_restaurants = Restaurant.where(cuisine_id: params[:id].to_i)
+    @cuisine_users = User.where(cuisine_id: params[:id].to_i)
+  end
+
+  def create
+    raise
   end
 end
 
