@@ -2,7 +2,7 @@
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
 <h2>Restaurant list</h2> 
-    <div class="restaurant_card_container">
+    <div class="horizontal-scroll">
         <% @cuisine_restaurants.each do |restaurant| %>
             <% if restaurant.upvotes.length > 1 %>
                 <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
@@ -11,7 +11,7 @@
     </div>
 
 <h2>Pending restaurant, less than 10 votes</h2> 
-    <div class="restaurant_card_container">
+    <div class="horizontal-scroll">
         <% @cuisine_restaurants.each do |restaurant| %>
             <% if restaurant.upvotes.length <= 1 %>
                 <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>

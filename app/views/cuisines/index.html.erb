@@ -9,22 +9,24 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 <%# render the list of cuisines seeded in the database using partials %>
-<div class="cuisine-cards-wrapper">
+<div class="cards-wrapper">
 	<h3>Cuisine</h3>
-	<div class="cuisine_cards_container">
+	<div class="horizontal-scroll">
 		<% @cuisines.each do |cuisine| %>
-			<%= render "shared/small_cuisine_card", {cuisine: cuisine} %>
+			<div class="remove-hover-effect">
+				<%= render "shared/small_cuisine_card", {cuisine: cuisine} %>
+			</div>
 		<% end  %>
 	</div> 
 </div>
-<div class="restaurant-container-wrapper">
+<div class="vw-100">
 	<% @cuisines.each do |cuisine| %>
-		<div class="restaurant-cards-wrapper">
+		<div class="cards-wrapper">
 			<h3><%= cuisine.name %></h3>
-			<div class="restaurant_card_container">
+			<div class="horizontal-scroll">
 				<% @cuisine_restaurants[cuisine.name].each do |restaurant| %>
 					<%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-				<% end  %>
+				<% end %>
 			</div> 
 		</div>
 	<% end %>

@@ -14,25 +14,15 @@
 
 <div class= "user_bio">
   <h2>Bio</h2>
-  <p>ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+  <p><%= current_user.bio %></p>
 </div>
 
 
-<div class="cuisine-cards-wrapper">
-  <h2 style="font-weight: bold; font-size: 23px">Favorites Restaurant</h2>
-  <div class="cuisine_cards_container">
+<h2 style="font-weight: bold; font-size: 23px">Favorites Restaurant</h2>
+  <div class="restaurant_card_container">
     <% @favorites.each do |favorite| %>
-    <div class="cuisine_card">
-    	<%= cl_image_tag favorite.restaurant.photo.key  %>
-    	<h4> <%= favorite.restaurant.name %> </h4>
-    	<p><%=favorite.restaurant.neat_address %></p>
-
-
-
-
-    </div>
+      <%= render "shared/medium_restaurant_card", {restaurant: favorite.restaurant} %>
     <% end %>
-  </div> 
-</div>
+  </div>
 <div class= "profile_small"> </div>
 	<!-- Recently upvoted restaurant cards -->

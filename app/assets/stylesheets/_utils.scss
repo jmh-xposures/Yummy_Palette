@@ -1,0 +1,30 @@
+.fas {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+  
+.checked {
+    color: orange;
+}
+
+.far {
+    color: red;
+}
+
+.cards-wrapper {
+    width: 100vw;
+    margin: 10px;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+    div {
+        margin-right: 8px;
+    }
+}
+
+.remove-hover-effect a:hover {
+    text-decoration: none !important;
+}
