@@ -1,29 +1,76 @@
-<h1>Welcome to a specific cuisine page</h1>
+<% if @cuisine.photo.attached? %>
+    <%= cl_image_tag @cuisine.photo.key, crop: :fill, class: "show-page-cover" %>
+  <% else %>
+   <img class="show-page-cover" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+<% end %>
+
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
-<h2>Restaurant list</h2> 
+    <h1><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</h1>
+
+    <h2>Restaurant list</h2> 
+        <div class="horizontal-scroll">
+            <% @cuisine_restaurants.each do |restaurant| %>
+                <% if restaurant.upvotes.length > 1 %>
+                    <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+                <% end %>
+            <% end  %>
+        </div>
+    <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+
+    <h2>Pending restaurant, less than 10 votes</h2> 
+        <div class="horizontal-scroll">
+            <% @cuisine_restaurants.each do |restaurant| %>
+                <% if restaurant.upvotes.length <= 1 %>
+                    <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+                <% end %>
+            <% end  %>
+        </div>
+    <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#restaurantModal">Add a Restaurant</button>
+
+
+
+    <div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5> Add a new restaurant</h5>
+                    <%= simple_form_for([@cuisine, @restaurant]) do |f| %>
+                        <%= f.input :name, label: 'Name' %>
+                        <%= f.input :address, label: 'Address' %>
+                        <%= f.input :phone, label: 'Phone' %>
+                        <%= f.input :vegetarian, as: :radio_buttons, label: 'Vegetarian ?' %>
+                        <%= f.button :submit, class: "btn btn-primary" %>
+                    <% end %>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div> 
+                </div>
+           </div>
+        </div>
+    </div>
+<% else %>
+
+    <h1><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</h1>
+
+    <h2>Meet the experts</h2> 
     <div class="horizontal-scroll">
+        <% @cuisine_users.each do |user| %>
+            <%= render "shared/medium_avatar", {user: user} %>
+        <% end %>
+    </div>
+    <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+    
+    <h2>Restaurant list</h2>
+    <div class="restaurant_card_container_home">
         <% @cuisine_restaurants.each do |restaurant| %>
             <% if restaurant.upvotes.length > 1 %>
-                <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+                <div class="my-3">
+                    <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+                </div>
             <% end %>
         <% end  %>
-    </div>
-
-<h2>Pending restaurant, less than 10 votes</h2> 
-    <div class="horizontal-scroll">
-        <% @cuisine_restaurants.each do |restaurant| %>
-            <% if restaurant.upvotes.length <= 1 %>
-                <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-            <% end %>
-        <% end  %>
-    </div>
-
-<% else %>
-<h2>Restaurant list</h2> 
-    <% @cuisine_restaurants.each do |restaurant| %>
-        <% if restaurant.upvotes.length > 1 %>
-            <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-        <% end %>
-    <% end  %>
+    </div> 
 <% end %>

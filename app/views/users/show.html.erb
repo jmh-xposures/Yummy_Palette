@@ -19,9 +19,11 @@
 
 
 <h2 style="font-weight: bold; font-size: 23px">Favorites Restaurant</h2>
-  <div class="restaurant_card_container">
+  <div class="horizontal-scroll">
     <% @favorites.each do |favorite| %>
-      <%= render "shared/medium_restaurant_card", {restaurant: favorite.restaurant} %>
+      <%# <div class="my-3"> %>
+        <%= render "shared/medium_restaurant_card", {restaurant: favorite.restaurant} %>
+      <%# </div> %>
     <% end %>
   </div>
 <div class= "profile_small"> </div>
