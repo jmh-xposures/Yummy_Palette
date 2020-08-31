@@ -1,0 +1,33 @@
+.recommentation_card {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 16px;
+  p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+.avatar {
+  width: 56px;
+  border-radius: 50%;
+}
+
+.review-dish {
+  margin-left: 10px;
+}
+
+.expert-name {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  .cuisine-name{
+    background-color: rgba(235, 220, 135, 0.8);
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
