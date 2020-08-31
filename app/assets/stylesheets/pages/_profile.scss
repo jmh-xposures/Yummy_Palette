@@ -47,33 +47,32 @@ background-position: top;
  	font-family: dosis;
  	font-size: 20px;
  }
-.cuisine_cards_container {
+.cuisine_cards_container_1 {
   // overflow: hidden;
 
   background: white;
- overflow-x: scroll;
-overflow-y: hidden;
-white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
   
   .cuisine_card {
    display: inline-block;
    // padding: 100px;
     width:  352px;
-     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-     margin: 10px;
-      border-radius: 25px;
-      // background-image: url(https://pbs.twimg.com/profile_images/600006367815049218/GPTFe5f2_400x400.jpg);
-      // background-size: cover;
-
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 10px;
+    border-radius: 25px;
+    // background-image: url(https://pbs.twimg.com/profile_images/600006367815049218/GPTFe5f2_400x400.jpg);
+    // background-size: cover;
   }
-p {
-  width: 300px;
-}
-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+  p {
+    width: 300px;
+  }
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
 }
 
 

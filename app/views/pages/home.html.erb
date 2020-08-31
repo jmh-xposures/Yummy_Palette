@@ -33,21 +33,23 @@
 </div>
 
 <!-- cuisine index -->
-<div class="cuisine-cards-wrapper">
+<div class="cards-wrapper">
   <h2 style="font-weight: bold; font-size: 23px">Cuisines</h2>
-  <div class="cuisine_cards_container">
+  <div class="horizontal-scroll">
     <% @cuisines.each do |cuisine| %>
       <%= render "shared/small_cuisine_card", {cuisine: cuisine} %>
     <% end  %>
   </div> 
 </div>
 <!-- Recently upvoted restaurant cards -->
- <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+<hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
  
 <h2 style="margin-bottom: 0; margin-top: 20px; font-weight: bold; font-size: 23px; padding-left: 12px;">Latest Upvoted Restaurants</h2>
 
-  <div class="restaurant_card_container_home">
-    <% @restaurants.each do |restaurant| %>
-          <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-    <% end %>
-  </div>
+<div class="restaurant_card_container_home">
+  <% @restaurants.each do |restaurant| %>
+    <div class="my-3">
+      <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+    </div>
+  <% end %>
+</div>

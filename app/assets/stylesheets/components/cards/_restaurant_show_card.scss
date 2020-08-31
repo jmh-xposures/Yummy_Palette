@@ -1,0 +1,44 @@
+.restaurant-show-card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  position: relative;
+  bottom: 70px;
+  height: 200px;
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    &a:hover {
+      text-decoration: none;
+    }
+  }
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  .restaurant-show-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    padding-bottom: 10px;
+  }
+}
+
+
+.restaurant-show-container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 600px) {
+  .restaurant-show-container {
+    width: 390px;
+  }
+}

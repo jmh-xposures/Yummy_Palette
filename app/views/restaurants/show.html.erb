@@ -1,5 +1,5 @@
 <% if @restaurant.photo.attached? %>
-    <%= cl_image_tag @restaurant.photo.key, crop: :fill, class: "card-image" %>
+    <%= cl_image_tag @restaurant.photo.key, crop: :fill, class: "show-page-cover" %>
   <% else %>
    <img class="show-page-cover" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
 <% end %>
@@ -8,7 +8,7 @@
 <div class="restaurant-show-container container">
   <div class="restaurant-show-card">
 
-      <h1 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h1>
+      <h1><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h1>
       <%= link_to @cuisine.name, cuisine_path(@cuisine), class: "btn btn-ghost cuisine" %>
 
       <div class="card-restaurant-infos">
