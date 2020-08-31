@@ -28,43 +28,43 @@ indian.photo.attach(io: img_indian_cuisine, filename: 'indian_cuisine', content_
 
 
 puts "Creating Indian restaurants"
-indian_rest1 = Restaurant.create!(cuisine: indian, name: "Le 409", address: "409 Rue McGill, Montréal, Québec H2Y 0B5 Canada", phone: "1-514-750-0409")
+indian_rest1 = Restaurant.create!(cuisine: indian, name: "Le 409", address: "409 Rue McGill, Montréal", phone: "1-514-750-0409")
 img_indian_rest1 = URI.open('https://www.jeffontheroad.com/wp-content/uploads/2019/01/le-409-restaurant-montreal-menu-jeffontheroad-6.jpg')
 indian_rest1.photo.attach(io: img_indian_rest1, filename: 'Le 409', content_type: 'image/jpg')
 
-indian_rest2 = Restaurant.create!(cuisine: indian, name: "Atma", address: "3962 Boul. St-Laurent Corner Duluth Street, Montréal, Québec H2W 1Y3 Canada", phone: "1-514-798-8484")
+indian_rest2 = Restaurant.create!(cuisine: indian, name: "Atma", address: "3962 Boul. St-Laurent Corner Duluth Street, Montréal", phone: "1-514-798-8484")
 img_indian_rest2 = URI.open('https://ssmscdn.yp.ca/image/resize/25b5a82e-9b7e-4dee-8059-a1a7fd3b21a1/ypui-d-mp-pic-gal-lg/restaurant-atma-11.jpg')
 indian_rest2.photo.attach(io: img_indian_rest2, filename: 'Atma', content_type: 'image/jpg')
 
-indian_rest3 = Restaurant.create!(cuisine: indian, name: "Resto Darbar", address: "2027 St-Laurent, Montreal, Quebec H2X 2T3 Canada", phone: "1-514-982-3724")
+indian_rest3 = Restaurant.create!(cuisine: indian, name: "Resto Darbar", address: "2027 St-Laurent, Montreal", phone: "1-514-982-3724")
 img_indian_rest3 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0a/e2/09/dd/resto-darbar.jpg')
 indian_rest3.photo.attach(io: img_indian_rest3, filename: 'Resto Darbar', content_type: 'image/jpg')
 
-indian_rest4 = Restaurant.create!(cuisine: indian, name: "Le Taj", address: "2077 Stanley Street, Montreal, Quebec H3A 1R7 Canada", phone: "1-514-845-9015")
+indian_rest4 = Restaurant.create!(cuisine: indian, name: "Le Taj", address: "2077 Stanley Street, Montreal", phone: "1-514-845-9015")
 img_indian_rest4 = URI.open('https://images.squarespace-cdn.com/content/v1/5c6f00f5c46f6d367d3a67c5/1556721782452-8PAU5PHI8LZUXK7OV6XX/ke17ZwdGBToddI8pDm48kPg3kkMSlDqGprD-21e6kCJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIpppx-FWaxK7i6rVdWZNGy6SGN0ZVlswpj22aI6j1zesKMshLAGzx4R3EDFOm1kBS/3.jpg')
 indian_rest4.photo.attach(io: img_indian_rest4, filename: 'Le Taj', content_type: 'image/jpg')
 
-indian_rest5 = Restaurant.create!(cuisine: indian, name: "Chez Devi", address: "1450 Crescent St. Above St. Catherine, Qc, Montreal, Quebec H3G 2B6 Canada", phone: "1-514-286-0303")
+indian_rest5 = Restaurant.create!(cuisine: indian, name: "Chez Devi", address: "1450 Crescent St. Above St. Catherine, Qc, Montreal", phone: "1-514-286-0303")
 img_indian_rest5 = URI.open('https://ssmscdn.yp.ca/image/resize/16d4d9af-2414-45cc-a9b4-5465ec292695/ypui-d-mp-pic-gal-lg/devi-restaurant-16.jpg')
 indian_rest5.photo.attach(io: img_indian_rest5, filename: 'Chez Devi', content_type: 'image/jpg')
 
-indian_rest6 = Restaurant.create!(cuisine: indian, name: "Gandhi", address: "230 rue Saint-Paul Ouest Vieux Montreal, Montreal, Quebec H2Y 1Z9 Canada", phone: "1-514-845-5866")
+indian_rest6 = Restaurant.create!(cuisine: indian, name: "Gandhi", address: "230 rue Saint-Paul Ouest Vieux Montreal, Montreal", phone: "1-514-845-5866")
 img_indian_rest6 = URI.open('https://portal.restomontreal.ca/gandhi/gallery/images/a-restomtl-photo.jpg')
 indian_rest6.photo.attach(io: img_indian_rest6, filename: 'Gandhi', content_type: 'image/jpg')
 
-indian_rest7 = Restaurant.create!(cuisine: indian, name: "Thanjai Restaurant", address: "4759 Van Horne, Montreal, Quebec H3W 1H8 Canada", phone: "1-514-419-9696")
+indian_rest7 = Restaurant.create!(cuisine: indian, name: "Thanjai Restaurant", address: "4759 Van Horne, Montreal", phone: "1-514-419-9696")
 img_indian_rest7 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/06/8b/45/98/thanjai-restaurant.jpg')
 indian_rest7.photo.attach(io: img_indian_rest7, filename: 'Thanjai Restaurant', content_type: 'image/jpg')
 
-indian_rest8 = Restaurant.create!(cuisine: indian, name: "Restaurant Bombay Choupati", address: "5011 Boulevard Des Sources Pierrefonds, Montreal, Quebec H8Y 3E3 Canada", phone: "1-514-421-3130")
+indian_rest8 = Restaurant.create!(cuisine: indian, name: "Restaurant Bombay Choupati", address: "5011 Boulevard Des Sources Pierrefonds, Montreal", phone: "1-514-421-3130")
 img_indian_rest8 = URI.open('https://img2.10bestmedia.com/Images/Photos/222978/p-4567ky_59_330x220_201407171049.jpg')
 indian_rest8.photo.attach(io: img_indian_rest8, filename: 'Restaurant Bombay Choupati', content_type: 'image/jpg')
 
-indian_rest9 = Restaurant.create!(cuisine: indian, name: "Pushap Sweets", address: "5195 Rue Pare, Montreal, Quebec H4P 1P4 Canada", phone: "1-514-737-4527")
+indian_rest9 = Restaurant.create!(cuisine: indian, name: "Pushap Sweets", address: "5195 Rue Pare, Montreal", phone: "1-514-737-4527")
 img_indian_rest9 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/PZVDdBFH7OucjtjivzLhqA/l.jpg')
 indian_rest9.photo.attach(io: img_indian_rest9, filename: 'Pushap Sweets', content_type: 'image/jpg')
 
-indian_rest10 = Restaurant.create!(cuisine: indian, name: "Kuljit India", address: "1904 Boulevard Thimens, Montreal, Quebec H4R 1J9 Canada", phone: "1-514-745-6975")
+indian_rest10 = Restaurant.create!(cuisine: indian, name: "Kuljit India", address: "1904 Boulevard Thimens, Montreal", phone: "1-514-745-6975")
 img_indian_rest10 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/tWCjJkr8hDCRVNGPlGCLWw/l.jpg')
 indian_rest10.photo.attach(io: img_indian_rest10, filename: 'Kuljit India', content_type: 'image/jpg')
 
@@ -94,49 +94,49 @@ japanese.photo.attach(io: img_japanese_cuisine, filename: 'japanese_cuisine', co
 
 
 puts "Creating Japanese restaurants"
-japan_rest1 = Restaurant.create!(cuisine: japanese, name: "Saint Sushi Plateau", address: "424 Duluth Ave E, Montréal, Québec H2L 1A3 Canada", phone: "1-514-507-7537", vegetarian: true)
+japan_rest1 = Restaurant.create!(cuisine: japanese, name: "Saint Sushi Plateau", address: "424 Duluth Ave E, Montréal", phone: "1-514-507-7537", vegetarian: true)
 img_japan_rest1 = URI.open('https://www.montrealfooddivas.com/wp-content/uploads/2015/11/Saint-Sushi-Bar-Montreal-Restaurant-Sushi-Bar-2.jpg')
 japan_rest1.photo.attach(io: img_japan_rest1, filename: 'Saint Sushi Plateau', content_type: 'image/jpg')
 
-japan_rest2 = Restaurant.create!(cuisine: japanese, name: "Kyo Bar Japonais", address: "711 Cote de la Place d'Armes, Montréal, Québec H2Y 2X6 Canada", phone: "1-514-282-2711", vegetarian: false)
+japan_rest2 = Restaurant.create!(cuisine: japanese, name: "Kyo Bar Japonais", address: "711 Cote de la Place d'Armes, Montréal", phone: "1-514-282-2711", vegetarian: false)
 img_japan_rest2 = URI.open('https://kyobar.com/wp-content/uploads/img_1508-2000x1333.jpg')
 japan_rest2.photo.attach(io: img_japan_rest2, filename: 'Kyo Bar Japonais', content_type: 'image/jpg')
 
-japan_rest3 = Restaurant.create!(cuisine: japanese, name: "Yakato Yokabai", address: "4185 rue Drolet, Montreal, Quebec H2W 2L5 Canada", phone: "1-514-282-9991")
+japan_rest3 = Restaurant.create!(cuisine: japanese, name: "Yakato Yokabai", address: "4185 rue Drolet, Montreal", phone: "1-514-282-9991")
 img_japan_rest3 = URI.open('https://i.pinimg.com/originals/82/53/74/82537446696d12fdfdd38931399cc77f.jpg')
 japan_rest3.photo.attach(io: img_japan_rest3, filename: 'Yakato Yokabai', content_type: 'image/jpg')
 
-japan_rest4 = Restaurant.create!(cuisine: japanese, name: "Kazu", address: "1862 Saint Catherine w, Montreal, Quebec H3H 1M1 Canada", phone: "1-514-677-6338")
+japan_rest4 = Restaurant.create!(cuisine: japanese, name: "Kazu", address: "1862 Saint Catherine w, Montreal", phone: "1-514-677-6338")
 img_japan_rest4 = URI.open('https://www.destinationcentreville.com/sites/default/files/kazu1.jpg')
 japan_rest4.photo.attach(io: img_japan_rest4, filename: 'Kazu', content_type: 'image/jpg')
 
-japan_rest5 = Restaurant.create!(cuisine: japanese, name: "Jatoba", address: "1184 Phillips Place, Montreal, Quebec H3B 3C8 Canada", phone: "1-514-871-1184")
+japan_rest5 = Restaurant.create!(cuisine: japanese, name: "Jatoba", address: "1184 Phillips Place, Montreal", phone: "1-514-871-1184")
 img_japan_rest5 = URI.open('https://tastet.ca/wp-content/uploads/2019/04/jatoba-restaurant-centre-ville-montreal-35-1024x683.jpg')
 japan_rest5.photo.attach(io: img_japan_rest5, filename: 'Jatoba', content_type: 'image/jpg')
 
-japan_rest6 = Restaurant.create!(cuisine: japanese, name: "Sushi Momo Vegetalien", address: "3609 rue Saint-Denis, Montréal, Quebec H2X 3L6 Canada", phone: "1-514-6776338", vegetarian: true  )
+japan_rest6 = Restaurant.create!(cuisine: japanese, name: "Sushi Momo Vegetalien", address: "3609 rue Saint-Denis, Montréal", phone: "1-514-6776338", vegetarian: true  )
 img_japan_rest6 = URI.open('https://portal.restomontreal.ca/sushi-momo/gallery/images/19__419-2020-01-10.jpg')
 japan_rest6.photo.attach(io: img_japan_rest6, filename: 'Sushi Momo Vegetalien', content_type: 'image/jpg')
 
-japan_rest7 = Restaurant.create!(cuisine: japanese, name: "Imadake", address: "4006 rue Sainte-Catherine, Westmount, Quebec H3Z 1P2 Canada", phone: "1-514-677-6338")
+japan_rest7 = Restaurant.create!(cuisine: japanese, name: "Imadake", address: "4006 rue Sainte-Catherine, Westmount", phone: "1-514-677-6338")
 img_japan_rest7 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/t_Rw8cjz_EiGBNFhe-hUkA/l.jpg')
 japan_rest7.photo.attach(io: img_japan_rest7, filename: 'Imadake', content_type: 'image/jpg')
 
-japan_rest8 = Restaurant.create!(cuisine: japanese, name: "Sho-Dan Restaurant", address: "2020, rue Metcalfe Près du métro Peel, Near Peel Metro, Montreal, Quebec H3A 1X8 Canada", phone: "1-514-987-9987")
+japan_rest8 = Restaurant.create!(cuisine: japanese, name: "Sho-Dan Restaurant", address: "2020, rue Metcalfe Près du métro Peel, Near Peel Metro, Montreal", phone: "1-514-987-9987")
 img_japan_rest8 = URI.open('https://www.sho-dan.com/restaurants/sho-dan-metcalfe/gallery/sho-dan-plancher-principal-no2_large.jpg')
 japan_rest8.photo.attach(io: img_japan_rest8, filename: 'Sho-Dan Restaurant', content_type: 'image/jpg')
 
-japan_rest9 = Restaurant.create!(cuisine: japanese, name: "Kinka Izakaya Montreal", address: "1624 Rue Sainte-Catherine Ouest, Montreal, Quebec H3H 2S7 Canada", phone: "1-514-750-1624")
+japan_rest9 = Restaurant.create!(cuisine: japanese, name: "Kinka Izakaya Montreal", address: "1624 Rue Sainte-Catherine Ouest, Montreal", phone: "1-514-750-1624")
 img_japan_rest9 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/nHFVveLBqeiCGy12R2CnRA/l.jpg')
 japan_rest9.photo.attach(io: img_japan_rest9, filename: 'Kinka Izakaya Montreal', content_type: 'image/jpg')
 
-japan_rest10 = Restaurant.create!(cuisine: japanese, name: "Jun L", address: "156 Laurier Ave W, Montreal, Quebec H2T 2N7 Canada", phone: "1-514-276-5864")
+japan_rest10 = Restaurant.create!(cuisine: japanese, name: "Jun L", address: "156 Laurier Ave W, Montreal", phone: "1-514-276-5864")
 img_japan_rest10 = URI.open('https://images.lpcdn.ca/435x290/201804/26/1530973-jun-i-ouvert-2005-amenage.jpg')
 japan_rest10.photo.attach(io: img_japan_rest10, filename: 'Jun L', content_type: 'image/jpg')
 
 
 puts "Creating Japanese cuisine experts"
-wince = User.create!(cuisine_id: japanese.id, first_name: "Wince", last_name: "Shum", email:"wince@wagon.com" , bio:"I eat to live and I live to eat!!! Yummy Palette is my kind of app! Can't wait to discover all the amazing restaurants on this app. And since I have a weak spot for sushi, I'll make ure you know where the best spots in town are! Cheers", password:"123456")
+wince = User.create!(cuisine_id: japanese.id, first_name: "Wince", last_name: "Shum", email:"wince@wagon.com" , bio:"I eat to live and I live to eat!!! Yummy Palette is my kind of app! Can't wait to discover all the amazing restaurants on this app. And since I have a weak spot for sushi, I'll make sure you know where the best spots in town are! Cheers", password:"123456")
 wince_img = URI.open('https://avatars1.githubusercontent.com/u/61887264?v=4')
 wince.photo.attach(io: wince_img, filename: 'wince profile', content_type: 'image/jpg')
 
@@ -159,49 +159,49 @@ portuguese.photo.attach(io: img_portuguese_cuisine, filename: 'portuguese_cuisin
 
 
 puts "Creating Portuguese restaurants"
-port_rest1 = Restaurant.create!(cuisine: portuguese, name: "Helena", address: "438 McGill, Montréal, Québec H2Y 2G1", phone: "1-514-677-6338" , vegetarian: true)
+port_rest1 = Restaurant.create!(cuisine: portuguese, name: "Helena", address: "438 McGill, Montréal", phone: "1-514-677-6338" , vegetarian: true)
 img_port_rest1 = URI.open('https://images.lpcdn.ca/924x615/201210/19/601068-vue-interieure-restaurant-helena-situe.jpg')
 port_rest1.photo.attach(io: img_port_rest1, filename: 'Helena', content_type: 'image/jpg')
 
-port_rest2 = Restaurant.create!(cuisine: portuguese, name: "Ma Poule Mouillée", address: "969 Rachel Street East, Montréal, Québec H2J 2J4 Canada", phone: "1-514-522-5175", vegetarian: true)
+port_rest2 = Restaurant.create!(cuisine: portuguese, name: "Ma Poule Mouillée", address: "969 Rachel Street East, Montréal", phone: "1-514-522-5175", vegetarian: true)
 img_port_rest2 = URI.open('https://media.cntraveler.com/photos/5b6dab0d9dc0d5057c463e92/master/pass/Ma-Poule-Mouille%CC%81e_Alison-Slattery__2018_Ma-Poule-Mouillee-0004.jpg')
 port_rest2.photo.attach(io: img_port_rest2, filename: 'Ma Poule Mouillé', content_type: 'image/jpg')
 
-port_rest3 = Restaurant.create!(cuisine: portuguese, name: "Porto Mar", address: "201 Place d'Youville, Montreal, Quebec H2Y 2B3 Canada", phone: "1-514-286-5223", vegetarian: false )
+port_rest3 = Restaurant.create!(cuisine: portuguese, name: "Porto Mar", address: "201 Place d'Youville, Montreal", phone: "1-514-286-5223", vegetarian: false )
 img_port_rest3 = URI.open('https://www.bonjourquebec.com/fiche/images/800x600/2df2c04e-a787-4906-b339-912b51572415/restaurant-porto-mar-salle-a-manger.jpg')
 port_rest3.photo.attach(io: img_port_rest3, filename: 'Porto Mar', content_type: 'image/jpg')
 
-port_rest4 = Restaurant.create!(cuisine: portuguese, name: "Romados", address: "115 Rachel E, Montreal, Quebec H2W 1C8 Canada", phone: "1-514-859-1803", vegetarian: false )
+port_rest4 = Restaurant.create!(cuisine: portuguese, name: "Romados", address: "115 Rachel E, Montreal", phone: "1-514-859-1803", vegetarian: false )
 img_port_rest4 = URI.open('https://foodology.ca/wp-content/uploads/2012/05/rom0inner.jpg')
 port_rest4.photo.attach(io: img_port_rest4, filename: 'Romados', content_type: 'image/jpg')
 
-port_rest5 = Restaurant.create!(cuisine: portuguese, name: "Portus 360", address: "777, Boulevard Robert Bourassa, Montreal, Quebec H3C 3Z7 Canada", phone: "1-514-849-2070", vegetarian: false )
+port_rest5 = Restaurant.create!(cuisine: portuguese, name: "Portus 360", address: "777, Boulevard Robert Bourassa, Montreal", phone: "1-514-849-2070", vegetarian: false )
 img_port_rest5 = URI.open('https://www.debeur.com/site/uploads/news/id1273/Debeur_Portus360-625.jpg')
 port_rest5.photo.attach(io: img_port_rest5, filename: 'Portus 360', content_type: 'image/jpg')
 
-port_rest6 = Restaurant.create!(cuisine: portuguese, name: "coco rico", address: "3907 St Laurent, Montreal, Quebec H2W 1X9 Canada", phone: "1-514-849-5554", vegetarian: false)
+port_rest6 = Restaurant.create!(cuisine: portuguese, name: "coco rico", address: "3907 St Laurent, Montreal", phone: "1-514-849-5554", vegetarian: false)
 img_port_rest6 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Coco_Rico_Restaurant_Montr%C3%A9al.jpg/1280px-Coco_Rico_Restaurant_Montr%C3%A9al.jpg')
 port_rest6.photo.attach(io: img_port_rest6, filename: 'coco rico', content_type: 'image/jpg')
 
-port_rest7 = Restaurant.create!(cuisine: portuguese, name: "Chez Jose", address: "173 Avenue Duluth E, Montréal, Quebec H2W 1H4 Canada", phone: "1-514-663-2381", vegetarian: false)
+port_rest7 = Restaurant.create!(cuisine: portuguese, name: "Chez Jose", address: "173 Avenue Duluth E, Montréal", phone: "1-514-663-2381", vegetarian: false)
 img_port_rest7 = URI.open('https://i.pinimg.com/564x/9c/d0/87/9cd087017b69af74766b7c42a626e4fb.jpg')
 port_rest7.photo.attach(io: img_port_rest7, filename: 'Chez Jose', content_type: 'image/jpg')
 
-port_rest8 = Restaurant.create!(cuisine: portuguese, name: "Boca Iberica", address: "12 rue Rachel O, Montréal, Quebec H2W 1G1 Canada", phone: "1-514-507-9996", vegetarian: false)
+port_rest8 = Restaurant.create!(cuisine: portuguese, name: "Boca Iberica", address: "12 rue Rachel O, Montréal", phone: "1-514-507-9996", vegetarian: false)
 img_port_rest8 = URI.open('https://www.restomontreal.ca/media/blog/boca_iberica-18.jpg')
 port_rest8.photo.attach(io: img_port_rest8, filename: 'Boca Iberica', content_type: 'image/jpg')
 
-port_rest9 = Restaurant.create!(cuisine: portuguese, name: "Ferreira Cafe", address: "1485, Jeanne Mance Quartier des spectacles, Montreal, Quebec H2X 2J4 Canada", phone: "1-514-848-0988", vegetarian: true)
+port_rest9 = Restaurant.create!(cuisine: portuguese, name: "Ferreira Cafe", address: "1485, Jeanne Mance Quartier des spectacles, Montreal", phone: "1-514-848-0988", vegetarian: true)
 img_port_rest9 = URI.open('https://ferreiracafe.com/wp-content/uploads/2015/08/ferreira-1585-1024x683.jpg')
 port_rest9.photo.attach(io: img_port_rest9, filename: 'Ferreira Cafe', content_type: 'image/jpg')
 
-port_rest10 = Restaurant.create!(cuisine: portuguese, name: "Taverne F", address: "1108 Boulevard de Maisonneuve O, Montréal, Quebec H3A 1M7 Canada", phone: "1-514-289-4558", vegetarian: false)
+port_rest10 = Restaurant.create!(cuisine: portuguese, name: "Taverne F", address: "1108 Boulevard de Maisonneuve O, Montréal", phone: "1-514-289-4558", vegetarian: false)
 img_port_rest10 = URI.open('https://ferreiracafe.com/wp-content/uploads/2015/08/ferreira-1585-1024x683.jpg')
 port_rest10.photo.attach(io: img_port_rest10, filename: 'Taverne F', content_type: 'image/jpg')
 
 
 puts "Creating Portuguese cuisine experts"
-aline = User.create!(cuisine_id: portuguese.id, first_name: "Aline", last_name: "Gasparindo", email:"aline@wagon.com" , bio:"I am Brazilian and moved to Canada in 2015 and, here, and I felt in love with the startup world. So I am in the Tech industry loving every moment of it. On my spare time I love to learn about new cuisines and try all the wonderful tastes Montreal has to offer. Thanks to Yummy Palette community I amable to discover the very best restaurantsa from so many cuisines and help the portuguese cuisine community showcase the best restaurants in town.  ", password:"123456")
+aline = User.create!(cuisine_id: portuguese.id, first_name: "Aline", last_name: "Gasparindo", email:"aline@wagon.com" , bio:"I am Brazil in 2015 and, here, and I felt in love with the startup world. So I am in the Tech industry loving every moment of it. On my spare time I love to learn about new cuisines and try all the wonderful tastes Montreal has to offer. Thanks to Yummy Palette community I amable to discover the very best restaurantsa from so many cuisines and help the portuguese cuisine community showcase the best restaurants in town.  ", password:"123456")
 aline_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1543883446/yafaowizaho0lqfdnjlg.jpg')
 aline.photo.attach(io: aline_img, filename: 'aline profile', content_type: 'image/jpg')
 
@@ -224,43 +224,43 @@ italian.photo.attach(io: img_italian_cuisine, filename: 'italian_cuisine', conte
 
 
 puts "Creating Italian restaurants"
-italian_rest1 = Restaurant.create!(cuisine: italian, name: "La Campagnola steakhouse italien", address: "Av. Dollard 1708, Montréal, Québec H8N 1T8 Canada", phone: "1-514-363-4066", vegetarian: false)
+italian_rest1 = Restaurant.create!(cuisine: italian, name: "La Campagnola steakhouse italien", address: "Av. Dollard 1708, Montréal", phone: "1-514-363-4066", vegetarian: false)
 img_italian_rest1 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/00/5d/99/photo4jpg.jpg')
 italian_rest1.photo.attach(io: img_italian_rest1, filename: 'La Campagnola steakhouse italien', content_type: 'image/jpg')
 
-italian_rest2 = Restaurant.create!(cuisine: italian, name: "II Focolaio", address: "1223 Rue du Square-Phillips, Montréal, Québec H3B 3E9 Canada", phone: "1-514-879-1045", vegetarian: false)
+italian_rest2 = Restaurant.create!(cuisine: italian, name: "II Focolaio", address: "1223 Rue du Square-Phillips, Montréal", phone: "1-514-879-1045", vegetarian: false)
 img_italian_rest2 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/06/ca/37/60/il-focolaio-pizza.jpg')
 italian_rest2.photo.attach(io: img_italian_rest2, filename: 'II Focolaio', content_type: 'image/jpg')
 
-italian_rest3 = Restaurant.create!(cuisine: italian, name: "Bis", address: "1229 Rue de la Montagne, Montreal, Quebec H3G 1Z2 Canada", phone: "1-514-866-3234")
+italian_rest3 = Restaurant.create!(cuisine: italian, name: "Bis", address: "1229 Rue de la Montagne, Montreal", phone: "1-514-866-3234")
 img_italian_rest3 = URI.open('https://ssmscdn.yp.ca/image/resize/a5434cea-99f0-41d5-9dd0-2d1251fa72af/ypui-d-mp-pic-gal-lg/bis-ristorante-1.jpg')
 italian_rest3.photo.attach(io: img_italian_rest3, filename: 'Bis', content_type: 'image/jpg')
 
-italian_rest4 = Restaurant.create!(cuisine: italian, name: "Salumi Vino", address: "358 rue Notre Dame E., Montreal, Quebec H2Y 1C7 Canada", phone: "1-514-759-0505")
+italian_rest4 = Restaurant.create!(cuisine: italian, name: "Salumi Vino", address: "358 rue Notre Dame E., Montreal", phone: "1-514-759-0505")
 img_italian_rest4 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/s1gPQVWts756tI1a1MnHLg/l.jpg')
 italian_rest4.photo.attach(io: img_italian_rest4, filename: 'Salumi Vino', content_type: 'image/jpg')
 
-italian_rest5 = Restaurant.create!(cuisine: italian, name: "Le Serpent", address: "257 Prince, Montreal, Quebec H3C 2N4 Canada", phone: "1-514-316-4666")
+italian_rest5 = Restaurant.create!(cuisine: italian, name: "Le Serpent", address: "257 Prince, Montreal", phone: "1-514-316-4666")
 img_italian_rest5 = URI.open('https://cdn.vox-cdn.com/thumbor/2b4vIZogXpSwgBozCmaG9gkB014=/110x0:1887x1333/1200x800/filters:focal(110x0:1887x1333)/cdn.vox-cdn.com/uploads/chorus_image/image/44419426/serpentnewcomer.0.0.jpg')
 italian_rest5.photo.attach(io: img_italian_rest5, filename: 'Le Serpent', content_type: 'image/jpg')
 
-italian_rest6 = Restaurant.create!(cuisine: italian, name: "Il Campari Centro Restaurant", address: "1177 rue de la Montagne, Montreal, Quebec H3G 1Z2 Canada", phone: "1-514-868-1177")
+italian_rest6 = Restaurant.create!(cuisine: italian, name: "Il Campari Centro Restaurant", address: "1177 rue de la Montagne, Montreal", phone: "1-514-868-1177")
 img_italian_rest6 = URI.open('https://www.bonjourquebec.com/fiche/images/800x600/bc438c4d-5885-4e34-882f-ed487127da1b/il-campari-centro-interieur.jpg')
 italian_rest6.photo.attach(io: img_italian_rest6, filename: 'Il Campari Centro Restaurant', content_type: 'image/jpg')
 
-italian_rest7 = Restaurant.create!(cuisine: italian, name: "Restaurant Epik", address: "171 Rue Saint-Paul Ouest Hotel Épik Montreal, Montreal, Quebec H2Y 1Z5 Canada", phone: "1-514-842-2912")
+italian_rest7 = Restaurant.create!(cuisine: italian, name: "Restaurant Epik", address: "171 Rue Saint-Paul Ouest Hotel Épik Montreal, Montreal", phone: "1-514-842-2912")
 img_italian_rest7 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/431lD4ySuj9QjdIMLGHjug/l.jpg')
 italian_rest7.photo.attach(io: img_italian_rest7, filename: 'Restaurant Epik', content_type: 'image/jpg')
 
-italian_rest8 = Restaurant.create!(cuisine: italian, name: "Ristorante Quattro", address: "17 Notre-Dame Street West, Montreal, Quebec H2Y 1S5 Canada", phone: "1-514-903-2909")
+italian_rest8 = Restaurant.create!(cuisine: italian, name: "Ristorante Quattro", address: "17 Notre-Dame Street West, Montreal", phone: "1-514-903-2909")
 img_italian_rest8 = URI.open('https://quattrossm.com/wp-content/uploads/2016/03/Quattro_chphse_2.jpg')
 italian_rest8.photo.attach(io: img_italian_rest8, filename: 'Ristorante Quattro', content_type: 'image/jpg')
 
-italian_rest9 = Restaurant.create!(cuisine: italian, name: "Da Vinci Restaurant", address: "1180 Rue Bishop, Montreal, Quebec H3G 2E3 Canada", phone: "1-514-874-2001")
+italian_rest9 = Restaurant.create!(cuisine: italian, name: "Da Vinci Restaurant", address: "1180 Rue Bishop, Montreal", phone: "1-514-874-2001")
 img_italian_rest9 = URI.open('https://davinci.ca/wp-content/uploads/2018/07/our-story2-2018-s.jpg')
 italian_rest9.photo.attach(io: img_italian_rest9, filename: 'Da Vinci Restaurant', content_type: 'image/jpg')
 
-italian_rest10 = Restaurant.create!(cuisine: italian, name: "Le Saint-Jacques", address: "6001, de Jumonville Montreal,QC, Montreal, Quebec H1M 1R5 Canada", phone: "1-514-259-3238")
+italian_rest10 = Restaurant.create!(cuisine: italian, name: "Le Saint-Jacques", address: "6001 de Jumonville , Montreal", phone: "1-514-259-3238")
 img_italian_rest10 = URI.open('https://portal.restomontreal.ca/st-jacques/gallery/images/b-restomtl-photo.jpg')
 italian_rest10.photo.attach(io: img_italian_rest10, filename: 'Le Saint-Jacques', content_type: 'image/jpg')
 
@@ -290,43 +290,43 @@ chinese.photo.attach(io: img_chinese_cuisine, filename: 'chinese_cuisine', conte
 
 
 puts "Creating Chinese restaurants"
-chinese_rest1 = Restaurant.create!(cuisine: chinese, name: "Nouille de Lan Zhou", address: "1006 Boulevard Saint-Laurent, Montreal, Quebec H2Z 1J3 Canada", phone: "1-514-800-2959")
+chinese_rest1 = Restaurant.create!(cuisine: chinese, name: "Nouille de Lan Zhou", address: "1006 Boulevard Saint-Laurent, Montreal", phone: "1-514-800-2959")
 img_chinese_rest1 = URI.open('https://tastet.ca/wp-content/uploads/2019/09/lan-zhou-8-1024x684.jpg')
 chinese_rest1.photo.attach(io: img_chinese_rest1, filename: 'Nouille de Lan Zhou', content_type: 'image/jpg')
 
-chinese_rest2 = Restaurant.create!(cuisine: chinese, name: "Beijing", address: "92 de la Gauchetière West, Montreal, Quebec H2Z 1C1 Canada", phone: "1-514-861-2003")
+chinese_rest2 = Restaurant.create!(cuisine: chinese, name: "Beijing", address: "92 de la Gauchetière West, Montreal", phone: "1-514-861-2003")
 img_chinese_rest2 = URI.open('https://live.staticflickr.com/1340/927894247_89278e75c1_b.jpg')
 chinese_rest2.photo.attach(io: img_chinese_rest2, filename: 'Beijing', content_type: 'image/jpg')
 
-chinese_rest3 = Restaurant.create!(cuisine: chinese, name: "Noodle Factory", address: "1018, rue St-urbain, Montreal, Quebec H2Z 1K6 Canada", phone: "1-514-677-6338")
+chinese_rest3 = Restaurant.create!(cuisine: chinese, name: "Noodle Factory", address: "1018, rue St-urbain, Montreal", phone: "1-514-677-6338")
 img_chinese_rest3 = URI.open('https://images.lpcdn.ca/924x615/200809/21/9227-comptoir-protege-vitre-cuisinier-prepare.jpg')
 chinese_rest3.photo.attach(io: img_chinese_rest3, filename: 'Noodle Factory', content_type: 'image/jpg')
 
-chinese_rest4 = Restaurant.create!(cuisine: chinese, name: "Restaurant Szechuan", address: "400 rue Notre-Dame O, Montreal, Quebec H2Y 1V3 Canada", phone: "1-514-866-8000")
+chinese_rest4 = Restaurant.create!(cuisine: chinese, name: "Restaurant Szechuan", address: "400 rue Notre-Dame O, Montreal", phone: "1-514-866-8000")
 img_chinese_rest4 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/14/bd/ef/45/restaurant-szechuan.jpg')
 chinese_rest4.photo.attach(io: img_chinese_rest4, filename: 'Restaurant Szechuan', content_type: 'image/jpg')
 
-chinese_rest5 = Restaurant.create!(cuisine: chinese, name: "Kim Fung", address: "1111 Rue Saint-Urbain, Montreal, Quebec H2Z 1Y6 Canada", phone: "1-514-878-2888")
+chinese_rest5 = Restaurant.create!(cuisine: chinese, name: "Kim Fung", address: "1111 Rue Saint-Urbain, Montreal", phone: "1-514-878-2888")
 img_chinese_rest5 = URI.open('https://mobile-img.lpcdn.ca/lpca/924x/eecd3960-d63d-11e9-a65c-0eda3a42da3c.jpg')
 chinese_rest5.photo.attach(io: img_chinese_rest5, filename: 'Kim Fung', content_type: 'image/jpg')
 
-chinese_rest6 = Restaurant.create!(cuisine: chinese, name: "Chez Maxime Oriental", address: "1059 St-Laurent, Montreal, Quebec Canada", phone: "1-514-861-2888")
+chinese_rest6 = Restaurant.create!(cuisine: chinese, name: "Chez Maxime Oriental", address: "1059 St-Laurent, Montreal ", phone: "1-514-861-2888")
 img_chinese_rest6 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0d/4d/9e/8d/beautiful-interior.jpg')
 chinese_rest6.photo.attach(io: img_chinese_rest6, filename: 'Chez Maxime Oriental', content_type: 'image/jpg')
 
-chinese_rest7 = Restaurant.create!(cuisine: chinese, name: "Chez Chili", address: "1050B Rue Clark, Montreal, Quebec H2Z 1K2 Canada", phone: "1-514-904-1767")
+chinese_rest7 = Restaurant.create!(cuisine: chinese, name: "Chez Chili", address: "1050B Rue Clark, Montreal", phone: "1-514-904-1767")
 img_chinese_rest7 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/09/af/d4/5f/photo1jpg.jpg')
 chinese_rest7.photo.attach(io: img_chinese_rest7, filename: 'Chez Chili', content_type: 'image/jpg')
 
-chinese_rest8 = Restaurant.create!(cuisine: chinese, name: "Nudo", address: "1055 Saint-Laurent Boulevard, Montreal, Quebec H2Z 1J6 Canada", phone: "1-514-508-9636")
+chinese_rest8 = Restaurant.create!(cuisine: chinese, name: "Nudo", address: "1055 Saint-Laurent Boulevard, Montreal", phone: "1-514-508-9636")
 img_chinese_rest8 = URI.open('https://parjosiane.com/wp-content/uploads/2015/12/450-nudo.jpg')
 chinese_rest8.photo.attach(io: img_chinese_rest8, filename: 'Nudo', content_type: 'image/jpg')
 
-chinese_rest9 = Restaurant.create!(cuisine: chinese, name: "Fung Shing", address: "1102 St Laurent, Montreal, Quebec Canada", phone: "1-514-866-0469")
+chinese_rest9 = Restaurant.create!(cuisine: chinese, name: "Fung Shing", address: "1102 St Laurent, Montreal", phone: "1-514-866-0469")
 img_chinese_rest9 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/14/99/5d/9f/facadu-du-restaurant.jpg')
 chinese_rest9.photo.attach(io: img_chinese_rest9, filename: 'Fung Shing', content_type: 'image/jpg')
 
-chinese_rest10 = Restaurant.create!(cuisine: chinese, name: "Mai Xiang Yuan", address: "1084 Saint Laurent, Montreal, Quebec H2Z 1J5 Canada", phone: "1-514-875-1888")
+chinese_rest10 = Restaurant.create!(cuisine: chinese, name: "Mai Xiang Yuan", address: "1084 Saint Laurent, Montreal", phone: "1-514-875-1888")
 img_chinese_rest10 = URI.open('https://tastet.ca/wp-content/uploads/2019/01/mai-xiang-yuan-7-1024x684.jpg')
 chinese_rest10.photo.attach(io: img_chinese_rest10, filename: 'Mai Xiang Yuan', content_type: 'image/jpg')
 
@@ -356,43 +356,43 @@ greek.photo.attach(io: img_greek_cuisine, filename: 'greek_cuisine', content_typ
 
 
 puts "Creating Greek restaurants"
-greek_rest1 = Restaurant.create!(cuisine: greek, name: "Zante", address: "3449, Rue St-Laurent, Montreal, Quebec H2X 2T6 Canada", phone: "1-514-271-9099")
+greek_rest1 = Restaurant.create!(cuisine: greek, name: "Zante", address: "3449, Rue St-Laurent, Montreal", phone: "1-514-271-9099")
 img_greek_rest1 = URI.open('https://portal.restomontreal.ca/zante-downtown/gallery/images/02_zante_132-2017-10-31.jpg')
 greek_rest1.photo.attach(io: img_greek_rest1, filename: 'zante', content_type: 'image/jpg')
 
-greek_rest2 = Restaurant.create!(cuisine: greek, name: "Milos", address: "5357 av. du Parc Between rue St-Viateur and av. Fairmont, Montreal, Quebec H2V 4G9 Canada", phone: "1-514-272-3522")
+greek_rest2 = Restaurant.create!(cuisine: greek, name: "Milos", address: "5357 av. du Parc Between rue St-Viateur and av. Fairmont, Montreal", phone: "1-514-272-3522")
 img_greek_rest2 = URI.open('https://media-exp1.licdn.com/dms/image/C561BAQEEjeMqxhOSGw/company-background_10000/0?e=2159024400&v=beta&t=BrdJOxSwvmwgjpePXCjMeCyDn6HCRwrLp4Pe2wIAER8')
 greek_rest2.photo.attach(io: img_greek_rest2, filename: 'milos', content_type: 'image/jpg')
 
-greek_rest3 = Restaurant.create!(cuisine: greek, name: "Yia Sou Greek Grill", address: "5375 Queen Mary Road, Montreal, Quebec H3X 1V1 Canada", phone: "1-514-488-4222")
+greek_rest3 = Restaurant.create!(cuisine: greek, name: "Yia Sou Greek Grill", address: "5375 Queen Mary Road, Montreal", phone: "1-514-488-4222")
 img_greek_rest3 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0e/34/eb/0e/view-of-the-exterior.jpg')
 greek_rest3.photo.attach(io: img_greek_rest3, filename: 'yia_sou', content_type: 'image/jpg')
 
-greek_rest4 = Restaurant.create!(cuisine: greek, name: "Le Jardin De Panos", address: "521 Av Duluth E, Montreal, Quebec H2L 1A8 Canada", phone: "1-514-521-4206")
+greek_rest4 = Restaurant.create!(cuisine: greek, name: "Le Jardin De Panos", address: "521 Av Duluth E, Montreal", phone: "1-514-521-4206")
 img_greek_rest4 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/0e/34/eb/0e/view-of-the-exterior.jpg')
 greek_rest4.photo.attach(io: img_greek_rest4, filename: 'jardin_panos', content_type: 'image/jpg')
 
-greek_rest5 = Restaurant.create!(cuisine: greek, name: "Elounda", address: "1818 Boulevard de la Cote-Vertu, Montreal, Quebec H4L 2A6 Canada", phone: "1-514-331-4040")
+greek_rest5 = Restaurant.create!(cuisine: greek, name: "Elounda", address: "1818 Boulevard de la Cote-Vertu, Montreal", phone: "1-514-331-4040")
 img_greek_rest5 = URI.open('https://assets.restomontreal.ca/sites/_webfiles/r694/bg_image2.jpg?v=2c')
 greek_rest5.photo.attach(io: img_greek_rest5, filename: 'elounda', content_type: 'image/jpg')
 
-greek_rest6 = Restaurant.create!(cuisine: greek, name: "Ouzeri", address: "4690 St-Denis, Montreal, Quebec H2J 2L3 Canada", phone: "1-514-845-1336")
+greek_rest6 = Restaurant.create!(cuisine: greek, name: "Ouzeri", address: "4690 St-Denis, Montreal", phone: "1-514-845-1336")
 img_greek_rest6 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/06/b0/82/89/ouzeri.jpg')
 greek_rest6.photo.attach(io: img_greek_rest6, filename: 'ouzeri', content_type: 'image/jpg')
 
-greek_rest7 = Restaurant.create!(cuisine: greek, name: "Mythos", address: "5318 Ave Du Parc, Montreal, Quebec H2V 4G7 Canada", phone: "1-514-270-0235")
+greek_rest7 = Restaurant.create!(cuisine: greek, name: "Mythos", address: "5318 Ave Du Parc, Montreal", phone: "1-514-270-0235")
 img_greek_rest7 = URI.open('https://ssmscdn.yp.ca/image/resize/e38593cd-acdd-47ee-9f82-380f3a60b426/ypui-d-mp-pic-gal-lg/mythos-ouzeri-estiatorio-11.jpg')
 greek_rest7.photo.attach(io: img_greek_rest7, filename: 'mythos', content_type: 'image/jpg')
 
-greek_rest8 = Restaurant.create!(cuisine: greek, name: "Marven's Restaurant", address: "880 Av Ball, Montreal, Quebec H3N 1J7 Canada", phone: "1-514-277-3625")
+greek_rest8 = Restaurant.create!(cuisine: greek, name: "Marven's Restaurant", address: "880 Av Ball, Montreal", phone: "1-514-277-3625")
 img_greek_rest8 = URI.open('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/marvens-greek-restaurant-park-ex-paintings-montreal-winterscenes-hockey-art-c-spandau-streetscenes-carole-spandau.jpg')
 greek_rest8.photo.attach(io: img_greek_rest8, filename: 'marven', content_type: 'image/jpg')
 
-greek_rest9 = Restaurant.create!(cuisine: greek, name: "La Maison Grecque", address: "450 Avenue Duluth Est, Montreal, Quebec H2L 1A5 Canada", phone: "1-514-842-0969")
+greek_rest9 = Restaurant.create!(cuisine: greek, name: "La Maison Grecque", address: "450 Avenue Duluth Est, Montreal", phone: "1-514-842-0969")
 img_greek_rest9 = URI.open('http://lamaisongrecque.com/wp-content/uploads/photo-gallery/imported_from_media_libray/Meilleur-Nourriture-Grec.jpg?bwg=1570335574')
 greek_rest9.photo.attach(io: img_greek_rest9, filename: 'maison_grecque', content_type: 'image/jpg')
 
-greek_rest10 = Restaurant.create!(cuisine: greek, name: "Marathon Souvlaki", address: "5365 des Jockeys, Montreal, Quebec H4P 2T8 Canada", phone: "1-514-731-6455")
+greek_rest10 = Restaurant.create!(cuisine: greek, name: "Marathon Souvlaki", address: "5365 des Jockeys, Montreal", phone: "1-514-731-6455")
 img_greek_rest10 = URI.open('https://marathonsouvlaki.ca/wp-content/uploads/2019/12/marathon-souvlaki.jpg')
 greek_rest10.photo.attach(io: img_greek_rest10, filename: 'marathon', content_type: 'image/jpg')
 
@@ -421,39 +421,39 @@ mexican.photo.attach(io: img_mexican_cuisine, filename: 'mexican_cuisine', conte
 
 
 puts "Creating Mexican restaurants"
-mexican_rest1 = Restaurant.create!(cuisine: mexican, name: "Escondite", address: "1206, Union, Montreal, Quebec H3B 3C4 Canada", phone: "1-514-419-9755")
+mexican_rest1 = Restaurant.create!(cuisine: mexican, name: "Escondite", address: "1206, Union, Montreal", phone: "1-514-419-9755")
 img_mexican_rest1 = URI.open('https://www.bonjourquebec.com/en/listing/images/800x600/91729664-69fc-41d3-9d5d-3e7c25e068ce/escondite-montreal-rue-st-paul-o-bar.jpg')
 mexican_rest1.photo.attach(io: img_mexican_rest1, filename: 'escondite', content_type: 'image/jpg')
 
-mexican_rest2 = Restaurant.create!(cuisine: mexican, name: "Cafe Lola Rosa", address: "545 Milton, Montreal, Quebec H2X 1W5 Canada", phone: "1-514-287-9337")
+mexican_rest2 = Restaurant.create!(cuisine: mexican, name: "Cafe Lola Rosa", address: "545 Milton, Montreal", phone: "1-514-287-9337")
 img_mexican_rest2 = URI.open('https://laurenjane.files.wordpress.com/2010/11/lolarosa.jpg')
 mexican_rest2.photo.attach(io: img_mexican_rest2, filename: 'cafe_lola', content_type: 'image/jpg')
 
-mexican_rest3 = Restaurant.create!(cuisine: mexican, name: "La Capital Tacos", address: "232, Jean Talon, East, Montreal, Quebec H2R 1S7 Canada", phone: "1-514-873-5255")
+mexican_rest3 = Restaurant.create!(cuisine: mexican, name: "La Capital Tacos", address: "232, Jean Talon, East, Montreal", phone: "1-514-873-5255")
 img_mexican_rest3 = URI.open('https://i.ytimg.com/vi/zvrSdWP3fr0/maxresdefault.jpg')
 mexican_rest3.photo.attach(io: img_mexican_rest3, filename: 'capital_tacos', content_type: 'image/jpg')
 
-mexican_rest4 = Restaurant.create!(cuisine: mexican, name: "El Rey del Taco", address: "232, Jean Talon, East, Montreal, Quebec H2R 1S7 Canada", phone: "1-514-274-3336")
+mexican_rest4 = Restaurant.create!(cuisine: mexican, name: "El Rey del Taco", address: "232, Jean Talon, East, Montreal", phone: "1-514-274-3336")
 img_mexican_rest4 = URI.open('https://montrealbestfoodever.files.wordpress.com/2012/06/p10401281.jpg')
 mexican_rest4.photo.attach(io: img_mexican_rest4, filename: 'rey_del_taco', content_type: 'image/jpg')
 
-mexican_rest5 = Restaurant.create!(cuisine: mexican, name: "Restaurant El Sabor de Mexico", address: "5013 Rue Wellinton Verdun, Montreal, Quebec H4G 1Y1 Canada", phone: "1-514-362-8888")
+mexican_rest5 = Restaurant.create!(cuisine: mexican, name: "Restaurant El Sabor de Mexico", address: "5013 Rue Wellinton Verdun, Montreal", phone: "1-514-362-8888")
 img_mexican_rest5 = URI.open('https://portal.restomontreal.ca/el-sabor-de-mexico/gallery/images/40_el-sabor_409-2018-07-17.jpg')
 mexican_rest5.photo.attach(io: img_mexican_rest5, filename: 'el_sabor', content_type: 'image/jpg')
 
-mexican_rest6 = Restaurant.create!(cuisine: mexican, name: "Grumman 78 ", address: "Around Montreal 630 de Courcelle, Montreal, Quebec, Montreal, Quebec H4C 3C5 Canada", phone: "1-514-290-5125")
+mexican_rest6 = Restaurant.create!(cuisine: mexican, name: "Grumman 78 ", address: "630 de Courcelle, Montreal", phone: "1-514-290-5125")
 img_mexican_rest6 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/18/ef/6e/8f/outside-of-restaurant.jpg')
 mexican_rest6.photo.attach(io: img_mexican_rest6, filename: 'grumman', content_type: 'image/jpg')
 
-mexican_rest7 = Restaurant.create!(cuisine: mexican, name: "Escondite Drummond", address: "1224, Rue Drummond, Montreal, Quebec H3G 1V7 Canada", phone: "1-514-375-5945")
+mexican_rest7 = Restaurant.create!(cuisine: mexican, name: "Escondite Drummond", address: "1224, Rue Drummond, Montreal", phone: "1-514-375-5945")
 img_mexican_rest7 = URI.open('https://www.bonjourquebec.com/en/listing/images/800x600/e891c961-218e-4b15-aea4-c169eb711346/escondite-montreal-rue-drummond-exterieur.jpg')
 mexican_rest7.photo.attach(io: img_mexican_rest7, filename: 'esoncdite_drummond', content_type: 'image/jpg')
 
-mexican_rest8 = Restaurant.create!(cuisine: mexican, name: "La Tamalera", address: "226 Av. Fairmount o, Montreal, Quebec H2T 2M7 Canada", phone: "1-438-381-5034")
+mexican_rest8 = Restaurant.create!(cuisine: mexican, name: "La Tamalera", address: "226 Av. Fairmount o, Montreal", phone: "1-438-381-5034")
 img_mexican_rest8 = URI.open('https://www.mtlblog.com/uploads/0019e72edcd96857761da9abd33b166ad8574c0f.jpg_facebook.jpg')
 mexican_rest8.photo.attach(io: img_mexican_rest8, filename: 'tamalera', content_type: 'image/jpg')
 
-mexican_rest9 = Restaurant.create!(cuisine: mexican, name: "3 amigos", address: "1621 Saint-Denis Rue, Montreal, Quebec H2X 3K3 Canada", phone: "1-514-987-6868")
+mexican_rest9 = Restaurant.create!(cuisine: mexican, name: "3 amigos", address: "1621 Saint-Denis st, Montreal, Quebec", phone: "1-514-987-6868")
 img_mexican_rest9 = URI.open('https://media.musely.com/u/549bc0a7-3e80-4140-82f2-fcbacbe15cc4.jpg')
 mexican_rest9.photo.attach(io: img_mexican_rest9, filename: 'amigos', content_type: 'image/jpg')
 
@@ -483,27 +483,27 @@ korean.photo.attach(io: img_korean_cuisine, filename: 'korean_cuisine', content_
 
 
 puts "Creating Korean restaurants"
-korean_rest1 = Restaurant.create!(cuisine: korean, name: "Omma", address: "51 Rue Ontario O, Montréal, QC H2X 1Y8 Canada", phone: "(514) 379-1183")
+korean_rest1 = Restaurant.create!(cuisine: korean, name: "Omma", address: "51 Rue Ontario O, Montreal", phone: "(514) 379-1183")
 img_korean_rest1 = URI.open('https://media1.ledevoir.com/images_galerie/nwd_344350_229850/image.jpg')
 korean_rest1.photo.attach(io: img_korean_rest1, filename: 'omma', content_type: 'image/jpg')
 
-korean_rest2 = Restaurant.create!(cuisine: korean, name: "Sam Cha", address: "2176 A Saint-Catherine St, Montreal, Quebec H3H 1M6 Canada", phone: "(514) 932-7565")
+korean_rest2 = Restaurant.create!(cuisine: korean, name: "Sam Cha", address: "2176 A Saint-Catherine St, Montreal", phone: "(514) 932-7565")
 img_korean_rest2 = URI.open('https://images.squarespace-cdn.com/content/v1/5cbe77f87fdcb8a33b617351/1560572848903-G1Z1L765M6F5JNZM5HIQ/ke17ZwdGBToddI8pDm48kK3wSlZs07heI9EV0CdBBQx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pTKqSDRwmMK43IUI3HojJXCyjgVWUnrptCwacG-841H9fbR-hyucpqzvrb-KBUQqg/sam%2Bcha%2Batmosphere')
 korean_rest2.photo.attach(io: img_korean_rest2, filename: 'sam_cha', content_type: 'image/jpg')
 
-korean_rest3 = Restaurant.create!(cuisine: korean, name: "Daldongnae", address: "1216 Bishop St, Montreal, Quebec H3G 2E3 Canada", phone: "(514) 878-1111")
+korean_rest3 = Restaurant.create!(cuisine: korean, name: "Daldongnae", address: "1216 Bishop St, Montreal", phone: "(514) 878-1111")
 img_korean_rest3 = URI.open('https://images.squarespace-cdn.com/content/v1/5c7dd5c0af4683dd84e8f918/1551750963647-RIOXMWUER7WKK9TMCZIH/ke17ZwdGBToddI8pDm48kFyD7pzB8zoMIVY5aiUuFlp7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jG2lbcDYBOeMi4OFSYem8DMb5PTLoEDdB05UqhYu-xbnSznFxIRsaAU-3g5IaylIg/_DSC0927.jpg?format=2500w')
 korean_rest3.photo.attach(io: img_korean_rest3, filename: 'daldongnae', content_type: 'image/jpg')
 
-korean_rest4 = Restaurant.create!(cuisine: korean, name: "Chez Bong", address: "1021 St-Laurent, Montreal H2Z 1J4 Canada", phone: "(514) 396-7779")
+korean_rest4 = Restaurant.create!(cuisine: korean, name: "Chez Bong", address: "1021 Rue St-Laurent, Montreal ", phone: "(514) 396-7779")
 img_korean_rest4 = URI.open('https://media-cdn.tripadvisor.com/media/photo-p/15/36/c0/a3/photo0jpg.jpg')
 korean_rest4.photo.attach(io: img_korean_rest4, filename: 'chez_bong', content_type: 'image/jpg')
 
-korean_rest5 = Restaurant.create!(cuisine: korean, name: "Mon ami Korean BBQ", address: "1488 Saint-Catherine St W, Montreal, Quebec H3G 1S8 Canada", phone: "(514) 931-1119")
+korean_rest5 = Restaurant.create!(cuisine: korean, name: "Mon ami Korean BBQ", address: "1488 Saint-Catherine St W, Montreal", phone: "(514) 931-1119")
 img_korean_rest5 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/12/79/9f/d9/ready-for-korean-bbq.jpg')
 korean_rest5.photo.attach(io: img_korean_rest5, filename: 'mon_ami', content_type: 'image/jpg')
 
-korean_rest6 = Restaurant.create!(cuisine: korean, name: "Ganadara", address: "1862 Maisonneuve Blvd W, Montreal, Quebec H3H 1J9 Canada", phone: "(514) 933-2288")
+korean_rest6 = Restaurant.create!(cuisine: korean, name: "Ganadara", address: "1862 Maisonneuve Blvd W, Montreal", phone: "(514) 933-2288")
 img_korean_rest6 = URI.open('https://www.mcgilldaily.com/wp-content/uploads/2014/01/CULTURE_Ganadara-Cafe_Tamim-Sujat_WEB.jpg')
 korean_rest6.photo.attach(io: img_korean_rest6, filename: 'ganadara', content_type: 'image/jpg')
 
@@ -532,31 +532,31 @@ middle_eastern.photo.attach(io: img_middle_eastern_cuisine, filename: 'middle_ea
 
 
 puts "Creating Middle-Eastern restaurants"
-middle_eastern_rest1 = Restaurant.create!(cuisine: middle_eastern, name: "Trip de Bouffe", address: "277 Mont-Royal Ave E, Montreal, Quebec H2T 1P6 Canada", phone: "(438) 381-4388")
+middle_eastern_rest1 = Restaurant.create!(cuisine: middle_eastern, name: "Trip de Bouffe", address: "277 Ave Mont-Royal E, Montreal", phone: "(438) 381-4388")
 img_middle_eastern_rest1 = URI.open('https://www.mont-royal.net/image/1/987/0/uploads/site/sdamr_277_2-fr-1550502464.jpg')
 middle_eastern_rest1.photo.attach(io: img_middle_eastern_rest1, filename: 'trip_de_bouffe', content_type: 'image/jpg')
 
-middle_eastern_rest2 = Restaurant.create!(cuisine: middle_eastern, name: "Shawarmaz", address: "1206 Peel St, Montreal, Quebec H3B 2T6 Canada", phone: "(514) 431-9345")
+middle_eastern_rest2 = Restaurant.create!(cuisine: middle_eastern, name: "Shawarmaz", address: "1206 Peel St, Montreal", phone: "(514) 431-9345")
 img_middle_eastern_rest2 = URI.open('https://d1ralsognjng37.cloudfront.net/589936c7-639c-4ee9-bf5c-f4b5e298f248.jpeg')
 middle_eastern_rest2.photo.attach(io: img_middle_eastern_rest2, filename: 'shawarmaz', content_type: 'image/jpg')
 
-middle_eastern_rest3 = Restaurant.create!(cuisine: middle_eastern, name: "La Khaima", address: "142 Avenue Fairmount O, Montréal, QC H2T 2M5 Canada", phone: "(514) 948-9993")
+middle_eastern_rest3 = Restaurant.create!(cuisine: middle_eastern, name: "La Khaima", address: "142 Avenue Fairmount O, Montreal", phone: "(514) 948-9993")
 img_middle_eastern_rest3 = URI.open('https://s3.amazonaws.com/tuango2/nimblebuy/19-pour-40-de-fine-cuisine-lafrique-louest-au-restaurant-la-598011-regular.jpg')
 middle_eastern_rest3.photo.attach(io: img_middle_eastern_rest3, filename: 'khaima', content_type: 'image/jpg')
 
-middle_eastern_rest4 = Restaurant.create!(cuisine: middle_eastern, name: "Daou", address: "519 Rue Faillon E, Montréal, QC H2R 1L6 Canada", phone: "(514) 276-8310")
+middle_eastern_rest4 = Restaurant.create!(cuisine: middle_eastern, name: "Daou", address: "519 Rue Faillon E, Montreal", phone: "(514) 276-8310")
 img_middle_eastern_rest4 = URI.open('https://montreall.com/wp-content/uploads/2014/01/restaurant-daou-montreal3.jpg')
 middle_eastern_rest4.photo.attach(io: img_middle_eastern_rest4, filename: 'daou', content_type: 'image/jpg')
 
-middle_eastern_rest5 = Restaurant.create!(cuisine: middle_eastern, name: "Damas", address: "1201 Ave Van Horne, Outremont, Quebec H2V 1K4 Canada", phone: "(514) 439-5435")
+middle_eastern_rest5 = Restaurant.create!(cuisine: middle_eastern, name: "Damas", address: "1201 Ave Van Horne, Outremont", phone: "(514) 439-5435")
 img_middle_eastern_rest5 = URI.open('https://cdn.vox-cdn.com/thumbor/d8LS33YK3h5dlU9tdC_KHIgtx9c=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19604541/64211094_2511375208909067_95785879599054848_o.jpg')
 middle_eastern_rest5.photo.attach(io: img_middle_eastern_rest5, filename: 'damas', content_type: 'image/jpg')
 
-middle_eastern_rest6 = Restaurant.create!(cuisine: middle_eastern, name: "Kaza Maza", address: "4629 Park Ave, Montreal, Quebec H2V 4E4 Canada", phone: "(514) 844-6292")
+middle_eastern_rest6 = Restaurant.create!(cuisine: middle_eastern, name: "Kaza Maza", address: "4629 Park Ave, Montreal", phone: "(514) 844-6292")
 img_middle_eastern_rest6 = URI.open('https://www.accesresto.com/r_photos/res_107_2.jpg')
 middle_eastern_rest6.photo.attach(io: img_middle_eastern_rest6, filename: 'kaza_maza', content_type: 'image/jpg')
 
-middle_eastern_rest7 = Restaurant.create!(cuisine: middle_eastern, name: "Omnivore", address: "4306 St Laurent Blvd, Montreal, Quebec H2W 1Z3 Canada", phone: "(514) 303-5757")
+middle_eastern_rest7 = Restaurant.create!(cuisine: middle_eastern, name: "Omnivore", address: "4306 St Laurent Blvd, Montreal", phone: "(514) 303-5757")
 img_middle_eastern_rest7 = URI.open('https://ssmscdn.yp.ca/image/resize/ccbccf47-c4f2-4b8b-86d3-66e83cb11e72/ypui-d-mp-pic-gal-lg/omnivore-4.jpg')
 middle_eastern_rest7.photo.attach(io: img_middle_eastern_rest7, filename: 'omnivore', content_type: 'image/jpg')
 
@@ -585,31 +585,31 @@ french.photo.attach(io: img_french_cuisine, filename: 'french_cuisine', content_
 
 
 puts "Creating French restaurants"
-french_rest1 = Restaurant.create!(cuisine: french, name: "L'express", address: "3927 St Denis St, Montreal, Quebec H2W 2M4 Canada", phone: "(514) 845-5333")
+french_rest1 = Restaurant.create!(cuisine: french, name: "L'express", address: "3927 St Denis St, Montreal", phone: "(514) 845-5333")
 img_french_rest1 = URI.open('https://tastet.ca/wp-content/uploads/2018/10/restaurant-lexpress-montreal-1-1024x684.jpg')
 french_rest1.photo.attach(io: img_french_rest1, filename: 'express', content_type: 'image/jpg')
 
-french_rest2 = Restaurant.create!(cuisine: french, name: "Le Quartier Général", address: "1251 Rue Gilford, Montréal, QC H2J 1R3 Canada", phone: "(514) 658-1839")
+french_rest2 = Restaurant.create!(cuisine: french, name: "Le Quartier Général", address: "1251 Rue Gilford, Montreal", phone: "(514) 658-1839")
 img_french_rest2 = URI.open('https://cdn.vox-cdn.com/thumbor/ToZ4OHxYbTNleaQyagp8SnfYQtc=/122x0:596x356/1400x788/filters:focal(122x0:596x356):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/46814314/quartiergeneralchef.0.0.jpg')
 french_rest2.photo.attach(io: img_french_rest2, filename: 'quartier_general', content_type: 'image/jpg')
 
-french_rest3 = Restaurant.create!(cuisine: french, name: "Le Pégase", address: "1831 Rue Gilford, Montréal, QC H2H 1G7 Canada", phone: "(514) 522-0487")
+french_rest3 = Restaurant.create!(cuisine: french, name: "Le Pégase", address: "1831 Rue Gilford, Montreal", phone: "(514) 522-0487")
 img_french_rest3 = URI.open('https://lepegase.ca/rlp-content/uploads/2014/08/pegase-bouchees.jpg')
 french_rest3.photo.attach(io: img_french_rest3, filename: 'pegase', content_type: 'image/jpg')
 
-french_rest4 = Restaurant.create!(cuisine: french, name: "P'tit Plateau", address: "330 Marie-Anne St E, Montreal, Quebec H2W 1B1 Canada", phone: "(514) 282-6342")
+french_rest4 = Restaurant.create!(cuisine: french, name: "P'tit Plateau", address: "330 Marie-Anne St E, Montreal", phone: "(514) 282-6342")
 img_french_rest4 = URI.open('https://portal.restomontreal.ca/le-ptit-plateau/gallery/images/01_le-pti_190-2017-04-18.jpg')
 french_rest4.photo.attach(io: img_french_rest4, filename: 'plateau', content_type: 'image/jpg')
 
-french_rest5 = Restaurant.create!(cuisine: french, name: "Au Petit Extra", address: "1690 Ontario St E, Montreal, Quebec H2L 1S7 Canada", phone: "(514) 527-5552")
+french_rest5 = Restaurant.create!(cuisine: french, name: "Au Petit Extra", address: "1690 Rue Ontario E, Montreal", phone: "(514) 527-5552")
 img_french_rest5 = URI.open('https://scontent.bookenda.com/merchants/au-petit-extra/image/65c876b0-92be-4cac-b23e-2b709f6d39c7.png')
 french_rest5.photo.attach(io: img_french_rest5, filename: 'petit_extra', content_type: 'image/jpg')
 
-french_rest6 = Restaurant.create!(cuisine: french, name: "Le Margaux", address: "5058 Park Ave, Montreal, Quebec H2V 4G1", phone: "(514) 448-1598")
+french_rest6 = Restaurant.create!(cuisine: french, name: "Le Margaux", address: "5058 Park Ave, Montreal", phone: "(514) 448-1598")
 img_french_rest6 = URI.open('https://ssmscdn.yp.ca/image/resize/383fa596-8b8e-41ed-a791-7863567970d4/ypui-d-mp-pic-gal-lg/restaurant-le-margaux-1.jpg')
 french_rest6.photo.attach(io: img_french_rest6, filename: 'margaux', content_type: 'image/jpg')
 
-french_rest7 = Restaurant.create!(cuisine: french, name: "Chez Lévèque", address: "1030 Avenue Laurier O, Outremont, QC H2V 2K8", phone: "(514) 279-7355")
+french_rest7 = Restaurant.create!(cuisine: french, name: "Chez Lévèque", address: "1030 Avenue Laurier O, Outremont", phone: "(514) 279-7355")
 img_french_rest7 = URI.open('https://s3.amazonaws.com/tuango2/nimblebuy/59pourunmenu5servicesspecial40emeanniversairepour2aucelebreresta-768441-regular.jpg')
 french_rest7.photo.attach(io: img_french_rest7, filename: 'leveque', content_type: 'image/jpg')
 
