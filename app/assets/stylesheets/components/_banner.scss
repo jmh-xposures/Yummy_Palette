@@ -1,9 +1,32 @@
 .cover-banner {
   height: 300px;
   width: 100vw;
-  background-image: url("color_palette.jpg");
+  background-image: linear-gradient(to right, rgba(0,0,0,0.8),rgba(200,200,200,0.2)), url("color_palette.jpg");
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4);
   background-position: right center;
+  position: relative;
+}
+
+.title {
+  font-size: 80px;
+  color: rgba(240, 240, 240, 0.8);
+}
+
+#title-div {
+  position: absolute;
+  top: 50px;
+  margin: 0 auto;
+  left: 20%;
+}
+
+#title1 {
+ 
+
+}
+
+#title2 {
+
 }
 
 .cuisines-banner {
