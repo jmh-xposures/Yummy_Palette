@@ -1,0 +1,31 @@
+.add-dish-modal {
+  border-radius: 20px;
+  background:white;
+  padding: 50px;
+  height: 311px;
+  width: 376px;
+}
+
+.review-modal {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  border-radius: 20px;
+  background: white;
+  height: 436px;
+  width: 376px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  p {
+    font-size: 14px;
+    padding: 20px;
+  }
+  .review-area {
+    height: 147px;
+    width: 329px;
+  }
+}
+
+.restaurant_name {
+  margin-top: 16px;
+}
