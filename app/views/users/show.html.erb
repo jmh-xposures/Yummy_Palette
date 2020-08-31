@@ -9,8 +9,8 @@
   </div>
 </div>
 
-<h3 class= "user_name"> <strong><%= current_user.first_name %><strong></h3>
-<h4 class= "user_cuisine"> <%= Cuisine.where(id: current_user.cuisine_id).first.name %> Cuisine Expert</h4>
+<h3 class= "user_name"> <strong><%= current_user.first_name %><strong></h3> 
+<h4 class= "user_cuisine"> <%= Cuisine.where(id: current_user&.cuisine_id)&.first&.name %> Cuisine Expert</h4>
 
 <div class= "user_bio">
   <h2>Bio</h2>
