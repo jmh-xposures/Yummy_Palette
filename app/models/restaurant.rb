@@ -20,14 +20,14 @@ class Restaurant < ApplicationRecord
     global = self.all.select do |restaurant|
       cuisine_experts = restaurant.cuisine.users.count
       restaurant_upvotes = Upvote.where(restaurant: restaurant).count
-      global_threshold = 0.15
+      global_threshold = 0.5
 
-      restaurant_value = (restaurant_upvotes / global_threshold).to_f
-      restaurant_value >= global_threshold
+      upvote_percentage = (restaurant_upvotes / cuisine_experts).to_f
+      upvote_percentage >= global_threshold
     end
-    global = global.sort { |r1, r2| r1.upvotes.order(created_at: :desc).last.created_at <=> r2.upvotes.order(created_at: :desc).last.created_at }
-    # global = global[0..9] if global.length > 10
-    # global
+    global = global.sort { |r1, r2|  r2.upvotes.last.created_at <=> r1.upvotes.last.created_at }
+    global = global[0..9] if global.length > 10
+    global
   end
 
   def neat_address 
