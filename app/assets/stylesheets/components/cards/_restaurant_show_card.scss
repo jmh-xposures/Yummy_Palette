@@ -3,7 +3,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 25px;
   position: relative;
-  bottom: 70px;
+  bottom: 20px;
   height: 200px;
   h1 {
     font-size: 20px;
@@ -30,15 +30,18 @@
   }
 }
 
+//add
 
-.restaurant-show-container {
-  width: 800px;
-  margin: 0 auto;
+
+.favorite-vote {
+  display: flex;
+  justify-content: space-around;
 }
 
-
-@media (max-width: 600px) {
-  .restaurant-show-container {
-    width: 390px;
+.orange-icon {
+  padding-left: 16px;
+  padding-top: 10px;
+  img {
+    margin-right: 10px;
   }
 }
