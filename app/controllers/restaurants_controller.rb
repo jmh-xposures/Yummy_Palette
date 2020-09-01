@@ -6,6 +6,18 @@ class RestaurantsController < ApplicationController
       @cuisine = @restaurant.cuisine
   end
 
+  def index
+   @restaurants = Restaurant.all
+    if params[:query].present?
+      @restaurants = Restaurant.search_by_restaurant_or_dish(params[:query])
+    else
+      @restaurants = Restaurant.all
+    end
+  end
+
+
+
+
   def create
     @restaurant = restaurant.new(restaurant_params)
     if @restaurant.save

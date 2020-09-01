@@ -1,5 +1,17 @@
 <div class="cuisines-banner">
- 
+	<div class="search">  
+	<%= form_tag restaurants_path, method: :get do %>
+		
+		    
+		    <%= text_field_tag :query,
+		    params[:query],
+		    class: "form-control big-border-radius",
+		    placeholder: "Find a dishes"%>
+		    <%= submit_tag "Search", class: "btn btn-primary big-border-radius", id: "searchbtn" %>
+		   
+		
+	<% end %> 
+ </div>
 </div>
 
 <%# Map %>

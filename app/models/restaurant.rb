@@ -8,9 +8,21 @@ class Restaurant < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :upvotes, dependent: :destroy
   has_many :tags, dependent: :destroy
+  has_many :dishes, through: :tags
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
   validates :phone, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_restaurant_or_dish,
+    against: :name,
+     associated_against: {
+      cuisine: [:name],
+      dishes:[:name]
+     },
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
