@@ -12,12 +12,14 @@
   margin: 20px auto;
   border-radius: 20px;
   background: white;
-  height: 436px;
+  height: 350px;
   width: 376px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   p {
-    font-size: 14px;
     padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
   }
   .review-area {
     height: 147px;
@@ -26,7 +28,7 @@
 }
 
 .modal_restaurant_name {
-  margin-top: 16px;
+  margin-top: 50px;
 }
 
 .restaurant-modal{
@@ -45,3 +47,4 @@
     color: #1C6E8C;
   }
 }
+
