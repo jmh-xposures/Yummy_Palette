@@ -39,6 +39,7 @@
   background-image: url("color_palette.jpg");
   background-size: cover;
   background-position: right center;
+
   .magnifying-glass{ 
   color: #8A8A8A;
   position: absolute; 
@@ -57,5 +58,11 @@
   }
 #searchbtn {
   margin-top: 10px;
+}
 
+.specific-cuisine-banner {
+  height: 150px;
+  width: 100vw;
+  background-size: cover;
+  background-position: right center;
 }
