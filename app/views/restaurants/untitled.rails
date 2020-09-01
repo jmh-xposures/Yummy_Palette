@@ -1,0 +1,8 @@
+<h1>go habs go </h1>
+<%=current_user.email%>
+<ul>
+  <% current_user.rentals.each do |rental| %>
+    <li><%= rental#powercard %></li>
+  <% end %>
+</ul>
+	
