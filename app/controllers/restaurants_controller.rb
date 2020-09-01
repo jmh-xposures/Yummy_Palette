@@ -7,6 +7,8 @@ class RestaurantsController < ApplicationController
       @cuisine = @restaurant.cuisine
   end
 
+  
+
   def index
    @restaurants = Restaurant.all
     if params[:query].present?
