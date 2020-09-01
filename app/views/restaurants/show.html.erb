@@ -54,7 +54,7 @@
         <div class="modal fade" id="tagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content add-dish-modal">
-              <h5 class="restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
+              <h5 class="modal_restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
               <div class="modal-body">
                 <p>Add your favorite dish</p>
                 <%= simple_form_for(@dish) do |f| %>
@@ -108,7 +108,7 @@
     <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content review-modal">
-          <h5 class="restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
+          <h5 class="modal_restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
           <div class="modal-body">
             <p>Leave a review</p>
             <textarea name="review" class="form-control review-area" cols="30" rows="10"></textarea>
