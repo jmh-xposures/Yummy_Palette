@@ -1,5 +1,6 @@
-<div class="restaurant-card-container">
+<div class="restaurant-card-container grow-small">
     <div class="restaurant-card">
+        <div class="cuisine-tag"><%= restaurant.cuisine.name %></div>
         <%= link_to restaurant_path(restaurant) do %>
             <% if restaurant.photo.attached? %>
                 <%= cl_image_tag restaurant.photo.key, crop: :fill, class: "card-image" %>
@@ -7,7 +8,7 @@
                 <img class="card-image" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
             <% end %>
         <% end %>
-        <div class="cuisine_tag"><%= restaurant.cuisine.name %></div>
+        
         <div class="restaurant-card-footer">
             <div class="restaurant-card-info">
                 <h2><%= restaurant.name %></h2>

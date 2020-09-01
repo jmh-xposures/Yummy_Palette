@@ -5,11 +5,12 @@
     margin: 20px auto;
     background-image: linear-gradient(rgba(240,240,240,0.3), rgba(240,240,240,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg);
     background-size: cover;
+    overflow-x: scroll;
   }
 
   .flex-card {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin-top: 20px;
   }
 
@@ -24,11 +25,11 @@
     border-radius: 50px;
   }
 
-  .restaurant_name {
+  .modal_restaurant_name {
     text-align: center;
     font-size: 30px;
   }
-  .restaurant_name a:hover {
+  .modal_restaurant_name a:hover {
     text-decoration: none;
   }
   
@@ -41,14 +42,12 @@
     display: block;
     border: none;
   }
-
-  .best-dish-title {
-    font-size: 23px; 
-    font-weight: bold;
-  }
-  
-  //did not work
-  .add-dish-area {
+ 
+  #dish_name {
     border-radius: 20px;
-    background: red;
+    background: white;
+  }
+
+  .add-dish {
+    text-align: center;
   }

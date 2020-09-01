@@ -1,3 +1,20 @@
+.grow-small {
+transition: 0.2s;
+}
+
+.grow-small:hover {
+    transform: scale(1.05)
+}
+
+.grow {
+    transition: 0.3s;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
+
 .fas {
     padding-left: 20px;
     padding-top: 20px;

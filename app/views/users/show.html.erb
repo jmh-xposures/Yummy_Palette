@@ -9,16 +9,15 @@
   </div>
 </div>
 
-<h3 class= "user_name"> <strong><%= current_user.first_name %><strong></h3> 
+<h3 class= "user_name" style="margin-top: 112px;"> <strong><%= current_user.first_name %><strong></h3> 
 <h4 class= "user_cuisine"> <%= Cuisine.where(id: current_user&.cuisine_id)&.first&.name %> Cuisine Expert</h4>
 
 <div class= "user_bio">
-  <h2>Bio</h2>
-  <p><%= current_user.bio %></p>
+  <p style="text-align: center;"><%= current_user.bio %></p>
 </div>
 
 
-<h2 style="font-weight: bold; font-size: 23px">Favorites Restaurant</h2>
+<h2 style="font-weight: bold; font-size: 23px; text-align: center;">Favorites Restaurant</h2>
   <div class="horizontal-scroll">
     <% @favorites.each do |favorite| %>
       <%# <div class="my-3"> %>

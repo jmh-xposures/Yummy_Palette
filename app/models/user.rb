@@ -3,10 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-
-  # belongs_to :cuisine
-  
  
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -15,6 +11,10 @@ class User < ApplicationRecord
 
   has_many :following_follows, foreign_key: :follower_id , class_name: "Follow", dependent: :destroy
   has_many :follower_follows, foreign_key: :followed_id, class_name: "Follow", dependent: :destroy
+
+  belongs_to :cuisine
+  has_many :reviews
+ 
   has_many :followers, through: :follower_follows, source: "follower"
   has_many :followings, through: :following_follows, source: "followed"
   has_one_attached :photo

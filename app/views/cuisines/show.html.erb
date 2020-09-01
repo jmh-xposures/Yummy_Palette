@@ -1,69 +1,79 @@
-<% if @cuisine.photo.attached? %>
-    <%= cl_image_tag @cuisine.photo.key, crop: :fill, class: "show-page-cover" %>
-  <% else %>
-   <img class="show-page-cover" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
-<% end %>
+<div class="banner-cuisine">
+    <% if @cuisine.photo.attached? %>
+        <%= cl_image_tag @cuisine.photo.key, crop: :fill %>
+    <% else %>
+        <img src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+    <% end %>
+    <div class="background-stripe">
+        <% if current_user.cuisine_id.to_s == params[:id]%>
+            <h1><%= @cuisine.name %></h1>
+            <h2>Welcome back <%= current_user.first_name.capitalize %> !</h2>
+        <% else %>
+            <h1><%= @cuisine.name %></h1>
+        <% end %>
+    </div>
+
+</div>
 
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
-    <h1><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</h1>
-
-    <h2>Restaurant list</h2> 
-        <div class="horizontal-scroll">
-            <% @cuisine_restaurants.each do |restaurant| %>
-                <% if restaurant.upvotes.length > 1 %>
-                    <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-                <% end %>
-            <% end  %>
-        </div>
+    <p class="p-custom-css"><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</p>
+    
+    <h3 class="h3-custom-css">Restaurant list</h3> 
+    <div class="horizontal-scroll">
+        <% @global_restaurants.each do |restaurant| %>
+            <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+        <% end  %>
+    </div>
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
 
-    <h2>Pending restaurant, less than 10 votes</h2> 
+    <h3 class="h3-custom-css">Pending restaurant</h3> 
         <div class="horizontal-scroll">
-            <% @cuisine_restaurants.each do |restaurant| %>
-                <% if restaurant.upvotes.length <= 1 %>
-                    <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-                <% end %>
+            <% @pending_restaurants.each do |restaurant| %>
+                <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
             <% end  %>
         </div>
-    <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#restaurantModal">Add a Restaurant</button>
-
-
+    <div class="button-box">
+        <button type="button" class="btn-review" data-toggle="modal" data-target="#restaurantModal">Add a Restaurant</button>
+    </div>
 
     <div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content restaurant-modal">
+                <h5 class="modal_restaurant_name"> Add a new restaurant</h5>
                 <div class="modal-body">
-                    <h5> Add a new restaurant</h5>
                     <%= simple_form_for([@cuisine, @restaurant]) do |f| %>
                         <%= f.input :name, label: 'Name' %>
                         <%= f.input :address, label: 'Address' %>
                         <%= f.input :phone, label: 'Phone' %>
                         <%= f.input :vegetarian, as: :radio_buttons, label: 'Vegetarian ?' %>
-                        <%= f.button :submit, class: "btn btn-primary" %>
-                    <% end %>
+                        <%= f.input :photo, as: :file, required: true, label: "upload a picture" %>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <%= f.button :submit, class: "btn btn-primary submit-button-blue" %>
+                        <%# <button type="button" class="btn btn-secondary button" data-dismiss="modal">Cancel</button> %>
                     </div> 
+                    <% end %>
                 </div>
            </div>
         </div>
     </div>
 <% else %>
 
-    <h1><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</h1>
+    <p class="p-custom-css"><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</p>
 
-    <h2>Meet the experts</h2> 
+    <h3 class="h3-custom-css">Meet the experts</h3> 
     <div class="horizontal-scroll">
-        <% @cuisine_users.each do |user| %>
-            <%= render "shared/medium_avatar", {user: user} %>
-        <% end %>
+        <% if @cuisine_users.empty? %> 
+            <p>"There are no expert for this cuisine type"</p>
+        <% else %>
+            <% @cuisine_users.each do |user| %>
+                <%= render "shared/medium_avatar", {user: user} %>
+            <% end %>
+        <% end %> 
     </div>
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
     
-    <h2>Restaurant list</h2>
+    <h3 class="h3-custom-css">Restaurant list</h3>
     <div class="restaurant_card_container_home">
         <% @cuisine_restaurants.each do |restaurant| %>
             <% if restaurant.upvotes.length > 1 %>
