@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
   def show
       @restaurant = Restaurant.find(params[:id])
       @dish = Dish.new
+      @user = current_user
       @review = Review.new
       @cuisine = @restaurant.cuisine
   end
@@ -14,9 +15,6 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
   end
-
-
-
 
   def create
     @restaurant = Restaurant.new(restaurant_params)

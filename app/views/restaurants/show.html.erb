@@ -47,16 +47,18 @@
         <% end %>
 
         <!-- Add Dish trigger modal -->
-        <button type="button" class="tag" data-toggle="modal" data-target="#tagModal">
-          +
-        </button>
+        <% if current_user.cuisine&.name == @cuisine.name %>
+          <button type="button" class="tag" data-toggle="modal" data-target="#tagModal">
+            +
+          </button>
+        <% end %>
         <!-- Modal -->
         <div class="modal fade" id="tagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content add-dish-modal">
               <h5 class="restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
               <div class="modal-body">
-                <p>Add your favorite dish</p>
+                <p class="add-dish">Add your favorite dish</p>
                 <%= simple_form_for(@dish) do |f| %>
                   <%= f.input :name, label: false %>
                   <%= f.input :restaurant_id, :as => :hidden, :class => "add-dish-area", :input_html => { :value => @restaurant.id } %>
@@ -80,27 +82,27 @@
     
     <% @restaurant.reviews.each do |review| %>
       <% if review.user.cuisine&.name == @cuisine.name %>   
-      <div class="recommentation_card">
-        <div class="avatar">    
-          <% if review.user.photo.attached? %>
-            <%= cl_image_tag review.user.photo.key, class: "avatar" %>
-          <% end %>
-          <!--<h3><%#= current_user.first_name</h3> %>-->
-        </div>
-        <div class="review-dish">
-          <div class="expert-name">
-            <span><%= review.user.first_name %></span>
-            <span class="cuisine-name"><%= review.user.cuisine.name %> Expert</span>
+        <div class="recommentation_card">
+          <div class="avatar">    
+            <% if review.user.photo.attached? %>
+              <%= cl_image_tag review.user.photo.key, class: "avatar" %>
+            <% end %>
+            <!--<h3><%#= current_user.first_name</h3> %>-->
           </div>
-          <div class="expert-review">
-            <p><%= review.content %></p>
+          <div class="review-dish">
+            <div class="expert-name">
+              <span><%= review.user.first_name %></span>
+              <span class="cuisine-name"><%= review.user.cuisine.name %> Expert</span>
+            </div>
+            <div class="expert-review">
+              <p><%= review.content %></p>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
     <% end %>
 
-<!-- Add Review trigger modal -->
+    <!-- Add Review trigger modal -->
     <% if current_user.cuisine&.name == @cuisine.name %>
       <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Review</button>
     <% end %>
@@ -111,51 +113,51 @@
           <h5 class="restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
           <div class="modal-body">
             <p>Leave a review</p>
-            <textarea name="review" class="form-control review-area" cols="30" rows="10"></textarea>
+                       
+            <%= simple_form_for([@restaurant, @review]) do |f| %>
+              <%= f.input :content, label: false %>
+              <%= f.input :restaurant_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @restaurant.id } %>
+              <%= f.input :user_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @user.id } %>
+              <div class="d-flex justify-content-center">
+                <%= f.submit 'Submit', class: "submit-button-blue" %>
+                <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> %>
+              </div>
+            <% end %>
           </div>
-          <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary submit-button-blue">Submit</button>
-            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>-->
-          </div>
+          
         </div>
       </div>
     </div>
-  
-
     <!-- end of add Review -->
+
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 20px; auto;">
 
     <!-- Comments of guests -->
-    
-      
-      <h1 style="font-size: 23px; font-weight: bold;">Guests comments</h1>
-      <% @restaurant.reviews.each do |review| %>
+    <h1 style="font-size: 23px; font-weight: bold;">Guests comments</h1>
+    <% @restaurant.reviews.each do |review| %>
       <% unless review.user.cuisine&.name == @cuisine.name %>   
-      <div class="recommentation_card">
-        <div class="avatar">    
-          <% if review.user.photo.attached? %>
-            <%= cl_image_tag review.user.photo.key, class: "avatar" %>
-          <% end %>
-          <!--<h3><%#= current_user.first_name</h3> %>-->
-        </div>
-        <div class="review-dish">
-          <div class="expert-name">
-            <span><%= review.user.first_name %></span>
-            <span class="cuisine-name"><%= review.user.cuisine&.name %> Expert</span>
+        <div class="recommentation_card">
+          <div class="avatar">    
+            <% if review.user.photo.attached? %>
+              <%= cl_image_tag review.user.photo.key, class: "avatar" %>
+            <% end %>
+            <!--<h3><%#= current_user.first_name</h3> %>-->
           </div>
-          <div class="expert-review">
-            <p><%= review.content %></p>
+          <div class="review-dish">
+            <div class="expert-name">
+              <span><%= review.user.first_name %></span>
+              <span class="cuisine-name"><%= review.user.cuisine&.name %> Expert</span>
+            </div>
+            <div class="expert-review">
+              <p><%= review.content %></p>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
     <% end %>
     <% unless current_user.cuisine.name == @cuisine.name %>
       <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Comment</button>
     <% end %>   
-  
-    
-    
-      
-    <!-- end comments of guests -->
+     <!-- end comments of guests -->
+
 </div>
