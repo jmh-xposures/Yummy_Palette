@@ -28,10 +28,6 @@ class CuisinesController < ApplicationController
     @cuisine_restaurants = Restaurant.where(cuisine_id: params[:id].to_i)
     @cuisine_users = User.where(cuisine_id: params[:id].to_i)
   end
-
-  def create
-    raise
-  end
 end
 
 # ne pas oublié de mettre :photo dans cuisine_params
