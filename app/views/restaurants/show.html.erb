@@ -79,15 +79,13 @@
 
     <!-- Review card -->
     <h1 style="font-size: 23px; font-weight: bold;">Why we recommend this Restaurant</h1>
-    
     <% @restaurant.reviews.each do |review| %>
       <% if review.user.cuisine&.name == @cuisine.name %>   
-        <div class="recommentation_card">
+        <div class="review_card">
           <div class="avatar">    
             <% if review.user.photo.attached? %>
               <%= cl_image_tag review.user.photo.key, class: "avatar" %>
             <% end %>
-            <!--<h3><%#= current_user.first_name</h3> %>-->
           </div>
           <div class="review-dish">
             <div class="expert-name">
@@ -112,8 +110,11 @@
         <div class="modal-content review-modal">
           <h5 class="modal_restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
           <div class="modal-body">
-            <p>Leave a review</p>
-                       
+            <% if current_user.cuisine&.name == @cuisine.name %>
+              <p>Leave a review</p>
+            <% else %> 
+              <p>Leave a comment</p>
+            <% end %>         
             <%= simple_form_for([@restaurant, @review]) do |f| %>
               <%= f.input :content, label: false %>
               <%= f.input :restaurant_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @restaurant.id } %>
@@ -136,7 +137,7 @@
     <h1 style="font-size: 23px; font-weight: bold;">Guests comments</h1>
     <% @restaurant.reviews.each do |review| %>
       <% unless review.user.cuisine&.name == @cuisine.name %>   
-        <div class="recommentation_card">
+        <div class="review_card">
           <div class="avatar">    
             <% if review.user.photo.attached? %>
               <%= cl_image_tag review.user.photo.key, class: "avatar" %>
@@ -155,6 +156,9 @@
         </div>
       <% end %>
     <% end %>
+
+
+
     <% unless current_user.cuisine.name == @cuisine.name %>
       <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Comment</button>
     <% end %>   
