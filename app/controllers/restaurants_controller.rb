@@ -14,6 +14,16 @@ class RestaurantsController < ApplicationController
     else
       @restaurants = Restaurant.all
     end
+   @restaurants_coordinates = Restaurant.where.not(latitude: nil, longitude: nil)
+   @markers = @restaurants_coordinates.map do |restaurant|
+     {
+       lat: restaurant.latitude,
+       lng: restaurant.longitude,
+       mapPopup: render_to_string(partial: "shared/map_popup", locals: { restaurant: restaurant })
+       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+     }
+   end
+  print @markers
   end
 
   def create

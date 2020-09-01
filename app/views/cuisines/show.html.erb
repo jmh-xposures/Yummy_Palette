@@ -1,18 +1,18 @@
+
 <div class="banner-cuisine">
     <% if @cuisine.photo.attached? %>
-        <%= cl_image_tag @cuisine.photo.key, crop: :fill %>
+        <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/drjhe1klf/image/upload/c_fill/<%= @cuisine.photo.key %>.jpg); position: absolute; width: 100%; height: 100%; background-size: cover; z-index: -1;">
+        </div>
     <% else %>
-        <img src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+        <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg); position: absolute; width: 100%; height: 100%; background-size: cover; z-index: -1">
+        </div>
     <% end %>
-    <div class="background-stripe">
-        <% if current_user.cuisine_id.to_s == params[:id]%>
-            <h1><%= @cuisine.name %></h1>
-            <h2>Welcome back <%= current_user.first_name.capitalize %> !</h2>
-        <% else %>
-            <h1><%= @cuisine.name %></h1>
-        <% end %>
-    </div>
-
+    <% if current_user.cuisine_id.to_s == params[:id]%>
+        <h1><%= @cuisine.name %></h1>
+        <h2>Welcome back <%= current_user.first_name.capitalize %> !</h2>
+    <% else %>
+        <h1><%= @cuisine.name %></h1>
+    <% end %>
 </div>
 
 <% if current_user.cuisine_id.to_s == params[:id]%>
