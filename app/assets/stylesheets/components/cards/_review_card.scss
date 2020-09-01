@@ -1,6 +1,6 @@
 .recommentation_card {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
   border-radius: 20px;
   background: white;
@@ -19,6 +19,7 @@
 
 .review-dish {
   margin-left: 10px;
+  flex-grow: 1;
 }
 
 .expert-name {
@@ -30,4 +31,8 @@
     border-radius: 5px;
     padding: 5px;
   }
+}
+
+.add-review-area {
+  margin-left: 10px;
 }

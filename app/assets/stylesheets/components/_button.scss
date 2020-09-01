@@ -22,7 +22,7 @@
     border: 1px solid black;
     color: #1C6E8C;
     text-align: center;
-    width: 100px;
+    padding: 10px 30px;
     font-size: 12px;
     background-color: white;
     font-weight: bold;
@@ -30,4 +30,9 @@
     margin-bottom: 50px;
   }
 
+  
+.button-box {
+  display: flex;
+  justify-content: center;
+}
   

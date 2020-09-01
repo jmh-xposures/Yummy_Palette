@@ -16,7 +16,7 @@ Review.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 Cuisine.destroy_all
-
+Follow.destroy_all
 
 
 
@@ -123,7 +123,7 @@ img_japan_rest7 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/t_Rw8cjz_EiG
 japan_rest7.photo.attach(io: img_japan_rest7, filename: 'Imadake', content_type: 'image/jpg')
 
 japan_rest8 = Restaurant.create!(cuisine: japanese, name: "Sho-Dan Restaurant", address: "2020, rue Metcalfe Près du métro Peel, Near Peel Metro, Montreal", phone: "1-514-987-9987")
-img_japan_rest8 = URI.open('https://www.sho-dan.com/restaurants/sho-dan-metcalfe/gallery/sho-dan-plancher-principal-no2_large.jpg')
+img_japan_rest8 = URI.open('https://ssmscdn.yp.ca/image/resize/743006b9-4272-4e80-afaf-b5ad52be21a5/ypui-d-mp-pic-gal-lg/restaurant-sho-dan-1.jpg')
 japan_rest8.photo.attach(io: img_japan_rest8, filename: 'Sho-Dan Restaurant', content_type: 'image/jpg')
 
 japan_rest9 = Restaurant.create!(cuisine: japanese, name: "Kinka Izakaya Montreal", address: "1624 Rue Sainte-Catherine Ouest, Montreal", phone: "1-514-750-1624")
@@ -2542,3 +2542,8 @@ Favorite.create!(restaurant: greek_rest2, user: richard)
 Favorite.create!(restaurant: port_rest7, user: richard)
 Favorite.create!(restaurant: korean_rest1, user: richard)
 Favorite.create!(restaurant: greek_rest7, user: richard)
+
+puts "creating follow"
+Follow.create!(follower: nicolas, followed: junior)
+Follow.create!(follower: martin, followed: junior)
+Follow.create!(follower: richard, followed: junior)

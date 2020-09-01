@@ -27,9 +27,9 @@ class Restaurant < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   has_one_attached :photo
-  
-  def self.latest_upvoted
-    global = self.all.select do |restaurant|
+ 
+  def self.upvoted
+      self.all.select do |restaurant|
       cuisine_experts = restaurant.cuisine.users.count
       restaurant_upvotes = Upvote.where(restaurant: restaurant).count
       global_threshold = 0.5
@@ -37,6 +37,10 @@ class Restaurant < ApplicationRecord
       upvote_percentage = (restaurant_upvotes / cuisine_experts).to_f
       upvote_percentage >= global_threshold
     end
+  end
+ 
+  def self.latest_upvoted
+    global = self.upvoted
     global = global.sort { |r1, r2|  r2.upvotes.last.created_at <=> r1.upvotes.last.created_at }
     global = global[0..9] if global.length > 10
     global

@@ -27,6 +27,8 @@ class CuisinesController < ApplicationController
     @tag = Tag.new
     @cuisine_restaurants = Restaurant.where(cuisine_id: params[:id].to_i)
     @cuisine_users = User.where(cuisine_id: params[:id].to_i)
+    @global_restaurants = Restaurant.upvoted
+    @pending_restaurants = @cuisine_restaurants - @global_restaurants
   end
 end
 

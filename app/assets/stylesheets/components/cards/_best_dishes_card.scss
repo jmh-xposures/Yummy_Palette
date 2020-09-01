@@ -25,11 +25,11 @@
     border-radius: 50px;
   }
 
-  .restaurant_name {
+  .modal_restaurant_name {
     text-align: center;
     font-size: 30px;
   }
-  .restaurant_name a:hover {
+  .modal_restaurant_name a:hover {
     text-decoration: none;
   }
   
@@ -42,14 +42,12 @@
     display: block;
     border: none;
   }
-
-  .best-dish-title {
-    font-size: 23px; 
-    font-weight: bold;
-  }
-  
-  //did not work
+ 
   #dish_name {
     border-radius: 20px;
-    background: red;
+    background: white;
+  }
+
+  .add-dish {
+    text-align: center;
   }
