@@ -39,12 +39,23 @@
   background-image: url("color_palette.jpg");
   background-size: cover;
   background-position: right center;
+  .magnifying-glass{ 
+  color: #8A8A8A;
+  position: absolute; 
+  top: -5px;
+  left: -9px;
+  }
+}
+.search{
+  position: relative;
 }
 #query {
   border-radius: 15px;
   width: 310px;
   height: 43px;
+  padding-left: 37px;
   }
 #searchbtn {
   margin-top: 10px;
+
 }
