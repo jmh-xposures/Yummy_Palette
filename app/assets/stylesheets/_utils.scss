@@ -48,13 +48,3 @@ transition: 0.2s;
 .remove-hover-effect a:hover {
     text-decoration: none !important;
 }
-
-.button-box {
-    display: flex;
-    justify-content: center;
-    .button {
-        padding: 10px;
-        margin-bottom: 25px;
-        border-radius: 10px;
-    }
-}

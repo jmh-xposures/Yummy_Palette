@@ -9,8 +9,7 @@
 .review-modal {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 2px;
+  margin: 20px auto;
   border-radius: 20px;
   background: white;
   height: 436px;
@@ -26,6 +25,23 @@
   }
 }
 
-.restaurant_name {
+.modal_restaurant_name {
   margin-top: 16px;
+}
+
+.restaurant-modal{
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  border-radius: 20px;
+  background: white;
+  height: 600px;
+  width: 376px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .modal-footer {
+    justify-content: center;
+  }
+  h5 {
+    color: #1C6E8C;
+  }
 }
