@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    raise
     @cuisines = Cuisine.all
     @restaurants = Restaurant.latest_upvoted
     @cuisine_count = Cuisine.count
