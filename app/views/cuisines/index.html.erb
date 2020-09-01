@@ -1,4 +1,18 @@
 <div class="cuisines-banner">
+	<div class="search"> 
+		<div class="magnifying-glass">
+			<i class="fas fa-search"></i>
+		</div> 
+		<%= form_tag restaurants_path, method: :get do %>
+		    <%= text_field_tag :query,
+		    params[:query],
+		    class: "form-control big-border-radius",
+		    placeholder: "Search for..." %>
+		    <%= submit_tag "Search", class: "btn btn-primary big-border-radius d-none", id: "searchbtn" %>	
+		<% end %> 
+ 	</div>
+
+
 </div>
 
 <%# Map %>
@@ -11,7 +25,7 @@
 
 <%# render the list of cuisines seeded in the database using partials %>
 <div class="cards-wrapper">
-	<h3>Cuisine</h3>
+	<h3 style="text-align: center; margin-bottom: 4px;">Cuisine</h3>
 	<div class="horizontal-scroll">
 		<% @cuisines.each do |cuisine| %>
 			<div class="remove-hover-effect">
@@ -25,7 +39,7 @@
 <div class="vw-100">
 	<% @cuisines.each do |cuisine| %>
 		<div class="cards-wrapper">
-			<h3><%= cuisine.name %></h3>
+			<h3 style="text-align: center; margin-bottom: 4px;"><%= cuisine.name %></h3>
 			<div class="horizontal-scroll">
 				<% @cuisine_restaurants[cuisine.name].each do |restaurant| %>
 					<%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>

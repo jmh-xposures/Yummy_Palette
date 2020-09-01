@@ -1,5 +1,5 @@
 <%= link_to cuisine_path(cuisine) do %>
-    <div class="small-cuisine-card">
+    <div class="small-cuisine-card grow">
         <% if cuisine.photo.attached? %>
             <%= cl_image_tag cuisine.photo.key, crop: :fill %>
         <% else %>

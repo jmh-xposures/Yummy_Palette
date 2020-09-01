@@ -1,8 +1,8 @@
  .background_profile {
-background-image: url(https://media.restomontreal.ca/blog/Square/809_2018-09-25-1460_news.jpg);
+background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("color_palette.jpg");
 height: 300;
 background-size: cover;
-background-position: top;
+background-position: bottom;
  }
  .profile-avatar {
  position: relative;

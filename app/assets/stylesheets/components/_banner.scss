@@ -1,12 +1,15 @@
 .cover-banner {
   height: 300px;
   width: 100vw;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.8),rgba(200,200,200,0.2)), url("color_palette.jpg");
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("color_palette.jpg");
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-position: right center;
   position: relative;
   z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner-cuisine {
@@ -43,33 +46,46 @@
   }
 }
 
+
 .title {
-  font-size: 80px;
-  color: rgba(240, 240, 240, 0.8);
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  color: rgba(240, 240, 240, 0.9);
 }
 
 #title-div {
-  position: absolute;
-  top: 50px;
-  margin: 0 auto;
-  left: 20%;
-}
-
-#title1 {
- 
 
 }
 
-#title2 {
-
-}
 
 .cuisines-banner {
-  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
   width: 100vw;
-  background-image: url("color_palette.jpg");
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("color_palette.jpg");
   background-size: cover;
   background-position: right center;
+
+  .magnifying-glass{ 
+  color: #8A8A8A;
+  position: absolute; 
+  top: -5px;
+  left: -9px;
+  }
+}
+.search{
+  position: relative;
+}
+#query {
+  border-radius: 15px;
+  width: 310px;
+  height: 43px;
+  padding-left: 37px;
+  }
+#searchbtn {
+  margin-top: 10px;
 }
 
 .specific-cuisine-banner {
