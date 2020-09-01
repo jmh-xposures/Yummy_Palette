@@ -137,7 +137,7 @@
     <h1 style="font-size: 23px; font-weight: bold;">Guests comments</h1>
     <% @restaurant.reviews.each do |review| %>
       <% unless review.user.cuisine&.name == @cuisine.name %>   
-        <div class="recommentation_card">
+        <div class="review_card">
           <div class="avatar">    
             <% if review.user.photo.attached? %>
               <%= cl_image_tag review.user.photo.key, class: "avatar" %>
