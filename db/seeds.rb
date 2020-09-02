@@ -634,15 +634,15 @@ mg.photo.attach(io: mg_img, filename: 'mg profile', content_type: 'image/jpg')
 
 
 puts "Creating Global Visitors"
-martin = User.create!(cuisine_id: nil, first_name: "Martin", last_name: "Giannakopoulos", email:"martin@wagon.com" , bio:"I am a web develper and teacher for Le Wagon, based in Montreal. I don't eat very much, or particularly well usually. So I made a resolution to discover great food this year. So I was really happy to discover Yummy Palette which has really open up my world to the amazing flavors of so many cuisines all right here in Montreal! ", password:"123456")
+martin = User.create!(cuisine_id: french.id, first_name: "Martin", last_name: "Giannakopoulos", email:"martin@wagon.com" , bio:"I am a web develper and teacher for Le Wagon, based in Montreal. I don't eat very much, or particularly well usually. So I made a resolution to discover great food this year. So I was really happy to discover Yummy Palette which has really open up my world to the amazing flavors of so many cuisines all right here in Montreal! ", password:"123456")
 martin_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1533305351/pwlstconwxh7zetwsz1w.jpg')
 martin.photo.attach(io: martin_img, filename: 'martin profile', content_type: 'image/jpg')
 
-nicolas = User.create!(cuisine_id: nil, first_name: "Nicolas", last_name: "Fraisse", email:"Nicolas@wagon.com" , bio:"I am a drummer, fullstack developer anf fulltime food lover! Yummy Palette is helping me discover the most authentic taste of various cuisines available right here in Montreal! I love this app!", password:"123456")
+nicolas = User.create!(cuisine_id: french.id, first_name: "Nicolas", last_name: "Fraisse", email:"Nicolas@wagon.com" , bio:"I am a drummer, fullstack developer anf fulltime food lover! Yummy Palette is helping me discover the most authentic taste of various cuisines available right here in Montreal! I love this app!", password:"123456")
 nicolas_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1570482026/xlayp6fkanfrqzwlg1eu.jpg')
 nicolas.photo.attach(io: nicolas_img, filename: 'nicolas profile', content_type: 'image/jpg')
 
-richard = User.create!(cuisine_id: nil, first_name: "Richard", last_name: "Jarram", email:"richard@wagon.com" , bio:"Fullstack developer and teacher for Le Wagon Montreal, I love spending time out woith friends and discovering restaurants. Yummy Palette is my go-to app to find the bext, most authentic choices in town!!!", password:"123456")
+richard = User.create!(cuisine_id: french.id, first_name: "Richard", last_name: "Jarram", email:"richard@wagon.com" , bio:"Fullstack developer and teacher for Le Wagon Montreal, I love spending time out woith friends and discovering restaurants. Yummy Palette is my go-to app to find the bext, most authentic choices in town!!!", password:"123456")
 richard_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1546902451/oyfiqksipakhgmfvbbsd.jpg')
 richard.photo.attach(io: richard_img, filename: 'richard profile', content_type: 'image/jpg')
 
