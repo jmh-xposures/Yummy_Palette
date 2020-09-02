@@ -1,7 +1,7 @@
 .cover-banner {
   height: 300px;
   width: 100vw;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("color_palette.jpg");
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), asset-url("color_palette.jpg");
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-position: right center;
@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: -1;
-  h1, h2 {
+  h1, h2, h3 {
     z-index: 1;
     text-align: center;
     margin: 0 auto;
@@ -33,9 +33,18 @@
   h2 {
     font-size: 30px;
     font-weight: bold;
+
+  }
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
   }
 }
 
+.welcome {
+  position: relative;
+  top: 50px;
+}
 
 .title {
   font-family: 'Dancing Script', cursive;
@@ -54,7 +63,7 @@
   justify-content: center;
   height: 250px;
   width: 100vw;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("color_palette.jpg");
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), asset-url("color_palette.jpg");
   background-size: cover;
   background-position: right center;
 
