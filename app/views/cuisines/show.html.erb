@@ -17,7 +17,7 @@
 
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
-    <p class="p-custom-css"><strong><%= @cuisine.restaurants.length %></strong> Restaurants recommended</p>
+    <p class="p-custom-css"><strong><%= @cuisine.cuisine_upvoted.length %></strong> Restaurants recommended</p>
     
     <h3 class="h3-custom-css" style="text-align: center;">Restaurant list</h3> 
     <div class="horizontal-scroll">
@@ -59,7 +59,7 @@
     </div>
 <% else %>
 
-    <p class="p-custom-css"><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</p>
+    <p class="p-custom-css"><strong><%= @cuisine.cuisine_upvoted.length %></strong> Restaurants available !!!</p>
 
     <h3 class="h3-custom-css">Meet the experts</h3> 
     <div class="horizontal-scroll">
