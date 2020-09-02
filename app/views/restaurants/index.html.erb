@@ -3,14 +3,13 @@
 		<div class="magnifying-glass">
 			<i class="fas fa-search"></i>
 		</div> 
-	<%= form_tag restaurants_path, method: :get do %>
-		 
-		    <%= text_field_tag :query,
-		    params[:query],
-		    class: "form-control big-border-radius",
-		    placeholder: "Search for..."%>
-		    <%= submit_tag "Search", class: "btn btn-primary big-border-radius d-none", id: "searchbtn" %>
-	<% end %> 
+		<%= form_tag restaurants_path, method: :get do %>
+			<%= text_field_tag :query,
+			params[:query],
+			class: "form-control big-border-radius",
+			placeholder: "Search for..."%>
+			<%= submit_tag "Search", class: "btn btn-primary big-border-radius d-none", id: "searchbtn" %>
+		<% end %> 
 	</div> 
 </div>
 

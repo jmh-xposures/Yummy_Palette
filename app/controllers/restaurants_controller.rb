@@ -12,22 +12,28 @@ class RestaurantsController < ApplicationController
   
 
   def index
-   @restaurants = Restaurant.all
+    @restaurants = Restaurant.all
     if params[:query].present?
       @restaurants = Restaurant.search_by_restaurant_or_dish(params[:query])
+      @markers = create_markers
     else
       @restaurants = Restaurant.all
+      @markers = create_markers
     end
-   @restaurants_coordinates = Restaurant.where.not(latitude: nil, longitude: nil)
-   @markers = @restaurants_coordinates.map do |restaurant|
-     {
-       lat: restaurant.latitude,
-       lng: restaurant.longitude,
-       mapPopup: render_to_string(partial: "shared/map_popup", locals: { restaurant: restaurant })
-       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
-     }
-   end
-  print @markers
+    print @markers
+  end
+
+  def create_markers
+    # @restaurants_coordinates = Restaurant.where.not(latitude: nil, longitude: nil)
+    @restaurants_coordinates = @restaurants.reject { |restaurant| restaurant.latitude.nil? && restaurant.longitude.nil? }
+    @restaurants_coordinates.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        mapPopup: render_to_string(partial: "shared/map_popup", locals: { restaurant: restaurant })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
   end
 
   def create
