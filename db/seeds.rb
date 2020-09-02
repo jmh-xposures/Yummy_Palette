@@ -23,8 +23,8 @@ Follow.destroy_all
 # Indian Cuisine 
 puts "Creating Indian cuisine"
 indian = Cuisine.create!(name:'Indian')
-# img_indian_cuisine = URI.open('https://cdn.vox-cdn.com/thumbor/fWdJKI_dirNSL2bBWVVWVW_I4-Q=/0x0:7360x4912/1200x800/filters:focal(3092x1868:4268x3044)/cdn.vox-cdn.com/uploads/chorus_image/image/67000785/shutterstock_1435374326.0.jpg')
-# indian.photo.attach(io: img_indian_cuisine, filename: 'indian_cuisine', content_type: 'image/jpg')
+img_indian_cuisine = URI.open('https://img.mobygeek.com/crop/1200x628/2020/02/23/indian-food-salinda-41c0.jpg')
+indian.photo.attach(io: img_indian_cuisine, filename: 'indian_cuisine', content_type: 'image/jpg')
 
 
 puts "Creating Indian restaurants"
