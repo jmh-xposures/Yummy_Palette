@@ -17,19 +17,19 @@
 
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
-    <p class="p-custom-css"><strong><%= @cuisine.restaurants.length %></strong> Restaurants available !!!</p>
+    <p class="p-custom-css"><strong><%= @cuisine.restaurants.length %></strong> Restaurants recommended</p>
     
-    <h3 class="h3-custom-css">Restaurant list</h3> 
+    <h3 class="h3-custom-css" style="text-align: center;">Restaurant list</h3> 
     <div class="horizontal-scroll">
-        <% @global_restaurants.each do |restaurant| %>
+        <% @cuisine.cuisine_upvoted.each do |restaurant| %>
             <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
         <% end  %>
     </div>
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
 
-    <h3 class="h3-custom-css">Pending restaurant</h3> 
+    <h3 class="h3-custom-css" style="text-align: center;">Pending restaurant</h3> 
         <div class="horizontal-scroll">
-            <% @pending_restaurants.each do |restaurant| %>
+            <% @cuisine.pending_cuisine.each do |restaurant| %>
                 <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
             <% end  %>
         </div>
@@ -75,12 +75,10 @@
     
     <h3 class="h3-custom-css">Restaurant list</h3>
     <div class="restaurant_card_container_home">
-        <% @cuisine_restaurants.each do |restaurant| %>
-            <% if restaurant.upvotes.length > 1 %>
-                <div class="my-3">
-                    <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-                </div>
-            <% end %>
+        <% @cuisine.cuisine_upvoted.each do |restaurant| %>
+            <div class="my-3">
+                <%= render "shared/medium_restaurant_card", {restaurant: restaurant}%>
+            </div>
         <% end  %>
     </div> 
 <% end %>
