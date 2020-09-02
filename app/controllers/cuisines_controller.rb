@@ -10,7 +10,6 @@ class CuisinesController < ApplicationController
         mapPopup: render_to_string(partial: "shared/map_popup", locals: { restaurant: restaurant })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
-
     end
     print @markers
     @cuisine_restaurants = {}
