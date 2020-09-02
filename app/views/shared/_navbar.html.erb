@@ -28,6 +28,9 @@
         <li class="nav-item">
           <%= link_to 'Cuisines', cuisines_path, class: 'nav-link text-dark' %>
         </li>
+        <li class="nav-item">
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+        </li>
       <% end %>
     </ul>
     <form class="form-inline mt-2 mt-md-0">
