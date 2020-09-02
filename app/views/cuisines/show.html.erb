@@ -9,16 +9,30 @@
     <% end %>
     <% if current_user.cuisine_id.to_s == params[:id]%>
         <h1><%= @cuisine.name %></h1>
-        <h2>Welcome back <%= current_user.first_name.capitalize %> !</h2>
+        <h3>cuisine</h3>
+        <h2 class="welcome">Welcome back <%= current_user.first_name.capitalize %> !</h2>
     <% else %>
         <h1><%= @cuisine.name %></h1>
+        <h3>cuisine</h3>
+        <h2 class="welcome">Welcome, <%= current_user.first_name.capitalize %> !</h2>
     <% end %>
 </div>
 
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
-    <p class="p-custom-css"><strong><%= @cuisine.cuisine_upvoted.length %></strong> Restaurants recommended</p>
-    
+    <p class="info-nums" style="text-align:center;"><%= @cuisine.cuisine_upvoted.length %> Restaurants approved</p>
+
+    <h3 class="h3-custom-css" style="text-align:center;">Members of your community</h3> 
+    <div class="horizontal-scroll">
+        <% if @cuisine_users.empty? %> 
+            <p>"There are no expert for this cuisine type"</p>
+        <% else %>
+            <% @cuisine_users.each do |user| %>
+                <%= render "shared/medium_avatar", {user: user} %>
+            <% end %>
+        <% end %> 
+    </div>
+
     <h3 class="h3-custom-css" style="text-align: center;">Restaurant list</h3> 
     <div class="horizontal-scroll">
         <% @cuisine.cuisine_upvoted.each do |restaurant| %>
@@ -59,9 +73,9 @@
     </div>
 <% else %>
 
-    <p class="p-custom-css"><strong><%= @cuisine.cuisine_upvoted.length %></strong> Restaurants available !!!</p>
+    <p class="info-nums" style="text-align:center;"><%= @cuisine.cuisine_upvoted.length %> Restaurants approved</p>
 
-    <h3 class="h3-custom-css">Meet the experts</h3> 
+    <h3 class="h3-custom-css" style="text-align:center;">Meet the experts</h3> 
     <div class="horizontal-scroll">
         <% if @cuisine_users.empty? %> 
             <p>"There are no expert for this cuisine type"</p>

@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: -1;
-  h1, h2 {
+  h1, h2, h3 {
     z-index: 1;
     text-align: center;
     margin: 0 auto;
@@ -33,9 +33,18 @@
   h2 {
     font-size: 30px;
     font-weight: bold;
+
+  }
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
   }
 }
 
+.welcome {
+  position: relative;
+  top: 50px;
+}
 
 .title {
   font-family: 'Dancing Script', cursive;
