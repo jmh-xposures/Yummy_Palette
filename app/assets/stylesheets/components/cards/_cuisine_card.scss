@@ -20,3 +20,23 @@
         object-fit: cover;
     }
 }
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(200px)
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+.card_index_0 {
+    animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+.card_index_1 {
+    animation: 0.8s ease-out 0s 1 slideInFromBottom;
+}
+.card_index_2 {
+    animation: 0.5s ease-out 0s 1 slideInFromBottom;
+}
+

@@ -36,8 +36,8 @@
 <div class="cards-wrapper">
   <h2 style="font-weight: bold; font-size: 23px; text-align: center;">Cuisines</h2>
   <div class="horizontal-scroll">
-    <% @cuisines.each do |cuisine| %>
-      <div class="remove-hover-effect">
+    <% @cuisines.each_with_index do |cuisine, i| %>
+      <div class="remove-hover-effect card_index_<%= i %>">
         <%= render "shared/small_cuisine_card", {cuisine: cuisine} %>
       </div>
     <% end  %>
