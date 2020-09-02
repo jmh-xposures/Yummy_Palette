@@ -11,11 +11,12 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% if request.original_url.split("/").last != "sign_in"%>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-
- 
   </body>
 </html>

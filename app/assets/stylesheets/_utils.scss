@@ -39,9 +39,13 @@ transition: 0.2s;
 .horizontal-scroll {
     display: flex;
     overflow-x: scroll;
-    padding: 25px;
+    padding: 25px 25px 25px 5px;
     div {
-        margin-right: 8px;
+        margin-right: 16px;
+        // I know it looks weird, but don't touch the 3 lines of code under this comment please - thomas
+        div {
+            margin-right: 0;
+        }
     }
 }
 

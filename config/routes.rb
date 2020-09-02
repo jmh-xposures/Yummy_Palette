@@ -10,11 +10,13 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
     resources :tags, only: [:create, :destroy]
     resources :reviews, only: [:create, :destroy]
+    resources :messages, only: [:create, :index]
   end
 
   resources :users, only: [:show] do 
     resources :follows, only: [:create, :destroy]
   end
 
-  resources :dishes, only: [:create]
+  resources :dishes, only: [:create] 
+
 end
