@@ -39,6 +39,7 @@ class Restaurant < ApplicationRecord
       upvote_percentage >= global_threshold
     end
   end
+
  
   def self.latest_upvoted
     global = self.upvoted

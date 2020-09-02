@@ -407,7 +407,7 @@ francesca_img = URI.open('https://avatars1.githubusercontent.com/u/62946944?v=4'
 francesca.photo.attach(io: francesca_img, filename: 'francesca profile', content_type: 'image/jpg')
 
 erika = User.create!(cuisine_id: greek.id, first_name: "Erika", last_name: "Sinkovics", email:"erika@wagon.com" , bio:"I worked as an accountant for 8 years. I wanted to do something more creative, so I am now a front-end developer working in montreal for a fantastic company. I love to discover new cuisines on the weekends and share my discoveries of delcious greek cuisine in town!!!", password:"123456")
-erika_img = URI.open('https://avatars1.githubusercontent.com/u/62946944?v=4')
+erika_img = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1594261628/vnz8hkueomwgqua4sbwe.jpg')
 erika.photo.attach(io: erika_img, filename: 'francesca profile', content_type: 'image/jpg')
 
 
@@ -513,7 +513,7 @@ miguel_img = URI.open('https://avatars3.githubusercontent.com/u/64239865?v=4')
 miguel.photo.attach(io: miguel_img, filename: 'miguel profile', content_type: 'image/jpg')
 
 choong = User.create!(cuisine_id: korean.id, first_name: "Choong Hun", last_name: "Lee", email:"choong@wagon.com" , bio:"I am originally from New York but I moved to Montreal to work as a software developer. I noticed that the korean food industry in Montreal wasen't as vibrant as in New York so it was quite difficult for me to find really good korean cuisine in town. Thanks to Yummy Palette I know not just where to find the best korean food in town, but the best of any cuisine I might be in the mood for. This app is fantastic!!!", password:"123456")
-choong_img = URI.open('https://avatars3.githubusercontent.com/u/64239865?v=4')
+choong_img = URI.open('https://avatars0.githubusercontent.com/u/38733598?v=4')
 choong.photo.attach(io: choong_img, filename: 'choong profile', content_type: 'image/jpg')
 
 ryan = User.create!(cuisine_id: korean.id, first_name: "Ryan", last_name: "Buckley", email:"ryan@wagon.com" , bio:"Originally from Toronto, I spent the last seven years working freelance in NYC as a consultant in the arts, helping museums and artists organize their digital and physical assets. I am now in Montreal working as a fullstack developer. Having traveled around the world and spent lots of time in Asia, I am particuarly fond of Korean cuisine. I love that I can share my discoveried on Yummy Palette and discover other people's discoveries. The quality of the restaurants on this app is stunning!", password:"123456")

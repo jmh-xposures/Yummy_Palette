@@ -15,7 +15,7 @@
       text-decoration: none;
     }
   }
-  p {
+  p, span {
     font-size: 12px;
     opacity: .7;
     margin: 0;
@@ -30,12 +30,13 @@
   }
 }
 
-//add
-
-
 .favorite-vote {
   display: flex;
   justify-content: space-around;
+  margin-top: 6px;
+  span {
+    margin: 8px;
+  }
 }
 
 .orange-icon {

@@ -1,46 +1,68 @@
 
 <div class= "background_profile">
   <div>
-  	<% if current_user.photo.attached? %>
-  	  <%= cl_image_tag current_user.photo.key, class: "profile-avatar" %>
+  	<% if @user.photo.attached? %>
+  	  <%= cl_image_tag @user.photo.key, class: "profile-avatar" %>
   	<% else %>
   	  <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
   	<% end %>
   </div>
 </div>
 
-<h3 class= "user_name" style="margin-top: 112px;"> <strong><%= current_user.first_name %><strong></h3> 
-<h4 class= "user_cuisine"> <%= Cuisine.where(id: current_user&.cuisine_id)&.first&.name %> Cuisine Expert</h4>
-
-<div class= "user_bio">
-  <p style="text-align: center;"><%= current_user.bio %></p>
+ <div class="favorite-vote">
+  <% if current_user.id != @user.id %> 
+    <% if current_user.following?(@user) %>
+      <%= link_to user_follow_path(@user), method: :delete, remote: true do %>
+        <%= image_tag 'user_followed.svg', {class: 'user-followed'} %>
+      <% end %>
+    <% else %>
+      <%= link_to user_follows_path(@user), method: :post, remote: true do %>
+        <%= image_tag 'follow_user.svg', {class: 'user-followed'} %>
+      <% end %>  
+    <% end %>
+  <% end %>
 </div>
 
+<h3 class= "user_name" style="margin-top: 30px;"> <strong><%= @user.first_name %><strong></h3> 
+<h4 class= "user_cuisine"> <%= Cuisine.where(id: @user&.cuisine_id)&.first&.name %> Cuisine Expert</h4>
+<hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+<div class= "user_bio">
+  <p style="text-align: center;"><%= @user.bio %></p>
+</div>
 
-<h2 style="font-weight: bold; font-size: 23px; text-align: center;">Favorites Restaurant</h2>
+<hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+
+<h2 style="font-weight: bold; font-size: 23px; text-align: center; margin-top: 25px;">Favorited Restaurants</h2>
   <div class="horizontal-scroll">
     <% @favorites.each do |favorite| %>
-      <%# <div class="my-3"> %>
+      <div class="my-3">
         <%= render "shared/medium_restaurant_card", {restaurant: favorite.restaurant} %>
-      <%# </div> %>
+      </div>
     <% end %>
   </div>
 <div class= "profile_small"> </div>
 	<!-- Recently upvoted restaurant cards -->
-<h2>Followers</h2> 
+<hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+
+
+<h2 style="font-weight: bold; font-size: 23px; text-align: center; margin-top: 25px;">Followers</h2> 
 <div class="container">
   <div class="horizontal-scroll">
     
     <% @followed_users.each do |follow| %>
-      <div>
+      <div class="follower-avatar">
+          <%= link_to user_path(follow.follower) do %>
         <% if follow.follower.photo.attached? %>
-          <%= cl_image_tag follow.follower.photo.key, class: "avatarfollow" %>
+          <%= cl_image_tag follow.follower.photo.key, class: "avatar-follow" %>
         <% else %>
           <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
+          <% end %>
         <% end %>
-       <p><%= follow.follower.first_name %></p>
+       <h3><%= follow.follower.first_name %></h3>
+       <p> <%= follow.follower.cuisine.name %> cuisine </p>
       </div>
     <% end %>
   </div>
    
 </div>
+
