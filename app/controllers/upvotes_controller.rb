@@ -12,7 +12,7 @@ class UpvotesController < ApplicationController
   def destroy
     @restaurant = Restaurant.find(params[:restaurant_id])
     @upvote = Upvote.where(user: current_user, restaurant: @restaurant).first
-    @upvote.destroy 
+    @upvote.destroy
 
     redirect_to restaurant_path(@restaurant)
   end

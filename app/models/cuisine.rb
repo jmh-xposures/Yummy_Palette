@@ -6,7 +6,7 @@ class Cuisine < ApplicationRecord
   has_one_attached :photo
 
   def cuisine_upvoted
-     restaurants.to_a.select do |restaurant|
+     restaurants.select do |restaurant|
        cuisine_experts = users.count
        restaurant_upvotes = Upvote.where(restaurant: restaurant).count
        global_threshold = 0.4

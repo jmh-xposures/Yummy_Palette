@@ -5,6 +5,8 @@ class RestaurantsController < ApplicationController
       @user = current_user
       @review = Review.new
       @cuisine = @restaurant.cuisine
+      @upvote = Upvote.where(user: current_user, restaurant: @restaurant).first
+      @favorite = Favorite.where(user: current_user, restaurant: @restaurant).first
   end
 
   

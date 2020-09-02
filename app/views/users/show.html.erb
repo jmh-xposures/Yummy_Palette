@@ -12,11 +12,11 @@
  <div class="favorite-vote">
   <% if current_user.id != @user.id %> 
     <% if current_user.following?(@user) %>
-      <%= link_to user_follow_path(@user), method: :delete do %>
+      <%= link_to user_follow_path(@user), method: :delete, remote: true do %>
         <%= image_tag 'user_followed.svg', {class: 'user-followed'} %>
       <% end %>
     <% else %>
-      <%= link_to user_follows_path(@user), method: :create do %>
+      <%= link_to user_follows_path(@user), method: :post, remote: true do %>
         <%= image_tag 'follow_user.svg', {class: 'user-followed'} %>
       <% end %>  
     <% end %>
