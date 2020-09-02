@@ -4,11 +4,6 @@ class UpvotesController < ApplicationController
     @upvote = Upvote.new(user: current_user, restaurant: @restaurant)
     if @upvote.save
       redirect_to restaurant_path(@restaurant)
-
-      # respond_to do |format|
-      #   format.html
-      #   format.json { render json: { restaurants: @restaurants } }
-      # end
     else
       flash[:warning] = "Could not upvote. Please try again!"
     end
@@ -17,12 +12,7 @@ class UpvotesController < ApplicationController
   def destroy
     @restaurant = Restaurant.find(params[:restaurant_id])
     @upvote = Upvote.where(user: current_user, restaurant: @restaurant).first
-    @upvote.destroy 
-
-    respond_to do |format|
-      format.html
-      format.json { render json: { restaurants: @restaurants } }
-    end
+    @upvote.destroy
 
     redirect_to restaurant_path(@restaurant)
   end
