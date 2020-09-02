@@ -17,7 +17,7 @@ Restaurant.destroy_all
 User.destroy_all
 Cuisine.destroy_all
 Follow.destroy_all
-
+Message.destroy_all
 
 
 # Indian Cuisine 
@@ -2547,3 +2547,6 @@ puts "creating follow"
 Follow.create!(follower: nicolas, followed: junior)
 Follow.create!(follower: martin, followed: junior)
 Follow.create!(follower: richard, followed: junior)
+
+puts"Creating messages"
+Message.create!(user: nicolas, restaurant: japan_rest2, content: "junior is the best dev")
