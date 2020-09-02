@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :bio, presence: true
 
-  has_many :following_follows, foreign_key: :follower_id , class_name: "Follow", dependent: :destroy
+  has_many :following_follows, foreign_key: :follower_id, class_name: "Follow", dependent: :destroy
   has_many :follower_follows, foreign_key: :followed_id, class_name: "Follow", dependent: :destroy
 
   belongs_to :cuisine
@@ -32,4 +32,8 @@ class User < ApplicationRecord
     favorites = Favorite.where(user: self, restaurant: resto)
     favorites.length > 0
   end
+
+  def following?(user)
+    follows = Follow.exists?(follower: self, followed: user)
+  end 
 end
