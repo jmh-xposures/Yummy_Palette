@@ -20,11 +20,11 @@
       <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
       <div class="favorite-vote">
         <% if current_user.has_favorited?(@restaurant) %> 
-            <%= link_to restaurant_favorite_path(@restaurant), method: :delete do %>
+            <%= link_to restaurant_favorite_path(@restaurant), method: :delete, remote: true do %>
               <%= image_tag 'yellow-star-filled.svg', {id: 'yellow_star_filled'} %>
             <% end %>
           <% else %>
-            <%= link_to restaurant_favorites_path(@restaurant), method: :create do %>
+            <%= link_to restaurant_favorites_path(@restaurant), method: :post, remote: true do %>
               <%= image_tag 'empty_grey_star.svg' %>
             <% end %>
           <% end %>
