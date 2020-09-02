@@ -29,6 +29,9 @@
           <%= link_to 'Profile', user_path(current_user), class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
+          <%= link_to 'My community', cuisine_path(current_user.cuisine), class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
           <%= link_to 'Cuisines', cuisines_path, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
