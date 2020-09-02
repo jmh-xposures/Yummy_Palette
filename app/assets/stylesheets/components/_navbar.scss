@@ -1,4 +1,16 @@
 @media (max-width: 992px) {
+  .search-field {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  
+    .magnifying-glass{ 
+    color: #8A8A8A;
+    position: absolute; 
+    top: -5px;
+    left: -9px;
+    }
+  }
   .navbar-collapse {
     position: absolute;
     top: 106px;
