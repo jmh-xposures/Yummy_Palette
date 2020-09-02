@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_021208) do
+ActiveRecord::Schema.define(version: 2020_09_02_134712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 2020_08_28_021208) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["followed_id"], name: "index_follows_on_followed_id"
     t.index ["follower_id"], name: "index_follows_on_follower_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_messages_on_restaurant_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -131,6 +141,8 @@ ActiveRecord::Schema.define(version: 2020_08_28_021208) do
   add_foreign_key "favorites", "users"
   add_foreign_key "follows", "users", column: "followed_id"
   add_foreign_key "follows", "users", column: "follower_id"
+  add_foreign_key "messages", "restaurants"
+  add_foreign_key "messages", "users"
   add_foreign_key "restaurants", "cuisines"
   add_foreign_key "reviews", "restaurants"
   add_foreign_key "reviews", "users"
