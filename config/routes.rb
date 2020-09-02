@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show] do 
-    resources :follows, only: [:create]
+    resources :follows, only: [:create, :destroy]
   end
 
   resources :dishes, only: [:create]
