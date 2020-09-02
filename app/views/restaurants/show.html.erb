@@ -107,7 +107,9 @@
         <div class="review_card">
           <div class="avatar">    
             <% if review.user.photo.attached? %>
+            <%= link_to user_path(review.user) do %>
               <%= cl_image_tag review.user.photo.key, class: "avatar" %>
+              <% end %>
             <% end %>
           </div>
           <div class="review-dish">
@@ -163,7 +165,9 @@
         <div class="review_card">
           <div class="avatar">    
             <% if review.user.photo.attached? %>
+            <%= link_to user_path(review.user) do %>
               <%= cl_image_tag review.user.photo.key, class: "avatar" %>
+              <% end %>
             <% end %>
             <!--<h3><%#= current_user.first_name</h3> %>-->
           </div>
