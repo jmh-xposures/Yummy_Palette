@@ -8,7 +8,7 @@
 <div class="restaurant-show-container container">
   <div class="restaurant-show-card">
 
-      <h1 class="card-title"><strong><%= link_to @restaurant.name, restaurant_path(@restaurant) %></strong></h1>
+      <h1 class="card-title"><strong><%= @restaurant.name %></strong></h1>
       <%= link_to @cuisine.name, cuisine_path(@cuisine), class: "btn btn-ghost cuisine-tag" %>
 
       <div class="card-restaurant-infos">
@@ -28,21 +28,23 @@
               <%= image_tag 'empty_grey_star.svg' %>
             <% end %>
           <% end %>
-
-        <% if current_user.can_upvote?(@restaurant) %>
-          <% if current_user.has_upvoted?(@restaurant) %> 
-            <%= link_to restaurant_upvote_path(@restaurant), method: :delete do %>
-              <%= image_tag 'red-upvote-filled.svg', {id: 'red-upvote'} %>
+        <div class="upvote-box">
+          <% if current_user.can_upvote?(@restaurant) %>
+            <% if current_user.has_upvoted?(@restaurant) %> 
+              <%= link_to restaurant_upvote_path(@restaurant), method: :delete do %>
+                <%= image_tag 'red-upvote-filled.svg', {id: 'red-upvote'} %>
+              <% end %>
+            <% else %>
+              <%= link_to restaurant_upvotes_path(@restaurant), method: :create do %>
+                <%= image_tag 'empty_grey_upvote.svg' %>
+              <% end %>
             <% end %>
           <% else %>
-            <%= link_to restaurant_upvotes_path(@restaurant), method: :create do %>
-              <%= image_tag 'empty_grey_upvote.svg' %>
-            <% end %>
+            <%= image_tag 'black_upvote.svg' %>
           <% end %>
-        <% else %>
-          <%= image_tag 'black_upvote.svg' %>
-        <% end %>
 
+          <span><%= @restaurant.upvotes.count %></span>
+        </div>
         <%#= if current_user.cuisine.name = @cuisine.name %>
         <%# end %>
       </div>
