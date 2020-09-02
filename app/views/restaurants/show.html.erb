@@ -65,13 +65,13 @@
       <div class="flex-card">
         <% @restaurant.tags.each do |tag| %>
           <div class="tag">
-            <%= tag.dish.name%>
+            <p><%= tag.dish.name%></p>
           </div>
         <% end %>
 
         <!-- Add Dish trigger modal -->
         <% if current_user.cuisine&.name == @cuisine.name %>
-          <button type="button" class="tag" data-toggle="modal" data-target="#tagModal">
+          <button type="button" class="tag" style="width: 50px;" data-toggle="modal" data-target="#tagModal">
             +
           </button>
         <% end %>
