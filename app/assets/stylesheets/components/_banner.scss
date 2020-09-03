@@ -33,12 +33,21 @@
   h2 {
     font-size: 30px;
     font-weight: bold;
-
   }
   h3 {
     font-size: 30px;
     font-weight: bold;
   }
+}
+
+.banner-restaurant {
+  width: 100vw;
+  height: 175px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: -1;
 }
 
 .welcome {
