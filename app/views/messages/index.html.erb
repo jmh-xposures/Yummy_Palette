@@ -1,23 +1,31 @@
+<% if @restaurant.photo.attached? %>
+    <%= cl_image_tag @restaurant.photo.key, crop: :fill, class: "show-page-cover" %>
+  <% else %>
+   <img class="show-page-cover" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+<% end %>
+
 <div id="messages">
+  <h1> <%= @restaurant.name %> </h1>
   <% @restaurant.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
     	<% if message.user.photo.attached? %>
     		<%= cl_image_tag message.user.photo.key, class:"avatar" %>
     	<% end %>
-      <i class="author">
-        <span><%= message.user.first_name %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
+      <div>
+        <i class="author">
+          <span><%= message.user.first_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
+
     </div>
   <% end %>
 </div>
 
-<div>
+<div class="messageform">
     <%= simple_form_for [ @restaurant, @message ] do |f| %>
-    <%= f.input :content %>
-  <div class="submit">
-    <%= f.submit "Submit message", class: "btn btn-primary" %>
+      <%= f.input :content, autofocus: true, label: false, placeholder: "Eat expert..." %>
+      <%= f.submit "🍴", class: "btn btn-primary" %>
     <% end %>
-  </div>
 </div>
