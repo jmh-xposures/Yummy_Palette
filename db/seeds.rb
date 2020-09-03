@@ -416,7 +416,7 @@ erika.photo.attach(io: erika_img, filename: 'francesca profile', content_type: '
 #Mexican Cuisine
 puts "Creating Mexican cuisine"
 mexican = Cuisine.create!(name:'Mexican')
-img_mexican_cuisine = URI.open('https://www.adv-bio.com/wp-content/uploads/shutterstock_395007781__1__gbzwut-e1519314492769.jpg')
+img_mexican_cuisine = URI.open('https://myareanetwork-photos.s3.amazonaws.com/editorphotos/f/34069_1556491389.jpg')
 mexican.photo.attach(io: img_mexican_cuisine, filename: 'mexican_cuisine', content_type: 'image/jpg')
 
 
@@ -1173,11 +1173,12 @@ Review.create!(restaurant: mexican_rest3, user: ryan, content:"Just Spectacular!
 Review.create!(restaurant: mexican_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
 
 Review.create!(restaurant: mexican_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
-Review.create!(restaurant: mexican_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
-Review.create!(restaurant: mexican_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest4, user: arthur, content:"Fresh ingredients, perfect texture, amazing taste!!!!")
+Review.create!(restaurant: mexican_rest4, user: alexander, content:"I recommend this place 100% It is super authentic!!!!")
+Review.create!(restaurant: mexican_rest4, user: thomas, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest4, user: richard, content:"So Spiiiiiccyyyyyy!!!! But really good!")
 Review.create!(restaurant: mexican_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
-Review.create!(restaurant: mexican_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
-Review.create!(restaurant: mexican_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
+Review.create!(restaurant: mexican_rest4, user: junior, content:"Vraiment bon!!! Merci pour la recommendation!!")
 Review.create!(restaurant: mexican_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
 
 Review.create!(restaurant: mexican_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
@@ -1246,6 +1247,7 @@ Review.create!(restaurant: korean_rest3, user: ryan, content:"Just Spectacular!!
 Review.create!(restaurant: korean_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
 
 Review.create!(restaurant: korean_rest4, user: choong, content:"Everything is authentic about this place. I come here often and have tried all their dishes! I recommend this place hands down!")
+Review.create!(restaurant: korean_rest4, user: minju, content:"I absolutely love this place. It's very homy and their kimchi tastes just like how my grandma used to make it. Definitely recommend it!")
 
 
 
@@ -1703,7 +1705,7 @@ Tag.create!(dish: m3, restaurant: mexican_rest4, user: alexander)
 Tag.create!(dish: m2, restaurant: mexican_rest4, user: alexander)
 Tag.create!(dish: m8, restaurant: mexican_rest4, user: millie)
 Tag.create!(dish: m9, restaurant: mexican_rest4, user: millie)
-Tag.create!(dish: m1, restaurant: mexican_rest4, user: alexander)
+Tag.create!(dish: m1, restaurant: mexican_rest8, user: alexander)
 Tag.create!(dish: m10, restaurant: mexican_rest5, user: alexander)
 Tag.create!(dish: m8, restaurant: mexican_rest5, user: alexander)
 Tag.create!(dish: m10, restaurant: mexican_rest6, user: alexander)
@@ -1712,27 +1714,27 @@ Tag.create!(dish: m5, restaurant: mexican_rest7, user: arthur)
 Tag.create!(dish: m7, restaurant: mexican_rest7, user: millie)
 Tag.create!(dish: m5, restaurant: mexican_rest8, user: millie)
 Tag.create!(dish: m8, restaurant: mexican_rest8, user: arthur)
-Tag.create!(dish: m9, restaurant: mexican_rest8, user: alexander)
+Tag.create!(dish: m9, restaurant: mexican_rest2, user: alexander)
 Tag.create!(dish: m2, restaurant: mexican_rest9, user: arthur)
 Tag.create!(dish: m3, restaurant: mexican_rest9, user: arthur)
 
 
 puts "creating tags for Korean restaurants"
-Tag.create!(dish: k1, restaurant: korean_rest1, user: choong)
+Tag.create!(dish: k1, restaurant: korean_rest1, user: kristin)
 Tag.create!(dish: k2, restaurant: korean_rest1, user: choong)
 Tag.create!(dish: k3, restaurant: korean_rest1, user: miguel)
-Tag.create!(dish: k4, restaurant: korean_rest1, user: miguel)
+Tag.create!(dish: k4, restaurant: korean_rest1, user: kristin)
 Tag.create!(dish: k5, restaurant: korean_rest2, user: choong)
 Tag.create!(dish: k4, restaurant: korean_rest2, user: ryan)
 Tag.create!(dish: k6, restaurant: korean_rest2, user: ryan)
 Tag.create!(dish: k6, restaurant: korean_rest3, user: miguel)
-Tag.create!(dish: k7, restaurant: korean_rest3, user: miguel)
-Tag.create!(dish: k3, restaurant: korean_rest4, user: choong)
+Tag.create!(dish: k7, restaurant: korean_rest3, user: minju)
+Tag.create!(dish: k3, restaurant: korean_rest4, user: minju)
 Tag.create!(dish: k2, restaurant: korean_rest4, user: choong)
 Tag.create!(dish: k8, restaurant: korean_rest4, user: miguel)
-Tag.create!(dish: k9, restaurant: korean_rest4, user: miguel)
+Tag.create!(dish: k9, restaurant: korean_rest4, user: kristin)
 Tag.create!(dish: k1, restaurant: korean_rest4, user: choong)
-Tag.create!(dish: k10, restaurant: korean_rest5, user: choong)
+Tag.create!(dish: k10, restaurant: korean_rest5, user: minju)
 Tag.create!(dish: k8, restaurant: korean_rest5, user: choong)
 Tag.create!(dish: k10, restaurant: korean_rest6, user: choong)
 
@@ -2358,6 +2360,22 @@ Favorite.create!(restaurant: port_rest2, user: miguel)
 Favorite.create!(restaurant: chinese_rest8, user: miguel)
 Favorite.create!(restaurant: korean_rest3, user: miguel)
 
+puts "Creating favorite restaurants for Minju"
+Favorite.create!(restaurant: korean_rest1, user: minju)
+Favorite.create!(restaurant: middle_eastern_rest1, user: minju)
+Favorite.create!(restaurant: greek_rest5, user: minju)
+Favorite.create!(restaurant: french_rest2, user: minju)
+Favorite.create!(restaurant: chinese_rest1, user: minju)
+Favorite.create!(restaurant: japan_rest3, user: minju)
+Favorite.create!(restaurant: korean_rest5, user: minju)
+Favorite.create!(restaurant: french_rest7, user: minju)
+Favorite.create!(restaurant: mexican_rest5, user: minju)
+Favorite.create!(restaurant: mexican_rest8, user: minju)
+Favorite.create!(restaurant: middle_eastern_rest7, user: minju)
+Favorite.create!(restaurant: korean_rest2, user: minju)
+Favorite.create!(restaurant: port_rest4, user: minju)
+Favorite.create!(restaurant: port_rest8, user: minju)
+
 puts "Creating favorite restaurants for Choong"
 Favorite.create!(restaurant: korean_rest1, user: choong)
 Favorite.create!(restaurant: korean_rest2, user: choong)
@@ -2552,9 +2570,14 @@ Favorite.create!(restaurant: korean_rest1, user: richard)
 Favorite.create!(restaurant: greek_rest7, user: richard)
 
 puts "creating follow"
-Follow.create!(follower: nicolas, followed: junior)
-Follow.create!(follower: martin, followed: junior)
-Follow.create!(follower: richard, followed: junior)
+Follow.create!(follower: nicolas, followed: minju)
+Follow.create!(follower: kristin, followed: minju)
+Follow.create!(follower: stephane, followed: minju)
+Follow.create!(follower: mg, followed: minju)
+Follow.create!(follower: aline, followed: minju)
+Follow.create!(follower: richard, followed: minju)
+Follow.create!(follower: wince, followed: minju)
+Follow.create!(follower: poyan, followed: minju)
 
 puts"Creating messages"
 Message.create!(user: nicolas, restaurant: japan_rest2, content: "junior is the best dev")
