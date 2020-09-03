@@ -1,0 +1,67 @@
+.signin-body {
+  background-image: linear-gradient(rgba(240,240,240,0.3), rgba(240,240,240,0.3)), asset-url("color_palette.jpg");
+  height: 100vh;
+  display: flex;
+  background-size: cover;
+  background-position: 74% 50%;
+  justify-content: center;
+  align-items: center;
+
+  .login-container {
+    background-color: #FFFFFF;
+    width: 350px;
+    height: 410px;
+    border-radius: 10px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    padding: 2px 16px;
+    opacity: 0.9;
+  }
+}
+
+#login-title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.input-field {
+  border-radius: 10px;
+  margin: 0 16px;
+}
+
+.login-button {
+  padding: 2px 5px;
+  color: #8C55AA;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: lightblue;
+  border-radius: 20px;  
+}
+
+.login-cred {
+  border-radius: 50px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+#user_remember_me {
+  border-radius: 50px;
+}
+
+.signup {
+  text-align: center;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.yummy-palette {
+  font-family: 'Brush Script MT';
+  text-align: center;
+  font-size: 50px;
+  color: rgba(8, 123, 255, 0.6);
+}
+

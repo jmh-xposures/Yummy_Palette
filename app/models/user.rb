@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, presence: true
-  validates :last_name, presence: true
+  # validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :bio, presence: true
+  # validates :bio, presence: true
 
   has_many :following_follows, foreign_key: :follower_id, class_name: "Follow", dependent: :destroy
   has_many :follower_follows, foreign_key: :followed_id, class_name: "Follow", dependent: :destroy
