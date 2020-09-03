@@ -1,0 +1,13 @@
+.footer {
+    height: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: greenyellow;
+    margin-top: 1rem;
+    // linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), asset-url("color_palette.jpg");
+    p {
+        color: black;
+        margin-top: 1rem;
+    }
+}

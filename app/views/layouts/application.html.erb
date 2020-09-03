@@ -18,5 +18,9 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+
+    <% if (request.original_url.split("/").last != "sign_in") && (request.original_url.split("/").last != "sign_up")%>
+      <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>
