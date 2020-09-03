@@ -4,28 +4,18 @@
    <img class="show-page-cover" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
 <% end %>
 
-<div id="messages">
+<div class="chatroom-messages-container" id="messages" data-restaurant-id="<%= @restaurant.id %>" >
   <h1> <%= @restaurant.name %> </h1>
   <% @restaurant.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
-    	<% if message.user.photo.attached? %>
-    		<%= cl_image_tag message.user.photo.key, class:"avatar" %>
-    	<% end %>
-      <div>
-        <i class="author">
-          <span><%= message.user.first_name %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
-      </div>
-
+      <%= render 'shared/message', message: message %>
     </div>
   <% end %>
 </div>
 
 <div class="messageform">
-    <%= simple_form_for [ @restaurant, @message ] do |f| %>
-      <%= f.input :content, autofocus: true, label: false, placeholder: "Eat expert..." %>
+    <%= simple_form_for [ @restaurant, @message ], remote: true do |f| %>
+      <%= f.input :content, autofocus: true, label: false, placeholder: "Eat expert...", remote: true %>
       <%= f.submit "🍴", class: "btn btn-primary" %>
     <% end %>
 </div>
