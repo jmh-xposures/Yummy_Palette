@@ -12,19 +12,40 @@
 
 @media (max-width: 600px) {
   .restaurant-show-container {
-    width: 390px;
+    width: 375px;
+  }
+}
+.ask-btn {
+  margin-top: 30px;
+  display: block;
+}
+
+.message-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 10px;
+  }
+  p {
+    margin-bottom: 0;
   }
 }
 
-// #messages {
-	// position: absolute;
-	// margin-top: 300px;
-	// padding-right: 15px;
-	// padding-left: 15px;
-// }
-// .submit {
-	// margin-top: 500px;
-// }
-// p {
-	// color: red;
-// }
+.messageform form {
+  display: flex;
+  padding: 10px;
+  
+  .message_content {
+    flex-grow: 1;
+    
+  }
+  input[type=text] {
+    height: 54px;
+    border: 1px solid;
+  }
+  input[type=submit] {
+    height: 54px;
+    font-size: 24px;
+  }
+}
