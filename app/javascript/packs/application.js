@@ -25,6 +25,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 // External imports
 import "bootstrap";
 import { buttonClick } from "../components/navbar_button"
+import { initChatroomCable } from '../channels/chatroom_channel';
 
 
 // Internal imports, e.g:
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   buttonClick();
   initMapbox();
+  initChatroomCable();
 });
