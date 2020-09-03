@@ -23,10 +23,10 @@
 
 <%# render the list of cuisines seeded in the database using partials %>
 <div class="cards-wrapper">
-	<h3 style="text-align: center; margin-bottom: 4px;">Cuisine</h3>
+	<h3 style="text-align: center; margin-bottom: 4px;">Cuisines</h3>
 	<div class="horizontal-scroll">
-		<% @cuisines.each do |cuisine| %>
-			<div class="remove-hover-effect">
+		<% @cuisines.each_with_index do |cuisine, i| %>
+			<div class="remove-hover-effect card_index_<%= i %>">
 				<%= render "shared/small_cuisine_card", {cuisine: cuisine} %>
 			</div>
 		<% end  %>
