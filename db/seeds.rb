@@ -20,7 +20,7 @@ Follow.destroy_all
 Message.destroy_all
 
 
-# Indian Cuisine 
+# Indian Cuisine
 puts "Creating Indian cuisine"
 indian = Cuisine.create!(name:'Indian')
 img_indian_cuisine = URI.open('https://img.mobygeek.com/crop/1200x628/2020/02/23/indian-food-salinda-41c0.jpg')
@@ -520,9 +520,17 @@ ryan = User.create!(cuisine_id: korean.id, first_name: "Ryan", last_name: "Buckl
 ryan_img = URI.open('https://avatars1.githubusercontent.com/u/48371025?v=4')
 ryan.photo.attach(io: ryan_img, filename: 'ryan profile', content_type: 'image/jpg')
 
+gabriel = User.create!(cuisine_id: korean.id, first_name: "Gabriel", last_name: "Gagnon", email:"gabriel@wagon.com" , bio:"From Montreal, love the Korean culture and food!", password:"123456")
+gabriel_img = URI.open('https://scontent.fymy1-2.fna.fbcdn.net/v/t1.0-9/90441313_2769539176494699_5534929589920333824_n.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=wtkv0ETSig4AX8sQmMt&_nc_ht=scontent.fymy1-2.fna&oh=709229eeda3aeccaff0e5b1cbfb75da0&oe=5F77CFD2')
+gabriel.photo.attach(io: gabriel_img, filename: 'gabriel profile', content_type: 'image/jpg')
 
+kristin = User.create!(cuisine_id: korean.id, first_name: "Kristin", last_name: "Lee", email:"kristin@wagon.com" , bio:"Originally from NYC, I moved to Montreal to play as a member of thew Montreal Symphony Orchestra! I am Korean and love food!!!", password:"123456")
+kristin_img = URI.open('https://scontent.fymy1-2.fna.fbcdn.net/v/t31.0-8/18358719_697561983820_4138894045649736404_o.jpg?_nc_cat=105&_nc_sid=174925&_nc_ohc=WvVYXP9pyf4AX_JFG_K&_nc_ht=scontent.fymy1-2.fna&oh=260598f2739a2db2e1a26cbe3e2250b8&oe=5F76FD19')
+kristin.photo.attach(io: kristin_img, filename: 'kristin profile', content_type: 'image/jpg')
 
-
+minju = User.create!(cuisine_id: korean.id, first_name: "Minju", last_name: "Kim", email:"minju@wagon.com" , bio:"Originally from Korea but gre up in Los Angeles, I just moved to Montreal to play violin in the  Montreal Symphony orchestra. I'm so happy I discovered Yummy Palette as I was able to find the most amazing Korean restaurants from the get go. Cant wait to try all your yummy suggestions!!!", password:"123456")
+minju_img = URI.open('https://scontent.fymy1-2.fna.fbcdn.net/v/t1.0-9/1928330_508563228206_9449_n.jpg?_nc_cat=105&_nc_sid=de6eea&_nc_ohc=eH09QcE0x2AAX8BAAO9&_nc_ht=scontent.fymy1-2.fna&oh=5a55b61ceb35a7a0a9de3f0e39326302&oe=5F75B36C')
+minju.photo.attach(io: minju_img, filename: 'minju profile', content_type: 'image/jpg')
 
 #Middle-Eastern Cuisine
 puts "Creating Middle-Eastern cuisine"
@@ -1197,9 +1205,9 @@ Review.create!(restaurant: mexican_rest7, user: boran, content:"Just Spectacular
 Review.create!(restaurant: mexican_rest7, user: nirali, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
 
 Review.create!(restaurant: mexican_rest8, user: junior, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
-Review.create!(restaurant: mexican_rest8, user: poyan, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
-Review.create!(restaurant: mexican_rest8, user: mg, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
-Review.create!(restaurant: mexican_rest8, user: martin, content:"Food coma!!!! What a spectaculor restaurant!")
+Review.create!(restaurant: mexican_rest8, user: alexander, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest8, user: millie, content:"I enjoyed this restaurant so much! And the Burrito here are just phenomenal!!!!")
+Review.create!(restaurant: mexican_rest8, user: arthur, content:"Food coma!!!! What a spectaculor restaurant!")
 Review.create!(restaurant: mexican_rest8, user: erika, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
 Review.create!(restaurant: mexican_rest8, user: lea, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
 Review.create!(restaurant: mexican_rest8, user: debora, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
@@ -1237,13 +1245,13 @@ Review.create!(restaurant: korean_rest3, user: choong, content:"Please take the 
 Review.create!(restaurant: korean_rest3, user: ryan, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
 Review.create!(restaurant: korean_rest3, user: michel, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
 
-Review.create!(restaurant: korean_rest4, user: millie, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
-Review.create!(restaurant: korean_rest4, user: miguel, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
-Review.create!(restaurant: korean_rest4, user: richard, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
-Review.create!(restaurant: korean_rest4, user: nicolas, content:"Food coma!!!! What a spectaculor restaurant!")
-Review.create!(restaurant: korean_rest4, user: francesca, content:"Please take the time to try out this restaurant if you haven't yet. The food, the service, the vibe!!! We are going back next week!!")
-Review.create!(restaurant: korean_rest4, user: arthur, content:"Just Spectacular!!! Haven't had this good a meal in a while!")
-Review.create!(restaurant: korean_rest4, user: alexander, content:"Thank you Yummy Palette community for these incredible recommendations. This last meal was, yet again, just stellar!!")
+Review.create!(restaurant: korean_rest4, user: choong, content:"Everything is authentic about this place. I come here often and have tried all their dishes! I recommend this place hands down!")
+
+
+
+
+
+
 
 Review.create!(restaurant: korean_rest5, user: debora, content:"Authentic recipes, done to prefection! I recommend this place hands down!")
 Review.create!(restaurant: korean_rest5, user: lea, content:"I enjoyed this restaurant so much! And the deserts here are just phenomenal!!!!")
