@@ -3,11 +3,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: greenyellow;
+    background-color: #EBDC87;
     margin-top: 1rem;
-    // linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), asset-url("color_palette.jpg");
+    // position: sticky;
+    // bottom: 0;
     p {
         color: black;
         margin-top: 1rem;
+        font-family: 'Dancing Script', cursive;
+        font-size: 30px;
     }
 }

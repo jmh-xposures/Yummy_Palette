@@ -9,7 +9,7 @@
   </div>
 </div>
 
- <div class="favorite-vote">
+<div class="favorite-vote">
   <% if current_user.id != @user.id %> 
     <% if current_user.following?(@user) %>
       <%= link_to user_follow_path(@user), method: :delete, remote: true do %>
@@ -45,9 +45,13 @@
 <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
 
 
-<h2 style="font-weight: bold; font-size: 23px; text-align: center; margin-top: 25px;">Followers</h2> 
+<h2 style="font-weight: bold; font-size: 23px; text-align: center; margin-top: 25px;">Followers (<%= @followed_users.count %>)</h2> 
 <div class="container">
-  <% if @followed_users == true %>
+  <% if @followed_users.empty? %>
+    <div class="no-follower-box">
+      <p>you have no followers yet</p>
+    </div>
+  <% else %>
     <div class="horizontal-scroll">
         <% @followed_users.each do |follow| %>
           <div class="follower-avatar">
@@ -63,11 +67,31 @@
           </div>
         <% end %>
     </div>
-  <% else %>
+  <% end %> 
+</div>
+
+<h2 style="font-weight: bold; font-size: 23px; text-align: center; margin-top: 25px;">Following (<%= @follow_users.count %>)</h2> 
+<div class="container">
+  <% if @follow_users.empty? %>
     <div class="no-follower-box">
-      <p>you have no followers yet</p>
+      <p>you are not following anyone yet</p>
     </div>
-  <% end %>
-   
+  <% else %>
+    <div class="horizontal-scroll">
+        <% @follow_users.each do |follow| %>
+          <div class="follower-avatar">
+            <%= link_to user_path(follow.follower) do %>
+              <% if follow.follower.photo.attached? %>
+                <%= cl_image_tag follow.follower.photo.key, class: "avatar-follow" %>
+              <% else %>
+                <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
+              <% end %>
+            <% end %>
+            <h3><%= follow.follower.first_name %></h3>
+            <p> <%= follow.follower.cuisine.name %> cuisine </p>
+          </div>
+        <% end %>
+    </div>
+  <% end %> 
 </div>
 
