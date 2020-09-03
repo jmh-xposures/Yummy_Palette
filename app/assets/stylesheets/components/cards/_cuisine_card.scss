@@ -2,8 +2,8 @@
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    width: 110px;
-    height: 110px;
+    width: 127px;
+    height: 127px;
     border-radius: 18px;
     
     .small-cuisine-card-name {
@@ -12,6 +12,8 @@
         align-items: flex-end;
         position: relative;
         padding-left: 8px;
+        span {
+        }
     }
 
     img {

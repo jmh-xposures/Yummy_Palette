@@ -122,7 +122,7 @@ japan_rest7 = Restaurant.create!(cuisine: japanese, name: "Imadake", address: "4
 img_japan_rest7 = URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/t_Rw8cjz_EiGBNFhe-hUkA/l.jpg')
 japan_rest7.photo.attach(io: img_japan_rest7, filename: 'Imadake', content_type: 'image/jpg')
 
-japan_rest8 = Restaurant.create!(cuisine: japanese, name: "Sho-Dan Restaurant", address: "2020, rue Metcalfe Près du métro Peel, Near Peel Metro, Montreal", phone: "1-514-987-9987")
+japan_rest8 = Restaurant.create!(cuisine: japanese, name: "Sho-Dan Restaurant", address: "2020 rue Metcalfe Près du métro Peel, Near Peel Metro, Montreal", phone: "1-514-987-9987")
 img_japan_rest8 = URI.open('https://ssmscdn.yp.ca/image/resize/743006b9-4272-4e80-afaf-b5ad52be21a5/ypui-d-mp-pic-gal-lg/restaurant-sho-dan-1.jpg')
 japan_rest8.photo.attach(io: img_japan_rest8, filename: 'Sho-Dan Restaurant', content_type: 'image/jpg')
 
@@ -175,7 +175,7 @@ port_rest4 = Restaurant.create!(cuisine: portuguese, name: "Romados", address: "
 img_port_rest4 = URI.open('https://foodology.ca/wp-content/uploads/2012/05/rom0inner.jpg')
 port_rest4.photo.attach(io: img_port_rest4, filename: 'Romados', content_type: 'image/jpg')
 
-port_rest5 = Restaurant.create!(cuisine: portuguese, name: "Portus 360", address: "777, Boulevard Robert Bourassa, Montreal", phone: "1-514-849-2070", vegetarian: false )
+port_rest5 = Restaurant.create!(cuisine: portuguese, name: "Portus 360", address: "777 Boulevard Robert Bourassa, Montreal", phone: "1-514-849-2070", vegetarian: false )
 img_port_rest5 = URI.open('https://www.debeur.com/site/uploads/news/id1273/Debeur_Portus360-625.jpg')
 port_rest5.photo.attach(io: img_port_rest5, filename: 'Portus 360', content_type: 'image/jpg')
 
@@ -191,7 +191,7 @@ port_rest8 = Restaurant.create!(cuisine: portuguese, name: "Boca Iberica", addre
 img_port_rest8 = URI.open('https://www.restomontreal.ca/media/blog/boca_iberica-18.jpg')
 port_rest8.photo.attach(io: img_port_rest8, filename: 'Boca Iberica', content_type: 'image/jpg')
 
-port_rest9 = Restaurant.create!(cuisine: portuguese, name: "Ferreira Cafe", address: "1485, Jeanne Mance Quartier des spectacles, Montreal", phone: "1-514-848-0988", vegetarian: true)
+port_rest9 = Restaurant.create!(cuisine: portuguese, name: "Ferreira Cafe", address: "1485 Jeanne Mance Quartier des spectacles, Montreal", phone: "1-514-848-0988", vegetarian: true)
 img_port_rest9 = URI.open('https://ferreiracafe.com/wp-content/uploads/2015/08/ferreira-1585-1024x683.jpg')
 port_rest9.photo.attach(io: img_port_rest9, filename: 'Ferreira Cafe', content_type: 'image/jpg')
 
@@ -298,7 +298,7 @@ chinese_rest2 = Restaurant.create!(cuisine: chinese, name: "Beijing", address: "
 img_chinese_rest2 = URI.open('https://live.staticflickr.com/1340/927894247_89278e75c1_b.jpg')
 chinese_rest2.photo.attach(io: img_chinese_rest2, filename: 'Beijing', content_type: 'image/jpg')
 
-chinese_rest3 = Restaurant.create!(cuisine: chinese, name: "Noodle Factory", address: "1018, rue St-urbain, Montreal", phone: "1-514-677-6338")
+chinese_rest3 = Restaurant.create!(cuisine: chinese, name: "Noodle Factory", address: "1018 rue St-urbain, Montreal", phone: "1-514-677-6338")
 img_chinese_rest3 = URI.open('https://images.lpcdn.ca/924x615/200809/21/9227-comptoir-protege-vitre-cuisinier-prepare.jpg')
 chinese_rest3.photo.attach(io: img_chinese_rest3, filename: 'Noodle Factory', content_type: 'image/jpg')
 
@@ -356,7 +356,7 @@ greek.photo.attach(io: img_greek_cuisine, filename: 'greek_cuisine', content_typ
 
 
 puts "Creating Greek restaurants"
-greek_rest1 = Restaurant.create!(cuisine: greek, name: "Zante", address: "3449, Rue St-Laurent, Montreal", phone: "1-514-271-9099")
+greek_rest1 = Restaurant.create!(cuisine: greek, name: "Zante", address: "3449 Rue St-Laurent, Montreal", phone: "1-514-271-9099")
 img_greek_rest1 = URI.open('https://portal.restomontreal.ca/zante-downtown/gallery/images/02_zante_132-2017-10-31.jpg')
 greek_rest1.photo.attach(io: img_greek_rest1, filename: 'zante', content_type: 'image/jpg')
 
@@ -421,7 +421,7 @@ mexican.photo.attach(io: img_mexican_cuisine, filename: 'mexican_cuisine', conte
 
 
 puts "Creating Mexican restaurants"
-mexican_rest1 = Restaurant.create!(cuisine: mexican, name: "Escondite", address: "1206, Union, Montreal", phone: "1-514-419-9755")
+mexican_rest1 = Restaurant.create!(cuisine: mexican, name: "Escondite", address: "1206 Union, Montreal", phone: "1-514-419-9755")
 img_mexican_rest1 = URI.open('https://www.bonjourquebec.com/en/listing/images/800x600/91729664-69fc-41d3-9d5d-3e7c25e068ce/escondite-montreal-rue-st-paul-o-bar.jpg')
 mexican_rest1.photo.attach(io: img_mexican_rest1, filename: 'escondite', content_type: 'image/jpg')
 
@@ -429,11 +429,11 @@ mexican_rest2 = Restaurant.create!(cuisine: mexican, name: "Cafe Lola Rosa", add
 img_mexican_rest2 = URI.open('https://laurenjane.files.wordpress.com/2010/11/lolarosa.jpg')
 mexican_rest2.photo.attach(io: img_mexican_rest2, filename: 'cafe_lola', content_type: 'image/jpg')
 
-mexican_rest3 = Restaurant.create!(cuisine: mexican, name: "La Capital Tacos", address: "232, Jean Talon, East, Montreal", phone: "1-514-873-5255")
+mexican_rest3 = Restaurant.create!(cuisine: mexican, name: "La Capital Tacos", address: "1096 St Laurent Blvd, Montreal", phone: "1-514-873-5255")
 img_mexican_rest3 = URI.open('https://i.ytimg.com/vi/zvrSdWP3fr0/maxresdefault.jpg')
 mexican_rest3.photo.attach(io: img_mexican_rest3, filename: 'capital_tacos', content_type: 'image/jpg')
 
-mexican_rest4 = Restaurant.create!(cuisine: mexican, name: "El Rey del Taco", address: "232, Jean Talon, East, Montreal", phone: "1-514-274-3336")
+mexican_rest4 = Restaurant.create!(cuisine: mexican, name: "El Rey del Taco", address: "232 Jean Talon St E, Montreal", phone: "1-514-274-3336")
 img_mexican_rest4 = URI.open('https://montrealbestfoodever.files.wordpress.com/2012/06/p10401281.jpg')
 mexican_rest4.photo.attach(io: img_mexican_rest4, filename: 'rey_del_taco', content_type: 'image/jpg')
 
@@ -445,7 +445,7 @@ mexican_rest6 = Restaurant.create!(cuisine: mexican, name: "Grumman 78 ", addres
 img_mexican_rest6 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/18/ef/6e/8f/outside-of-restaurant.jpg')
 mexican_rest6.photo.attach(io: img_mexican_rest6, filename: 'grumman', content_type: 'image/jpg')
 
-mexican_rest7 = Restaurant.create!(cuisine: mexican, name: "Escondite Drummond", address: "1224, Rue Drummond, Montreal", phone: "1-514-375-5945")
+mexican_rest7 = Restaurant.create!(cuisine: mexican, name: "Escondite Drummond", address: "1224 Rue Drummond, Montreal", phone: "1-514-375-5945")
 img_mexican_rest7 = URI.open('https://www.bonjourquebec.com/en/listing/images/800x600/e891c961-218e-4b15-aea4-c169eb711346/escondite-montreal-rue-drummond-exterieur.jpg')
 mexican_rest7.photo.attach(io: img_mexican_rest7, filename: 'esoncdite_drummond', content_type: 'image/jpg')
 
@@ -453,7 +453,7 @@ mexican_rest8 = Restaurant.create!(cuisine: mexican, name: "La Tamalera", addres
 img_mexican_rest8 = URI.open('https://www.mtlblog.com/uploads/0019e72edcd96857761da9abd33b166ad8574c0f.jpg_facebook.jpg')
 mexican_rest8.photo.attach(io: img_mexican_rest8, filename: 'tamalera', content_type: 'image/jpg')
 
-mexican_rest9 = Restaurant.create!(cuisine: mexican, name: "3 amigos", address: "1621 Saint-Denis st, Montreal, Quebec", phone: "1-514-987-6868")
+mexican_rest9 = Restaurant.create!(cuisine: mexican, name: "3 amigos", address: "1621 Saint-Denis st, Montreal", phone: "1-514-987-6868")
 img_mexican_rest9 = URI.open('https://media.musely.com/u/549bc0a7-3e80-4140-82f2-fcbacbe15cc4.jpg')
 mexican_rest9.photo.attach(io: img_mexican_rest9, filename: 'amigos', content_type: 'image/jpg')
 
