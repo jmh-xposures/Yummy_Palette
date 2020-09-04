@@ -8,7 +8,7 @@
   <% end %>
 </div>
 
-<div class="restaurant-show-container container">
+<div class="show-container container">
   <div class="restaurant-show-card">
     <h1 class="card-title"><strong><%= @restaurant.name %></strong></h1>
     <%= link_to @cuisine.name, cuisine_path(@cuisine), class: "btn btn-ghost cuisine-tag" %>
@@ -47,16 +47,6 @@
       </div>
     </div>
   </div>
-
-  <%# if current_user.signed_in do %>
-    <div class="upvote-button">
-      <%# TODO%>
-    </div>
-  <%# else %>
-    <div>
-      <%# TODO%>
-    </div>
-  <%# end %>
 
   <% if user_signed_in? && current_user.cuisine == @restaurant.cuisine %>
     <%= link_to "Enter Chatroom", restaurant_messages_path(@restaurant), class:"btn btn-outline-primary ask-btn enter-chatroom-button", 'data-retaurant-id' => @restaurant.id %>

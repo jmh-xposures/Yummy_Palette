@@ -1,8 +1,36 @@
-<% if @restaurant.photo.attached? %>
-    <%= cl_image_tag @restaurant.photo.key, crop: :fill, class: "show-page-cover" %>
+<div class="banner-restaurant">
+  <% if @restaurant.photo.attached? %>
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://res.cloudinary.com/drjhe1klf/image/upload/c_fill/<%= @restaurant.photo.key %>.jpg); position: absolute; width: 100%; height: 100%; background-size: cover; z-index: -1;">
+    </div>
   <% else %>
-   <img class="show-page-cover" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
-<% end %>
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg); position: absolute; width: 100%; height: 100%; background-size: cover; z-index: -1">
+    </div>
+  <% end %>
+  <h1><%= @restaurant.name %></h1>
+</div>
+
+<div class="button-box">
+  <%= link_to :back do %>
+    <div class="btn btn-primary submit-button-blue">
+      back to restaurant 
+    </div>
+  <% end %>
+</div>
+
+
+<div id="messages">
+  <% @restaurant.messages.each do |message| %>
+    <div class="message-container" id="message-<%= message.id %>">
+    	<% if message.user.photo.attached? %>
+    		<%= cl_image_tag message.user.photo.key, class:"avatar" %>
+    	<% end %>
+      <div>
+        <i class="author">
+          <span><%= message.user.first_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
 
 <div class="chatroom-messages-container" id="messages" data-restaurant-id="<%= @restaurant.id %>" >
   <h1> <%= @restaurant.name %> </h1>
