@@ -35,7 +35,7 @@ class Restaurant < ApplicationRecord
       restaurant_upvotes = Upvote.where(restaurant: restaurant).count
       global_threshold = 0.5
 
-      upvote_percentage = (restaurant_upvotes / cuisine_experts).to_f
+      upvote_percentage = restaurant_upvotes / cuisine_experts.to_f
       upvote_percentage >= global_threshold
     end
   end
