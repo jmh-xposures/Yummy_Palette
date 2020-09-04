@@ -508,7 +508,7 @@ img_korean_rest6 = URI.open('https://www.mcgilldaily.com/wp-content/uploads/2014
 korean_rest6.photo.attach(io: img_korean_rest6, filename: 'ganadara', content_type: 'image/jpg')
 
 puts "Creating Korean cuisine experts"
-miguel = User.create!(cuisine_id: korean.id, first_name: "Juan-Miguel", last_name: "Hernandez", email:"miguel@wagon.com" , bio:"I am a violist, photographer and have a passion for food and am particularly knowledgeable about Korean cuisine. Really loving being a part of Yummy Palette to share with the community and discover through them the best food in town!!!  ", password:"123456")
+miguel = User.create!(cuisine_id: korean.id, first_name: "Miguel", last_name: "Hernandez", email:"miguel@wagon.com" , bio:"I am a violist, photographer and have a passion for food and am particularly knowledgeable about Korean cuisine. Really loving being a part of Yummy Palette to share with the community and discover through them the best food in town!!!  ", password:"123456")
 miguel_img = URI.open('https://avatars3.githubusercontent.com/u/64239865?v=4')
 miguel.photo.attach(io: miguel_img, filename: 'miguel profile', content_type: 'image/jpg')
 
@@ -529,7 +529,7 @@ kristin_img = URI.open('https://scontent.fymy1-2.fna.fbcdn.net/v/t31.0-8/1835871
 kristin.photo.attach(io: kristin_img, filename: 'kristin profile', content_type: 'image/jpg')
 
 minju = User.create!(cuisine_id: korean.id, first_name: "Minju", last_name: "Kim", email:"minju@wagon.com" , bio:"Originally from Korea but gre up in Los Angeles, I just moved to Montreal to play violin in the  Montreal Symphony orchestra. I'm so happy I discovered Yummy Palette as I was able to find the most amazing Korean restaurants from the get go. Cant wait to try all your yummy suggestions!!!", password:"123456")
-minju_img = URI.open('https://scontent.fymy1-2.fna.fbcdn.net/v/t1.0-9/1928330_508563228206_9449_n.jpg?_nc_cat=105&_nc_sid=de6eea&_nc_ohc=eH09QcE0x2AAX8BAAO9&_nc_ht=scontent.fymy1-2.fna&oh=5a55b61ceb35a7a0a9de3f0e39326302&oe=5F75B36C')
+minju_img = URI.open('https://festivaldefebrero.com/wp-content/uploads/2019/01/Minju-Kim600.jpg')
 minju.photo.attach(io: minju_img, filename: 'minju profile', content_type: 'image/jpg')
 
 #Middle-Eastern Cuisine
