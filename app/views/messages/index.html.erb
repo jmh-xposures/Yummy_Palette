@@ -17,6 +17,7 @@
   <% end %>
 </div>
 
+
 <div id="messages">
   <% @restaurant.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
@@ -30,14 +31,19 @@
         </i>
         <p><%= message.content %></p>
       </div>
+
+<div class="chatroom-messages-container" id="messages" data-restaurant-id="<%= @restaurant.id %>" >
+  <h1> <%= @restaurant.name %> </h1>
+  <% @restaurant.messages.each do |message| %>
+    <div class="message-container" id="message-<%= message.id %>">
+      <%= render 'shared/message', message: message %>
     </div>
   <% end %>
 </div>
 
 <div class="messageform">
-    <%= simple_form_for [ @restaurant, @message ] do |f| %>
-      <%= f.input :content, autofocus: true, label: false, placeholder: "Eat expert..." %>
+    <%= simple_form_for [ @restaurant, @message ], remote: true do |f| %>
+      <%= f.input :content, autofocus: true, label: false, placeholder: "Eat expert...", remote: true %>
       <%= f.submit "🍴", class: "btn btn-primary" %>
     <% end %>
 </div>
-

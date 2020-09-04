@@ -20,7 +20,7 @@
     <br>
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
     <div class="favorite-vote">
-      <% if current_user.has_favorited?(@restaurant) %> 
+      <% if current_user.has_favorited?(@restaurant) %>
         <%= link_to restaurant_favorite_path(@restaurant, @favorite), method: :delete, remote: true do %>
           <%= image_tag 'yellow-star-filled.svg', {id: 'yellow_star_filled'} %>
         <% end %>
@@ -31,7 +31,7 @@
       <% end %>
       <div class="upvote-box">
         <% if current_user.can_upvote?(@restaurant) %>
-          <% if current_user.has_upvoted?(@restaurant) %> 
+          <% if current_user.has_upvoted?(@restaurant) %>
             <%= link_to restaurant_upvote_path(@restaurant, @upvote), method: :delete, remote: true do %>
               <%= image_tag 'red-upvote-filled.svg', {id: 'red-upvote'} %>
             <% end %>
@@ -49,7 +49,7 @@
   </div>
 
   <% if user_signed_in? && current_user.cuisine == @restaurant.cuisine %>
-    <%= link_to "Expert Chat", restaurant_messages_path(@restaurant), class:"btn btn-outline-primary ask-btn"%>
+    <%= link_to "Enter Chatroom", restaurant_messages_path(@restaurant), class:"btn btn-outline-primary ask-btn enter-chatroom-button", 'data-retaurant-id' => @restaurant.id %>
   <% end %>
   <!-- Best dishes card -->
   <h1 style="font-size: 23px; font-weight: bold;">Best dishes</h1>
@@ -82,7 +82,7 @@
                   <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> %>
                 </div>
               <% end %>
-            </div>              
+            </div>
           </div>
         </div>
       </div>
@@ -94,9 +94,9 @@
   <!-- Review card -->
   <h1 style="font-size: 23px; font-weight: bold;">Why we recommend this Restaurant</h1>
   <% @restaurant.reviews.each do |review| %>
-    <% if review.user.cuisine&.name == @cuisine.name %>   
+    <% if review.user.cuisine&.name == @cuisine.name %>
       <div class="review_card">
-        <div class="avatar">    
+        <div class="avatar">
           <% if review.user.photo.attached? %>
             <%= link_to user_path(review.user) do %>
               <%= cl_image_tag review.user.photo.key, class: "avatar" %>
@@ -128,9 +128,9 @@
         <div class="modal-body">
           <% if current_user.cuisine&.name == @cuisine.name %>
             <p>Leave a review</p>
-          <% else %> 
+          <% else %>
             <p>Leave a comment</p>
-          <% end %>         
+          <% end %>
           <%= simple_form_for([@restaurant, @review]) do |f| %>
             <%= f.input :content, label: false %>
             <%= f.input :restaurant_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @restaurant.id } %>
@@ -140,7 +140,7 @@
               <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> %>
             </div>
           <% end %>
-        </div>          
+        </div>
       </div>
     </div>
   </div>
@@ -151,9 +151,9 @@
   <!-- Comments of guests -->
   <h1 style="font-size: 23px; font-weight: bold;">Guests comments</h1>
   <% @restaurant.reviews.each do |review| %>
-    <% unless review.user.cuisine&.name == @cuisine.name %>   
+    <% unless review.user.cuisine&.name == @cuisine.name %>
       <div class="review_card">
-        <div class="avatar">    
+        <div class="avatar">
           <% if review.user.photo.attached? %>
             <%= link_to user_path(review.user) do %>
               <%= cl_image_tag review.user.photo.key, class: "avatar" %>
@@ -176,6 +176,6 @@
 
   <% unless current_user.cuisine.name == @cuisine.name %>
     <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Comment</button>
-  <% end %>   
+  <% end %>
     <!-- end comments of guests -->
 </div>
