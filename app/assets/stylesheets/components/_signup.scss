@@ -8,65 +8,62 @@
   align-items: center;
 
   .signup-container {
-      background-color: #FFFFFF;
-      width: 350px;
-      height: 650px;
-      border-radius: 10px;
-      box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-      padding: 2px 16px;////////////////
-      opacity: 0.9;
-      margin-top: 70px;
+    background-color: #FFFFFF;
+    width: 350px;
+    height: 650px;
+    border-radius: 10px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    padding: 2px 16px;
+    opacity: 0.9;
+    margin-top: 70px;
   }
 }
 
-  #signup-title {
-    text-align: center;
-    font-size: 25px;
-  }
-  
-  .input-field {
-    border-radius: 10px;
-    margin: 0 16px;
-  }
-  
-  .signup-button {
-    padding: 2px 5px;
-    color: #8C55AA;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    background-color: lightblue;
-    border-radius: 20px;  
-  }
-  
-  .signup-cred {
-    border-radius: 50px;
-    a.hover { /////does not work
-      text-decoration: none;
-    }
-    
-  }
-  
-  .form-actions {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .signup {
-    text-align: center;
-    padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .yummy-palette {
-    font-family: 'Brush Script MT';
-    text-align: center;
-    font-size: 50px;
-    color: rgba(8, 123, 255, 0.6);
-  }
+#signup-title {
+  text-align: center;
+  font-size: 25px;
+}
 
+.input-field {
+  border-radius: 10px;
+  margin: 0 16px;
+}
 
+.signup-button {
+  padding: 2px 5px;
+  color: #8C55AA;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: lightblue;
+  border-radius: 20px;  
+}
+
+.signup-cred {
+  border-radius: 50px;
+  a.hover {
+    text-decoration: none;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.signup {
+  text-align: center;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.yummy-palette {
+  font-family: 'Brush Script MT';
+  text-align: center;
+  font-size: 50px;
+  color: rgba(8, 123, 255, 0.6);
+}
 
 .cuisine-name {
   border-radius: 5px;
@@ -75,12 +72,10 @@
     border-radius: 20px;
     width: 100px;
     height: 100px;
-/////////////////////////////////////////////
   }
 }
 
-  #user_photo {
-    background-color: white;
-    color: lightblue;
-  }
-
+#user_photo {
+  background-color: white;
+  color: lightblue;
+}

@@ -1,12 +1,12 @@
 class RestaurantsController < ApplicationController
   def show
-      @restaurant = Restaurant.find(params[:id])
-      @dish = Dish.new
-      @user = current_user
-      @review = Review.new
-      @cuisine = @restaurant.cuisine
-      @upvote = Upvote.where(user: current_user, restaurant: @restaurant).first
-      @favorite = Favorite.where(user: current_user, restaurant: @restaurant).first
+    @restaurant = Restaurant.find(params[:id])
+    @dish = Dish.new
+    @user = current_user
+    @review = Review.new
+    @cuisine = @restaurant.cuisine
+    @upvote = Upvote.where(user: current_user, restaurant: @restaurant).first
+    @favorite = Favorite.where(user: current_user, restaurant: @restaurant).first
   end
 
   

@@ -51,9 +51,3 @@ class Restaurant < ApplicationRecord
     self.address.split(',')[0..1].join(',')
   end
 end
-
-
-
-
-
-

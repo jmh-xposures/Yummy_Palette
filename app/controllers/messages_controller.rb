@@ -23,4 +23,3 @@ class MessagesController < ApplicationController
 		params.require(:message).permit(:content)
 	end
 end
-

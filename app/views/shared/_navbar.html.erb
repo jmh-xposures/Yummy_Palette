@@ -18,7 +18,6 @@
           <%= link_to 'Login', new_user_session_path, class: 'nav-link text-dark' %>
         </li>
       <% else %>
-
         <!-- If user is signed in -->
         <li class="nav-item active">
           <%= link_to 'Home', root_path, class: 'nav-link text-dark' %>
@@ -36,6 +35,7 @@
           <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
         </li>
       <% end %>
+
     </ul>
     <%# <form class="form-inline mt-2 mt-md-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">

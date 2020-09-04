@@ -1,76 +1,75 @@
 .grow-small {
-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .grow-small:hover {
-    transform: scale(1.05)
+  transform: scale(1.05)
 }
 
 .grow {
-    transition: 0.3s;
+  transition: 0.3s;
 }
 
 .grow:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-
 .fas {
-    padding-left: 20px;
-    padding-top: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
 }
   
 .checked {
-    color: orange;
+  color: orange;
 }
 
 .far {
-    color: red;
+  color: red;
 }
 
 .cards-wrapper {
-    width: 100vw;
-    margin: 10px 0;
-    h3 {
-        margin-bottom: -1rem;
-    }
+  width: 100vw;
+  margin: 10px 0;
+  h3 {
+      margin-bottom: -1rem;
+  }
 }
 
 .horizontal-scroll {
-    display: flex;
-    overflow-x: scroll;
-    padding: 25px 25px 25px 5px;
+  display: flex;
+  overflow-x: scroll;
+  padding: 25px 25px 25px 5px;
+  div {
+    margin-right: 16px;
+    // I know it looks weird, but don't touch the 3 lines of code under this comment please - thomas
     div {
-        margin-right: 16px;
-        // I know it looks weird, but don't touch the 3 lines of code under this comment please - thomas
-        div {
-            margin-right: 0;
-        }
+        margin-right: 0;
     }
+  }
 }
 
 .remove-hover-effect a:hover {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .no-follower-box {
-    border: 2px solid #8a8a8a70;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    p {
-        margin-top: 1rem;
-    }
+  border: 2px solid #8a8a8a70;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+      margin-top: 1rem;
+  }
 }
 
 .show-container {
-    width: 800px;
-    margin: 0 auto;
-  }
+  width: 800px;
+  margin: 0 auto;
+}
   
-  @media (max-width: 600px) {
-    .show-container {
-      width: 375px;
-    }
+@media (max-width: 600px) {
+.show-container {
+  width: 375px;
   }
+}
