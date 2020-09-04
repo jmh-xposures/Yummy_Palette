@@ -1,65 +1,65 @@
 .best-dishes {
-    height: 150px;
-    width: 100%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin: 20px auto;
-    background-image: linear-gradient(rgba(240,240,240,0.3), rgba(240,240,240,0.3)), asset-url("color_palette.jpg");
-    background-size: cover;
-    overflow-x: scroll;
-    p {
-      font-size: 14px;
-      text-align: center;
-      margin-bottom: 16px;  
-    }
-  }
-
-  .flex-card {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-
-  .tag {
-    background-color: #f1f1f1;
-    // width: 100px;
-    margin: 10px;
-    // padding: 2px;
-    text-align: center;
-    line-height: 25px;
-    font-size: 12px;
-    border-radius: 5px;
-    p {
-      padding: 2px 5px;
-      margin: 0;
-    }
-  }
-
-  .modal_restaurant_name {
-    text-align: center;
-    font-size: 30px;
-  }
-  .modal_restaurant_name a:hover {
-    text-decoration: none;
-  }
-  
-  .btn-review {
-    background-color: white;
-    font-weight: bold;
-    margin: 10px auto;
-    text-align: center;
-    font-size: 16px;
-    display: block;
-    border: none;
-  }
- 
-  #dish_name {
-    border-radius: 20px;
-    background: white;
-  }
-
-  .add-dish {
-    text-align: center;
-    margin-bottom: 16px;
+  height: 150px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px auto;
+  background-image: linear-gradient(rgba(240,240,240,0.3), rgba(240,240,240,0.3)), asset-url("color_palette.jpg");
+  background-size: cover;
+  background-position: 50% 65%;
+  overflow-x: scroll;
+  p {
     font-size: 14px;
+    text-align: center;
+    margin-bottom: 16px;  
   }
+}
+
+.flex-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.tag {
+  background-color: #f1f1f1;
+  margin: 10px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 12px;
+  border-radius: 5px;
+  p {
+    padding: 2px 5px;
+    margin: 0;
+  }
+}
+
+.modal_restaurant_name {
+  text-align: center;
+  font-size: 30px;
+}
+
+.modal_restaurant_name a:hover {
+  text-decoration: none;
+}
+
+.btn-review {
+  background-color: white;
+  font-weight: bold;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  border: none;
+}
+
+#dish_name {
+  border-radius: 20px;
+  background: white;
+}
+
+.add-dish {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
   
