@@ -1,20 +1,25 @@
 <div class="restaurant-card-container grow-small">
-  <div class="restaurant-card">
-    <div class="cuisine-tag"><%= restaurant.cuisine.name %></div>
-    <%= link_to restaurant_path(restaurant) do %>
-      <% if restaurant.photo.attached? %>
-          <%= cl_image_tag restaurant.photo.key, crop: :fill, class: "card-image" %>
-      <% else %>
-          <img class="card-image" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
-      <% end %>
-    <% end %>
-      
-    <div class="restaurant-card-footer">
-      <div class="restaurant-card-info">
-        <h2><%= restaurant.name %></h2>
-        <div class="address-container">
-            <%= image_tag 'location_icon.svg', size: "17" %>
-            <p class="location"><%= restaurant.neat_address %></p>
+    <div class="restaurant-card">
+        <div class="cuisine-tag"><%= restaurant.cuisine.name %></div>
+        <%= link_to restaurant_path(restaurant) do %>
+            <% if restaurant.photo.attached? %>
+                <%= cl_image_tag restaurant.photo.key, crop: :fill, class: "card-image" %>
+            <% else %>
+                <img class="card-image" src="https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg"/>
+            <% end %>
+        <% end %>
+        
+        <div class="restaurant-card-footer">
+            <div class="restaurant-card-info">
+                <h2><%= restaurant.name %></h2>
+                <div class="address-container">
+                    <%= image_tag 'location_icon.svg', size: "17" %>
+                    <p class="location"><%= restaurant.neat_address %></p>
+                </div>
+            </div>
+            <div class="card-extra-info">
+                <p><%= image_tag 'black_star.svg', size: "18" %> <%= restaurant.favorites.count %> <%= image_tag 'black_upvote.svg', size: "18" %><%= restaurant.upvotes.count %></p>
+            </div>
         </div>
       </div>
       <div class="card-extra-info">

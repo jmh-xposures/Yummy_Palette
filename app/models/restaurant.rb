@@ -30,7 +30,7 @@ class Restaurant < ApplicationRecord
   has_one_attached :photo
  
   def self.upvoted
-      self.all.select do |restaurant|
+    self.all.select do |restaurant|
       cuisine_experts = restaurant.cuisine.users.count
       restaurant_upvotes = Upvote.where(restaurant: restaurant).count
       global_threshold = 0.5
@@ -39,7 +39,6 @@ class Restaurant < ApplicationRecord
       upvote_percentage >= global_threshold
     end
   end
-
  
   def self.latest_upvoted
     global = self.upvoted

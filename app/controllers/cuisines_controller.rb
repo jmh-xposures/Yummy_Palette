@@ -12,10 +12,14 @@ class CuisinesController < ApplicationController
       }
     end
     print @markers
+
     @cuisine_restaurants = {}
     @cuisines.each do |cuisine|
-      @cuisine_restaurants[cuisine.name] = Restaurant.where("restaurants.cuisine_id = #{cuisine.id}")
+      @cuisine_restaurants[cuisine.name] = Restaurant.includes(:favorites, :upvotes, :cuisine).with_attached_photo.upvoted.select do |restaurant| 
+        restaurant.cuisine_id = cuisine.id
+      end
     end
+  
   end
 
   def show
@@ -24,7 +28,7 @@ class CuisinesController < ApplicationController
     @review = Review.new
     @upvote = Upvote.new
     @tag = Tag.new
-    @cuisine_restaurants = Restaurant.where(cuisine_id: params[:id].to_i)
+    @cuisine_restaurants = Restaurant.where(cuisine_id: params[:id].to_i, )
     @cuisine_users = User.where(cuisine_id: params[:id].to_i)
     @global_restaurants = Restaurant.upvoted
     @pending_restaurants = @cuisine_restaurants - @global_restaurants
