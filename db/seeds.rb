@@ -508,9 +508,9 @@ img_korean_rest6 = URI.open('https://www.mcgilldaily.com/wp-content/uploads/2014
 korean_rest6.photo.attach(io: img_korean_rest6, filename: 'ganadara', content_type: 'image/jpg')
 
 puts "Creating Korean cuisine experts"
-miguel = User.create!(cuisine_id: korean.id, first_name: "Miguel", last_name: "Hernandez", email:"miguel@wagon.com" , bio:"I am a violist, photographer and have a passion for food and am particularly knowledgeable about Korean cuisine. Really loving being a part of Yummy Palette to share with the community and discover through them the best food in town!!!  ", password:"123456")
-miguel_img = URI.open('https://avatars3.githubusercontent.com/u/64239865?v=4')
-miguel.photo.attach(io: miguel_img, filename: 'miguel profile', content_type: 'image/jpg')
+mark = User.create!(cuisine_id: korean.id, first_name: "Mark", last_name: "Vanchestein", email:"mark@wagon.com" , bio:"I'm photographer and have a passion for food and am particularly knowledgeable about Korean cuisine. Really loving being a part of Yummy Palette to share with the community and discover through them the best food in town!!!  ", password:"123456")
+mark_img = URI.open('https://scontent.fykz2-1.fna.fbcdn.net/v/t31.0-8/1401172_575363904750_1937880701_o.jpg?_nc_cat=106&_nc_sid=174925&_nc_ohc=fnMdiHlrKxkAX-4GxdZ&_nc_ht=scontent.fykz2-1.fna&oh=1c20a6b2416aaf8efe1cb21402ddeb31&oe=5F78A6AD')
+mark.photo.attach(io: mark_img, filename: 'mark profile', content_type: 'image/jpg')
 
 choong = User.create!(cuisine_id: korean.id, first_name: "Choong Hun", last_name: "Lee", email:"choong@wagon.com" , bio:"I am originally from New York but I moved to Montreal to work as a software developer. I noticed that the korean food industry in Montreal wasen't as vibrant as in New York so it was quite difficult for me to find really good korean cuisine in town. Thanks to Yummy Palette I know not just where to find the best korean food in town, but the best of any cuisine I might be in the mood for. This app is fantastic!!!", password:"123456")
 choong_img = URI.open('https://avatars0.githubusercontent.com/u/38733598?v=4')
