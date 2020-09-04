@@ -16,10 +16,9 @@ class CuisinesController < ApplicationController
     @cuisine_restaurants = {}
     @cuisines.each do |cuisine|
       @cuisine_restaurants[cuisine.name] = Restaurant.includes(:favorites, :upvotes, :cuisine).with_attached_photo.upvoted.select do |restaurant| 
-        restaurant.cuisine_id = cuisine.id
+        restaurant.cuisine_id == cuisine.id
       end
     end
-  
   end
 
   def show
