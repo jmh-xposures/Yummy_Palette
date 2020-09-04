@@ -53,19 +53,19 @@
     </div>
   <% else %>
     <div class="horizontal-scroll">
-        <% @followed_users.each do |follow| %>
-          <div class="follower-avatar">
-            <%= link_to user_path(follow.follower) do %>
-              <% if follow.follower.photo.attached? %>
-                <%= cl_image_tag follow.follower.photo.key, class: "avatar-follow" %>
-              <% else %>
-                <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
-              <% end %>
+      <% @followed_users.each do |follow| %>
+        <div class="follower-avatar">
+          <%= link_to user_path(follow.follower) do %>
+            <% if follow.follower.photo.attached? %>
+              <%= cl_image_tag follow.follower.photo.key, class: "avatar-follow" %>
+            <% else %>
+              <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
             <% end %>
-            <h3><%= follow.follower.first_name %></h3>
-            <p> <%= follow.follower.cuisine.name %> cuisine </p>
-          </div>
-        <% end %>
+          <% end %>
+          <h3><%= follow.follower.first_name %></h3>
+          <p> <%= follow.follower.cuisine.name %> cuisine </p>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
@@ -78,20 +78,19 @@
     </div>
   <% else %>
     <div class="horizontal-scroll">
-        <% @follow_users.each do |follow| %>
-          <div class="follower-avatar">
-            <%= link_to user_path(follow.follower) do %>
-              <% if follow.followed.photo.attached? %>
-                <%= cl_image_tag follow.followed.photo.key, class: "avatar-follow" %>
-              <% else %>
-                <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
-              <% end %>
+      <% @follow_users.each do |follow| %>
+        <div class="follower-avatar">
+          <%= link_to user_path(follow.follower) do %>
+            <% if follow.followed.photo.attached? %>
+              <%= cl_image_tag follow.followed.photo.key, class: "avatar-follow" %>
+            <% else %>
+              <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
             <% end %>
-            <h3><%= follow.followed.first_name %></h3>
-            <p> <%= follow.followed.cuisine.name %> cuisine </p>
-          </div>
-        <% end %>
+          <% end %>
+          <h3><%= follow.followed.first_name %></h3>
+          <p> <%= follow.followed.cuisine.name %> cuisine </p>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
-

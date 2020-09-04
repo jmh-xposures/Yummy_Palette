@@ -1,15 +1,15 @@
 .btn-ghost {
-    color: #4A4A4A;
-    background-color: rgba(235, 220, 135, 0.8);
-    padding: 2px 5px 2px 5px;
-    border-radius: 5px;
-    font-weight: lighter;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    color: black;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  color: #4A4A4A;
+  background-color: rgba(235, 220, 135, 0.8);
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
   
 .btn-ghost:hover {
@@ -29,7 +29,6 @@
   text-align: center;
 }
 
-  
 .button-box {
   display: flex;
   justify-content: center;
