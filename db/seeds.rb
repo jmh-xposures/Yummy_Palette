@@ -529,7 +529,7 @@ kristin_img = URI.open('https://scontent.fymy1-2.fna.fbcdn.net/v/t31.0-8/1835871
 kristin.photo.attach(io: kristin_img, filename: 'kristin profile', content_type: 'image/jpg')
 
 minju = User.create!(cuisine_id: korean.id, first_name: "Minju", last_name: "Kim", email:"minju@wagon.com" , bio:"Originally from Korea but gre up in Los Angeles, I just moved to Montreal to play violin in the  Montreal Symphony orchestra. I'm so happy I discovered Yummy Palette as I was able to find the most amazing Korean restaurants from the get go. Cant wait to try all your yummy suggestions!!!", password:"123456")
-minju_img = URI.open('https://festivaldefebrero.com/wp-content/uploads/2019/01/Minju-Kim600.jpg')
+minju_img = URI.open('https://festivaldefebrero.com/wp-content/uploads/2019/01/Gracce-Park600.jpg')
 minju.photo.attach(io: minju_img, filename: 'minju profile', content_type: 'image/jpg')
 
 #Middle-Eastern Cuisine
