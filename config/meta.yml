@@ -1,5 +1,5 @@
 meta_product_name: "Yummy Palette"
 meta_title: "Yummy Palette - Celebrate the colorful cuisine around you"
 meta_description: "Yummy Palette brings food lovers together to build a platform that recommends only the most authentic and delicious restaurants around you!"
-meta_image: "color_palette.jpg" # should exist in `app/assets/images/`
+meta_image: "cover_image.png" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
