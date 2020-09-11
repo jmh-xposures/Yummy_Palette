@@ -6,31 +6,32 @@
   </div>
 </div>
 
-<!-- Palette info icons -->
-<div class="icons_aligned">   
-  <div class="info-icons">
-    <%= image_tag 'small_orange_palette.svg' %>
-    <span class="info-nums"><%= @cuisine_count %></span>
-    <div class="intro-info">
-      <p>Cuisines to explore</p>
+<div class="container">
+  <!-- Palette info icons -->
+  <div class="icons_aligned">   
+    <div class="info-icons">
+      <%= image_tag 'small_orange_palette.svg' %>
+      <span class="info-nums"><%= @cuisine_count %></span>
+      <div class="intro-info">
+        <p>Cuisines to explore</p>
+      </div>
     </div>
-  </div>
-  <div class="info-icons">
-    <%= image_tag 'small_yellow_palette.svg' %>
-    <span class="info-nums"><%= @restaurant_count %></span>
-    <div class="intro-info">
-      <p>Restaurants to discover</p>
+    <div class="info-icons">
+      <%= image_tag 'small_yellow_palette.svg' %>
+      <span class="info-nums"><%= @restaurant_count %></span>
+      <div class="intro-info">
+        <p>Restaurants to discover</p>
+      </div>
     </div>
-  </div>
-  <div class="info-icons">
-    <%= image_tag 'small_green_palette.svg' %>
-    <span class="info-nums"><%= @user_count %></span>
-    <div class="intro-info">
-      <p>Cuisine Experts</p>
+    <div class="info-icons">
+      <%= image_tag 'small_green_palette.svg' %>
+      <span class="info-nums"><%= @user_count %></span>
+      <div class="intro-info">
+        <p>Cuisine Experts</p>
+      </div>
     </div>
   </div>
 </div>
-
 <!-- cuisine index -->
 <div class="cards-wrapper">
   <h2 style="font-weight: bold; font-size: 23px; text-align: center;">Cuisines</h2>
@@ -42,6 +43,7 @@
     <% end  %>
   </div> 
 </div>
+
 <!-- Recently upvoted restaurant cards -->
 <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
 
