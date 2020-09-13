@@ -1,6 +1,6 @@
 .cover-banner {
   height: 300px;
-  width: 100vw;
+  width: 100%;
   background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), asset-url("color_palette.jpg");
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
@@ -88,6 +88,12 @@
 }
 .search{
   position: relative;
+  .magnifying-glass{
+    color: #8A8A8A;
+    position: absolute;
+    top: -5px;
+    left: -9px;
+    }
 }
 #query {
   border-radius: 15px;

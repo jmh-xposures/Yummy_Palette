@@ -1,3 +1,15 @@
+.navbar {
+  background-color: rgba(white, .7);
+  //position: absolute;
+  width: 100%;
+  z-index: 1000;
+  position: fixed;
+  .navbar-brand {
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 992px) {
   .search-field {
     display: flex;
