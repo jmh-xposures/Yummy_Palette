@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :show, :index]
   def show
     @restaurant = Restaurant.find(params[:id])
     @dish = Dish.new
@@ -9,7 +10,7 @@ class RestaurantsController < ApplicationController
     @favorite = Favorite.where(user: current_user, restaurant: @restaurant).first
   end
 
-  
+
 
   def index
     @restaurants = Restaurant.all

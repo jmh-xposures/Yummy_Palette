@@ -15,6 +15,9 @@
           <%= link_to 'Home', root_path, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
+          <%= link_to 'Cuisines', cuisines_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
           <%= link_to 'Login', new_user_session_path, class: 'nav-link text-dark' %>
         </li>
       <% else %>
@@ -43,7 +46,7 @@
     </form> %>
 
     <div class="search-field">
-      <div class="search">  
+      <div class="search">
         <div class="magnifying-glass">
           <i class="fas fa-search"></i>
         </div>
@@ -52,10 +55,10 @@
             params[:query],
             class: "form-control big-border-radius",
             placeholder: "Search for..."%>
-          <%= submit_tag "Search", 
-            class: "btn btn-primary big-border-radius d-none", 
+          <%= submit_tag "Search",
+            class: "btn btn-primary big-border-radius d-none",
             id: "searchbtn" %>
-        <% end %> 
+        <% end %>
       </div>
     </div>
   </div>
