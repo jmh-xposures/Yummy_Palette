@@ -20,7 +20,11 @@
     <br>
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
     <div class="favorite-vote">
-      <% if current_user.has_favorited?(@restaurant) %>
+      <% if !user_signed_in? %>
+        <%= link_to new_user_registration_path do %>
+          <%= image_tag 'yellow-star-filled.svg', {id: 'yellow_star_filled'} %>
+        <% end %>
+      <% elsif current_user.has_favorited?(@restaurant) %>
         <%= link_to restaurant_favorite_path(@restaurant, @favorite), method: :delete, remote: true do %>
           <%= image_tag 'yellow-star-filled.svg', {id: 'yellow_star_filled'} %>
         <% end %>
@@ -30,7 +34,9 @@
         <% end %>
       <% end %>
       <div class="upvote-box">
-        <% if current_user.can_upvote?(@restaurant) %>
+        <% if !user_signed_in? %>
+          <%= image_tag 'black_upvote.svg' %>
+        <% elsif current_user.can_upvote?(@restaurant) %>
           <% if current_user.has_upvoted?(@restaurant) %>
             <%= link_to restaurant_upvote_path(@restaurant, @upvote), method: :delete, remote: true do %>
               <%= image_tag 'red-upvote-filled.svg', {id: 'red-upvote'} %>
@@ -62,10 +68,12 @@
       <% end %>
 
       <!-- Add Dish trigger modal -->
-      <% if current_user.cuisine&.name == @cuisine.name %>
-        <button type="button" class="tag" style="width: 50px;" data-toggle="modal" data-target="#tagModal">
-          +
-        </button>
+      <% if user_signed_in? %>
+        <% if current_user.cuisine&.name == @cuisine.name %>
+          <button type="button" class="tag" style="width: 50px;" data-toggle="modal" data-target="#tagModal">
+            +
+          </button>
+        <% end %>
       <% end %>
       <!-- Modal -->
       <div class="modal fade" id="tagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -117,8 +125,10 @@
   <% end %>
 
   <!-- Add Review trigger modal -->
-  <% if current_user.cuisine&.name == @cuisine.name %>
-    <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Review</button>
+  <% if user_signed_in? %>
+    <% if current_user.cuisine&.name == @cuisine.name %>
+      <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Review</button>
+    <% end %>
   <% end %>
   <!-- Modal -->
   <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -126,19 +136,21 @@
       <div class="modal-content review-modal">
         <h5 class="modal_restaurant_name"><%= link_to @restaurant.name, restaurant_path(@restaurant) %></h5>
         <div class="modal-body">
-          <% if current_user.cuisine&.name == @cuisine.name %>
-            <p>Leave a review</p>
-          <% else %>
-            <p>Leave a comment</p>
-          <% end %>
-          <%= simple_form_for([@restaurant, @review]) do |f| %>
-            <%= f.input :content, label: false %>
-            <%= f.input :restaurant_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @restaurant.id } %>
-            <%= f.input :user_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @user.id } %>
-            <div class="d-flex justify-content-center">
-              <%= f.submit 'Submit', class: "submit-button-blue" %>
-              <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> %>
-            </div>
+          <% if user_signed_in? %>
+            <% if current_user.cuisine&.name == @cuisine.name %>
+              <p>Leave a review</p>
+            <% else %>
+              <p>Leave a comment</p>
+            <% end %>
+            <%= simple_form_for([@restaurant, @review]) do |f| %>
+              <%= f.input :content, label: false %>
+              <%= f.input :restaurant_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @restaurant.id } %>
+              <%= f.input :user_id, :as => :hidden, :class => "add-review-area", :input_html => { :value => @user.id } %>
+              <div class="d-flex justify-content-center">
+                <%= f.submit 'Submit', class: "submit-button-blue" %>
+                <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> %>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -173,9 +185,10 @@
       </div>
     <% end %>
   <% end %>
-
-  <% unless current_user.cuisine.name == @cuisine.name %>
-    <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Comment</button>
+  <% if user_signed_in? %>
+    <% unless current_user.cuisine.name == @cuisine.name %>
+      <button type="button" class="btn-review" data-toggle="modal" data-target="#reviewModal">Add a Comment</button>
+    <% end %>
   <% end %>
     <!-- end comments of guests -->
 </div>

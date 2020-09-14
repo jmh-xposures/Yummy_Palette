@@ -6,79 +6,82 @@
         <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c8.alamy.com/comp/JB1G0H/food-palette-with-fresh-ingredients-including-herbs-and-spices-JB1G0H.jpg); position: absolute; width: 100%; height: 100%; background-size: cover; z-index: -1">
         </div>
     <% end %>
-    <% if current_user.cuisine_id.to_s == params[:id]%>
-        <h1><%= @cuisine.name %></h1>
-        <h3>cuisine</h3>
-        <h2 class="welcome">Welcome back <%= current_user.first_name.capitalize %> !</h2>
-    <% else %>
-        <h1><%= @cuisine.name %></h1>
-        <h3>cuisine</h3>
-        <h2 class="welcome">Welcome, <%= current_user.first_name.capitalize %> !</h2>
+    <% if user_signed_in? %>
+      <% if current_user.cuisine_id.to_s == params[:id]%>
+          <h1><%= @cuisine.name %></h1>
+          <h3>cuisine</h3>
+          <h2 class="welcome">Welcome back <%= current_user.first_name.capitalize %> !</h2>
+      <% else %>
+          <h1><%= @cuisine.name %></h1>
+          <h3>cuisine</h3>
+          <h2 class="welcome">Welcome, <%= current_user.first_name.capitalize %> !</h2>
+      <% end %>
     <% end %>
 </div>
+<% if user_signed_in? %>
+  <% if current_user.cuisine_id.to_s == params[:id]%>
 
-<% if current_user.cuisine_id.to_s == params[:id]%>
+      <h3 class="h3-custom-css" style="text-align:center;">Members of your community</h3>
+      <div class="icons_aligned">
+          <% if @cuisine_users.empty? %>
+              <p>"There are no expert for this cuisine type"</p>
+          <% else %>
+              <% @cuisine_users.each do |user| %>
+                  <%= render "shared/medium_avatar", {user: user} %>
+              <% end %>
+          <% end %>
+      </div>
 
-    <h3 class="h3-custom-css" style="text-align:center;">Members of your community</h3> 
+      <h3 class="h3-custom-css" style="text-align: center;"><%= @cuisine.cuisine_upvoted.length %> Restaurants approved</h3>
+      <div class="horizontal-scroll grid-three">
+          <% @cuisine.cuisine_upvoted.each do |restaurant| %>
+              <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+          <% end  %>
+      </div>
+      <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
+
+      <h3 class="h3-custom-css" style="text-align: center;">Pending restaurant</h3>
+          <div class="horizontal-scroll grid-three">
+              <% @cuisine.pending_cuisine.each do |restaurant| %>
+                  <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
+              <% end  %>
+          </div>
+      <div class="button-box">
+          <button type="button" class="btn-review" data-toggle="modal" data-target="#restaurantModal">Add a Restaurant</button>
+      </div>
+
+      <div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content restaurant-modal">
+                  <h5 class="modal_restaurant_name"> Add a new restaurant</h5>
+                  <div class="modal-body">
+                      <%= simple_form_for([@cuisine, @restaurant]) do |f| %>
+                          <%= f.input :name, label: 'Name' %>
+                          <%= f.input :address, label: 'Address' %>
+                          <%= f.input :phone, label: 'Phone' %>
+                          <%= f.input :vegetarian, as: :radio_buttons, label: 'Vegetarian ?' %>
+                          <%= f.input :photo, as: :file, required: true, label: "upload a picture" %>
+                      <div class="modal-footer">
+                          <%= f.button :submit, class: "btn btn-primary submit-button-blue" %>
+                          <%# <button type="button" class="btn btn-secondary button" data-dismiss="modal">Cancel</button> %>
+                      </div>
+                      <% end %>
+                  </div>
+             </div>
+          </div>
+      </div>
+<% end %>
+  <% else %>
+
+    <h3 class="h3-custom-css" style="text-align:center;">Meet the experts</h3>
     <div class="icons_aligned">
-        <% if @cuisine_users.empty? %> 
+        <% if @cuisine_users.empty? %>
             <p>"There are no expert for this cuisine type"</p>
         <% else %>
             <% @cuisine_users.each do |user| %>
                 <%= render "shared/medium_avatar", {user: user} %>
             <% end %>
-        <% end %> 
-    </div>
-
-    <h3 class="h3-custom-css" style="text-align: center;"><%= @cuisine.cuisine_upvoted.length %> Restaurants approved</h3> 
-    <div class="horizontal-scroll grid-three">
-        <% @cuisine.cuisine_upvoted.each do |restaurant| %>
-            <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-        <% end  %>
-    </div>
-    <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
-
-    <h3 class="h3-custom-css" style="text-align: center;">Pending restaurant</h3> 
-        <div class="horizontal-scroll grid-three">
-            <% @cuisine.pending_cuisine.each do |restaurant| %>
-                <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
-            <% end  %>
-        </div>
-    <div class="button-box">
-        <button type="button" class="btn-review" data-toggle="modal" data-target="#restaurantModal">Add a Restaurant</button>
-    </div>
-
-    <div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content restaurant-modal">
-                <h5 class="modal_restaurant_name"> Add a new restaurant</h5>
-                <div class="modal-body">
-                    <%= simple_form_for([@cuisine, @restaurant]) do |f| %>
-                        <%= f.input :name, label: 'Name' %>
-                        <%= f.input :address, label: 'Address' %>
-                        <%= f.input :phone, label: 'Phone' %>
-                        <%= f.input :vegetarian, as: :radio_buttons, label: 'Vegetarian ?' %>
-                        <%= f.input :photo, as: :file, required: true, label: "upload a picture" %>
-                    <div class="modal-footer">
-                        <%= f.button :submit, class: "btn btn-primary submit-button-blue" %>
-                        <%# <button type="button" class="btn btn-secondary button" data-dismiss="modal">Cancel</button> %>
-                    </div> 
-                    <% end %>
-                </div>
-           </div>
-        </div>
-    </div>
-<% else %>
-
-    <h3 class="h3-custom-css" style="text-align:center;">Meet the experts</h3> 
-    <div class="icons_aligned">
-        <% if @cuisine_users.empty? %> 
-            <p>"There are no expert for this cuisine type"</p>
-        <% else %>
-            <% @cuisine_users.each do |user| %>
-                <%= render "shared/medium_avatar", {user: user} %>
-            <% end %>
-        <% end %> 
+        <% end %>
     </div>
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
     <h3 class="h3-custom-css"><%= @cuisine.cuisine_upvoted.length %> Restaurants approved</h3>
@@ -88,5 +91,5 @@
                 <%= render "shared/medium_restaurant_card", {restaurant: restaurant}%>
             </div>
         <% end  %>
-    </div> 
+    </div>
 <% end %>

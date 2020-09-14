@@ -1,4 +1,5 @@
 class CuisinesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
     @cuisines = Cuisine.all
     @restaurants = Restaurant.all
@@ -15,7 +16,7 @@ class CuisinesController < ApplicationController
 
     @cuisine_restaurants = {}
     @cuisines.each do |cuisine|
-      @cuisine_restaurants[cuisine.name] = Restaurant.includes(:favorites, :upvotes, :cuisine).with_attached_photo.upvoted.select do |restaurant| 
+      @cuisine_restaurants[cuisine.name] = Restaurant.includes(:favorites, :upvotes, :cuisine).with_attached_photo.upvoted.select do |restaurant|
         restaurant.cuisine_id == cuisine.id
       end
     end
