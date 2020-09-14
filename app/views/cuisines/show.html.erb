@@ -20,7 +20,7 @@
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
     <h3 class="h3-custom-css" style="text-align:center;">Members of your community</h3> 
-    <div class="horizontal-scroll grid-three">
+    <div class="icons_aligned">
         <% if @cuisine_users.empty? %> 
             <p>"There are no expert for this cuisine type"</p>
         <% else %>
@@ -71,7 +71,7 @@
 <% else %>
 
     <h3 class="h3-custom-css" style="text-align:center;">Meet the experts</h3> 
-    <div class="horizontal-scroll grid-three">
+    <div class="icons_aligned">
         <% if @cuisine_users.empty? %> 
             <p>"There are no expert for this cuisine type"</p>
         <% else %>

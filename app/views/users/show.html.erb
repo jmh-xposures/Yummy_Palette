@@ -1,12 +1,12 @@
 
 <div class= "background_profile">
-  <div>
+  <div class="cover-banner user-banner">
+  </div>
   	<% if @user.photo.attached? %>
   	  <%= cl_image_tag @user.photo.key, class: "profile-avatar" %>
   	<% else %>
   	  <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
   	<% end %>
-  </div>
 </div>
 
 <div class="favorite-vote">
