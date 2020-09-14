@@ -20,7 +20,7 @@
 <% if current_user.cuisine_id.to_s == params[:id]%>
 
     <h3 class="h3-custom-css" style="text-align:center;">Members of your community</h3> 
-    <div class="horizontal-scroll">
+    <div class="icons_aligned">
         <% if @cuisine_users.empty? %> 
             <p>"There are no expert for this cuisine type"</p>
         <% else %>
@@ -31,7 +31,7 @@
     </div>
 
     <h3 class="h3-custom-css" style="text-align: center;"><%= @cuisine.cuisine_upvoted.length %> Restaurants approved</h3> 
-    <div class="horizontal-scroll">
+    <div class="horizontal-scroll grid-three">
         <% @cuisine.cuisine_upvoted.each do |restaurant| %>
             <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
         <% end  %>
@@ -39,7 +39,7 @@
     <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
 
     <h3 class="h3-custom-css" style="text-align: center;">Pending restaurant</h3> 
-        <div class="horizontal-scroll">
+        <div class="horizontal-scroll grid-three">
             <% @cuisine.pending_cuisine.each do |restaurant| %>
                 <%= render "shared/medium_restaurant_card", {restaurant: restaurant} %>
             <% end  %>
@@ -71,7 +71,7 @@
 <% else %>
 
     <h3 class="h3-custom-css" style="text-align:center;">Meet the experts</h3> 
-    <div class="horizontal-scroll">
+    <div class="icons_aligned">
         <% if @cuisine_users.empty? %> 
             <p>"There are no expert for this cuisine type"</p>
         <% else %>

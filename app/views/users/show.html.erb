@@ -1,12 +1,12 @@
 
 <div class= "background_profile">
-  <div>
+  <div class="cover-banner user-banner">
+  </div>
   	<% if @user.photo.attached? %>
   	  <%= cl_image_tag @user.photo.key, class: "profile-avatar" %>
   	<% else %>
   	  <%= image_tag "https://media.wired.com/photos/5a13e24f63f8d15055c806fe/master/pass/hulk-still-bg.jpg", class: "profile-avatar" %>
   	<% end %>
-  </div>
 </div>
 
 <div class="favorite-vote">
@@ -33,7 +33,7 @@
 <hr style="border: 1px solid rgba(187, 187, 187, 0.41); width:95%; text-align:center; margin: 0 auto;">
 
 <h2 style="font-weight: bold; font-size: 23px; text-align: center; margin-top: 25px;">Favorited Restaurants</h2>
-  <div class="horizontal-scroll">
+  <div class="horizontal-scroll grid-three">
     <% @favorites.each do |favorite| %>
       <div class="my-3">
         <%= render "shared/medium_restaurant_card", {restaurant: favorite.restaurant} %>
@@ -52,7 +52,7 @@
       <p>no followers yet</p>
     </div>
   <% else %>
-    <div class="horizontal-scroll">
+    <div class="horizontal-scroll grid-three">
       <% @followed_users.each do |follow| %>
         <div class="follower-avatar">
           <%= link_to user_path(follow.follower) do %>
@@ -77,7 +77,7 @@
       <p>not following anyone yet</p>
     </div>
   <% else %>
-    <div class="horizontal-scroll">
+    <div class="horizontal-scroll grid-three">
       <% @follow_users.each do |follow| %>
         <div class="follower-avatar">
           <%= link_to user_path(follow.follower) do %>

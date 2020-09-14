@@ -1,6 +1,7 @@
 .restaurant-card-container {
-  position: relative; 
-  // width: 350px; 
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .cuisine-tag {

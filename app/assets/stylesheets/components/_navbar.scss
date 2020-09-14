@@ -1,4 +1,21 @@
+.navbar {
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(white, .7);
+  padding-top: 0;
+  padding-bottom: 0;
+  position: fixed;
+  .navbar-brand {
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 992px) {
+  .navbar {
+    position: absolute;
+    background-color: rgba(white, 0);
+  }
   .search-field {
     display: flex;
     align-items: center;
@@ -13,11 +30,9 @@
   }
   .navbar-collapse {
     position: absolute;
-    top: 106px;
+    top: 80px;
     left: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding-left: 0 15px 15px 15px;
     width: 100%;
     transition: all 0.4s ease;
     display: block;
@@ -47,3 +62,12 @@
     background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=');
   }
 }
+
+// @media (min-width: 800px) {
+//   .navbar {
+//     background-color: rgba(white, .7);
+//     padding-top: 0;
+//     padding-bottom: 0;
+//     position: fixed;
+//   }
+// }
