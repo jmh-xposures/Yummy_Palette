@@ -80,7 +80,7 @@
     <div class="horizontal-scroll grid-three">
       <% @follow_users.each do |follow| %>
         <div class="follower-avatar">
-          <%= link_to user_path(follow.follower) do %>
+          <%= link_to user_path(follow.followed) do %>
             <% if follow.followed.photo.attached? %>
               <%= cl_image_tag follow.followed.photo.key, class: "avatar-follow" %>
             <% else %>
